@@ -1,0 +1,532 @@
+﻿<Window  
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d"
+	x:Class="WpfApplication3.MainWindow"
+	x:Name="Window"
+	Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded"
+	>
+    <Window.Resources>
+        <Color x:Key="#939393">#FF5D5D5D</Color>
+        <Color x:Key="#535353">#FF353535</Color>
+        <Color x:Key="#646464">#FF404040</Color>
+        <Style TargetType="{x:Type Button}" x:Key="ButtonMapBottomVehicle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle RadiusY="11" RadiusX="11" Margin="0" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" VerticalAlignment="Stretch">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{DynamicResource #535353}"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Label FontSize="12" Margin="8,0,-8,0" Content="车流" Width="50" Height="25" VerticalAlignment="Stretch" d:LayoutOverrides="HorizontalAlignment">
+                                <Label.Foreground>
+                                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                                </Label.Foreground>
+                            </Label>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonMapBottomWalker" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <VisualStateManager.CustomVisualStateManager>
+                                <ei:ExtendedVisualStateManager/>
+                            </VisualStateManager.CustomVisualStateManager>
+                            <Rectangle RadiusY="11" RadiusX="11" Margin="0" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" VerticalAlignment="Stretch">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{DynamicResource #535353}"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Label x:Name="label" FontSize="12" Margin="8,0,-8,0" Content="人流" Width="50" Height="25" VerticalAlignment="Stretch" d:LayoutOverrides="HorizontalAlignment">
+                                <Label.Foreground>
+                                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                                </Label.Foreground>
+                            </Label>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="ButtonNormalBackground" Color="{DynamicResource #535353}"/>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="{DynamicResource #535353}"/>
+        <Style x:Key="ButtonMapBottomOuter" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderDefaulted="{TemplateBinding IsDefaulted}" SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Microsoft_Windows_Themes:ButtonChrome>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="RenderDefaulted" TargetName="Chrome" Value="true"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="ComboBoxStyle1" TargetType="{x:Type ComboBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <Grid Height="20" VerticalAlignment="Top">
+                                <Rectangle x:Name="contentarea" Fill="#FF333333" RadiusX="5" RadiusY="5" Height="Auto" VerticalAlignment="Stretch" />
+                                <TextBox x:Name="PART_EditableTextBox" Margin="5,1,1.5,0" Background="#FF333333" BorderBrush="{x:Null}" SelectionBrush="{x:Null}">
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Grid>
+                            <Popup x:Name="PART_Popup">
+                                <Grid Height="96.5" Width="113">
+                                    <Rectangle x:Name="popupbackground" Fill="#FF333333" Stroke="#FF4C4C4C" Margin="0,-1,-0.5,-1" />
+                                    <ScrollViewer Margin="0,0,0,-0.5">
+                                        <ItemsPresenter/>
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Rectangle Fill="#FF666666" RadiusX="3" RadiusY="3" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" Margin="0" VerticalAlignment="Stretch" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Color x:Key="#TVcolor">Transparent</Color>
+        <Color x:Key="TVCharacterColor">#FFFF8B00</Color>
+        <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
+
+        <DataTemplate x:Key="DataTemplate1" >
+            <StackPanel Height="82" Background="{x:Null}">
+                <Grid Height="82" Margin="0" Width="280" HorizontalAlignment="Right">
+                    <Image Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" Source="{Binding Path=LogoPath}" />
+                    <WrapPanel Background="{x:Null}" Margin="60,0,20,0" VerticalAlignment="Top" Height="30">
+                        <TextBlock Background="{x:Null}" Foreground="#FFFF8B00" Width="Auto"><Hyperlink   NavigateUri="{Binding Path=ChannelLink}" RequestNavigate="Hyperlink_RequestNavigate" ><InlineUIContainer>
+												<Label Content="{Binding Path=ChannelTitle}"   HorizontalAlignment="Left">
+													<Label.Foreground>
+														<SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+													</Label.Foreground>
+												</Label>
+											</InlineUIContainer></Hyperlink></TextBlock>
+                    </WrapPanel>
+                    <WrapPanel Width="200" Height="41" Margin="60,40,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <TextBlock Height="30" >
+										<TextBlock.Foreground>
+											<SolidColorBrush Color="White"/>
+										</TextBlock.Foreground>
+										<Hyperlink NavigateUri="{Binding Path=Link}" RequestNavigate="Hyperlink_RequestNavigate" ><InlineUIContainer>   
+												
+												<TextBlock Text="{Binding Path=Title}" HorizontalAlignment="Left" MaxWidth="180" TextWrapping="Wrap">
+													<TextBlock.Foreground>
+														<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+													</TextBlock.Foreground>
+												</TextBlock>     
+											</InlineUIContainer></Hyperlink></TextBlock>
+                    </WrapPanel>
+                </Grid>
+
+            </StackPanel>
+
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/background.jpg"/>
+        </Grid.Background>
+        <Grid x:Name="LeftContent" HorizontalAlignment="Left">
+            <Grid x:Name="Logo" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Rectangle HorizontalAlignment="Left" Height="60" Stroke="Black" VerticalAlignment="Top" Width="290" Fill="#B1111111"/>
+                <Rectangle HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="290" IsEnabled="False" Stroke="#FF414141" Fill="#A4000000"/>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="35" Margin="61,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Foreground="White" FontFamily="Agency FB" FontSize="26" FontWeight="Bold"><Run Text="Decision Making "/><Run Text="System"/></TextBlock>
+            </Grid>
+            <Grid x:Name="Date" VerticalAlignment="Top" HorizontalAlignment="Left" Height="77" Width="290" Margin="0,59,0,0">
+                <Rectangle Fill="#FF1D1D1D" HorizontalAlignment="Left" Height="77" Margin="0,0,0,0" VerticalAlignment="Top" Width="290" Stroke="#FF414141"/>
+                <Label x:Name="label" Content="七月" HorizontalAlignment="Left" Height="33" Margin="11,14,0,0" VerticalAlignment="Top" Width="51" FontSize="15" FontFamily="Arial Black" d:LayoutOverrides="HorizontalAlignment">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                    </Label.Foreground>
+                </Label>
+                <Label x:Name="week" Content="星期六" HorizontalAlignment="Left" Height="31" Margin="109.98,14,0,0" VerticalAlignment="Top" Width="76" FontFamily="Arial Black" FontSize="15">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                    </Label.Foreground>
+                </Label>
+                <Label x:Name="label2" Content="28" Height="63" Margin="49,6,177,0" VerticalAlignment="Top" FontSize="44">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                    </Label.Foreground>
+                </Label>
+                <Label x:Name="label3" Content="Sat." Height="30" Margin="114.98,38,126.02,0" VerticalAlignment="Top" FontSize="15">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource #939393}"/>
+                    </Label.Foreground>
+                </Label>
+                <Label x:Name="label4" Content="Jul." HorizontalAlignment="Left" Height="32" Margin="14,38,0,0" VerticalAlignment="Top" Width="49" FontSize="15" d:LayoutOverrides="HorizontalAlignment">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource #939393}"/>
+                    </Label.Foreground>
+                </Label>
+                <Label x:Name="label5" Content="09:30" HorizontalAlignment="Left" Height="63" Margin="162.234,6,0,0" VerticalAlignment="Top" Width="122" FontSize="44" d:LayoutOverrides="GridBox">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+            <Grid x:Name="Menu" HorizontalAlignment="Left" Width="290" Margin="0,135,0,0">
+                <Rectangle HorizontalAlignment="Left" Width="290" IsEnabled="False" Stroke="#FF414141" Margin="0,0,0,-3" Fill="#9F000000"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="39" Margin="27.252,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="193" OpacityMask="Black" BorderThickness="1" Opacity="0.55" ClipToBounds="True" SelectionBrush="#FFA0A0A0" Background="#FF595959">
+                    <TextBox.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                    </TextBox.Foreground>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <Menu x:Name="menu" HorizontalAlignment="Left" Height="47" Margin="21,83,0,0" VerticalAlignment="Top" Width="244" Background="#FFFFDF7F" Cursor="Hand" Foreground="Black">
+                    <MenuItem Header="执政业绩" Height="47" Width="112" FontSize="24" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Margin="66,11,0,0" >
+                        <MenuItem Header="经济发展" Width="240" Height="47" FontSize="18" Background="#FF2C2C2C">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="社会发展" Width="240" Height="47" FontSize="18" Background="#FF343434">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="环境保护" Width="240" Height="47" FontSize="18" Background="#FF2C2C2C">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="横向比较" Width="240" Height="47" FontSize="18" Background="#FF343434">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="menu_Copy" HorizontalAlignment="Left" Height="47" Margin="21,148,0,0" VerticalAlignment="Top" Width="244" Background="#FFFFAA84" Cursor="Hand" Foreground="Black">
+                    <MenuItem Header="规划支撑" Height="47" Width="112" FontSize="24" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Margin="66,11,0,0" >
+                        <MenuItem Header="经济发展" Width="240" Height="47" FontSize="18" Background="#FF2C2C2C">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="社会发展" Width="240" Height="47" FontSize="18" Background="#FF343434">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="环境保护" Width="240" Height="47" FontSize="18" Background="#FF2C2C2C">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                        <MenuItem Header="横向比较" Width="240" Height="47" FontSize="18" Background="#FF343434">
+                            <MenuItem.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </MenuItem.Foreground>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Weather" Margin="325.5,30,835.5,0" Width="743" Height="470" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle Fill="#E9111111" Stroke="Black" Width="743" Height="470" d:LayoutOverrides="Height" Margin="0"/>
+            <Grid x:Name="WeatherInfo" Width="706" Height="100" Margin="18.5,17,18.5,0" VerticalAlignment="Top">
+                <Rectangle Fill="#FF30BADF" Height="100" Stroke="#FF30BADF" RadiusY="15" RadiusX="15" Width="706"/>
+                <Grid x:Name="WeatherToday" HorizontalAlignment="Left" Width="111">
+                    <Image x:Name="w_image1" HorizontalAlignment="Left" Margin="21,12,0,33" Stretch="Fill" Width="55"/>
+                    <Label x:Name="w_label1" HorizontalAlignment="Left" Height="24.667" Margin="14,63,0,0" VerticalAlignment="Top" FontSize="11">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Grid x:Name="WeatherTemp" HorizontalAlignment="Left" Width="117.5" Margin="112.5,0,0,0">
+                    <Label x:Name="w_label2" HorizontalAlignment="Left" Height="64.667" Margin="16,0,0,0" VerticalAlignment="Top" FontSize="51">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Label x:Name="w_label3" HorizontalAlignment="Left" Height="24.667" Margin="17,0,0,12" VerticalAlignment="Bottom" FontSize="11">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Grid x:Name="WeatherAir1" HorizontalAlignment="Left" Width="160" Margin="231.338,0,0,0">
+                    <Label x:Name="w_label4" Height="30" Margin="15.838,6.5,0,0" VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Left">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Label x:Name="w_label5" Height="30" Margin="15.838,33,0,0" VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Left">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Image x:Name="Images_vertical_line_white_png" HorizontalAlignment="Left" Height="66" Margin="111,13,0,0" Source="Images/vertical_line_white.png" Stretch="Fill" VerticalAlignment="Top" Width="2"/>
+                <Image x:Name="Images_vertical_line_white_png_Copy" HorizontalAlignment="Left" Height="66" Margin="233.838,13,0,0" Source="Images/vertical_line_white.png" Stretch="Fill" VerticalAlignment="Top" Width="2"/>
+                <Image x:Name="Images_vertical_line_white_png_Copy1" HorizontalAlignment="Left" Height="66" Margin="388.501,13,0,0" Source="Images/vertical_line_white.png" Stretch="Fill" VerticalAlignment="Top" Width="2"/>
+                <Image x:Name="Images_vertical_line_white_png_Copy2" HorizontalAlignment="Left" Height="66" Margin="535.497,13,0,0" Source="Images/vertical_line_white.png" Stretch="Fill" VerticalAlignment="Top" Width="2"/>
+
+
+                <Grid x:Name="WeatherAir2" HorizontalAlignment="Left" Margin="394,0,0,-2.667" Width="138.501">
+                    <Label x:Name="w_label6" HorizontalAlignment="Left" Height="30" Margin="15.838,6.5,0,0" VerticalAlignment="Top" FontSize="15">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Label x:Name="w_label7" HorizontalAlignment="Left" Height="30" Margin="15.838,33,0,0" VerticalAlignment="Top" FontSize="15">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Grid x:Name="WeatherFuture1" HorizontalAlignment="Left" Margin="536,0,0,0" Width="70">
+                    <Label x:Name="w_label8" Content="" Height="24.667" Margin="19,8,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" d:LayoutOverrides="VerticalAlignment">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Image x:Name="w_image2" Height="30" Margin="20,37,19.666,0" Stretch="Fill" VerticalAlignment="Top" Width="30"/>
+                    <Label x:Name="w_label11" Content="" Height="24.667" Margin="8,68.166,0,0" VerticalAlignment="Top" FontSize="9" d:LayoutOverrides="Width" HorizontalAlignment="Left">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Grid x:Name="WeatherFuture1_Copy" HorizontalAlignment="Left" Margin="587,0,0,0" Width="70">
+                    <Label x:Name="w_label9" Content="" Height="24.667" Margin="19,8,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" d:LayoutOverrides="VerticalAlignment">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Image x:Name="w_image3" Height="30" Margin="20,37,19.666,0" Stretch="Fill" VerticalAlignment="Top" Width="30"/>
+                    <Label x:Name="w_label12" Content="" Height="24.667" Margin="8,68.166,0,0" VerticalAlignment="Top" FontSize="9" HorizontalAlignment="Left">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+                <Grid x:Name="WeatherFuture1_Copy1" HorizontalAlignment="Left" Margin="637,0,0,0" Width="70">
+                    <Label x:Name="w_label10" Content="" Height="24.667" Margin="19,8,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" d:LayoutOverrides="VerticalAlignment">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                    <Image x:Name="w_image4" Height="30" Margin="20,37,19.666,0" Stretch="Fill" VerticalAlignment="Top" Width="30"/>
+                    <Label x:Name="w_label13" Content="" Height="24.667" Margin="8,68.166,0,0" VerticalAlignment="Top" FontSize="9" HorizontalAlignment="Left">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                        </Label.Foreground>
+                    </Label>
+                </Grid>
+
+            </Grid>
+            <WebBrowser Margin="20.5,135,243,17.5" Name="w_webBrowser1" />
+            <Image x:Name="w_imageWeather" HorizontalAlignment="Right" Margin="0,138,21,23.5" Width="203.5" Source="pack://siteoforigin:,,,/background.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+        <Grid Margin="325.5,0,835.5,50" Width="743" Height="470" VerticalAlignment="Bottom">
+            <Rectangle Fill="#E9111111" Stroke="Black" Width="743" Height="470" />
+            <WebBrowser x:Name="wbEmergency" Height="400" Margin="18,18,18,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="707"/>
+            <Button Content="车流" HorizontalAlignment="Left" Height="25" Margin="18,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="人流" HorizontalAlignment="Left" Height="25" Margin="82.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="市外" HorizontalAlignment="Left" Height="25" Margin="149.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Cursor="Hand" Style="{DynamicResource ButtonMapBottomOuter}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+        </Grid>
+        <Grid Margin="0,30,323.5,0"  Width="486" Height="470" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Right">
+            <Rectangle Fill="#E9111111" Stroke="Black" Width="486" Height="470" d:LayoutOverrides="Width, Height" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <WebBrowser Height="400" Margin="18,18,18,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="450" Name="wbTraffic" >
+                <WebBrowser.OpacityMask>
+                    <SolidColorBrush Color="Transparent"/>
+                </WebBrowser.OpacityMask>
+            </WebBrowser>
+            <Button Content="车流" HorizontalAlignment="Left" Height="25" Margin="18,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="人流" HorizontalAlignment="Left" Height="25" Margin="82.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="市外" HorizontalAlignment="Left" Height="25" Margin="149.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Cursor="Hand" Style="{DynamicResource ButtonMapBottomOuter}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+        </Grid>
+        <Grid Margin="0,0,323.5,50" Width="486" Height="470" HorizontalAlignment="Right" d:LayoutOverrides="Width, Height" VerticalAlignment="Bottom">
+            <Rectangle Fill="#E9111111" Stroke="Black" Width="486" Height="470" d:LayoutOverrides="Width, Height"/>
+            <WebBrowser Height="400" Margin="18,18,18,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="450" Name="wbenvironment" />
+            <Button Content="车流" HorizontalAlignment="Left" Height="25" Margin="18,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="人流" HorizontalAlignment="Left" Height="25" Margin="82.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Style="{DynamicResource ButtonMapBottomOuter}" Cursor="Hand" >
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="市外" HorizontalAlignment="Left" Height="25" Margin="149.5,427,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="2.02,0.52" Cursor="Hand" Style="{DynamicResource ButtonMapBottomOuter}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource #646464}"/>
+                </Button.Foreground>
+            </Button>
+        </Grid>
+        <Grid Margin="0,30.75,20.5,310.25" Width="280" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Rectangle Fill="#E9111111" HorizontalAlignment="Right" Stroke="Black" Width="280" RenderTransformOrigin="0.5,0.5" Height="701"/>
+            <Grid Height="230" VerticalAlignment="Top">
+                <WebBrowser Name="WebBrowserTV" Width="267" Height="186" VerticalAlignment="Top" Margin="0,6.5,0,0" Visibility="Collapsed"></WebBrowser>
+                <Image Height="186" HorizontalAlignment="Left" Margin="6,6,0,0" Name="imageTVCover" Stretch="Fill" VerticalAlignment="Top" Width="267" Source="/WpfApplication3;component/Images/TVCover.jpg" MouseLeftButtonDown="imageTVCover_MouseLeftButtonDown" />
+                <ComboBox x:Name="comboBox" Margin="5.834,199.916,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Background="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}" SelectionChanged="comboBox_SelectionChanged">
+                    <ComboBox.Foreground>
+                        <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                    </ComboBox.Foreground>
+                    <ComboBoxItem Content="东方卫视" Name="Dongfangweishi" >
+                        <ComboBoxItem.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                        </ComboBoxItem.Background>
+                        <ComboBoxItem.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                        </ComboBoxItem.Foreground>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="CCTV新闻" Name="CCTV13" >
+                        <ComboBoxItem.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                        </ComboBoxItem.Background>
+                        <ComboBoxItem.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                        </ComboBoxItem.Foreground>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="CCTV体育" Name="CCTV5" >
+                        <ComboBoxItem.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                        </ComboBoxItem.Background>
+                        <ComboBoxItem.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                        </ComboBoxItem.Foreground>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="五星体育" Name="Wuxingtiyu" >
+                        <ComboBoxItem.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                        </ComboBoxItem.Background>
+                        <ComboBoxItem.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                        </ComboBoxItem.Foreground>
+                    </ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Grid x:Name="RssNews" Margin="0,250.5,0,0">
+                <ListView  Name="Rsslist" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <ListView.Foreground>
+                        <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
+                    </ListView.Foreground>
+                </ListView>
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+</Window>

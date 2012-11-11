@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="WpfApplication3.Control.CxExplain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UserControl="clr-namespace:WpfApplication3.Control"
+    Height="150" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.200*"/>
+            <RowDefinition Height="0.800*"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Background="#DF5C7590" Width="200" Height="150" Grid.Row="0" Grid.RowSpan="3"></Border>
+        <TextBlock Text="解释信息" Grid.Row="0" HorizontalAlignment="Center" FontSize="14" Foreground="White"/>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" Width="200">
+            <TextBlock Text="" HorizontalAlignment="Stretch"  FontSize="18" Foreground="White" x:Name="title" TextWrapping="Wrap"/>
+        </ScrollViewer>
+        <UserControl:CxCloseButton HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="closeButton" MouseDown="closeButton_MouseDown" Grid.Row="0" Margin="0,10,20,0"/>
+    </Grid>
+</UserControl>

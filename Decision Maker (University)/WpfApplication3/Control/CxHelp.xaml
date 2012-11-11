@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfApplication3.Control.CxHelp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="18" Width="80" Cursor="Hand">
+    <Grid x:Name="Layouthelp" >
+        <Border CornerRadius="0"
+                Width="80"
+                Height="18"
+            x:Name="helpButtonBorder"
+            MouseEnter="helpButtonBorder_MouseEnter"
+            MouseLeave="helpButtonBorder_MouseLeave"
+            >
+
+            <TextBlock  Text="指标解释" FontSize="15" x:Name="helpButton"  Foreground="White"
+                            HorizontalAlignment="Center" ToolTip="指标解释" TextDecorations="Underline"/>
+        </Border>
+    </Grid>
+</UserControl>
+   
