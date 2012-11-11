@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="town" Class="TownDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.60.40.141;Initial Catalog=town;User ID=sa" SettingsObjectName="DataLib.Properties.Settings" SettingsPropertyName="townConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Calendar" Member="Calendar">
+    <Type Name="Calendar">
+      <Column Name="cyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.R_INDEX" Member="R_INDEX">
+    <Type Name="R_INDEX">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MainIndex" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubIndex" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="I_INDEX_R_INDEX" Member="I_INDEX" ThisKey="SubIndex" OtherKey="ID" Type="I_INDEX" IsForeignKey="true" />
+      <Association Name="I_INDEX_R_INDEX1" Member="I_INDEX1" ThisKey="MainIndex" OtherKey="ID" Type="I_INDEX" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ct_Class" Member="ct_Class">
+    <Type Name="ct_Class">
+      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codename" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ct_Indicator" Member="ct_Indicator">
+    <Type Name="ct_Indicator">
+      <Column Name="id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codename" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="classid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_DEVIDE" Member="I_DEVIDE">
+    <Type Name="I_DEVIDE">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Zone" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Attribute" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AttrCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="I_ZONE_I_DEVIDE" Member="I_ZONE" ThisKey="Zone" OtherKey="ID" Type="I_ZONE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_INDEX" Member="I_INDEX">
+    <Type Name="I_INDEX">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="[Rule]" Member="Rule" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Zone" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="StdValue" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueHigh" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueLow" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="I_INDEX_R_INDEX" Member="R_INDEX" ThisKey="ID" OtherKey="SubIndex" Type="R_INDEX" />
+      <Association Name="I_INDEX_R_INDEX1" Member="R_INDEX1" ThisKey="ID" OtherKey="MainIndex" Type="R_INDEX" />
+      <Association Name="I_SOURCE_I_INDEX" Member="I_SOURCE" ThisKey="Source" OtherKey="ID" Type="I_SOURCE" IsForeignKey="true" />
+      <Association Name="I_ZONE_I_INDEX" Member="I_ZONE" ThisKey="Zone" OtherKey="ID" Type="I_ZONE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_REMARK" Member="I_REMARK">
+    <Type Name="I_REMARK">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Reamrk" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_ResultData" Member="I_ResultData">
+    <Type Name="I_ResultData">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="indicatorid" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fromyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="toyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_SOURCE" Member="I_SOURCE">
+    <Type Name="I_SOURCE">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Sample" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="I_SOURCE_I_INDEX" Member="I_INDEX" ThisKey="ID" OtherKey="Source" Type="I_INDEX" />
+      <Association Name="I_SOURCE_I_INDEX_EX" Member="I_INDEX_EX" ThisKey="ID" OtherKey="Source" Type="I_INDEX_EX" />
+      <Association Name="I_SOURCE_I_INDEX_HIGH_LEVEL" Member="I_INDEX_HIGH_LEVELs" ThisKey="ID" OtherKey="Source" Type="I_INDEX_HIGH_LEVEL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_ZONE" Member="I_ZONE">
+    <Type Name="I_ZONE">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Layer" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="District" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Township" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Village" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Area" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="I_ZONE_I_DEVIDE" Member="I_DEVIDE" ThisKey="ID" OtherKey="Zone" Type="I_DEVIDE" />
+      <Association Name="I_ZONE_I_INDEX" Member="I_INDEX" ThisKey="ID" OtherKey="Zone" Type="I_INDEX" />
+      <Association Name="I_ZONE_I_INDEX_EX" Member="I_INDEX_EX" ThisKey="ID" OtherKey="Zone" Type="I_INDEX_EX" />
+      <Association Name="I_ZONE_I_INDEX_HIGH_LEVEL" Member="I_INDEX_HIGH_LEVELs" ThisKey="ID" OtherKey="Zone" Type="I_INDEX_HIGH_LEVEL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_INDEX_EX" Member="I_INDEX_EX">
+    <Type Name="I_INDEX_EX">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="[Rule]" Member="Rule" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Zone" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="StdValue" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueHigh" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueLow" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="I_SOURCE_I_INDEX_EX" Member="I_SOURCE" ThisKey="Source" OtherKey="ID" Type="I_SOURCE" IsForeignKey="true" />
+      <Association Name="I_ZONE_I_INDEX_EX" Member="I_ZONE" ThisKey="Zone" OtherKey="ID" Type="I_ZONE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.I_INDEX_HIGH_LEVEL" Member="I_INDEX_HIGH_LEVELs">
+    <Type Name="I_INDEX_HIGH_LEVEL">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="[Rule]" Member="Rule" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Zone" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="StdValue" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueHigh" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="WarnValueLow" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="I_SOURCE_I_INDEX_HIGH_LEVEL" Member="I_SOURCE" ThisKey="Source" OtherKey="ID" Type="I_SOURCE" IsForeignKey="true" />
+      <Association Name="I_ZONE_I_INDEX_HIGH_LEVEL" Member="I_ZONE" ThisKey="Zone" OtherKey="ID" Type="I_ZONE" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
