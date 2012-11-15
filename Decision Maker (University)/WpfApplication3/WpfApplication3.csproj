@@ -459,6 +459,9 @@
     <Content Include="html\zhiboDongfangweishi.htm" />
     <Content Include="html\zhiboWuxingtiyu.htm" />
     <Content Include="html\ZiRanZaiHai.htm" />
+    <Resource Include="Images\项目现场.jpg" />
+    <Resource Include="Images\项目进度.jpg" />
+    <Resource Include="Images\LOGO同济大学BBS.gif" />
     <Resource Include="Images\631.jpg" />
     <Resource Include="Images\account.png" />
     <Resource Include="Images\back.png" />

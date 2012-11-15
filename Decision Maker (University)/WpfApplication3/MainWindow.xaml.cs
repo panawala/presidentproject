@@ -121,6 +121,9 @@ namespace WpfApplication3
             mainContent6.Visibility = System.Windows.Visibility.Hidden;
             mainContent7.Visibility = System.Windows.Visibility.Hidden;
             mainContent8_ZiRanZaiHai.Visibility = System.Windows.Visibility.Hidden;
+            mainContent9_YuanChengHuiYi.Visibility = System.Windows.Visibility.Hidden;
+            mainContent10_YiJianHuiJu.Visibility = System.Windows.Visibility.Hidden;
+            mainContent11_ZhongDaXiangMu.Visibility = System.Windows.Visibility.Hidden;
             Emergency.Visibility = System.Windows.Visibility.Hidden;
             Traffic.Visibility = System.Windows.Visibility.Hidden;
             Environment.Visibility = System.Windows.Visibility.Hidden;
@@ -1005,7 +1008,7 @@ namespace WpfApplication3
         {
             // TODO: Add event handler implementation here.
             int largewidth, smallwidth;
-            largewidth = 1300;
+            largewidth = 1280;
             smallwidth = 290;
             smallwidth++;
             if (this.Video.Width != largewidth)
@@ -1013,16 +1016,17 @@ namespace WpfApplication3
                 this.Video.VerticalAlignment = System.Windows.VerticalAlignment.Top;
                 this.Video.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 Thickness marginlarge;
-                marginlarge = new Thickness(300, 8, 0, 0);
+                marginlarge = new Thickness(6, 6, 0, 0);
                 this.Video.Margin = marginlarge;
-                this.Video.Width = 1300;
-                this.Video.Height = 1040;
+                this.Video.Width = 1280;
+                this.Video.Height = 1010;
                 this.bgvideo1.Visibility = System.Windows.Visibility.Visible;
-                this.remotevideo.Width = 1300;
-                this.remotevideo.Height = 990;
+                this.remotevideo.Width = 1280;
+                this.remotevideo.Height = 980;
                 this.localvideo.Width = 300;
                 this.localvideo.Height = 200;
-                HideEveryContent();
+                grid_YuanChengHuiYi_XiangGuanCaiLiao.Visibility = System.Windows.Visibility.Hidden;
+                grid_YuanChengHuiYi_FaYanJiangGao.Visibility = System.Windows.Visibility.Hidden;
             }
 
             else
@@ -1030,20 +1034,17 @@ namespace WpfApplication3
                 this.Video.VerticalAlignment = System.Windows.VerticalAlignment.Top;
                 this.Video.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 Thickness marginsmall;
-                marginsmall = new Thickness(18, 620, 0, 0);
+                marginsmall = new Thickness(6, 100, 0, 0);
                 this.Video.Margin = marginsmall;
-                this.Video.Width = 254;
-                this.Video.Height = 211.167;
+                this.Video.Width = 900;
+                this.Video.Height = 650;
                 this.bgvideo1.Visibility = System.Windows.Visibility.Collapsed;
-                this.remotevideo.Width = 254;
-                this.remotevideo.Height = 181;
-                this.localvideo.Width = 75;
-                this.localvideo.Height = 50;
-                HideEveryContent();
-                Emergency.Visibility = System.Windows.Visibility.Visible;
-                Traffic.Visibility = System.Windows.Visibility.Visible;
-                Environment.Visibility = System.Windows.Visibility.Visible;
-                Weather.Visibility = System.Windows.Visibility.Visible;
+                this.remotevideo.Width = 896;
+                this.remotevideo.Height = 616;
+                this.localvideo.Width = 300;
+                this.localvideo.Height = 200;
+                grid_YuanChengHuiYi_XiangGuanCaiLiao.Visibility = System.Windows.Visibility.Visible;
+                grid_YuanChengHuiYi_FaYanJiangGao.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
@@ -1674,7 +1675,7 @@ namespace WpfApplication3
         {
             HideEveryContent();
             mainContent5.Visibility = System.Windows.Visibility.Visible;
-            label_JingYanYinJian_Title.Content = "城市发展案例库";
+            //label_JingYanYinJian_Title.Content = "城市发展案例库";
             dtSource = null;
             gridJingYanYinJian_Menu_ChengShiFaZhanAnLiKu.Visibility = System.Windows.Visibility.Visible;
             gridJingYanYinJian_Menu_ChengShiBaiKeZhiShiKu.Visibility = System.Windows.Visibility.Hidden;
@@ -1767,7 +1768,7 @@ namespace WpfApplication3
         {
             HideEveryContent();
             mainContent5.Visibility = System.Windows.Visibility.Visible;
-            label_JingYanYinJian_Title.Content = "城市百科知识库";
+            //label_JingYanYinJian_Title.Content = "城市百科知识库";
             dtSource = null;
             gridJingYanYinJian_Menu_ChengShiFaZhanAnLiKu.Visibility = System.Windows.Visibility.Hidden;
             gridJingYanYinJian_Menu_ChengShiBaiKeZhiShiKu.Visibility = System.Windows.Visibility.Visible;
@@ -1793,7 +1794,7 @@ namespace WpfApplication3
         {
             HideEveryContent();
             mainContent5.Visibility = System.Windows.Visibility.Visible;
-            label_JingYanYinJian_Title.Content = "城市数据知识库";
+            //label_JingYanYinJian_Title.Content = "城市数据知识库";
             dtSource = null;
             gridJingYanYinJian_Menu_ChengShiFaZhanAnLiKu.Visibility = System.Windows.Visibility.Hidden;
             gridJingYanYinJian_Menu_ChengShiBaiKeZhiShiKu.Visibility = System.Windows.Visibility.Hidden;
@@ -2342,6 +2343,153 @@ namespace WpfApplication3
             textBlock_ZiRanZaiHai_YingJiYuAn.Text = "注意事项内容";
         }
 
+        private void MenuItem_YuanChengHuiYi_Click(object sender, RoutedEventArgs e)
+        {
+            HideEveryContent();
+            mainContent9_YuanChengHuiYi.Visibility = System.Windows.Visibility.Visible;
+        }
 
+        private void mainContent9_YuanChengHuiYi_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.label_YuanChengHuiYi_Title.Content = "关于迅速落实欧洲智慧城市项目用地的协调会";
+
+            DataTable dt = new DataTable();
+            DataColumn col = new DataColumn("ReferenceMeterialTitel", typeof(string));
+            dt.Columns.Add(col);
+            DataRow dr = dt.NewRow();
+            dr[0] = "校长视屏会议需要的相关材料1";
+            dt.Rows.Add(dr);
+            dr = dt.NewRow();
+            dr[0] = "校长视屏会议需要的相关材料2";
+            dt.Rows.Add(dr);
+            dr = dt.NewRow();
+            dr[0] = "校长视屏会议需要的相关材料3";
+            dt.Rows.Add(dr);
+            this.dataGrid_YuanChengHuiYi_XiangGuanCaiLiao.ItemsSource = dt.DefaultView;
+
+            if (System.IO.File.Exists("远程会议发演讲稿.pdf"))
+            {
+                //Process.Start(fileName);
+                AdobeReaderControl pdfCl = new AdobeReaderControl("远程会议发演讲稿.pdf");
+                this.windowsFormsHost_YuanChengHuiYi_FaYanJiangGao.Child = pdfCl;
+            }
+        }
+
+        private void dataGrid_YuanChengHuiYi_XiangGuanCaiLiao_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.dataGrid_YuanChengHuiYi_XiangGuanCaiLiao.SelectedItem == null)
+            {
+                return;
+            }
+            if (e.OriginalSource.GetType() != typeof(System.Windows.Documents.Hyperlink))
+                return;
+            string strCommand = ((System.Windows.Documents.Hyperlink)e.OriginalSource).NavigateUri.ToString();
+            if (strCommand != "下载")
+            {
+                string fileName = ((DataRowView)this.dataGrid_YuanChengHuiYi_XiangGuanCaiLiao.SelectedItem)[0].ToString() + ".pdf";
+                if (System.IO.File.Exists(fileName))
+                {
+                    //Process.Start(fileName);
+                    AdobeReaderControl pdfCl = new AdobeReaderControl(fileName);
+                    this.windowsFormsHost_YuanChengHuiYi_XiangGuanCaiLiao.Child = pdfCl;
+                    this.grid_YuanChengHuiYi_XiangGuanCaiLiao_Show.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show("无法找到该文件");
+                }
+            }
+            else
+            {
+                //下载
+            }
+        }
+
+        private void btn_YuanChengHuiYi_XiangGuanCaiLiao_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.grid_YuanChengHuiYi_XiangGuanCaiLiao_Show.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+
+        public void Load_Tongji_BBS_Rss()
+        {
+            string[] rsspath ={ "http://bbs.tongji.edu.cn/rssi.php?h=1"
+                              };//RSS地址
+            string[] channeltitle ={"bbs.tongji.edu.cn"
+                                   };
+            string[] channellink ={"http://bbs.tongji.edu.cn/frames.html"
+                                  };
+            string[] logopath = {
+                                "/Images/LOGO同济大学BBS.gif"
+                                };
+            items = new List<NewsItem>();
+            for (int cid = 0; cid < 8; cid++)
+            {
+                XmlDocument doc = new XmlDocument();//创建文档对象
+                try
+                {
+                    doc.Load(rsspath[0]);//加载XML 包括HTTP：// 和本地
+                }
+                catch (Exception)
+                {
+                    //异常处理
+                }
+                //初始化Rss 
+                XmlNodeList list = doc.GetElementsByTagName("item"); //获得项   
+                XmlNode node = list.Item(cid);//
+                NewsItem item = new NewsItem();
+                item = getItem((XmlElement)node);
+                item.ChannelLink = channellink[0];
+                item.ChannelTitle = channeltitle[0];
+                item.LogoPath = logopath[0];
+                //加入list
+                items.Add(item);
+            }
+
+            //添加绑定操作
+            this.listView_YiJianHuiJu.ItemsSource = items;
+        }
+
+        private void mainContent10_YiJianHuiJu_Loaded(object sender, RoutedEventArgs e)
+        {
+            Load_Tongji_BBS_Rss();
+            this.InkCanvasAnnotation_YiJianHuiJu.Strokes = new System.Windows.Ink.StrokeCollection();
+        }
+
+        private void MenuItem_ShiShengXinXiFanKui_Click(object sender, RoutedEventArgs e)
+        {
+            HideEveryContent();
+            this.mainContent10_YiJianHuiJu.Visibility = System.Windows.Visibility.Visible;
+            this.gridSendCopy.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void Hyperlink_RequestNavigate_ShiShengXinXi(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            webBrowser_YiJianHuiJu.Navigate(e.Uri);
+        }
+
+        private void btn_YiJianHuiJu_OK_Click(object sender, RoutedEventArgs e)
+        {
+            System.IO.FileStream fs = new System.IO.FileStream("意见汇聚批示.isf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            this.InkCanvasAnnotation_YiJianHuiJu.Strokes.Save(fs);
+            fs.Close();
+            MessageBox.Show("批示保存成功！");
+        }
+
+        private void btn_YiJianHuiJu_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            InkCanvasAnnotation_YiJianHuiJu.Strokes.Clear();
+        }
+
+        private void MenuItem_211GongCheng_Click(object sender, RoutedEventArgs e)
+        {
+            HideEveryContent();
+            mainContent11_ZhongDaXiangMu.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void mainContent11_ZhongDaXiangMu_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

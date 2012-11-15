@@ -122,7 +122,7 @@
 					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
 				</TextBlock.Foreground><TextBlock.Effect>
 					<DropShadowEffect BlurRadius="1" ShadowDepth="4"/>
-				</TextBlock.Effect><Run Language="zh-cn" Text="智慧城市市长桌面系统"/></TextBlock>
+				</TextBlock.Effect><Run Language="zh-cn" Text="智慧校园校长桌面系统"/></TextBlock>
             <GridSplitter HorizontalAlignment="Left" Width="1" Margin="90.916,-60.166,0,-69.834" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
                 <GridSplitter.RenderTransform>
                     <TransformGroup>
