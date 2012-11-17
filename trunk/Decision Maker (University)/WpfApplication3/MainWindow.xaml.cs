@@ -2423,7 +2423,7 @@ namespace WpfApplication3
                                 "/Images/LOGO同济大学BBS.gif"
                                 };
             items = new List<NewsItem>();
-            for (int cid = 0; cid < 8; cid++)
+            for (int cid = 0; cid < 2; cid++)
             {
                 XmlDocument doc = new XmlDocument();//创建文档对象
                 try
