@@ -449,6 +449,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="CutImages\图像\branch_bg-07.png" />
+    <Resource Include="CutImages\图像\branch_bg-full-07.png" />
+    <Resource Include="CutImages\图像\branch_bg-half-07.png" />
+    <Resource Include="CutImages\图像\button_click-07.png" />
+    <Resource Include="CutImages\图像\button_unclick-07.png" />
+    <Resource Include="CutImages\图像\dot_bg-07.png" />
+    <Resource Include="CutImages\图像\dot_bg-green-07.png" />
+    <Resource Include="CutImages\图像\emergency_bg-07-07.png" />
+    <Resource Include="CutImages\图像\emergency_bg-07.png" />
+    <Resource Include="CutImages\图像\emergency_fg-07.png" />
+    <Resource Include="CutImages\图像\frame-07.png" />
+    <Resource Include="CutImages\图像\green_top_03.gif" />
+    <Resource Include="CutImages\图像\huozaiyuan1-07.png" />
+    <Resource Include="CutImages\图像\huozaiyuan2-07.png" />
+    <Resource Include="CutImages\图像\huozaiyuan3-07.png" />
+    <Resource Include="CutImages\图像\mainbg_03.gif" />
+    <Resource Include="CutImages\图像\phone-07.png" />
+    <Resource Include="CutImages\图像\select_green-07.png" />
+    <Resource Include="CutImages\图像\tab_yuan-07.png" />
+    <Resource Include="CutImages\图像\tag02-07.png" />
+    <Resource Include="CutImages\图像\tag03-07.png" />
+    <Resource Include="CutImages\图像\tag1-07.png" />
+    <Resource Include="CutImages\图像\tag4-07.png" />
+    <Resource Include="CutImages\图像\title_bg-07.png" />
+    <Resource Include="CutImages\图像\title_bg1-07.png" />
+    <Resource Include="CutImages\图像\yingjiyuan-07.png" />
+    <Resource Include="CutImages\图像\yingjiyuan1-07.png" />
+    <Resource Include="CutImages\图像\yuan_bg-07.png" />
     <Content Include="html\GoogleCalendar.htm" />
     <Content Include="html\MaxEmergency.htm" />
     <Content Include="html\PM25.htm" />
