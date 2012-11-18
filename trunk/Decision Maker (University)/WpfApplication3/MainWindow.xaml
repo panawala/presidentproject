@@ -1858,6 +1858,275 @@
             <GradientStop Color="#FFD8D8D8" Offset="0.284"/>
             <GradientStop Color="#FFF9F9F9" Offset="1"/>
         </LinearGradientBrush>
+        <Style x:Key="TextBoxStyle3" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="Padding" Value="1"/>
+        	<Setter Property="AllowDrop" Value="true"/>
+        	<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        	<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        	<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type TextBox}">
+        				<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderThickness="{TemplateBinding BorderThickness}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+        					<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Template="{DynamicResource ScrollViewerControlTemplate2}">
+        						<ScrollViewer.Foreground>
+        							<SolidColorBrush Color="{DynamicResource #535353}"/>
+        						</ScrollViewer.Foreground>
+        					</ScrollViewer>
+        				</Microsoft_Windows_Themes:ListBoxChrome>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <ControlTemplate x:Key="ScrollViewerControlTemplate2" TargetType="{x:Type ScrollViewer}">
+        	<Grid x:Name="Grid" Background="{TemplateBinding Background}">
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="*"/>
+        			<ColumnDefinition Width="Auto"/>
+        		</Grid.ColumnDefinitions>
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="*"/>
+        			<RowDefinition Height="Auto"/>
+        		</Grid.RowDefinitions>
+        		<Rectangle HorizontalAlignment="Stretch" Width="Auto" StrokeDashArray="3 3" StrokeDashCap="Round">
+        			<Rectangle.Stroke>
+        				<SolidColorBrush Color="{DynamicResource #939393}"/>
+        			</Rectangle.Stroke>
+        		</Rectangle>
+        		<Rectangle x:Name="Corner" Grid.Column="1" Grid.Row="1" StrokeDashArray="3 3" Stroke="{x:Null}"/>
+        		<ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+        		<ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
+        		<ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+        	</Grid>
+        </ControlTemplate>
+        <Style x:Key="TabItemFocusVisual">
+        	<Setter Property="Control.Template">
+        		<Setter.Value>
+        			<ControlTemplate>
+        				<Rectangle Margin="3,3,3,1" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
+        <LinearGradientBrush x:Key="ButtonNormalBackground9" EndPoint="0,1" StartPoint="0,0">
+        	<GradientStop Color="#F3F3F3" Offset="0"/>
+        	<GradientStop Color="#EBEBEB" Offset="0.5"/>
+        	<GradientStop Color="#DDDDDD" Offset="0.5"/>
+        	<GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="TabItemHotBackground" EndPoint="0,1" StartPoint="0,0">
+        	<GradientStop Color="#EAF6FD" Offset="0.15"/>
+        	<GradientStop Color="#D9F0FC" Offset=".5"/>
+        	<GradientStop Color="#BEE6FD" Offset=".5"/>
+        	<GradientStop Color="#A7D9F5" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="TabItemSelectedBackground" Color="#F9F9F9"/>
+        <SolidColorBrush x:Key="TabItemHotBorderBrush" Color="#3C7FB1"/>
+        <SolidColorBrush x:Key="TabItemDisabledBackground" Color="#F4F4F4"/>
+        <SolidColorBrush x:Key="TabItemDisabledBorderBrush" Color="#FFC9C7BA"/>
+        <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
+        	<Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+        	<Setter Property="Foreground" Value="Black"/>
+        	<Setter Property="Padding" Value="6,1,6,1"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush}"/>
+        	<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        	<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        	<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type TabItem}">
+        				<Grid SnapsToDevicePixels="true">
+        					<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1,1,1,0" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+        						<ContentPresenter x:Name="Content" ContentSource="Header" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        					</Border>
+        				</Grid>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsMouseOver" Value="true">
+        						<Setter Property="Background" TargetName="Bd" Value="{StaticResource TabItemHotBackground}"/>
+        					</Trigger>
+        					<Trigger Property="IsSelected" Value="true">
+        						<Setter Property="Panel.ZIndex" Value="1"/>
+        						<Setter Property="Background" TargetName="Bd" Value="{StaticResource TabItemSelectedBackground}"/>
+        					</Trigger>
+        					<MultiTrigger>
+        						<MultiTrigger.Conditions>
+        							<Condition Property="IsSelected" Value="false"/>
+        							<Condition Property="IsMouseOver" Value="true"/>
+        						</MultiTrigger.Conditions>
+        						<Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource TabItemHotBorderBrush}"/>
+        					</MultiTrigger>
+        					<Trigger Property="TabStripPlacement" Value="Bottom">
+        						<Setter Property="BorderThickness" TargetName="Bd" Value="1,0,1,1"/>
+        					</Trigger>
+        					<Trigger Property="TabStripPlacement" Value="Left">
+        						<Setter Property="BorderThickness" TargetName="Bd" Value="1,1,0,1"/>
+        					</Trigger>
+        					<Trigger Property="TabStripPlacement" Value="Right">
+        						<Setter Property="BorderThickness" TargetName="Bd" Value="0,1,1,1"/>
+        					</Trigger>
+        					<MultiTrigger>
+        						<MultiTrigger.Conditions>
+        							<Condition Property="IsSelected" Value="true"/>
+        							<Condition Property="TabStripPlacement" Value="Top"/>
+        						</MultiTrigger.Conditions>
+        						<Setter Property="Margin" Value="-2,-2,-2,-1"/>
+        						<Setter Property="Margin" TargetName="Content" Value="0,0,0,1"/>
+        					</MultiTrigger>
+        					<MultiTrigger>
+        						<MultiTrigger.Conditions>
+        							<Condition Property="IsSelected" Value="true"/>
+        							<Condition Property="TabStripPlacement" Value="Bottom"/>
+        						</MultiTrigger.Conditions>
+        						<Setter Property="Margin" Value="-2,-1,-2,-2"/>
+        						<Setter Property="Margin" TargetName="Content" Value="0,1,0,0"/>
+        					</MultiTrigger>
+        					<MultiTrigger>
+        						<MultiTrigger.Conditions>
+        							<Condition Property="IsSelected" Value="true"/>
+        							<Condition Property="TabStripPlacement" Value="Left"/>
+        						</MultiTrigger.Conditions>
+        						<Setter Property="Margin" Value="-2,-2,-1,-2"/>
+        						<Setter Property="Margin" TargetName="Content" Value="0,0,1,0"/>
+        					</MultiTrigger>
+        					<MultiTrigger>
+        						<MultiTrigger.Conditions>
+        							<Condition Property="IsSelected" Value="true"/>
+        							<Condition Property="TabStripPlacement" Value="Right"/>
+        						</MultiTrigger.Conditions>
+        						<Setter Property="Margin" Value="-1,-2,-2,-2"/>
+        						<Setter Property="Margin" TargetName="Content" Value="1,0,0,0"/>
+        					</MultiTrigger>
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Background" TargetName="Bd" Value="{StaticResource TabItemDisabledBackground}"/>
+        						<Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource TabItemDisabledBorderBrush}"/>
+        						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="TabControlStyle1" TargetType="{x:Type TabControl}">
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="Padding" Value="4,4,4,4"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush}"/>
+        	<Setter Property="Background" Value="#F9F9F9"/>
+        	<Setter Property="HorizontalContentAlignment" Value="Center"/>
+        	<Setter Property="VerticalContentAlignment" Value="Center"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type TabControl}">
+        				<Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition x:Name="ColumnDefinition0"/>
+        						<ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+        					</Grid.ColumnDefinitions>
+        					<Grid.RowDefinitions>
+        						<RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+        						<RowDefinition x:Name="RowDefinition1" Height="*"/>
+        					</Grid.RowDefinitions>
+        					<TabPanel x:Name="HeaderPanel" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+        					<Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+        						<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+        					</Border>
+        				</Grid>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="TabStripPlacement" Value="Bottom">
+        						<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+        						<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+        						<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+        						<Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+        						<Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+        					</Trigger>
+        					<Trigger Property="TabStripPlacement" Value="Left">
+        						<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+        						<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+        						<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+        						<Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+        						<Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+        						<Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+        						<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+        						<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+        						<Setter Property="Margin" TargetName="HeaderPanel" Value="2,2,0,2"/>
+        					</Trigger>
+        					<Trigger Property="TabStripPlacement" Value="Right">
+        						<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+        						<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+        						<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+        						<Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+        						<Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+        						<Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+        						<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+        						<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+        						<Setter Property="Margin" TargetName="HeaderPanel" Value="0,2,2,2"/>
+        					</Trigger>
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="TextBoxStyle4" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="Padding" Value="1"/>
+        	<Setter Property="AllowDrop" Value="true"/>
+        	<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        	<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        	<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type TextBox}">
+        				<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderThickness="{TemplateBinding BorderThickness}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+        					<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Template="{DynamicResource ScrollViewerControlTemplate3}">
+        						<ScrollViewer.Foreground>
+        							<SolidColorBrush Color="{DynamicResource #535353}"/>
+        						</ScrollViewer.Foreground>
+        					</ScrollViewer>
+        				</Microsoft_Windows_Themes:ListBoxChrome>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <ControlTemplate x:Key="ScrollViewerControlTemplate3" TargetType="{x:Type ScrollViewer}">
+        	<Grid x:Name="Grid" Background="{TemplateBinding Background}">
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="*"/>
+        			<ColumnDefinition Width="Auto"/>
+        		</Grid.ColumnDefinitions>
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="*"/>
+        			<RowDefinition Height="Auto"/>
+        		</Grid.RowDefinitions>
+        		<Rectangle HorizontalAlignment="Stretch" Width="Auto" StrokeDashArray="3 3" StrokeDashCap="Round" Stroke="{x:Null}"/>
+        		<Rectangle x:Name="Corner" Grid.Column="1" Grid.Row="1" StrokeDashArray="3 3" Stroke="{x:Null}"/>
+        		<ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+        		<ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
+        		<ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+        	</Grid>
+        </ControlTemplate>
     </Window.Resources>
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
@@ -2178,24 +2447,24 @@
                         </Grid>
                         <StackPanel x:Name="Menu_1_6_1" Visibility="Collapsed">
                             <Grid Height="70">
-                                <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                <Label Content="自然灾害" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                <Button Margin="20,10" Opacity="0" Cursor="Hand" Click="MenuItem_TuFaShiJian_ZiRanZaiHai_Click"/>
+                                <Rectangle x:Name="bg_zrzh" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
+                                <Label x:Name="label_zrzh" Content="自然灾害" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
+                                <Button x:Name="btn_zrzh" Margin="20,10" Opacity="0" Cursor="Hand"/>
                             </Grid>
                             <Grid Height="70">
-                                <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                <Label Content="个体事故" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" />
+                                <Rectangle x:Name="bg_shaq" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
+                                <Label x:Name="label_shaq" Content="社会安全" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
+                                <Button x:Name="btn_shaq" Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" />
                             </Grid>
                             <Grid Height="70">
-                                <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                <Label Content="公共卫生事件" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                <Button Margin="20,10" Opacity="0" Cursor="Hand"/>
+                                <Rectangle x:Name="bg_sgzh" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
+                                <Label x:Name="label_sgzh" Content="事故灾害" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
+                                <Button x:Name="btn_sgzh" Margin="20,10" Opacity="0" Cursor="Hand" Click="btn_sgzh_Click"/>
                             </Grid>
                             <Grid Height="70">
-                                <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                <Label Content="社会安全事件" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                <Button Margin="20,10" Opacity="0" Cursor="Hand"/>
+                                <Rectangle x:Name="bg_ggws" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
+                                <Label x:Name="label_ggws" Content="公共卫生" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
+                                <Button x:Name="btn_ggws" Margin="20,10" Opacity="0" Cursor="Hand" Click="btn_ggws_Click"/>
                             </Grid>
                         </StackPanel>
                     </StackPanel>
@@ -2297,7 +2566,7 @@
                 </Grid>
             </StackPanel>
         </Grid>
-        <Grid x:Name="WeatherInfo" Height="170" Margin="320,43,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="840" Visibility="Visible">
+        <Grid x:Name="WeatherInfo" Height="170" Margin="320,43,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="840" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -2421,7 +2690,7 @@
             </Label>
 
         </Grid>
-        <Grid x:Name="GridCalender" Margin="320,223,0,0" Width="235" Height="295" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible">
+        <Grid x:Name="GridCalender" Margin="320,223,0,0" Width="235" Height="295" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -2453,7 +2722,7 @@
         			<SolidColorBrush Color="{DynamicResource #535353}"/>
         		</TextBlock.Foreground></TextBlock>
         </Grid>
-        <Grid x:Name="Weather" Margin="565,223,0,0" Width="595" Height="295" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible">
+        <Grid x:Name="Weather" Margin="565,223,0,0" Width="595" Height="295" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -2489,7 +2758,7 @@
 
             </Grid>
         </Grid>
-        <Grid x:Name="Emergency" Margin="320,548,0,0" Width="840" Height="465" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Visible">
+        <Grid x:Name="Emergency" Margin="320,548,0,0" Width="840" Height="465" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -2566,7 +2835,7 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        <Grid x:Name="Environment" Margin="1170,43,0,0" Width="410" Height="475" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible">
+        <Grid x:Name="Environment" Margin="1170,43,0,0" Width="410" Height="475" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -2620,7 +2889,7 @@
         			</TextBlock.Foreground></TextBlock>
             </Grid>
         </Grid>
-        <Grid x:Name="Traffic" Margin="1170,548,0,0"  Width="410" Height="465" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Visible">
+        <Grid x:Name="Traffic" Margin="1170,548,0,0"  Width="410" Height="465" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Visible" d:IsHidden="True">
             <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
@@ -3453,69 +3722,343 @@
                 <WebBrowser Height="995" HorizontalAlignment="Left" Margin="6,6,0,0" Name="webBrowser_GoogleCalendar" VerticalAlignment="Top" Width="1262" />
             </Grid>
         </Grid>
-        <Grid x:Name="mainContent8_ZiRanZaiHai" Margin="308,18,0,0" Width="1286" Height="1019.333" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" Background="White" Loaded="mainContent8_ZiRanZaiHai_Loaded">
-            <Rectangle Stroke="Black" Margin="-1,0" StrokeThickness="2">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="{DynamicResource Contentbg}"/>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Grid Height="1007" HorizontalAlignment="Left" Margin="6,6,0,0" Name="grid_TuFaShiJian_ZiRanZaiHai" VerticalAlignment="Top" Width="1274" Background="White" Visibility="Visible">
-                <Grid Height="419" HorizontalAlignment="Left" Margin="18,576,0,0" Name="grid_ZiRanZaiHai_tabcontrol" VerticalAlignment="Top" Width="630" Background="#FFE4D1C6" >
-                    <TabControl Height="407" HorizontalAlignment="Left" Margin="6,6,0,0" Name="tabControl_ZiRanZaiHai" VerticalAlignment="Top" Width="618">
-                        <TabItem Header="应急预案" Name="tabItem_ZiRanZaiHai_YingJiYuAn">
+        <Grid x:Name="mainContent8_ZiRanZaiHai" Margin="320,43,0,0" Width="1260" Height="970" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="mainContent8_ZiRanZaiHai_Loaded">
+            <Grid x:Name="grid_TuFaShiJian_ZiRanZaiHai" Visibility="Visible">
+                <Grid x:Name="grid_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Height="485">
+                	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
+                		<Rectangle.Fill>
+                			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                		</Rectangle.Fill>
+                	</Rectangle>
+                	<Grid Height="40.834" VerticalAlignment="Top">
+                		<StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
+                			<Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
+                			<Path Data="M0,1.2022383E-11 L419.99999,1.2022383E-11 1146.7447,1.2022383E-11 1161.9905,1.2022383E-11 C1166.414,-7.5748774E-06 1170,3.5817175 1170,7.9999995 L1169.9462,8.5333161 1170,8.5333161 1170,16 1161.9905,16 1146.7447,16 419.99999,16 0,16 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="1170"/>
+                		</StackPanel>
+                		<GridSplitter Margin="90,38.333,15,0.5" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Stretch" d:LayoutOverrides="VerticalMargin"/>
+                		<Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
+
+                	</Grid>
+                	<WebBrowser Height="388" HorizontalAlignment="Left" Margin="30,67,0,0" x:Name="webBrowser_ZiRanZaiHai" VerticalAlignment="Top" Width="700" />
+                	<StackPanel x:Name="Shijianshishigengxin" HorizontalAlignment="Right" Margin="0,67,42,0" Width="390" Height="119.5" VerticalAlignment="Top">
+                		<Grid HorizontalAlignment="Left" Height="19.5" Margin="2.5,0,0,0" Width="106.223">
+                			<Image Source="CutImages/图像/title_bg1-07.png" Stretch="Fill"/>
+                			<Label Content="   事件实时更新:" Height="19.5" x:Name="label_ZiRanZaiHai_ShiJianShiShiGengXin" VerticalAlignment="Top" Padding="5,1" Background="{x:Null}" >
+                				<Label.Foreground>
+                					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                				</Label.Foreground>
+                			</Label>
+                		</Grid>
+                		<TextBox Height="88.167" x:Name="tbx_ZiRanZaiHai_ShiJianShiShiGengXin" VerticalAlignment="Top" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle4}" Margin="0,10,0,0" BorderBrush="{x:Null}" Background="{x:Null}" />
+                	</StackPanel>
+                	<StackPanel x:Name="Shijianqingkuang" Margin="0,209.834,42,46" Orientation="Vertical" HorizontalAlignment="Right" Width="390">
+                		<Grid HorizontalAlignment="Left" Height="18.833" Margin="3,0,0,0" Width="88.057">
+                			<Image Source="CutImages/图像/title_bg-07.png" Stretch="Fill" d:LayoutOverrides="Width, Height"/>
+                			<Label Height="18.833" HorizontalAlignment="Center" x:Name="label_ZiRanZaiHai_ShiJianQingKuang" VerticalAlignment="Top" Width="88.057" Padding="5,1" Background="{x:Null}" Content="   事件情况：" >
+                				<Label.Foreground>
+                					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                				</Label.Foreground>
+                			</Label>
+                		</Grid>
+                		<TextBox x:Name="tbx_ZiRanZaiHai_ShiJianQingKuang" TextWrapping="Wrap" Height="199.337" Style="{DynamicResource TextBoxStyle3}" Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" />
+                	</StackPanel>
+                	<Grid Height="273" HorizontalAlignment="Left" Margin="728,182,0,0" x:Name="grid1" VerticalAlignment="Top" Width="100" Visibility="Collapsed" d:IsLocked="True">
+                		<RadioButton Content="全部" Height="16" HorizontalAlignment="Left" Margin="13,15,0,0" x:Name="radioButton_ZiRanZaiHai_QuanBu" VerticalAlignment="Top" IsEnabled="False" GroupName="全部"/>
+                		<RadioButton Content="火警" Height="16" HorizontalAlignment="Left" Margin="13,70,0,0" x:Name="radioButton_ZiRanZaiHai_HuoJin" VerticalAlignment="Top" IsEnabled="False" GroupName="火警"/>
+                		<RadioButton Content="救护" Height="16" HorizontalAlignment="Left" Margin="13,125,0,0" x:Name="radioButton_ZiRanZaiHai_JiuHu" VerticalAlignment="Top" IsEnabled="False" GroupName="救护"/>
+                		<RadioButton Content="民警" Height="16" HorizontalAlignment="Left" Margin="13,180,0,0" x:Name="radioButton_ZiRanZaiHai_MinJing" VerticalAlignment="Top" IsEnabled="False" GroupName="民警"/>
+                		<RadioButton Content="医院" Height="16" HorizontalAlignment="Left" Margin="13,230,0,0" x:Name="radioButton_ZiRanZaiHai_YiYuan" VerticalAlignment="Top" IsEnabled="False" GroupName="医院"/>
+                	</Grid>
+                	<Label Content="地图信息" Height="28" HorizontalAlignment="Left" Margin="728,62,0,0" x:Name="label_TuFaShiJian_DiTuXinXi" VerticalAlignment="Top" Visibility="Collapsed" d:IsLocked="True" />
+                	<TextBlock Height="129" HorizontalAlignment="Left" Margin="734,99,0,0" x:Name="textBlock_TuFaShiJian_DiTuXinXi" Text="TextBlock" VerticalAlignment="Top" Width="173" Visibility="Collapsed" d:IsLocked="True" />
+                	<TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.364,17.375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62.333" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
+                			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                		</TextBlock.Foreground><Run Language="zh-cn" Text="事件概况"/><LineBreak/><Run Language="zh-cn"/></TextBlock>
+                	<Grid Width="40" HorizontalAlignment="Right" Margin="0,232,469,33">
+                		<Image Source="CutImages/图像/emergency_bg-07-07.png" Stretch="Fill" Width="40" Height="220"/>
+                		<Image x:Name="Select_green" HorizontalAlignment="Left" Source="CutImages/图像/select_green-07.png" Stretch="Fill" Width="40" Height="55" VerticalAlignment="Top"/>
+                		<Image Source="CutImages/图像/emergency_fg-07.png" Stretch="Fill" Margin="4,13,4,15"/>
+                		<Button x:Name="Minjing" Content="Button" VerticalAlignment="Top" Height="55" Opacity="0" Click="Minjing_Click"/>
+                		<Button x:Name="Huojing" Content="Button" VerticalAlignment="Top" Height="55" Opacity="0" Click="Huojing_Click" Margin="0,55,0,0"/>
+                		<Button x:Name="Yiyuan" Content="Button" Margin="0,110,0,0" Height="55" VerticalAlignment="Top" Opacity="0" Click="Yiyuan_Click"/>
+                		<Button x:Name="Wuran" Content="Button" Opacity="0" Height="55" VerticalAlignment="Top" Click="Wuran_Click" Margin="0,165,0,0"/>
+                	</Grid>
+                </Grid>
+                <Grid Height="465" HorizontalAlignment="Left" Margin="0,505,0,0" x:Name="grid_ZiRanZaiHai_tabcontrol" VerticalAlignment="Top" Width="625" >
+                    <Rectangle RadiusY="16" RadiusX="16" StrokeThickness="2">
+                    	<Rectangle.Fill>
+                    		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    	</Rectangle.Fill>
+                    </Rectangle>
+                    <TabControl Height="407" HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="tabControl_ZiRanZaiHai" VerticalAlignment="Top" Width="618" Style="{DynamicResource TabControlStyle1}" Visibility="Collapsed">
+                        <TabItem Header="应急预案" x:Name="tabItem_ZiRanZaiHai_YingJiYuAn" Style="{DynamicResource TabItemStyle1}">
                             <Grid>
-                                <Label Content="火灾应急预案" Height="34" HorizontalAlignment="Left" Margin="231,6,0,0" Name="label_ZiRanZaiHai_YingJiYuAn_Title" VerticalAlignment="Top" Width="124" />
-                                <TextBlock Height="228" HorizontalAlignment="Left" Margin="15,98,0,0" Name="textBlock_ZiRanZaiHai_YingJiYuAn" Text="TextBlock" VerticalAlignment="Top" Width="586" />
-                                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="15,50,0,0" Name="label_ZiRanZaiHai_YingJiYuAn_Subtitle" VerticalAlignment="Top" Width="99" />
-                                <Button Content="一、组织实施" Height="23" HorizontalAlignment="Left" Margin="206,344,0,0" Name="btn_ZiRanZaiHai_ZuZhiShiShi" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZuZhiShiShi_Click" />
-                                <Button Content="二、扑救方法" Height="23" HorizontalAlignment="Left" Margin="355,345,0,0" Name="btn_ZiRanZaiHai_PuJiuFangFa" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_PuJiuFangFa_Click"/>
-                                <Button Content="三、注意事项" Height="23" HorizontalAlignment="Left" Margin="499,344,0,0" Name="btn_ZiRanZaiHai_ZhuYiShiXiang" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZhuYiShiXiang_Click"/>
+                                <Label Content="火灾应急预案" Height="34" HorizontalAlignment="Left" Margin="231,6,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Title" VerticalAlignment="Top" Width="124" />
+                                <TextBlock Height="228" HorizontalAlignment="Left" Margin="15,98,0,0" x:Name="textBlock_ZiRanZaiHai_YingJiYuAn" Text="TextBlock" VerticalAlignment="Top" Width="586" />
+                                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="15,50,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Subtitle" VerticalAlignment="Top" Width="99" />
+                                <Button Content="一、组织实施" Height="23" HorizontalAlignment="Left" Margin="206,344,0,0" x:Name="btn_ZiRanZaiHai_ZuZhiShiShi" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZuZhiShiShi_Click" />
+                                <Button Content="二、扑救方法" Height="23" HorizontalAlignment="Left" Margin="355,345,0,0" x:Name="btn_ZiRanZaiHai_PuJiuFangFa" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_PuJiuFangFa_Click"/>
+                                <Button Content="三、注意事项" Height="23" HorizontalAlignment="Left" Margin="499,344,0,0" x:Name="btn_ZiRanZaiHai_ZhuYiShiXiang" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZhuYiShiXiang_Click"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="历史记录" Name="tabItem_ZiRanZaiHai_LiShiJiLu">
+                        <TabItem Header="历史记录" x:Name="tabItem_ZiRanZaiHai_LiShiJiLu">
                             <Grid />
                         </TabItem>
-                        <TabItem Header="重大危险源" Name="tabItem_ZiRanZaiHai_ZhongDaWeiXianYuan">
+                        <TabItem Header="重大危险源" x:Name="tabItem_ZiRanZaiHai_ZhongDaWeiXianYuan">
                             <Grid />
                         </TabItem>
-                        <TabItem Header="案例链接" Name="tabItem_ZiRanZaiHai_AnLiLianJie">
+                        <TabItem Header="案例链接" x:Name="tabItem_ZiRanZaiHai_AnLiLianJie">
                             <Grid />
                         </TabItem>
                     </TabControl>
-                </Grid>
-                <Grid Height="551" HorizontalAlignment="Left" Margin="18,19,0,0" Name="grid_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Width="1250" Background="#FFF8E3D7">
-                    <Label Content="事件概况" Height="41" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Width="119" FontSize="24" Background="#FFB8551D" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-                    <WebBrowser Height="492" HorizontalAlignment="Left" Margin="6,53,0,0" Name="webBrowser_ZiRanZaiHai" VerticalAlignment="Top" Width="712" />
-                    <Label Content="事件实时更新" Height="28" HorizontalAlignment="Left" Margin="906,67,0,0" Name="label_ZiRanZaiHai_ShiJianShiShiGengXin" VerticalAlignment="Top" />
-                    <TextBox Height="149" HorizontalAlignment="Left" Margin="906,112,0,0" Name="tbx_ZiRanZaiHai_ShiJianShiShiGengXin" VerticalAlignment="Top" Width="332" Background="#FF64665B" TextWrapping="Wrap" Foreground="#FFD6D7B8" />
-                    <Label Content="事件情况" Height="28" HorizontalAlignment="Left" Margin="906,273,0,0" Name="label_ZiRanZaiHai_ShiJianQingKuang" VerticalAlignment="Top" />
-                    <TextBox Height="234" HorizontalAlignment="Left" Margin="906,312,0,0" Name="tbx_ZiRanZaiHai_ShiJianQingKuang" VerticalAlignment="Top" Width="338" Background="#FF64665B" TextWrapping="Wrap" Foreground="White" />
-                    <Grid Height="295" HorizontalAlignment="Left" Margin="728,247,0,0" Name="grid1" VerticalAlignment="Top" Width="100">
-                        <RadioButton Content="全部" Height="16" HorizontalAlignment="Left" Margin="13,15,0,0" Name="radioButton_ZiRanZaiHai_QuanBu" VerticalAlignment="Top" IsEnabled="False" GroupName="全部"/>
-                        <RadioButton Content="火警" Height="16" HorizontalAlignment="Left" Margin="13,70,0,0" Name="radioButton_ZiRanZaiHai_HuoJin" VerticalAlignment="Top" IsEnabled="False" GroupName="火警"/>
-                        <RadioButton Content="救护" Height="16" HorizontalAlignment="Left" Margin="13,125,0,0" Name="radioButton_ZiRanZaiHai_JiuHu" VerticalAlignment="Top" IsEnabled="False" GroupName="救护"/>
-                        <RadioButton Content="民警" Height="16" HorizontalAlignment="Left" Margin="13,180,0,0" Name="radioButton_ZiRanZaiHai_MinJing" VerticalAlignment="Top" IsEnabled="False" GroupName="民警"/>
-                        <RadioButton Content="医院" Height="16" HorizontalAlignment="Left" Margin="13,230,0,0" Name="radioButton_ZiRanZaiHai_YiYuan" VerticalAlignment="Top" IsEnabled="False" GroupName="医院"/>
+                    <Grid x:Name="tab" VerticalAlignment="Top" Height="48">
+                    	<Image x:Name="tag1" Source="CutImages/图像/tag1-07.png" Stretch="Fill"/>
+                    	<Image x:Name="tag2" Source="CutImages/图像/tag02-07.png" Stretch="Fill" Visibility="Hidden"/>
+                    	<Image x:Name="tag3" Source="CutImages/图像/tag03-07.png" Stretch="Fill" Visibility="Hidden"/>
+                    	<Image x:Name="tag4" Source="CutImages/图像/tag4-07.png" Stretch="Fill" Visibility="Hidden"/>
                     </Grid>
-                    <Label Content="地图信息" Height="28" HorizontalAlignment="Left" Margin="728,62,0,0" Name="label_TuFaShiJian_DiTuXinXi" VerticalAlignment="Top" />
-                    <TextBlock Height="129" HorizontalAlignment="Left" Margin="727,112,0,0" Name="textBlock_TuFaShiJian_DiTuXinXi" Text="TextBlock" VerticalAlignment="Top" Width="173" />
-                </Grid>
-                <Grid Height="419" HorizontalAlignment="Left" Margin="657,576,0,0" Name="grid_ZiRanZaiHai_YuAnQiDong" VerticalAlignment="Top" Width="611" Background="#FFF9E4D8">
-                    <Label Content="预案启动" Height="41" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label_YuAnQiDong" VerticalAlignment="Top" Width="110" FontSize="24" Background="#FFB8551D" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-                    <Button Content="Ⅰ级（特别重大）" Height="38" HorizontalAlignment="Left" Margin="40,106,0,0" Name="btn_ZiRanZaiHai_YuAnQiDong_A" VerticalAlignment="Top" Width="119" />
-                    <Button Content="Ⅱ级（重大）" Height="38" HorizontalAlignment="Left" Margin="40,163,0,0" Name="btn_ZiRanZaiHai_YuAnQiDong_B" VerticalAlignment="Top" Width="119" />
-                    <Button Content="Ⅲ级（较大）" Height="38" HorizontalAlignment="Left" Margin="40,223,0,0" Name="btn_ZiRanZaiHai_YuAnQiDong_C" VerticalAlignment="Top" Width="119" />
-                    <Button Content="Ⅳ级（一般）" Height="38" HorizontalAlignment="Left" Margin="40,283,0,0" Name="btn_ZiRanZaiHai_YuAnQiDong_D" VerticalAlignment="Top" Width="120" />
-                    <Image Height="258" HorizontalAlignment="Left" Margin="169,89,0,0" Name="image_ZiRanZaiHai_YuAnQiDong" Stretch="Fill" VerticalAlignment="Top" Width="282" />
-                    <Grid Height="357" HorizontalAlignment="Left" Margin="457,44,0,0" Name="grid_ZiRanZaiHai_Phone" VerticalAlignment="Top" Width="148" >
-                        <Label Content="负责人联络" Height="33" HorizontalAlignment="Left" Margin="6,4,0,0" Name="label_ZiRanZaiHai_YuAnQiDong_1" VerticalAlignment="Top" Width="88" />
-                        <Label Content="应急行动组长" Height="28" HorizontalAlignment="Left" Margin="6,39,0,0" Name="label_ZiRanZaiHai_YuAnQiDong_2" VerticalAlignment="Top" Width="88" />
-                        <Label Content="应急行动副组长" Height="28" HorizontalAlignment="Left" Margin="6,125,0,0" Name="label_ZiRanZaiHai_YuAnQiDong_3" VerticalAlignment="Top" />
-                        <Button Content="李伟" Height="41" HorizontalAlignment="Left" Margin="19,77,0,0" Name="btn_ZiRanZaiHai_Phone_A" VerticalAlignment="Top" Width="75" />
-                        <Button Content="张小溪" Height="41" HorizontalAlignment="Left" Margin="19,157,0,0" Name="btn_ZiRanZaiHai_Phone_B" VerticalAlignment="Top" Width="75" />
-                        <Button Content="陈晨" Height="41" HorizontalAlignment="Left" Margin="19,217,0,0" Name="btn_ZiRanZaiHai_Phone_C" VerticalAlignment="Top" Width="75" />
-                        <Button Content="金肖" Height="41" HorizontalAlignment="Left" Margin="19,287,0,0" Name="btn_ZiRanZaiHai_Phone_D" VerticalAlignment="Top" Width="75" />
+                    <Grid x:Name="yingjiyuan" HorizontalAlignment="Left" Height="21.837" Margin="0,15.375,0,0" VerticalAlignment="Top" Width="87.375">
+                    	<TextBlock Margin="7.906,2,4.761,1.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Center"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground><Run Language="zh-cn" Text="应急预案"/></TextBlock>
+                    	<Button Content="Button" d:LayoutOverrides="Height" Opacity="0" Cursor="Hand" Click="yingjiyuan_tag1_Click"/>
                     </Grid>
+                    <Grid x:Name="lishijilu" HorizontalAlignment="Left" Height="21.837" Margin="101.5,17.375,0,0" VerticalAlignment="Top" Width="87.375">
+                    	<TextBlock Margin="15.864,0,9.178,3.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground><Run Language="zh-cn" Text="历史记录"/></TextBlock>
+                    	<Button Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="lishijilu_tag2_Click"/>
+                    </Grid>
+                    <Grid x:Name="zhongdaweixianyuan" Height="21.837" Margin="206,17.375,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88.697">
+                    	<TextBlock HorizontalAlignment="Center" Height="18.333" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground><Run Language="zh-cn" Text="重大危险源"/></TextBlock>
+                    	<Button Content="Button" Opacity="0" Cursor="Hand" Width="87.375" d:LayoutOverrides="Height" Click="zhongdaweixian_tag3_Click"/>
+                    </Grid>
+                    <Grid x:Name="anlilianjie" Height="21.837" Margin="0,17.375,224.954,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="87.375">
+                    	<TextBlock Margin="15.026,0,10.016,3.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground><Run Language="zh-cn" Text="案例链接"/></TextBlock>
+                    	<Button Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="anlilianjie_tag4_Click"/>
+                    </Grid>
+                    <Grid x:Name="Content_yingjiyuan" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" d:IsHidden="True">
+                    	<Image x:Name="img_yibanshiwuzhongdu" Source="CutImages/图像/yingjiyuan-07.png" Stretch="Fill"/>
+                    	<Image x:Name="img_yanzhongshiwuzhongdu" Source="CutImages/图像/yingjiyuan1-07.png" Stretch="Fill" Visibility="Collapsed"/>
+                    	<TextBlock TextWrapping="Wrap" FontSize="18" FontFamily="Helvetica" FontWeight="Bold" Text="食物中毒应急预案" Height="21.837" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1.332,1.334,0,0"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground></TextBlock>
+                    	<Grid Height="21.837" Margin="242.083,8,216.292,0" VerticalAlignment="Top">
+                    		<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="一般食物中毒事故" Margin="3,0,0,0"><TextBlock.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    			</TextBlock.Foreground></TextBlock>
+                    		<Button x:Name="btn_yibanshiwuzhongdu" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_yibanshiwuzhongdu_Click"/>
+                    	</Grid>
+                    	<Grid Height="21.837" Margin="0,8,9.615,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="121.625">
+                    		<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="重大食物中毒事故" Margin="3,0,0,0"><TextBlock.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    			</TextBlock.Foreground></TextBlock>
+                    		<Button x:Name="btn_yanzhongshiwuzhongdu" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_yanzhongshiwuzhongdu_Click"/>
+                    	</Grid>
+                    </Grid>
+                    <Grid x:Name="Content_lishijilu" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed">
+                    	<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
+                    </Grid>
+                    <Grid x:Name="Content_zhongdaweixianyuan" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed">
+                    	<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
+                    </Grid>
+                    <Grid x:Name="Content_anlilianjie" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed">
+                    	<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
+                    </Grid>
+                    <Grid x:Name="Content_shiguzaihai" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0">
+                    	<Image x:Name="img_huozaiyuan1" Source="CutImages/图像/huozaiyuan1-07.png" Stretch="Fill"/>
+                    	<Image x:Name="img_huozaiyuan2" Source="CutImages/图像/huozaiyuan2-07.png" Stretch="Fill" Visibility="Collapsed"/>
+                    	<Image x:Name="img_huozaiyuan3" Source="CutImages/图像/huozaiyuan3-07.png" Stretch="Fill" Visibility="Collapsed"/>
+                    	<TextBlock TextWrapping="Wrap" FontSize="18" FontFamily="Helvetica" FontWeight="Bold" Text="火灾应急预案" Height="21.837" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1.332,1.334,0,0"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground></TextBlock>
+                    	<Grid Height="21.837" Margin="219.083,8,287.292,0" VerticalAlignment="Top">
+                    		<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="组织实施" Margin="6,0,0,0"><TextBlock.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    			</TextBlock.Foreground></TextBlock>
+                    		<Button x:Name="btn_zzss" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_zzss_Click"/>
+                    	</Grid>
+                    	<Grid Height="21.837" Margin="0,8,151.948,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64.292">
+                    		<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="扑救办法" Margin="3,0,0,0"><TextBlock.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    			</TextBlock.Foreground></TextBlock>
+                    		<Button x:Name="btn_pjbf" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_pjbf_Click"/>
+                    	</Grid>
+                    	<Grid Height="21.837" Margin="0,8,7.292,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="73.625">
+                    		<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="注意事项" Margin="6,0,0,0"><TextBlock.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    			</TextBlock.Foreground></TextBlock>
+                    		<Button x:Name="btn_zysx" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_zysx_Click"/>
+                    	</Grid>
+                    </Grid>
+                </Grid>
+                <Grid Height="465" HorizontalAlignment="Left" Margin="635,505,0,0" x:Name="grid_ZiRanZaiHai_YuAnQiDong" VerticalAlignment="Top" Width="625">
+                    <Rectangle RadiusY="15" RadiusX="15" StrokeThickness="2">
+                    	<Rectangle.Fill>
+                    		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    	</Rectangle.Fill>
+                    </Rectangle>
+                    <Grid Height="48" VerticalAlignment="Top">
+                    	<Image Source="CutImages/图像/tab_yuan-07.png" Stretch="Fill"/>
+                    	<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Left" Margin="17.666,17,0,14.2" d:LayoutOverrides="Height" Text="预案启动"><TextBlock.Foreground>
+                    			<SolidColorBrush Color="{DynamicResource #535353}"/>
+                    		</TextBlock.Foreground></TextBlock>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" d:LayoutOverrides="Width" Margin="50,80,0,0" VerticalAlignment="Top">
+                    	<StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="110" Margin="0,40,0,0">
+                    		<Grid Height="40">
+                    			<Image x:Name="Img_dengji1" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
+                    			<Image x:Name="ImgGreen_dengji1" Source="CutImages/图像/button_click-07.png" Stretch="Fill" Margin="3,3,4,4" Visibility="Collapsed"/>
+                    			<TextBlock x:Name="Txt_dengji1" TextWrapping="Wrap" Text="Ⅰ级（特大）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold">
+                    				<TextBlock.Foreground>
+                    					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    				</TextBlock.Foreground>
+                    			</TextBlock>
+                    			<Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji1" Opacity="0" Cursor="Hand" Click="btn_dengji1_Click" />
+                    		</Grid>
+                    		<Grid Height="40" Margin="0,30,0,0">
+                    			<Image x:Name="Img_dengji2" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
+                    			<Image x:Name="ImgGreen_dengji2" Source="CutImages/图像/button_click-07.png" Stretch="Fill" Margin="3,3,4,4" Visibility="Collapsed"/>
+                    			<TextBlock x:Name="Txt_dengji2" TextWrapping="Wrap" Text="Ⅱ级（重大）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold">
+                    				<TextBlock.Foreground>
+                    					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    				</TextBlock.Foreground>
+                    			</TextBlock>
+                    			<Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji2" Opacity="0" Cursor="Hand" Click="btn_dengji2_Click" />
+                    		</Grid>
+                    		<Grid Height="40" Margin="0,30,0,0">
+                    			<Image x:Name="Img_dengji3" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
+                    			<Image x:Name="ImgGreen_dengji3" Source="CutImages/图像/button_click-07.png" Stretch="Fill" Margin="3,3,4,4" Visibility="Collapsed"/>
+                    			<TextBlock x:Name="Txt_dengji3" TextWrapping="Wrap" Text="Ⅲ级（较大）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold">
+                    				<TextBlock.Foreground>
+                    					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    				</TextBlock.Foreground>
+                    			</TextBlock>
+                    			<Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji3" Opacity="0" Cursor="Hand" Click="btn_dengji3_Click" />
+                    		</Grid>
+                    		<Grid Height="40" Margin="0,30,0,0">
+                    			<Image x:Name="Img_dengji4" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
+                    			<Image x:Name="ImgGreen_dengji4" Source="CutImages/图像/button_click-07.png" Stretch="Fill" Margin="3,3,4,4" Visibility="Collapsed"/>
+                    			<TextBlock x:Name="Txt_dengji4" TextWrapping="Wrap" Text="Ⅳ级（一般）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold">
+                    				<TextBlock.Foreground>
+                    					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    				</TextBlock.Foreground>
+                    			</TextBlock>
+                    			<Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji4" Opacity="0" Cursor="Hand" Click="btn_dengji4_Click" />
+                    		</Grid>
+                    	</StackPanel>
+                    	<Grid Height="250" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Margin="45,40,0,0">
+                    		<Grid.RowDefinitions>
+                    			<RowDefinition Height="75.978"/>
+                    			<RowDefinition Height="89.355"/>
+                    			<RowDefinition Height="84.667"/>
+                    		</Grid.RowDefinitions>
+                    		<Image Source="CutImages/图像/yuan_bg-07.png" Stretch="Fill" Grid.RowSpan="3"/>
+                    		<Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="32" Width="182.3">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="36.15"/>
+                    				<ColumnDefinition Width="97.25"/>
+                    				<ColumnDefinition Width="96.6"/>
+                    			</Grid.ColumnDefinitions>
+                    			<Grid HorizontalAlignment="Right" Width="12" d:LayoutOverrides="GridBox" Margin="0,11.523,5.01,8.477">
+                    				<Image x:Name="lingdaoceng_bg" Source="CutImages/图像/dot_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_green" Source="CutImages/图像/dot_bg-green-07.png" Stretch="Fill" Margin="1.5,1.5,2.5,2.5" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<TextBlock x:Name="tongzhilingdao" TextWrapping="Wrap" Text="通知领导层" TextAlignment="Center" Padding="0,10,0,0" FontFamily="Helvetica" FontWeight="Bold" d:LayoutOverrides="Width" Grid.Column="1" Foreground="{DynamicResource white}" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    			<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6">
+                    				<Image x:Name="lingdaoceng_branch_bg" Source="CutImages/图像/branch_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_branch_green" Source="CutImages/图像/branch_bg-full-07.png" Stretch="Fill" Margin="1.875,1.501,3,2.832" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<Button x:Name="btn_lingdaoceng" Opacity="0" Cursor="Hand" Grid.ColumnSpan="3" Margin="0,0,47.7,0" Click="btn_lingdaoceng_Click" />
+                    		</Grid>
+                    		<Grid HorizontalAlignment="Center" Width="182.3" Margin="0,28.333,0,29.022" Grid.Row="1">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="36.15"/>
+                    				<ColumnDefinition Width="97.25"/>
+                    				<ColumnDefinition Width="96.6"/>
+                    			</Grid.ColumnDefinitions>
+                    			<Grid HorizontalAlignment="Right" Width="12" d:LayoutOverrides="GridBox" Margin="0,11.523,5.01,8.477">
+                    				<Image x:Name="lingdaoceng_bg1" Source="CutImages/图像/dot_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_green1" Source="CutImages/图像/dot_bg-green-07.png" Stretch="Fill" Margin="1.5,1.5,2.5,2.5" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<TextBlock x:Name="tongzhilingdao1" TextWrapping="Wrap" Text="通知预案人员" TextAlignment="Center" Padding="0,10,0,0" FontFamily="Helvetica" FontWeight="Bold" d:LayoutOverrides="Width" Grid.Column="1" Foreground="{DynamicResource white}" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    			<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6">
+                    				<Image x:Name="lingdaoceng_branch_bg1" Source="CutImages/图像/branch_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_branch_green1" Source="CutImages/图像/branch_bg-full-07.png" Stretch="Fill" Margin="1.875,1.501,3,2.832" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<Button x:Name="btn_yuanrenyuan" Opacity="0" Cursor="Hand" Grid.ColumnSpan="3" Margin="0,0,47.7,0" Click="btn_yuanrenyuan_Click" />
+                    		</Grid>
+                    		<Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="182.3" Grid.Row="2">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="36.15"/>
+                    				<ColumnDefinition Width="97.25"/>
+                    				<ColumnDefinition Width="96.6"/>
+                    			</Grid.ColumnDefinitions>
+                    			<Grid HorizontalAlignment="Right" Width="12" d:LayoutOverrides="GridBox" Margin="0,11.523,5.01,8.477">
+                    				<Image x:Name="lingdaoceng_bg2" Source="CutImages/图像/dot_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_green2" Source="CutImages/图像/dot_bg-green-07.png" Stretch="Fill" Margin="1.5,1.5,2.5,2.5" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<TextBlock x:Name="tongzhilingdao2" TextWrapping="Wrap" Text="通知预案机构" TextAlignment="Center" Padding="0,10,0,0" FontFamily="Helvetica" FontWeight="Bold" d:LayoutOverrides="Width" Grid.Column="1" Foreground="{DynamicResource white}" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    			<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6">
+                    				<Image x:Name="lingdaoceng_branch_bg2" Source="CutImages/图像/branch_bg-07.png" Stretch="Fill"/>
+                    				<Image x:Name="lingdaoceng_branch_green2" Source="CutImages/图像/branch_bg-full-07.png" Stretch="Fill" Margin="1.875,1.501,3,2.832" Visibility="Collapsed"/>
+                    			</Grid>
+                    			<Button x:Name="btn_yuanjigou" Opacity="0" Cursor="Hand" Grid.ColumnSpan="3" Margin="0,0,47.7,0" Click="btn_yuanjigou_Click" />
+                    		</Grid>
+                    	</Grid>
+                    	<StackPanel Margin="30,0,0,0" Width="115" >
+                    		<Label Content="负责人联络" Height="26.666" HorizontalAlignment="Left" x:Name="label_ZiRanZaiHai_ShiJianQingKuang_Copy" VerticalAlignment="Top" Width="107" Padding="13,1,5,1" FontWeight="Bold" FontSize="16" >
+                    			<Label.Foreground>
+                    				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                    			</Label.Foreground>
+                    			<Label.Background>
+                                    <ImageBrush ImageSource="CutImages/图像/title_bg-07.png"/>
+                    			</Label.Background>
+                    		</Label>
+                    		<TextBlock TextWrapping="Wrap" Text="应急行动组长：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontWeight="Bold" FontSize="14"/>
+                    		<Grid Height="35" Margin="0,15,0,0">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="28.25"/>
+                    				<ColumnDefinition/>
+                    			</Grid.ColumnDefinitions>
+                    			<Image Source="CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+                    			<TextBlock TextWrapping="Wrap" Text="林涛" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+                    			<Button x:Name="btn_ZiRanZaiHai_Phone_A" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+                    		</Grid>
+                    		<TextBlock TextWrapping="Wrap" Text="副组长：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontWeight="Bold" FontSize="14"/>
+                    		<Grid Height="35" Margin="0,15,0,0">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="28.25"/>
+                    				<ColumnDefinition/>
+                    			</Grid.ColumnDefinitions>
+                    			<Image Source="CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+                    			<TextBlock TextWrapping="Wrap" Text="程晓军" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+                    			<Button x:Name="btn_ZiRanZaiHai_Phone_A1" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+                    		</Grid>
+                    		<Grid Height="35" Margin="0,10,0,0">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="28.25"/>
+                    				<ColumnDefinition/>
+                    			</Grid.ColumnDefinitions>
+                    			<Image Source="CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+                    			<TextBlock TextWrapping="Wrap" Text="朱闻一" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+                    			<Button x:Name="btn_ZiRanZaiHai_Phone_A2" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+                    		</Grid>
+                    		<Grid Height="35" Margin="0,10,0,0">
+                    			<Grid.ColumnDefinitions>
+                    				<ColumnDefinition Width="28.25"/>
+                    				<ColumnDefinition/>
+                    			</Grid.ColumnDefinitions>
+                    			<Image Source="CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+                    			<TextBlock TextWrapping="Wrap" Text="金肖" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+                    			<Button x:Name="btn_ZiRanZaiHai_Phone_A3" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+                    		</Grid>
+                    	</StackPanel>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Grid>
