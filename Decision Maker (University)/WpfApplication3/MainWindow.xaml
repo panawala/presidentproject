@@ -3722,7 +3722,7 @@
                 <WebBrowser Height="995" HorizontalAlignment="Left" Margin="6,6,0,0" Name="webBrowser_GoogleCalendar" VerticalAlignment="Top" Width="1262" />
             </Grid>
         </Grid>
-        <Grid x:Name="mainContent8_ZiRanZaiHai" Margin="320,43,0,0" Width="1260" Height="970" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="mainContent8_ZiRanZaiHai_Loaded">
+        <Grid x:Name="mainContent8_ZiRanZaiHai" Margin="320,43,0,0" Width="1260" Height="970" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="mainContent8_ZiRanZaiHai_Loaded" Visibility="Hidden">
             <Grid x:Name="grid_TuFaShiJian_ZiRanZaiHai" Visibility="Visible">
                 <Grid x:Name="grid_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Height="485">
                 	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
@@ -4151,7 +4151,7 @@
             <Button Content="清空" Height="96" HorizontalAlignment="Left" Margin="858,773,0,0" Name="btn_YiJianHuiJu_Cancel" VerticalAlignment="Top" Width="96" Click="btn_YiJianHuiJu_Cancel_Click" />
             <Button Content="确认" Height="96" HorizontalAlignment="Left" Margin="858,890,0,0" Name="btn_YiJianHuiJu_OK" VerticalAlignment="Top" Width="96" Click="btn_YiJianHuiJu_OK_Click" />
         </Grid>
-        <Grid x:Name="mainContent11_ZhongDaXiangMu" Margin="308,18,0,0" Width="1286" Height="1019.333" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" Background="White" Loaded="mainContent11_ZhongDaXiangMu_Loaded">
+        <Grid x:Name="mainContent11_ZhongDaXiangMu" Margin="308,18,0,0" Width="1286" Height="1019.333" Panel.ZIndex="200" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Background="White" Loaded="mainContent11_ZhongDaXiangMu_Loaded">
             <Rectangle Stroke="Black" Margin="-1,0" StrokeThickness="2">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="{DynamicResource Contentbg}"/>
