@@ -447,5 +447,11 @@ namespace WpfApplication3
             HomePage m_HomePage = new HomePage();
             FrameMiddleContent.Navigate(m_HomePage);
         }
+
+        private void btn_sgzh_Click(object sender, RoutedEventArgs e)
+        {
+            PageShiGuZaiHai m_PageShiGuZaiHai = new PageShiGuZaiHai();
+            FrameMiddleContent.Navigate(m_PageShiGuZaiHai);
+        }
     }
 }
