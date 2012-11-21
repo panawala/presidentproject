@@ -566,7 +566,7 @@
                                     <Grid Height="70">
                                         <Rectangle x:Name="bg_sgzh" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label x:Name="label_sgzh" Content="事故灾害" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button x:Name="btn_sgzh" Margin="20,10" Opacity="0" Cursor="Hand" />
+                                        <Button x:Name="btn_sgzh" Margin="20,10" Opacity="0" Cursor="Hand" Click="btn_sgzh_Click"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle x:Name="bg_ggws" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>

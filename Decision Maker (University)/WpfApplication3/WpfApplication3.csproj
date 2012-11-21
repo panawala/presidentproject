@@ -184,6 +184,9 @@
     <Compile Include="PageMaxWeather.xaml.cs">
       <DependentUpon>PageMaxWeather.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageShiGuZaiHai.xaml.cs">
+      <DependentUpon>PageShiGuZaiHai.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PDFReader.xaml.cs">
       <DependentUpon>PDFReader.xaml</DependentUpon>
     </Compile>
@@ -250,6 +253,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageShiGuZaiHai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PDFReader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -307,7 +314,6 @@
     <None Include="DataSet_HumanResource.xss">
       <DependentUpon>DataSet_HumanResource.xsd</DependentUpon>
     </None>
-    <Resource Include="MainWindow.xaml.cs.old.txt" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -484,7 +490,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MainWindow.xaml.old.txt" />
     <Resource Include="Images\JingFei.JPG" />
     <Resource Include="CutImages\图像\branch_bg-07.png" />
     <Resource Include="CutImages\图像\branch_bg-full-07.png" />
