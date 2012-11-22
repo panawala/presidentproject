@@ -84,9 +84,15 @@
     <Reference Include="GifImageLib">
       <HintPath>..\Library\GifImageLib\GifImageLib.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Expression.Drawing" />
-    <Reference Include="Microsoft.Expression.Effects" />
-    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\Library\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Effects">
+      <HintPath>..\Library\Microsoft.Expression.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\Library\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="Primitive3DSurfaces">
       <HintPath>..\Library\Primitive3DSurfaces\Primitive3DSurfaces.dll</HintPath>
@@ -166,6 +172,9 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LargeProject\PageProject.xaml.cs">
+      <DependentUpon>PageProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -222,6 +231,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LargeProject\PageProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -490,6 +503,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\solute.png" />
+    <Resource Include="Images\sence.png" />
+    <Resource Include="Images\construct.png" />
     <Resource Include="Images\JingFei.JPG" />
     <Resource Include="CutImages\图像\branch_bg-07.png" />
     <Resource Include="CutImages\图像\branch_bg-full-07.png" />

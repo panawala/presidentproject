@@ -15,6 +15,7 @@ using System.Windows.Threading;
 using System.Diagnostics;
 using System.Xml;
 using WpfZhihui;
+using WpfApplication3.LargeProject;
 
 namespace WpfApplication3
 {
@@ -453,5 +454,13 @@ namespace WpfApplication3
             PageShiGuZaiHai m_PageShiGuZaiHai = new PageShiGuZaiHai();
             FrameMiddleContent.Navigate(m_PageShiGuZaiHai);
         }
+
+        private void Btn_Design_Click(object sender, RoutedEventArgs e)
+        {
+            PageProject m_PageProject = new PageProject();
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
+
+
     }
 }
