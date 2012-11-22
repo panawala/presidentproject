@@ -55,7 +55,7 @@ namespace WpfApplication3
 
                 Ping p = new Ping();
                 PingReply pr = p.Send("www.baidu.com");
-                if (pr.Status == IPStatus.Success)
+                if (pr.Status == IPStatus.Success||true)
                 {
                     MainWindow mw = new MainWindow();
                     mw.Show();
