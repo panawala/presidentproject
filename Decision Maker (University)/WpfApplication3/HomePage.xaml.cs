@@ -111,6 +111,11 @@ namespace WpfApplication3
         {
             WeatherWebService.WeatherWebServiceSoapClient ws = new WeatherWebService.WeatherWebServiceSoapClient();
             string[] strWeather = ws.getWeatherbyCityName("上海");
+            if (strWeather[8] == "")
+            {
+                MessageBox.Show("天气预报WebService系统维护中...");
+                return;
+            }
             BitmapImage image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/a_" + strWeather[8], UriKind.RelativeOrAbsolute));
             w_image1.Source = image;
             w_label1.Content = (strWeather[6].Split(' '))[1];
