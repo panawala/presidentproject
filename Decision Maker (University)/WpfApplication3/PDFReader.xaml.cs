@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WpfApplication3
 {
@@ -22,5 +23,12 @@ namespace WpfApplication3
         {
             InitializeComponent();
         }
+        public void showPdf(string pdfFile)
+        {
+            DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
+            string pathPDF = di.Parent.Parent.FullName;
+            webBrower1.Navigate(new Uri(pathPDF + @"/PDF/"+pdfFile, UriKind.RelativeOrAbsolute));//获取根目录的日历文件
+        }
     }
+
 }

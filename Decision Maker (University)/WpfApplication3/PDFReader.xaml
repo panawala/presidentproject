@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PDFReader" Height="497" Width="900">
         <Grid>
-        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="152,129,0,0" Name="button1" VerticalAlignment="Top" Width="75" Background="#FF3399FF" IsDefault="True" />
+        <WebBrowser Name="webBrower1"/>
     </Grid>
     
 </Window>

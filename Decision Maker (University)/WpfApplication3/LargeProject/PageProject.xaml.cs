@@ -331,12 +331,26 @@ namespace WpfApplication3.LargeProject
                 }
                 else if (selected.Equals("经费使用"))
                 {
-                    drawFeePercentList();
+                    if (!isChoosen)
+                    {
+                        drawFeePercentList();
+                        isChoosen = true;
+                    }
+
                     drawFeeAni();
                 }
             }
 
 
+        }
+
+        private bool isChoosen = false;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            string content = btn.Content as string;
+            PDFReader pdfReader = new PDFReader();
+            pdfReader.showPdf(content + ".pdf");
         }
 
 
