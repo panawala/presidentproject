@@ -28,6 +28,7 @@ namespace WpfApplication3
             DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
             string pathPDF = di.Parent.Parent.FullName;
             webBrower1.Navigate(new Uri(pathPDF + @"/PDF/"+pdfFile, UriKind.RelativeOrAbsolute));//获取根目录的日历文件
+            Show();
         }
     }
 

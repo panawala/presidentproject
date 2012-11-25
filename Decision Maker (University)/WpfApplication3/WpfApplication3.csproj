@@ -323,6 +323,9 @@
     <None Include="DataSet_HumanResource.xss">
       <DependentUpon>DataSet_HumanResource.xsd</DependentUpon>
     </None>
+    <None Include="PDF\2012年5月内部文件情况报告.pdf" />
+    <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
+    <None Include="PDF\2012年5月项目经费使用情况报告.pdf" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -655,9 +658,7 @@
       <Name>DataLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PDF\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.
