@@ -107,7 +107,7 @@
 
             <!--右下角左-->
             <GroupBox Grid.Row="1" Grid.Column="0" Header="项目机构" Name="groupBox3">
-                
+                <Image Name="image_ProjectOrg" Stretch="Fill" />
             </GroupBox>
 
 

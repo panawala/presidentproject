@@ -46,6 +46,7 @@ namespace WpfApplication3.LargeProject
             ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.png", UriKind.Relative));
             CurrentSence.Source = new BitmapImage(new Uri("/Images/sence.png", UriKind.Relative));
             ImageSolution.Source = new BitmapImage(new Uri("/Images/solute.png", UriKind.Relative));
+            image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
 
             TextProject.Text = "上海国际设计一场”的前身是巴士一汽停车场，占地面积约120亩。在上海市高校布局新一轮调整中，该停车场划归同济大学。杨浦区政府与同济大学决定联手，在此建设集设计教育、设计研发、国际交流、活动展览等多种功能于一体的“上海国际设计一场”，将其建设成为国际化的高端设计创意平台、同济大学设计创意教育与实践基地、环同济设计创意产业的航空母舰、知识杨浦国际化的高端平台，以及上海创意之都的核心引擎项目。";
 

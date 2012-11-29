@@ -502,6 +502,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\projectorg.jpg" />
     <Resource Include="Images\solute.png" />
     <Resource Include="Images\sence.png" />
     <Resource Include="Images\construct.png" />
