@@ -166,8 +166,7 @@ namespace WpfApplication3.LargeProject
                     Type="媒体报道"
                 }
             };
-
-
+           
             listBox1.DataContext = infos.Where(s => s.Type == "项目经费");
             listBox1.SelectedIndex = 0;
 
