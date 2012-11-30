@@ -508,7 +508,7 @@
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="日程管理" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Margin="20,10" Opacity="0" Cursor="Hand"/>
+                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" Click="Btn_Schedule_Click"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
@@ -518,7 +518,7 @@
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="远程会议" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" />
+                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" Click="Btn_VideoConferencing_Click"/>
                                     </Grid>
                                 </StackPanel>
                             </StackPanel>
