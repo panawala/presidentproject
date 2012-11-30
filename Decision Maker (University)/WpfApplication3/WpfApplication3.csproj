@@ -126,6 +126,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BRAnyChatCoreSDK.cs" />
+    <Compile Include="Case\ClassCatalogNodeItem.cs" />
+    <Compile Include="Case\PageCase.xaml.cs">
+      <DependentUpon>PageCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communicate\DataSetDoc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Communicate\PageDocIssue.xaml.cs">
+      <DependentUpon>PageDocIssue.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\CxCloseButton.xaml.cs">
       <DependentUpon>CxCloseButton.xaml</DependentUpon>
     </Compile>
@@ -135,16 +147,22 @@
     <Compile Include="Control\CxHelp.xaml.cs">
       <DependentUpon>CxHelp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DailyManagement\Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DailyManagement\VideoConferencing.xaml.cs">
+      <DependentUpon>VideoConferencing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCalendar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet_Case.cs">
+    <Compile Include="Case\DataSet_Case.cs">
       <DependentUpon>DataSet_Case.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataSet_Case.Designer.cs">
+    <Compile Include="Case\DataSet_Case.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Case.xsd</DependentUpon>
@@ -164,6 +182,15 @@
     <Compile Include="Enum\MapState.cs" />
     <Compile Include="Enum\MenuState.cs" />
     <Compile Include="Enum\Version.cs" />
+    <Compile Include="FeedBack\DataSetFeedback1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFeedback.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBack\PageTeacherStudentFeedback.xaml.cs">
+      <DependentUpon>PageTeacherStudentFeedback.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GoogleMapHelper.cs" />
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -177,16 +204,16 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageMaxEmergency.xaml.cs">
+    <Compile Include="MaxPage\PageMaxEmergency.xaml.cs">
       <DependentUpon>PageMaxEmergency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageMaxEnvironment.xaml.cs">
+    <Compile Include="MaxPage\PageMaxEnvironment.xaml.cs">
       <DependentUpon>PageMaxEnvironment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageMaxTraffic.xaml.cs">
+    <Compile Include="MaxPage\PageMaxTraffic.xaml.cs">
       <DependentUpon>PageMaxTraffic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageMaxWeather.xaml.cs">
+    <Compile Include="MaxPage\PageMaxWeather.xaml.cs">
       <DependentUpon>PageMaxWeather.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageShiGuZaiHai.xaml.cs">
@@ -210,6 +237,14 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Case\PageCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Communicate\PageDocIssue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Control\CxCloseButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -222,9 +257,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DailyManagement\Schedule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DailyManagement\VideoConferencing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EggModel\CxEggModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FeedBack\PageTeacherStudentFeedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
@@ -246,21 +293,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageMaxEmergency.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MaxPage\PageMaxEmergency.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageMaxEnvironment.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MaxPage\PageMaxEnvironment.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageMaxTraffic.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MaxPage\PageMaxTraffic.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageMaxWeather.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MaxPage\PageMaxWeather.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageShiGuZaiHai.xaml">
       <SubType>Designer</SubType>
@@ -290,6 +337,17 @@
     <None Include="background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Communicate\DataSetDoc.xsc">
+      <DependentUpon>DataSetDoc.xsd</DependentUpon>
+    </None>
+    <None Include="Communicate\DataSetDoc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDoc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Communicate\DataSetDoc.xss">
+      <DependentUpon>DataSetDoc.xsd</DependentUpon>
+    </None>
     <None Include="DataSetCalendar.xsc">
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
     </None>
@@ -301,15 +359,15 @@
     <None Include="DataSetCalendar.xss">
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
     </None>
-    <None Include="DataSet_Case.xsc">
+    <None Include="Case\DataSet_Case.xsc">
       <DependentUpon>DataSet_Case.xsd</DependentUpon>
     </None>
-    <None Include="DataSet_Case.xsd">
+    <None Include="Case\DataSet_Case.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet_Case.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet_Case.xss">
+    <None Include="Case\DataSet_Case.xss">
       <DependentUpon>DataSet_Case.xsd</DependentUpon>
     </None>
     <None Include="DataSet_HumanResource.xsc">
@@ -322,6 +380,17 @@
     </None>
     <None Include="DataSet_HumanResource.xss">
       <DependentUpon>DataSet_HumanResource.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBack\DataSetFeedback.xsc">
+      <DependentUpon>DataSetFeedback.xsd</DependentUpon>
+    </None>
+    <None Include="FeedBack\DataSetFeedback.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFeedback1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FeedBack\DataSetFeedback.xss">
+      <DependentUpon>DataSetFeedback.xsd</DependentUpon>
     </None>
     <None Include="PDF\2012年5月内部文件情况报告.pdf" />
     <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
@@ -502,6 +571,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\logo_tongji.jpg" />
     <Resource Include="Images\projectorg.jpg" />
     <Resource Include="Images\solute.png" />
     <Resource Include="Images\sence.png" />

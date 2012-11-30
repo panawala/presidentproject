@@ -375,7 +375,7 @@
                 </Grid>
             </Grid>
             <Grid x:Name="Menu1" Grid.Row="1">
-                <ScrollViewer>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ScrollViewer.Content>
                         <StackPanel x:Name="Menu_1">
                             <StackPanel x:Name="Home">
@@ -483,17 +483,12 @@
                                 <StackPanel x:Name="Menu_1_3_1" Visibility="Collapsed">
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                        <Label Content="部委沟通" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Margin="20,10" Opacity="0" Cursor="Hand" />
+                                        <Label Content="下发文件" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
+                                        <Button Name="btnDocIssue" Margin="20,10" Opacity="0" Cursor="Hand" Click="btnDocIssue_Click"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="市局沟通" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" />
-                                    </Grid>
-                                    <Grid Height="70">
-                                        <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                        <Label Content="特殊联络" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
                                         <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" />
                                     </Grid>
                                 </StackPanel>
@@ -532,7 +527,7 @@
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="校园管理经营" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Margin="20,10" Opacity="0" Cursor="Hand" />
+                                        <Button Margin="20,10" Opacity="0" Cursor="Hand" Click="Button_Click_1"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
@@ -585,7 +580,7 @@
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="师生信息反馈" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Margin="20,10" Opacity="0" Cursor="Hand" />
+                                        <Button Name="btnTeacherStudentFeedback" Margin="20,10" Opacity="0" Cursor="Hand" Click="btnTeacherStudentFeedback_Click"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
@@ -609,7 +604,7 @@
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                         <Label Content="设计创意中心" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" Click="Btn_Design_Click"/>
+                                        <Button Content="Button" Margin="20,10" Opacity="0" Cursor="Hand" Click="Button_Click"/>
                                     </Grid>
                                     <Grid Height="70">
                                         <Rectangle Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>

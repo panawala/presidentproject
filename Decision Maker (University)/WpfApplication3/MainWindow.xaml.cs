@@ -15,8 +15,6 @@ using System.Windows.Threading;
 using System.Diagnostics;
 using System.Xml;
 using WpfZhihui;
-using WpfApplication3.LargeProject;
-using WpfApplication3.DailyManagement;
 
 namespace WpfApplication3
 {
@@ -365,11 +363,11 @@ namespace WpfApplication3
                                    ,"http://news.tongji.edu.cn/classid-176.html"
                                   };
             string[] logopath = {
-                                "/Images/网易2.png",
+                                "/Images/logo_tongji.jpg",
                                 //"/Images/新华1.jpg",
-                                "/Images/百度.png",
-                                "/Images/上海热线.jpg"
-                                ,"/Images/sina.png"
+                                "/Images/logo_tongji.jpg",
+                                "/Images/logo_tongji.jpg"
+                                ,"/Images/logo_tongji.jpg"
                                 };
             for (int cid = 0; cid < 4; cid++)
             {
@@ -456,23 +454,40 @@ namespace WpfApplication3
             FrameMiddleContent.Navigate(m_PageShiGuZaiHai);
         }
 
-        private void Btn_Design_Click(object sender, RoutedEventArgs e)
+        private void btnTeacherStudentFeedback_Click(object sender, RoutedEventArgs e)
         {
-            PageProject m_PageProject = new PageProject();
+            FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback();
+            FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
+        }
+
+        private void btnDocIssue_Click(object sender, RoutedEventArgs e)
+        {
+            Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
+            FrameMiddleContent.Navigate(m_PageDocIssue);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LargeProject.PageProject m_PageProject = new LargeProject.PageProject();
             FrameMiddleContent.Navigate(m_PageProject);
         }
-        private void Btn_Schedule_Click(object sender, RoutedEventArgs e)
-        {
 
-            Schedule m_Schedule = new Schedule();
-            FrameMiddleContent.Navigate(m_Schedule);
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Case.PageCase m_PageCase = new Case.PageCase();
+            FrameMiddleContent.Navigate(m_PageCase);
         }
+
         private void Btn_VideoConferencing_Click(object sender, RoutedEventArgs e)
         {
-
-            VideoConferencing m_VideoConferencing = new VideoConferencing();
+            DailyManagement.VideoConferencing m_VideoConferencing = new DailyManagement.VideoConferencing();
             FrameMiddleContent.Navigate(m_VideoConferencing);
         }
 
+        private void Btn_Schedule_Click(object sender, RoutedEventArgs e)
+        {
+            DailyManagement.Schedule m_Schedule = new DailyManagement.Schedule();
+            FrameMiddleContent.Navigate(m_Schedule);
+        }
     }
 }
