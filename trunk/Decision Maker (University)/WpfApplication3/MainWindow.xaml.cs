@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Xml;
 using WpfZhihui;
 using WpfApplication3.LargeProject;
+using WpfApplication3.DailyManagement;
 
 namespace WpfApplication3
 {
@@ -460,7 +461,18 @@ namespace WpfApplication3
             PageProject m_PageProject = new PageProject();
             FrameMiddleContent.Navigate(m_PageProject);
         }
+        private void Btn_Schedule_Click(object sender, RoutedEventArgs e)
+        {
 
+            Schedule m_Schedule = new Schedule();
+            FrameMiddleContent.Navigate(m_Schedule);
+        }
+        private void Btn_VideoConferencing_Click(object sender, RoutedEventArgs e)
+        {
+
+            VideoConferencing m_VideoConferencing = new VideoConferencing();
+            FrameMiddleContent.Navigate(m_VideoConferencing);
+        }
 
     }
 }

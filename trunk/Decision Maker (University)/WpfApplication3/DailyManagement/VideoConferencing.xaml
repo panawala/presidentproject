@@ -1,0 +1,141 @@
+﻿<Page x:Class="WpfApplication3.DailyManagement.VideoConferencing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="992"
+	Title="VideoConferencing" Loaded="Page_Loaded">
+    <Page.Resources>
+        <DataTemplate x:Key="listBoxTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
+                <Button Grid.Column="1" Content="{Binding Path=Title}" Click="Button_Click"/>
+                <Button Grid.Column="2" Content="共享" Click="Button_Share"/>
+            </Grid>
+
+        </DataTemplate>
+        <DataTemplate x:Key="listBoxTemplate1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
+                <Button Grid.Column="1" Content="{Binding Path=Title}" Click="Button_FaYan"/>
+                <Button Grid.Column="2" Content="共享" Click="Button_Share"/>
+            </Grid>
+
+        </DataTemplate>
+    </Page.Resources>
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*">
+            </ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65*"></RowDefinition>
+                <RowDefinition Height="35*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="视频会议" FontSize="20" Name="groupBox2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="66*" ></ColumnDefinition>
+                        <ColumnDefinition Width="34*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Name="ImageVideo1" Stretch="Fill" Grid.Column="1" Source="/WpfApplication3;component/Images/ImageVideo1.jpg" />
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="67*"></RowDefinition>
+                            <RowDefinition Height="33*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" x:Name="Video"   d:IsHidden="True" d:IsLocked="True" Background="Black">
+
+                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,62,9" x:Name="buttonfullscreen" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}"  Cursor="Hand">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/WpfApplication3;component/zoom-fit-best.png" />
+                                </Button.Background>
+                            </Button>
+                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,6,9" x:Name="buttonswitch" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/WpfApplication3;component/switch1.png" />
+                                </Button.Background>
+                            </Button>
+                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,122,9" x:Name="buttonStart" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/WpfApplication3;component/Cam.jpg" />
+                                </Button.Background>
+                            </Button>
+                            <Label Height="39" Margin="0,0,185,-1" x:Name="msglabel" VerticalAlignment="Bottom" Content="状态提示" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="92">
+                                <Label.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <SkewTransform />
+                                        <RotateTransform Angle="-0.139" />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Label.RenderTransform>
+                                <Label.Foreground>
+                                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}" />
+                                </Label.Foreground>
+                            </Label>
+
+                            <!--daimaxiezaizheli-->
+                        </Grid>
+
+                        <Image   Name="ImageVideo3" Stretch="Fill" Grid.Row="1" Source="/WpfApplication3;component/Images/ImageVideo3.jpg" />
+                 
+                    </Grid>
+                   
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="发演讲稿" FontSize="20" Name="groupBox3">
+
+                <Grid>
+                    <WebBrowser Name="webBrower1"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox Grid.Column="1" Grid.ColumnSpan="2" Header="相关材料" FontSize="20" Name="groupBox4">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"></RowDefinition>
+                    <RowDefinition Height="40*"></RowDefinition>
+                    <RowDefinition Height="30*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" >
+                    <TabItem Header="发演讲稿" Width="80" >
+                        <ListBox  Name="listBox1" ItemTemplate="{StaticResource listBoxTemplate1}" ItemsSource="{Binding}"/>
+                    </TabItem>
+                    <TabItem Header="收到共享" Width="80" >
+                        <ListBox  Name="listBox2" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
+                    </TabItem>
+                    <TabItem Header="未共享" Width="72" >
+                        <ListBox  Name="listBox3" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
+                    </TabItem>
+                    <TabItem Header="已共享" Width="72" >
+                        <ListBox  Name="listBox4" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
+                    </TabItem>
+                </TabControl>
+                <Grid Grid.Row="1" >
+                    <WebBrowser Name="webBrower2"/>
+                </Grid>
+                <Grid Grid.Row="2" >
+                    <Button Content="添加相关文件"   Name="button1" Click="Button_ChooseFile"  />
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>
