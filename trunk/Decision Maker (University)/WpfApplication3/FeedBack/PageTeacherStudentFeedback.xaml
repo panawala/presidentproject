@@ -1,0 +1,325 @@
+﻿<Page x:Class="WpfApplication3.FeedBack.PageTeacherStudentFeedback"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1300"
+	Title="PageTeacherStudentFeedback">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Height="31" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0">师生信息反馈</Label>
+                </Grid>
+                <Grid Grid.Row="1" Margin="5,5,5,5">
+                    <ListBox Name="listboxFeedback" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="listboxFeedback_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="65*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Button Name="btnFeedbackShow" Click="btnFeedbackShow_Click" Content="->" Margin="5,10,5,10" Focusable="False"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Label Content="{Binding Path=SubmissionDate}" Margin="5,10,5,10"/>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Button Name="btnFeedbackTitle" Content="{Binding Path=FeedbackTitle}" Click="btnFeedbackShow_Click" Margin="5,10,5,10" Focusable="False"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button Name="btnHistory" Margin="10,5,10,5">历史记录？这按钮干嘛的？</Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBox Name="tbxSearch" VerticalAlignment="Center" Margin="0,5,0,5" MaxLength="50" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Name="btnSearch" VerticalAlignment="Center" Margin="10,14,10,14" Content="搜索" Click="btnSearch_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">文件内容</Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border Margin="10,20,10,20">
+                        <TextBox Name="tbxFeedbackContent" Margin="40,20,40,20" TextWrapping="Wrap"></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label Content="姓名" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="label1" VerticalAlignment="Center" />
+                        <Label Content="Label" Height="28" Margin="45,0,0,0" Name="labelName" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label Content="联系方式" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="label2" VerticalAlignment="Center" />
+                        <Label Content="Label" Height="28" Margin="80,0,0,0" Name="labelContact" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Label Content="日期" Height="28" Margin="10,0,0,0" Name="label3" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <Label Content="Label" Height="28" Margin="45,0,0,0" Name="labelDate" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Button Content="&lt;" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="btnPrevious" VerticalAlignment="Center" Width="23" Click="btnPrevious_Click" />
+                        <Button Content="&gt;" Height="23" HorizontalAlignment="Right" Margin="0,0,5,0" Name="btnNext" VerticalAlignment="Center" Width="23" Click="btnNext_Click" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" Margin="5,5,5,5" Background="#FFEBEBEB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">抄送部门</Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox1" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                            <ComboBoxItem Content="学校主要领导" IsEnabled="False" IsSelected="True" />
+                            <CheckBox Content="张三" />
+                            <CheckBox Content="李四" />
+                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox2" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                            <ComboBoxItem Content="学校行政机构" IsEnabled="False" IsSelected="True" />
+                            <CheckBox Content="校长办公室" />
+                            <CheckBox Content="发展规划研究中心" />
+                            <CheckBox Content="教务处" />
+                            <CheckBox Content="研究生院" />
+                            <CheckBox Content="科学技术处" />
+                            <CheckBox Content="文科办" />
+                            <CheckBox Content="人事处、人才中心" />
+                            <CheckBox Content="学生处" />
+                            <CheckBox Content="财务处" />
+                            <CheckBox Content="医管处" />
+                            <CheckBox Content="外事办公室、港澳台事务办公室" />
+                            <CheckBox Content="宣传处" />
+                            <CheckBox Content="审计处" />
+                            <CheckBox Content="监察处" />
+                            <CheckBox Content="基建处" />
+                            <CheckBox Content="实验室与设备管理处" />
+                            <CheckBox Content="资产管理处" />
+                            <CheckBox Content="教学质量管理办公室" />
+                            <CheckBox Content="保卫处" />
+                            <CheckBox Content="产业管理办公室" />
+                            <CheckBox Content="离退休工作办公室" />
+                            <CheckBox Content="对外联络与发展办公室" />
+                            <CheckBox Content="沪西校区管理委员会" />
+                            <CheckBox Content="沪北校区管理委员会" />
+                            <CheckBox Content="嘉定校区管理委员会" />
+                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox3" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                            <ComboBoxItem Content="学校院系A" IsEnabled="False" IsSelected="True" />
+                            <CheckBox Content="土木工程学院" />
+                            <CheckBox Content="经济与管理学院" />
+                            <CheckBox Content="材料科学与工程学院" />
+                            <CheckBox Content="理学部" />
+                            <CheckBox Content="生命科学与技术学院" />
+                            <CheckBox Content="医学院" />
+                            <CheckBox Content="口腔医学院" />
+                            <CheckBox Content="人文学院" />
+                            <CheckBox Content="法学院/知识产权学院" />
+                            <CheckBox Content="马克思主义学院" />
+                            <CheckBox Content="政治与国际关系学院" />
+                            <CheckBox Content="中德学院" />
+                            <CheckBox Content="中德工程学院" />
+                            <CheckBox Content="联合国环境规划署环境与可持续发展学院" />
+                            <CheckBox Content="中意学院" />
+                            <CheckBox Content="高等技术学院/同科学院" />
+                            <CheckBox Content="继续教育/网络教育学院" />
+                            <CheckBox Content="出国培训学院" />
+                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox4" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                            <ComboBoxItem Content="学校院系B" IsEnabled="False" IsSelected="True" />
+                            <CheckBox Content="建筑与城市规划学院" />
+                            <CheckBox Content="机械与能源工程学院" />
+                            <CheckBox Content="环境科学与工程学院" />
+                            <CheckBox Content="电子与信息工程学院" />
+                            <CheckBox Content="外国语学院" />
+                            <CheckBox Content="交通运输工程学院" />
+                            <CheckBox Content="汽车学院" />
+                            <CheckBox Content="轨道与城市轨道交通研究院" />
+                            <CheckBox Content="软件学院" />
+                            <CheckBox Content="设计与艺术学院" />
+                            <CheckBox Content="测绘与地理信息学院" />
+                            <CheckBox Content="体育教学部" />
+                            <CheckBox Content="职业技术教育学院" />
+                            <CheckBox Content="女子学院" />
+                            <CheckBox Content="国际文化交流学院" />
+                            <CheckBox Content="中法工程和管理学院" />
+                            <CheckBox Content="中芬中心" />
+                            <CheckBox Content="中西学院" />
+                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+                        </ComboBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="20,5,20,5">
+                        <ListBox Name="listboxSend">
+                            <ListBox.Template>
+                                <ControlTemplate TargetType="{x:Type ListBox}">
+                                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                                </ControlTemplate>
+                            </ListBox.Template>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <Image Source="/WpfApplication3;component/CutImages/图像/dot_bg-green-07.png" Width="10" Height="10"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Text="{Binding}"/>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                    
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button Name="btnSend" Content="发送" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Margin="5,5,5,5" Background="#FFEBEBEB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">批示区</Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="70*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="20,5,20,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Button Name="rbtBlackInk" Width="40" Height="20" Content="黑" Click="rbtBlackInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button Name="rbtRedInk" Width="40" Height="20" Content="红" Click="rbtRedInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Button Name="rbtGreenInk" Width="40" Height="20" Content="绿" Click="rbtGreenInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Button Name="rbtBlueInk" Width="40" Height="20" Content="蓝" Click="rbtBlueInk_Click"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Button Width="40" Height="20" Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button Width="40" Height="20" Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Button Width="40" Height="20" Name="rbtThinInk" Content="细" Click="rbtThinInk_Click"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Button Width="40" Height="20" Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <InkCanvas Name="InkCanvasAnnotation1" Margin="10,20,10,20" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink">
+                        </InkCanvas>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button Height="23" Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,10,0" Width="69" Content="确认" Click="btnCommentOK_Click"/>
+                    <Button Height="23" Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,89,0" Width="69" Content="清空" Click="btnCommentClear_Click" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

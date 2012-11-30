@@ -109,38 +109,6 @@ namespace WpfApplication3
 
         public void loadWeather()
         {
-            WeatherWebService.WeatherWebServiceSoapClient ws = new WeatherWebService.WeatherWebServiceSoapClient();
-            string[] strWeather = ws.getWeatherbyCityName("上海");
-            if (strWeather[8] == "")
-            {
-                MessageBox.Show("天气预报WebService系统维护中...");
-                return;
-            }
-            BitmapImage image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/a_" + strWeather[8], UriKind.RelativeOrAbsolute));
-            w_image1.Source = image;
-            w_label1.Content = (strWeather[6].Split(' '))[1];
-            w_label0.Content = (strWeather[6].Split(' '))[0];
-            string str = (strWeather[10].Split('；'))[0];
-            w_label2.Content = (str.Split('：'))[2];
-            w_label3.Content = "上次监测：" + (strWeather[4].Split(' '))[1];
-            w_label4.Content = (strWeather[10].Split('；'))[2];
-            w_label5.Content = (strWeather[10].Split('；'))[1];
-            w_label6.Content = (strWeather[10].Split('；'))[3];
-            w_label7.Content = (strWeather[10].Split('；'))[4];
-
-            w_label8.Content = (strWeather[6].Split(' '))[0];
-            w_label9.Content = (strWeather[13].Split(' '))[0];
-            w_label10.Content = (strWeather[18].Split(' '))[0];
-            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[8], UriKind.RelativeOrAbsolute));
-            w_image2.Source = image;
-            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[15], UriKind.RelativeOrAbsolute));
-            w_image3.Source = image;
-            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[20], UriKind.RelativeOrAbsolute));
-            w_image4.Source = image;
-            w_label11.Content = strWeather[5];
-            w_label12.Content = strWeather[12];
-            w_label13.Content = strWeather[17];
-
             System.Net.WebClient wc = new System.Net.WebClient();
 
             DateTime nowtime = DateTime.Now;
@@ -176,6 +144,40 @@ namespace WpfApplication3
             BitmapImage bmp = new BitmapImage(uri);
             w_imageWeather.Source = bmp;
             webbrowserWeather.Source = new Uri("http://flash.weather.com.cn/sk2/shikuang.swf?id=101020100");
+
+            WeatherWebService.WeatherWebServiceSoapClient ws = new WeatherWebService.WeatherWebServiceSoapClient();
+            string[] strWeather = ws.getWeatherbyCityName("上海");
+            if (strWeather[8] == "")
+            {
+                MessageBox.Show("天气预报WebService系统维护中...");
+                return;
+            }
+            BitmapImage image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/a_" + strWeather[8], UriKind.RelativeOrAbsolute));
+            w_image1.Source = image;
+            w_label1.Content = (strWeather[6].Split(' '))[1];
+            w_label0.Content = (strWeather[6].Split(' '))[0];
+            string str = (strWeather[10].Split('；'))[0];
+            w_label2.Content = (str.Split('：'))[2];
+            w_label3.Content = "上次监测：" + (strWeather[4].Split(' '))[1];
+            w_label4.Content = (strWeather[10].Split('；'))[2];
+            w_label5.Content = (strWeather[10].Split('；'))[1];
+            w_label6.Content = (strWeather[10].Split('；'))[3];
+            w_label7.Content = (strWeather[10].Split('；'))[4];
+
+            w_label8.Content = (strWeather[6].Split(' '))[0];
+            w_label9.Content = (strWeather[13].Split(' '))[0];
+            w_label10.Content = (strWeather[18].Split(' '))[0];
+            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[8], UriKind.RelativeOrAbsolute));
+            w_image2.Source = image;
+            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[15], UriKind.RelativeOrAbsolute));
+            w_image3.Source = image;
+            image = new BitmapImage(new Uri(strPATH + @"/weatherlogo/b_" + strWeather[20], UriKind.RelativeOrAbsolute));
+            w_image4.Source = image;
+            w_label11.Content = strWeather[5];
+            w_label12.Content = strWeather[12];
+            w_label13.Content = strWeather[17];
+
+            
 
         }
         private bool RemoteFileExists(string fileUri)
