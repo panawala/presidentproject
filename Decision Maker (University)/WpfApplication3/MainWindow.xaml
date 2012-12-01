@@ -260,10 +260,10 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="292" />
-            <ColumnDefinition Width="1288.667" />
-            <ColumnDefinition Width="323" />
+            <ColumnDefinition Width="1288" />
+            <ColumnDefinition Width="318" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Name="LeftContent" Margin="0,20,0,10">
+        <Grid Grid.Column="0" Name="LeftContent" Margin="0,30,0,40">
             <Grid.RowDefinitions>
                 <RowDefinition Height="328" />
                 <RowDefinition Height="*" />
@@ -644,10 +644,10 @@
                 
             </Grid>
         </Grid>
-        <Grid Grid.Column="1" Name="MiddleContent" Margin="29,20,0,10">
+        <Grid Grid.Column="1" Name="MiddleContent" Margin="29,30,0,40">
             <Frame Name="FrameMiddleContent" NavigationUIVisibility="Hidden"/>
         </Grid>
-        <Grid Grid.Column="2" Name="RightContent" Margin="29,20,4,10">
+        <Grid Grid.Column="2" Name="RightContent" Margin="24,30,4,40">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="423.75"/>
