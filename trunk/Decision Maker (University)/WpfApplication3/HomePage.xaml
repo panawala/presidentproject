@@ -769,8 +769,8 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40*"/>
-                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="202.4"/>
+                    <RowDefinition Height="303.6"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Name="gridWeatherInfo">
                     <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -790,50 +790,54 @@
                         <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
 
                     </Grid>
-                    <Grid x:Name="WeatherToday" HorizontalAlignment="Left" Width="123" Margin="0,36,0,0">
-                        <Image x:Name="w_image1" Margin="26,76,0,0" Stretch="Fill" VerticalAlignment="Top" Height="55" Width="55" HorizontalAlignment="Left"/>
-                        <Label x:Name="w_label1" HorizontalAlignment="Center" Height="32" Margin="13,25,31,0" VerticalAlignment="Top" FontSize="14" Content="多云转阵雨" FontWeight="Bold">
+                    <Grid x:Name="WeatherToday" HorizontalAlignment="Left" Width="152" Margin="0,36,0,0">
+                    	<Grid.ColumnDefinitions>
+                    		<ColumnDefinition Width="0.605*"/>
+                    		<ColumnDefinition Width="0.395*"/>
+                    	</Grid.ColumnDefinitions>
+                        <Image x:Name="w_image1" Margin="0,45.4,0,0" Stretch="Fill" VerticalAlignment="Top" Height="55" Grid.Column="1" Width="55" HorizontalAlignment="Left"/>
+                        <Label x:Name="w_label1" Margin="0,55.667,0,78.733" FontSize="14" Content="多云转阵雨" FontWeight="Bold" HorizontalAlignment="Center">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
                     </Grid>
                     <GridSplitter HorizontalAlignment="Left" Margin="123,15,0,15" Width="2" d:IsHidden="True" Visibility="Collapsed"/>
-                    <Grid x:Name="WeatherTemp" HorizontalAlignment="Left" Width="161" Margin="152,43,0,8">
-                        <Label x:Name="w_label2" HorizontalAlignment="Left" Height="67" Margin="6,8,0,0" VerticalAlignment="Top" FontSize="60" Content="14℃" FontFamily="Helvetica" FontWeight="Bold">
+                    <Grid x:Name="WeatherTemp" HorizontalAlignment="Left" Width="161" Margin="162.663,50.5,0,8">
+                        <Label x:Name="w_label2" HorizontalAlignment="Left" Height="67" Margin="6,10,0,0" VerticalAlignment="Top" FontSize="60" Content="14℃" FontFamily="Helvetica" FontWeight="Bold">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label3" HorizontalAlignment="Left" Height="24.667" Margin="21,0,0,7" VerticalAlignment="Bottom" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold">
+                        <Label x:Name="w_label3" HorizontalAlignment="Center" Height="24.667" Margin="0,0,0,35.5" VerticalAlignment="Bottom" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
                     </Grid>
                     <GridSplitter HorizontalAlignment="Left" Margin="332,77,0,62" Width="2" Background="#FFB7B7B7" Height="30"/>
-                    <Grid x:Name="WeatherAir1" Margin="352.995,37,347.005,-1">
-                        <Label x:Name="w_label4" Height="30" Margin="7,28.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Content="湿度：60%" FontFamily="Helvetica" FontWeight="Bold">
+                    <Grid x:Name="WeatherAir1" Margin="334.995,37,365.005,-1">
+                        <Label x:Name="w_label4" Height="30" Margin="7,39.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Content="湿度：60%" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label6" Margin="7,64,0,40" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold">
+                        <Label x:Name="w_label6" Margin="7,75,0,62" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
                     </Grid>
-                    <GridSplitter Margin="0,77,362.005,63" Height="30" Width="2" Background="#FFB7B7B7"/>
+                    <GridSplitter Margin="0,93.2,372.005,79.2" Height="30" Width="2" Background="#FFB7B7B7"/>
 
 
-                    <Grid x:Name="WeatherAir2" HorizontalAlignment="Left" Margin="484.995,37,0,-4.167" Width="186">
-                        <Label x:Name="w_label5" HorizontalAlignment="Left" Margin="6.165,28.5,0,0" Height="30" VerticalAlignment="Top" Content="风向/风力：东风1级" FontFamily="Helvetica" FontWeight="Bold">
+                    <Grid x:Name="WeatherAir2" HorizontalAlignment="Left" Margin="468.995,37,0,-4.167" Width="186">
+                        <Label x:Name="w_label5" HorizontalAlignment="Left" Margin="6.165,38.5,0,0" Height="30" VerticalAlignment="Top" Content="风向/风力：东风1级" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,64,0,43" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold">
+                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,74,0,33" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -864,8 +868,8 @@
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
                             </Label>
-                            <Image x:Name="w_image3" Height="40" Margin="20,32,19.666,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
-                            <Label x:Name="w_label12" Content="23℃/29℃" Height="24.667" Margin="17,91,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
+                            <Image x:Name="w_image3" Height="40" Margin="26.5,42,26.166,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
+                            <Label x:Name="w_label12" Content="23℃/29℃" Height="24.667" Margin="17,101,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
                                 <Label.Foreground>
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
@@ -877,8 +881,8 @@
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
                             </Label>
-                            <Image x:Name="w_image4" Height="40" Margin="20,32,19.666,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
-                            <Label x:Name="w_label13" Content="25℃/31℃" Height="24.667" Margin="13,91,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
+                            <Image x:Name="w_image4" Height="40" Margin="23.083,42,22.749,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
+                            <Label x:Name="w_label13" Content="25℃/31℃" Height="24.667" Margin="13,101,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
                                 <Label.Foreground>
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
