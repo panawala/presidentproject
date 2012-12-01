@@ -6,7 +6,7 @@
       xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
       xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1300"
+      d:DesignHeight="1012" d:DesignWidth="1260"
 	Title="HomePage">
     <Page.Resources>
         <Color x:Key="#122122122">#FF7A7A7A</Color>
@@ -764,15 +764,15 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="65*"/>
-                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="0.667*"/>
+                <ColumnDefinition Width="0.3335*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="60*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Name="gridWeatherInfo" Margin="5,5,5,5">
+                <Grid Grid.Row="0" Name="gridWeatherInfo">
                     <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                         <Rectangle.Effect>
                             <DropShadowEffect/>
@@ -895,12 +895,12 @@
                         </Label.Foreground>
                     </Label>
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Margin="0,10,0,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.29*"/>
-                        <ColumnDefinition Width="0.71*"/>
+                        <ColumnDefinition Width="0.28*"/>
+                        <ColumnDefinition Width="0.72*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Margin="5,5,5,5">
+                    <Grid Grid.Column="0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                             <Rectangle.Effect>
                                 <DropShadowEffect/>
@@ -932,7 +932,7 @@
         			<SolidColorBrush Color="{DynamicResource #535353}"/>
         		</TextBlock.Foreground></TextBlock>
                     </Grid>
-                    <Grid Grid.Column="1" Name="gridWeather" Margin="5,5,5,5">
+                    <Grid Grid.Column="1" Name="gridWeather" Margin="10,0,0,0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                             <Rectangle.Effect>
                                 <DropShadowEffect/>
@@ -970,7 +970,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1" Name="gridEnvironment" Margin="5,5,5,5">
+            <Grid Grid.Column="1" Name="gridEnvironment" Margin="10,0,0,0">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                     <Rectangle.Effect>
                         <DropShadowEffect/>
@@ -1025,12 +1025,12 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,30,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="65*"/>
-                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="0.667*"/>
+                <ColumnDefinition Width="0.3335*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Name="gridEmergency" Margin="5,5,5,5">
+            <Grid Grid.Column="0" Name="gridEmergency">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                     <Rectangle.Effect>
                         <DropShadowEffect/>
@@ -1072,7 +1072,7 @@
                     </Label.Foreground>
                 </Label>
             </Grid>
-            <Grid Grid.Column="1" Name="gridTraffic" Margin="5,5,5,5">
+            <Grid Grid.Column="1" Name="gridTraffic" Margin="10,0,0,0">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                     <Rectangle.Effect>
                         <DropShadowEffect/>
