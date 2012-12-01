@@ -216,18 +216,6 @@
     <Compile Include="MaxPage\PageMaxWeather.xaml.cs">
       <DependentUpon>PageMaxWeather.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageMaxEmergency.xaml.cs">
-      <DependentUpon>PageMaxEmergency.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageMaxEnvironment.xaml.cs">
-      <DependentUpon>PageMaxEnvironment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageMaxTraffic.xaml.cs">
-      <DependentUpon>PageMaxTraffic.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageMaxWeather.xaml.cs">
-      <DependentUpon>PageMaxWeather.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PageShiGuZaiHai.xaml.cs">
       <DependentUpon>PageShiGuZaiHai.xaml</DependentUpon>
     </Compile>
@@ -318,22 +306,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MaxPage\PageMaxWeather.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PageMaxEmergency.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PageMaxEnvironment.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PageMaxTraffic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PageMaxWeather.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
