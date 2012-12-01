@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
-        Title="MainWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="SingleBorderWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="1080" Width="1920">
+        Title="MainWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="SingleBorderWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="1080" Width="1920" Foreground="{DynamicResource black}">
     <Window.Resources>
         <SolidColorBrush x:Key="leftcontentmenu1" Color="{DynamicResource #235235235}"/>
         <Color x:Key="s_side">#FF656560</Color>
@@ -249,6 +249,7 @@
             <Setter Property="Margin" Value="0"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
+        <SolidColorBrush x:Key="white" Color="WhiteSmoke"/>
     </Window.Resources>
     <Grid Name="LayoutRoot" >
         <Grid.Background>
@@ -259,7 +260,7 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="1285" />
             <ColumnDefinition Width="319" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Name="LeftContent" Margin="0,20,0,10">
@@ -267,7 +268,7 @@
                 <RowDefinition Height="328" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Rectangle IsEnabled="False" Stroke="#FF414141" RadiusY="8" RadiusX="8" Style="{DynamicResource RectangleStyle216}" VerticalAlignment="Stretch" Margin="0,0,0,51">
+            <Rectangle IsEnabled="False" Stroke="#FF414141" RadiusY="8" RadiusX="8" Style="{DynamicResource RectangleStyle216}" VerticalAlignment="Stretch" Grid.RowSpan="2">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
                 </Rectangle.Effect>
@@ -414,8 +415,12 @@
                             <StackPanel x:Name="Menu_1_1">
                                 <Grid Height="70">
                                     <Rectangle x:Name="MenuBg1" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
-                                    <Label x:Name="Menutext1" Content="发展状态" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource black}" Cursor="None"/>
-                                    <Button x:Name="Menu1Btn1" Content="Button" Click="Menu1Btn1_Click" Margin="20,10" Opacity="0" Cursor="Hand"/>
+                                    <Label x:Name="Menutext1" Content="发展状态" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Cursor="None" Foreground="{DynamicResource black}"/>
+                                    <Button x:Name="Menu1Btn1" Content="Button" Click="Menu1Btn1_Click" Margin="20,10" Opacity="0" Cursor="Hand">
+                                    	<Button.Foreground>
+                                    		<SolidColorBrush Color="White"/>
+                                    	</Button.Foreground>
+                                    </Button>
                                 </Grid>
                                 <StackPanel x:Name="Menu_1_1_1" Visibility="Collapsed">
                                     <Grid Height="70">
