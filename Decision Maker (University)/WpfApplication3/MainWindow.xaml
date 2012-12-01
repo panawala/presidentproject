@@ -259,9 +259,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="1285" />
-            <ColumnDefinition Width="319" />
+            <ColumnDefinition Width="292" />
+            <ColumnDefinition Width="1288.667" />
+            <ColumnDefinition Width="323" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Name="LeftContent" Margin="0,20,0,10">
             <Grid.RowDefinitions>
@@ -644,10 +644,10 @@
                 
             </Grid>
         </Grid>
-        <Grid Grid.Column="1" Name="MiddleContent" Margin="25,20,0,10">
+        <Grid Grid.Column="1" Name="MiddleContent" Margin="29,20,0,10">
             <Frame Name="FrameMiddleContent" NavigationUIVisibility="Hidden"/>
         </Grid>
-        <Grid Grid.Column="2" Name="RightContent" Margin="25,20,4,10">
+        <Grid Grid.Column="2" Name="RightContent" Margin="29,20,4,10">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="423.75"/>
