@@ -259,8 +259,8 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="310" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Name="LeftContent" Margin="0,20,0,10">
             <Grid.RowDefinitions>
@@ -639,15 +639,18 @@
                 
             </Grid>
         </Grid>
-        <Grid Grid.Column="1" Name="MiddleContent" Margin="0,20,0,10">
-            <Frame Name="FrameMiddleContent" Margin="10,0,10,0" NavigationUIVisibility="Hidden"></Frame>
+        <Grid Grid.Column="1" Name="MiddleContent" Margin="30,20,20,10">
+            <Frame Name="FrameMiddleContent" NavigationUIVisibility="Hidden"/>
         </Grid>
-        <Grid Grid.Column="2" Name="RightContent" Margin="0,20,0,10">
+        <Grid Grid.Column="2" Name="RightContent" Margin="10,20,10,10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="430"/>
+                <RowDefinition/>
+                <RowDefinition Height="423.75"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Name="News">
+            <Grid Grid.Row="0" Name="News" Margin="0,0,0,-10">
+            	<Grid.Effect>
+            		<DropShadowEffect/>
+            	</Grid.Effect>
                 <Rectangle RadiusX="8" RadiusY="8" Height="970" Style="{DynamicResource RectangleStyle1}">
                     <Rectangle.Effect>
                         <DropShadowEffect/>
@@ -721,7 +724,7 @@
                         </ComboBoxItem>
                     </ComboBox>
                 </Grid>
-                <Grid x:Name="RssNews" Width="286" HorizontalAlignment="Left" Margin="2,261.5,0,0">
+                <Grid x:Name="RssNews" Width="286" HorizontalAlignment="Left" Margin="2,261.5,0,10">
                     <ListView x:Name="Rsslist" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0" />
                 </Grid>
             </Grid>
@@ -736,7 +739,7 @@
                         <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
                         <Path Data="M0,3.1832315E-12 L176.74469,3.1832315E-12 191.99048,3.1832315E-12 C196.414,-3.8793896E-06 200,3.5817204 200,8.0000019 L199.94617,8.5333252 200,8.5333252 200,16.000004 191.99048,16.000004 176.74469,16.000004 0,16.000004 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="200"/>
                     </StackPanel>
-                    <GridSplitter Margin="90,38.333,0,0.5" Width="195" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
+                    <GridSplitter Margin="90,41.25,0,0.749" Width="195" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left"/>
                     <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
                     <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="22,0,0,6" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="14" FontFamily="Helvetica" Text="微  博" FontWeight="Bold">
             	<TextBlock.Foreground>
@@ -751,13 +754,13 @@
                     <Border x:Name="weibo_border" HorizontalAlignment="Right" Margin="0,10,26,0" Width="30" VerticalAlignment="Top" Height="30" Style="{DynamicResource ButtonFocusVisual}">
                         <Grid>
                             <Rectangle Fill="White" RadiusY="8" RadiusX="8" Height="30"/>
-                            <Path Data="M21.011086,17.817692 L18.182692,20.646086 21.142607,23.605999 23.971001,20.777607 z M14.290925,7.4920001 C10.701116,7.4920001 7.7909999,10.402115 7.7909999,13.991924 7.7909999,17.581734 10.701116,20.491848 14.290925,20.491848 17.880733,20.491848 20.79085,17.581734 20.79085,13.991924 20.79085,10.402115 17.880733,7.4920001 14.290925,7.4920001 z M8,0 L22,0 C26.418278,0 30,3.581722 30,8 L30,22 C30,26.418278 26.418278,30 22,30 L8,30 C3.581722,30 0,26.418278 0,22 L0,8 C0,3.581722 3.581722,0 8,0 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" />
                             <Ellipse Margin="10.791,10.492,12.209,0" StrokeThickness="4" VerticalAlignment="Top" Height="7" Fill="{DynamicResource bluegredient}"/>
-                            <Button x:Name="weibo_search" Content="Button" Opacity="0" Click="weibo_search_Click" Cursor="Hand"/>
+                            <Path Data="M21.011086,17.817692 L18.182692,20.646086 21.142607,23.605999 23.971001,20.777607 z M14.290925,7.4920001 C10.701116,7.4920001 7.7909999,10.402115 7.7909999,13.991924 7.7909999,17.581734 10.701116,20.491848 14.290925,20.491848 17.880733,20.491848 20.79085,17.581734 20.79085,13.991924 20.79085,10.402115 17.880733,7.4920001 14.290925,7.4920001 z M8,0 L22,0 C26.418278,0 30,3.581722 30,8 L30,22 C30,26.418278 26.418278,30 22,30 L8,30 C3.581722,30 0,26.418278 0,22 L0,8 C0,3.581722 3.581722,0 8,0 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" />
+                            <Button x:Name="weibo_search" Content="Button" Click="weibo_search_Click" Cursor="Hand" Opacity="0"/>
                         </Grid>
                     </Border>
                 </Grid>
-                <WebBrowser Width="276" x:Name="wb_weibo" HorizontalAlignment="Left" Margin="14,0,0,6" Height="311" VerticalAlignment="Bottom" />
+                <WebBrowser Width="276" x:Name="wb_weibo" HorizontalAlignment="Left" Margin="8,0,0,11" Height="298" VerticalAlignment="Bottom" />
             </Grid>
         </Grid>
     </Grid>

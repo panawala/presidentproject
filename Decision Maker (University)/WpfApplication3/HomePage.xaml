@@ -897,8 +897,8 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30*"/>
-                        <ColumnDefinition Width="70*"/>
+                        <ColumnDefinition Width="0.29*"/>
+                        <ColumnDefinition Width="0.71*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" Margin="5,5,5,5">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
