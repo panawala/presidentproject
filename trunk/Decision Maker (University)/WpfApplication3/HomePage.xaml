@@ -6,7 +6,8 @@
       xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
       xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
       mc:Ignorable="d" 
-      d:DesignHeight="1012" d:DesignWidth="1260"
+      d:DesignHeight="977" d:DesignWidth="1265
+	  "
 	Title="HomePage" Foreground="{x:Null}">
     <Page.Resources>
         <Color x:Key="#122122122">#FF7A7A7A</Color>
@@ -759,20 +760,20 @@
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="491"/>
+            <RowDefinition Height="486"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Margin="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.667*"/>
-                <ColumnDefinition Width="0.3335*"/>
+                <ColumnDefinition Width="850"/>
+                <ColumnDefinition Width="410"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Margin="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="202.4"/>
-                    <RowDefinition Height="303.6"/>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="338"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Name="gridWeatherInfo">
+                <Grid Grid.Row="0" Name="gridWeatherInfo" Margin="0,0,10,0">
                     <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                         <Rectangle.Effect>
                             <DropShadowEffect/>
@@ -809,7 +810,7 @@
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label3" HorizontalAlignment="Center" Height="24.667" Margin="0,0,0,35.5" VerticalAlignment="Bottom" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold">
+                        <Label x:Name="w_label3" Height="24.667" Margin="25.04,80,27.04,0" VerticalAlignment="Top" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold" d:LayoutOverrides="Width" HorizontalAlignment="Center">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -822,7 +823,7 @@
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label6" Margin="7,75,0,62" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
+                        <Label x:Name="w_label6" Margin="7,75,0,62" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -837,7 +838,7 @@
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,74,0,33" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold" FontSize="14">
+                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,74,0,33" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -868,8 +869,8 @@
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
                             </Label>
-                            <Image x:Name="w_image3" Height="40" Margin="26.5,42,26.166,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
-                            <Label x:Name="w_label12" Content="23℃/29℃" Height="24.667" Margin="17,101,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
+                            <Image x:Name="w_image3" Height="40" Margin="26.5,22,26.166,0" Stretch="Fill" VerticalAlignment="Top" Width="40" RenderTransformOrigin="1,0.5" d:LayoutOverrides="VerticalAlignment, HorizontalMargin"/>
+                            <Label x:Name="w_label12" Content="23℃/29℃" Height="24.667" Margin="17,81,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
                                 <Label.Foreground>
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
@@ -881,8 +882,8 @@
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
                             </Label>
-                            <Image x:Name="w_image4" Height="40" Margin="23.083,42,22.749,0" Stretch="Fill" VerticalAlignment="Top" Width="40"/>
-                            <Label x:Name="w_label13" Content="25℃/31℃" Height="24.667" Margin="13,101,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
+                            <Image x:Name="w_image4" Height="40" Margin="23.083,22,22.749,0" Stretch="Fill" VerticalAlignment="Top" Width="40" d:LayoutOverrides="VerticalAlignment, HorizontalMargin"/>
+                            <Label x:Name="w_label13" Content="25℃/31℃" Height="24.667" Margin="13,81,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" FontFamily="Helvetica" FontWeight="Bold">
                                 <Label.Foreground>
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </Label.Foreground>
@@ -899,10 +900,10 @@
                         </Label.Foreground>
                     </Label>
                 </Grid>
-                <Grid Grid.Row="1" Margin="0,10,0,0">
+                <Grid Grid.Row="1" Margin="0,10,0,20">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.28*"/>
-                        <ColumnDefinition Width="0.72*"/>
+                        <ColumnDefinition Width="235"/>
+                        <ColumnDefinition Width="614.667"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -936,7 +937,7 @@
         			<SolidColorBrush Color="{DynamicResource #535353}"/>
         		</TextBlock.Foreground></TextBlock>
                     </Grid>
-                    <Grid Grid.Column="1" Name="gridWeather" Margin="10,0,0,0">
+                    <Grid Grid.Column="1" Name="gridWeather" Margin="10,0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                             <Rectangle.Effect>
                                 <DropShadowEffect/>
@@ -963,7 +964,7 @@
                         <Grid Height="40.834" VerticalAlignment="Top">
                             <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
                                 <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
-                                <Path Data="M0,7.0485839E-12 L481.74469,7.0485839E-12 496.99048,7.0485839E-12 C501.414,-5.786743E-06 505,3.5817193 505,8.0000013 L504.94617,8.5333246 505,8.5333246 505,16.000003 496.99048,16.000003 481.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="505"/>
+                                <Path Data="M0,7.0485839E-12 L481.74469,7.0485839E-12 496.99048,7.0485839E-12 C501.414,-5.786743E-06 505,3.5817193 505,8.0000013 L504.94617,8.5333246 505,8.5333246 505,16.000003 496.99048,16.000003 481.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="504.75"/>
                             </StackPanel>
                             <GridSplitter Margin="90,38.333,0,0.5" Width="489" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
                             <GridSplitter Margin="665,38.75,0,0.084" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left"/>
@@ -974,7 +975,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1" Name="gridEnvironment" Margin="10,0,0,0">
+            <Grid Grid.Column="1" Name="gridEnvironment" Margin="0,0,0,5">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
                     <Rectangle.Effect>
                         <DropShadowEffect/>
@@ -1029,10 +1030,10 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1" Margin="0,30,0,0">
+        <Grid Grid.Row="1" Margin="0,25,5,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.667*"/>
-                <ColumnDefinition Width="0.3335*"/>
+                <ColumnDefinition Width="840"/>
+                <ColumnDefinition Width="420"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Name="gridEmergency">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
