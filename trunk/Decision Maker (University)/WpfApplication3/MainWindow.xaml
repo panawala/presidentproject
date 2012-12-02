@@ -649,7 +649,7 @@
         </Grid>
         <Grid Grid.Column="2" Name="RightContent" Margin="24,30,4,40">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="548.25"/>
                 <RowDefinition Height="423.75"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Name="News" Margin="0,0,0,-10">

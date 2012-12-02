@@ -6,7 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1300"
+      d:DesignHeight="977" d:DesignWidth="1265"
 	Title="PageShiGuZaiHai">
     <Page.Resources>
         <Color x:Key="#535353">#FF353535</Color>
@@ -54,9 +54,9 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <Grid Margin="5,5,5,5">
+    <Grid>
         <Grid x:Name="grid_TuFaShiJian_ZiRanZaiHai" Visibility="Visible">
-            <Grid x:Name="grid_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Height="485">
+            <Grid x:Name="grid_ZiRanZaiHai_ShiJianGaiKuang" VerticalAlignment="Top" Height="485" Margin="0,0,5,0">
                 <Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="{DynamicResource #235235235}"/>
@@ -117,7 +117,7 @@
                 </Grid>
             </Grid>
             <Grid Height="465" HorizontalAlignment="Left" Margin="0,505,0,0" x:Name="grid_ZiRanZaiHai_tabcontrol" VerticalAlignment="Top" Width="625" >
-                <Rectangle RadiusY="16" RadiusX="16" StrokeThickness="2">
+                <Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="{DynamicResource #235235235}"/>
                     </Rectangle.Fill>
@@ -212,7 +212,7 @@
                         <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="组织实施" Margin="6,0,0,0"><TextBlock.Foreground>
                     				<SolidColorBrush Color="{DynamicResource #535353}"/>
                     			</TextBlock.Foreground></TextBlock>
-                        <Button x:Name="btn_zzss" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_zzss_Click"/>
+                        <Button x:Name="btn_zzss" Content="Button" Opacity="0" Cursor="Hand" Click="btn_zzss_Click" VerticalAlignment="Top"/>
                     </Grid>
                     <Grid Height="21.837" Margin="0,8,151.948,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64.292">
                         <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="扑救办法" Margin="3,0,0,0"><TextBlock.Foreground>
@@ -229,7 +229,7 @@
                 </Grid>
             </Grid>
             <Grid Height="465" HorizontalAlignment="Left" Margin="635,505,0,0" x:Name="grid_ZiRanZaiHai_YuAnQiDong" VerticalAlignment="Top" Width="625">
-                <Rectangle RadiusY="15" RadiusX="15" StrokeThickness="2">
+                <Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="{DynamicResource #235235235}"/>
                     </Rectangle.Fill>
