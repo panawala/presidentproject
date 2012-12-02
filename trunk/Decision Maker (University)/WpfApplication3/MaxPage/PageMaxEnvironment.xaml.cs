@@ -27,7 +27,8 @@ namespace WpfApplication3
             DirectoryInfo di;
             di = new DirectoryInfo(System.Environment.CurrentDirectory);
             strPATH = di.Parent.Parent.FullName;
-            webBrowsermaxenvironment.Navigate(new Uri(strPATH + @"/html/PM25.htm", UriKind.RelativeOrAbsolute));
+            //webBrowsermaxenvironment.Navigate(new Uri(strPATH + @"/html/PM25.htm", UriKind.RelativeOrAbsolute));
+            webBrowsermaxenvironment.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
         }
 
         private void btn_minenvironment_Click(object sender, RoutedEventArgs e)

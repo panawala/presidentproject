@@ -33,6 +33,10 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -607,11 +611,14 @@
     <Resource Include="CutImages\图像\yingjiyuan-07.png" />
     <Resource Include="CutImages\图像\yingjiyuan1-07.png" />
     <Resource Include="CutImages\图像\yuan_bg-07.png" />
+    <Content Include="html\tufashijian.html" />
     <Content Include="html\GoogleCalendar.htm" />
+    <Content Include="html\GreenDetect.htm" />
     <Content Include="html\MaxEmergency.htm" />
     <Content Include="html\PM25.htm" />
     <Content Include="html\Stylesheet1.css" />
     <Content Include="html\weibo.htm" />
+    <Content Include="html\xiaoyuanhuodong.htm" />
     <Content Include="html\zhiboCCTV13.htm" />
     <Content Include="html\zhiboCCTV5.htm" />
     <Content Include="html\zhiboDongfangweishi.htm" />

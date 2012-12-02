@@ -32,7 +32,8 @@ namespace WpfApplication3
             di = new DirectoryInfo(System.Environment.CurrentDirectory);
             strPATH = di.Parent.Parent.FullName;
             ds = new EmergencyBasic();
-            webBrowsermaxmap.Navigate(new Uri(strPATH + @"/html/MaxEmergency.htm", UriKind.RelativeOrAbsolute));
+            //webBrowsermaxmap.Navigate(new Uri(strPATH + @"/html/MaxEmergency.htm", UriKind.RelativeOrAbsolute));
+            webBrowsermaxmap.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
             webBrowsermaxmap.ObjectForScripting = ds;
         }
 
@@ -65,6 +66,25 @@ namespace WpfApplication3
             public string Tel { get; set; }
 
         }
+
+        /// <summary>
+        /// 绿色检测,数据契约
+        /// </summary>
+        [DataContract]
+        public class GreenDetect
+        {
+            [DataMember(Order = 1)]
+            public double Longitude { get; set; }
+            [DataMember(Order = 2)]
+            public double Latitude { get; set; }
+            [DataMember(Order = 3)]
+            public string Name { get; set; }
+            [DataMember(Order = 4)]
+            public string Water { get; set; }
+            [DataMember(Order = 5)]
+            public string Energy { get; set; }
+        }
+
         public EmergencyBasic ds;
         [System.Runtime.InteropServices.ComVisibleAttribute(true)]//将该类设置为com可访问
         public class EmergencyBasic
@@ -77,6 +97,52 @@ namespace WpfApplication3
             }
             public void ClickEvent(string strlocation)
             {
+
+                if (strlocation.Equals("绿色监测"))
+                {
+                    List<GreenDetect> m_greenDetectlist = new List<GreenDetect> { 
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.508837,
+                    Energy="23",
+                    Water="23",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.289236,
+                    Longitude=121.505837,
+                    Energy="23",
+                    Water="23",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.506837,
+                    Energy="23",
+                    Water="23",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.287236,
+                    Longitude=121.508837,
+                    Energy="23",
+                    Water="23",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.286236,
+                    Longitude=121.507837,
+                    Energy="23",
+                    Water="23",
+                    Name="水耗能耗"
+                    },
+                    };
+
+                    strlocation = ToJsJson(m_greenDetectlist);
+                    this.Name = strlocation;
+                    return;
+                }
+
                 int ijudge = 0;
                 if (strlocation == "突发事件")
                     ijudge = 1;
