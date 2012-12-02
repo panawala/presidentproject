@@ -243,14 +243,14 @@
                 <StackPanel Orientation="Horizontal" d:LayoutOverrides="Width" Margin="50,80,0,0" VerticalAlignment="Top">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="110" Margin="0,40,0,0">
                         <Grid Height="40">
-                            <Image x:Name="Img_dengji1" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
+                            <Image x:Name="Img_dengji1" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill" Height="40" VerticalAlignment="Bottom" Visibility="Collapsed"/>
                             <Image x:Name="ImgGreen_dengji1" Source="CutImages/图像/button_click-07.png" Stretch="Fill" Margin="3,3,4,4" Visibility="Collapsed"/>
-                            <TextBlock x:Name="Txt_dengji1" TextWrapping="Wrap" Text="Ⅰ级（特大）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold">
+                            <TextBlock x:Name="Txt_dengji1" TextWrapping="Wrap" Text="Ⅰ级（特大）" d:LayoutOverrides="Width" TextAlignment="Center" Padding="0,12,0,0" FontFamily="Helvetica" FontWeight="Bold" Visibility="Collapsed">
                     				<TextBlock.Foreground>
                     					<SolidColorBrush Color="{DynamicResource #235235235}"/>
                     				</TextBlock.Foreground>
                             </TextBlock>
-                            <Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji1" Opacity="0" Cursor="Hand" Click="btn_dengji1_Click" />
+                            <Button Content="Ⅰ级（特别重大）" Height="38" x:Name="btn_dengji1" Cursor="Hand" Click="btn_dengji1_Click" Style="{DynamicResource BtnGreenNormal}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" />
                         </Grid>
                         <Grid Height="40" Margin="0,30,0,0">
                             <Image x:Name="Img_dengji2" Source="CutImages/图像/button_unclick-07.png" Stretch="Fill"/>
