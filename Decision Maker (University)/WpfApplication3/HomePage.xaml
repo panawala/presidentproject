@@ -990,7 +990,7 @@
                     <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
 
                 </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="7.331,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="PM2.5监测" FontWeight="Bold"><TextBlock.Foreground>
+                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="7.331,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="突发事件" FontWeight="Bold"><TextBlock.Foreground>
         			<SolidColorBrush Color="{DynamicResource #535353}"/>
         		</TextBlock.Foreground></TextBlock>
                 <Image x:Name="w_imageWeather" HorizontalAlignment="Left" Margin="21,44,20,0" Width="444" RenderTransformOrigin="0.5,0.5" Height="336" VerticalAlignment="Top" Panel.ZIndex="1" Visibility="Collapsed">
@@ -1051,7 +1051,7 @@
                     <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
 
                 </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.837,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57.5" FontSize="14" FontFamily="Helvetica" Text="突发事件" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.837,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57.5" FontSize="14" FontFamily="Helvetica" Text="绿色监测" FontWeight="Bold">
             	<TextBlock.Foreground>
             		<SolidColorBrush Color="{DynamicResource #535353}"/>
             	</TextBlock.Foreground>
@@ -1092,7 +1092,7 @@
                     <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
 
                 </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.494,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="城市交通" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.494,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="校园活动" FontWeight="Bold">
             	<TextBlock.Foreground>
             		<SolidColorBrush Color="{DynamicResource #535353}"/>
             	</TextBlock.Foreground>
