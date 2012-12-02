@@ -258,5 +258,10 @@ namespace WpfApplication3.Communicate
                 this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection();
             this.InkCanvasAnnotation1.IsEnabled = true;
         }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("发送成功！");
+        }
     }
 }

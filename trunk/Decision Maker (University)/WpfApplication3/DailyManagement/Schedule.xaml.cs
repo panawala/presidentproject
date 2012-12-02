@@ -32,6 +32,42 @@ namespace WpfApplication3.DailyManagement
             webBrowser_GoogleCalendar.Navigate(new Uri(strPATH + @"/html/GoogleCalendar.htm", UriKind.RelativeOrAbsolute));
         }
 
+        private void comboBox1_DropDownClosed(object sender, EventArgs e)
+        {
+            ComboBox m_ComboBox = (ComboBox)sender;
+            for (int i = 1; i < m_ComboBox.Items.Count - 1; i++)
+            {
+                CheckBox m_CheckBox = (CheckBox)m_ComboBox.Items[i];
+                if ((bool)m_CheckBox.IsChecked && listboxSend.Items.IndexOf(m_CheckBox.Content.ToString()) == -1)
+                    listboxSend.Items.Add(m_CheckBox.Content.ToString());
+                else if (!(bool)m_CheckBox.IsChecked && listboxSend.Items.IndexOf(m_CheckBox.Content.ToString()) != -1)
+                    listboxSend.Items.Remove(m_CheckBox.Content.ToString());
+            }
+
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ComboBox m_ComboBox = (ComboBox)((CheckBox)sender).Parent;
+            for (int i = 1; i < m_ComboBox.Items.Count - 1; i++)
+            {
+                ((CheckBox)m_ComboBox.Items[i]).IsChecked = true;
+            }
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ComboBox m_ComboBox = (ComboBox)((CheckBox)sender).Parent;
+            for (int i = 1; i < m_ComboBox.Items.Count - 1; i++)
+            {
+                ((CheckBox)m_ComboBox.Items[i]).IsChecked = false;
+            }
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("发送成功！");
+        }
    
     }
 }

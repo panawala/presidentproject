@@ -267,7 +267,7 @@
 
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button Name="btnSend" Content="发送" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Button Name="btnSend" Content="发送" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Click="btnSend_Click" />
                 </Grid>
             </Grid>
             <Grid Grid.Row="2" Margin="5,5,5,5" Background="#FFEBEBEB">
