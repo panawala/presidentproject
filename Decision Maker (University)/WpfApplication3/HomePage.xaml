@@ -796,8 +796,8 @@
                     		<ColumnDefinition Width="0.605*"/>
                     		<ColumnDefinition Width="0.395*"/>
                     	</Grid.ColumnDefinitions>
-                        <Image x:Name="w_image1" Margin="0,45.4,0,0" Stretch="Fill" VerticalAlignment="Top" Height="55" Grid.Column="1" Width="55" HorizontalAlignment="Left"/>
-                        <Label x:Name="w_label1" Margin="0,55.667,0,78.733" FontSize="14" Content="多云转阵雨" FontWeight="Bold" HorizontalAlignment="Center">
+                        <Image x:Name="w_image1" Margin="2,35.4,0,0" Stretch="Fill" VerticalAlignment="Top" Height="55" Grid.Column="1" Width="55" HorizontalAlignment="Left"/>
+                        <Label x:Name="w_label1" FontSize="14" Content="多云转阵雨" FontWeight="Bold" HorizontalAlignment="Center" d:LayoutOverrides="Height" VerticalAlignment="Center" Margin="0,-3,0,0">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -805,12 +805,12 @@
                     </Grid>
                     <GridSplitter HorizontalAlignment="Left" Margin="123,15,0,15" Width="2" d:IsHidden="True" Visibility="Collapsed"/>
                     <Grid x:Name="WeatherTemp" HorizontalAlignment="Left" Width="161" Margin="162.663,50.5,0,8">
-                        <Label x:Name="w_label2" HorizontalAlignment="Left" Height="67" Margin="6,10,0,0" VerticalAlignment="Top" FontSize="60" Content="14℃" FontFamily="Helvetica" FontWeight="Bold">
+                        <Label x:Name="w_label2" HorizontalAlignment="Left" Height="67" Margin="6,8,0,0" VerticalAlignment="Top" FontSize="60" Content="14℃" FontFamily="Helvetica" FontWeight="Bold">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label3" Height="24.667" Margin="25.04,80,27.04,0" VerticalAlignment="Top" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold" d:LayoutOverrides="Width" HorizontalAlignment="Center">
+                        <Label x:Name="w_label3" Height="24.667" Margin="25.04,78,27.04,0" VerticalAlignment="Top" FontSize="11" Content="上次监测：15:28:30" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Center">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -823,7 +823,7 @@
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label6" Margin="7,75,0,62" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
+                        <Label x:Name="w_label6" Margin="7,75,0,0" HorizontalAlignment="Left" Content="空气质量：良" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
@@ -838,7 +838,7 @@
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
                         </Label>
-                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,74,0,33" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
+                        <Label x:Name="w_label7" HorizontalAlignment="Left" Margin="6,74,0,0" Content="紫外线强度：最弱" FontFamily="Helvetica" FontWeight="Bold" FontSize="14" VerticalAlignment="Top">
                             <Label.Foreground>
                                 <SolidColorBrush Color="{DynamicResource #535353}"/>
                             </Label.Foreground>
