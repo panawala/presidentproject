@@ -781,7 +781,7 @@
                     </Rectangle>
                     <Grid Height="40.834" VerticalAlignment="Top">
                         <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                            <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
+                            <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Stretch="Fill" Width="80" Fill="{DynamicResource GreenGredient}"/>
 
                             <Path Data="M0,1.0572876E-11 L726.74463,1.0572876E-11 741.99042,1.0572876E-11 C746.41394,-7.0980515E-06 749.99994,3.5817174 749.99994,7.9999989 L749.94611,8.5333222 749.99994,8.5333222 749.99994,15.999998 741.99042,15.999998 726.74463,15.999998 0,15.999998 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="750" Margin="10,0,0,0" />
                         </StackPanel>
@@ -963,7 +963,7 @@
                         </Grid>
                         <Grid Height="40.834" VerticalAlignment="Top">
                             <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                                <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
+                                <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource GreenGredient}" Stretch="Fill" Width="80"/>
                                 <Path Data="M0,7.0485839E-12 L481.74469,7.0485839E-12 496.99048,7.0485839E-12 C501.414,-5.786743E-06 505,3.5817193 505,8.0000013 L504.94617,8.5333246 505,8.5333246 505,16.000003 496.99048,16.000003 481.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="504.75"/>
                             </StackPanel>
                             <GridSplitter Margin="90,38.333,0,0.5" Width="489" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
@@ -983,7 +983,7 @@
                 </Rectangle>
                 <Grid Height="40.834" VerticalAlignment="Top">
                     <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                        <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
+                        <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource GreenGredient}" Stretch="Fill" Width="80"/>
                         <Path Data="M0,7.0485839E-12 L296.74469,7.0485839E-12 311.99048,7.0485839E-12 C316.414,-5.786743E-06 320,3.5817193 320,8.0000013 L319.94617,8.5333246 320,8.5333246 320,16.000003 311.99048,16.000003 296.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="320"/>
                     </StackPanel>
                     <GridSplitter Margin="90,38.333,0,0.5" Width="310" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalMargin"/>
