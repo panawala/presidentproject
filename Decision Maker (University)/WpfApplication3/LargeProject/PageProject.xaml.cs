@@ -43,7 +43,7 @@ namespace WpfApplication3.LargeProject
             percentList = new List<double> { 0.3, 0.4, 0.2, 0.1 };
             actualPercentList = new List<double> { 0.2, 0.2, 0.1, 0.05 };
 
-            ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.png", UriKind.Relative));
+            ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.jpg", UriKind.Relative));
             CurrentSence.Source = new BitmapImage(new Uri("/Images/sence.png", UriKind.Relative));
             ImageSolution.Source = new BitmapImage(new Uri("/Images/solute.png", UriKind.Relative));
             image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
