@@ -575,6 +575,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\construct.jpg" />
     <Resource Include="Images\ImageVideo1.jpg" />
     <Resource Include="Images\ImageVideo3.jpg" />
     <Resource Include="Images\logo_tongji.jpg" />
