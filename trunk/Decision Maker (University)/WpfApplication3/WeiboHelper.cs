@@ -13,7 +13,7 @@ namespace WpfApplication3
         string html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><!-- saved from url=(0014)about:internet -->\r\n<html xmlns:wb=\"http://open.weibo.com/wb\">";
         string script = "<head><script src=\"http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=\" type=\"text/javascript\" charset=\"utf-8\"></script></head><title>微博直播</title>";
         string body ="<body style=\"margin-left:-20px;margin-top:-20px;\" scroll=\"no\" >";
-		string frame1 ="<iframe frameborder=\"0\" skin=\"4\" scrolling=\"no\" style=\"width:278px;height:420px;background-color=#353535;\" src=\"http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=278&height=310&uid=2389517080&skin=10&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=0&atalk=1&recomm=0&at=0&atopic=";
+		string frame1 ="<iframe frameborder=\"0\" scrolling=\"no\" style=\"width:278px;height:420px;\" src=\"http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=278&height=310&uid=2389517080&skin=4&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=0&atalk=1&recomm=0&at=0&atopic=";
         string frame2 = "&colordiy=0&dpc=1\"></iframe>";
         string end ="</body></html>";
         public void settopic(string topic) {

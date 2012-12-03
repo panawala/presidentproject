@@ -770,8 +770,8 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="168"/>
-                    <RowDefinition Height="338"/>
+                    <RowDefinition Height="0.412*"/>
+                    <RowDefinition Height="0.66798418972332*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Name="gridWeatherInfo" Margin="0,0,10,0">
                     <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -900,7 +900,7 @@
                         </Label.Foreground>
                     </Label>
                 </Grid>
-                <Grid Grid.Row="1" Margin="0,10,0,20">
+                <Grid Grid.Row="1" Margin="0,10,0,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.276*"/>
                         <ColumnDefinition Width="0.7224*"/>
