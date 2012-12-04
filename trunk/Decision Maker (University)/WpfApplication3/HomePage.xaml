@@ -757,6 +757,35 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="LabelStyle" TargetType="{x:Type Label}">
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type Label}">
+        				<Grid>
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition Width="89.498"/>
+        						<ColumnDefinition/>
+        					</Grid.ColumnDefinitions>
+        					<Grid Margin="0,0,10,0.53">
+        						<Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Height="16" VerticalAlignment="Top"/>
+        						<Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Margin="3.663,0,0.275,0" Height="9.668" VerticalAlignment="Bottom" />
+        					</Grid>
+        					<Grid Margin="0,0,0,0.53" Grid.Column="1">
+        						<Grid.ColumnDefinitions>
+        							<ColumnDefinition/>
+        						</Grid.ColumnDefinitions>
+        						<Path Grid.ColumnSpan="1" Grid.Column="0" Data="M0,3.0013325E-11 L1.6560059,3.0013325E-11 C6.0814209,-1.1935911E-05 9.6689453,3.5817131 9.6689453,7.9999956 L9.6151123,8.5333151 9.6689453,8.5333151 9.6689453,15.999991 1.6560059,15.999991 0,15.999991 z" Fill="#FF7A7A7A" HorizontalAlignment="Right" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="9.638"/>
+        						<Rectangle Grid.Column="0" Fill="#FF7A7A7A" HorizontalAlignment="Stretch" Height="16" Margin="0,0,8,0" VerticalAlignment="Top" Width="Auto" Grid.ColumnSpan="1"/>
+        						<GridSplitter Margin="0,38.569,216.553,0.265" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Stretch"/>
+        						<GridSplitter Margin="0,38.834,111,0" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Right"/>
+        						<GridSplitter Margin="663.25,38.834,19,0" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Right"/>
+        					</Grid>
+        					<ContentPresenter Grid.ColumnSpan="1" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,10,0"/>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -779,18 +808,6 @@
                             <DropShadowEffect/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Height="40.834" VerticalAlignment="Top">
-                        <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                            <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Stretch="Fill" Width="80" Fill="{DynamicResource GreenGredient}"/>
-
-                            <Path Data="M0,1.0572876E-11 L726.74463,1.0572876E-11 741.99042,1.0572876E-11 C746.41394,-7.0980515E-06 749.99994,3.5817174 749.99994,7.9999989 L749.94611,8.5333222 749.99994,8.5333222 749.99994,15.999998 741.99042,15.999998 726.74463,15.999998 0,15.999998 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="750" Margin="10,0,0,0" />
-                        </StackPanel>
-                        <GridSplitter Margin="90,38.333,0,0.5" Width="533.5" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
-                        <GridSplitter Margin="657.5,38.75,0,0.084" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left"/>
-                        <GridSplitter Margin="753,38.833,0,0" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
-                        <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                    </Grid>
                     <Grid x:Name="WeatherToday" HorizontalAlignment="Left" Width="152" Margin="0,36,0,0">
                     	<Grid.ColumnDefinitions>
                     		<ColumnDefinition Width="0.605*"/>
@@ -891,14 +908,12 @@
                         </Grid>
 
                     </Grid>
-                    <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="21.364,17.375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37.333" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
-            		<SolidColorBrush Color="{DynamicResource #535353}"/>
-            	</TextBlock.Foreground><Run Language="zh-cn" Text="天"/><Run Text="  "/><Run Language="zh-cn" Text="气"/></TextBlock>
                     <Label x:Name="w_label0" Content="11月2日" HorizontalAlignment="Left" Height="24.5" Margin="315,16.498,0,0" VerticalAlignment="Top" Width="73" FontFamily="Helvetica" FontWeight="Bold">
                         <Label.Foreground>
                             <SolidColorBrush Color="{DynamicResource #535353}"/>
                         </Label.Foreground>
                     </Label>
+                    <Label Content="天气" VerticalAlignment="Top" Style="{DynamicResource LabelStyle}" FontFamily="Helvetica" FontWeight="Bold"/>
                 </Grid>
                 <Grid Grid.Row="1" Margin="0,10,0,5">
                     <Grid.ColumnDefinitions>

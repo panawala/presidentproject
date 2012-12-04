@@ -513,5 +513,55 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+		<Style x:Key="CheckBoxTongzhi" TargetType="{x:Type CheckBox}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type CheckBox}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.266*"/>
+								<ColumnDefinition Width="0.455*"/>
+								<ColumnDefinition Width="0.279*"/>
+							</Grid.ColumnDefinitions>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CheckStates">
+									<VisualState x:Name="Checked">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+												<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+											</ColorAnimationUsingKeyFrames>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path">
+												<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Unchecked"/>
+									<VisualState x:Name="Indeterminate"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Ellipse x:Name="ellipse" StrokeThickness="2" HorizontalAlignment="Center" Height="8" Width="8" VerticalAlignment="Center">
+								<Ellipse.Effect>
+									<DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="{DynamicResource #122122122}"/>
+								</Ellipse.Effect>
+								<Ellipse.Fill>
+									<SolidColorBrush Color="{DynamicResource white}"/>
+								</Ellipse.Fill>
+							</Ellipse>
+							<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6">
+								<Path x:Name="path" Data="M14.543,9.9709995 L19.543,9.9709995 19.543,14.970999 14.543,14.970999 z M0,4.9274995 L5,4.9274995 5,9.9274995 0,9.9274995 z M9.7090001,2.0829997 L10.709,2.0829997 13.709,2.0829997 13.709,3.0829997 10.709,3.0829997 10.709,12.083 13.709,12.083 13.709,13.083 10.709,13.083 9.7090001,13.083 9.7090001,12.083 9.7090001,7.9369996 6.0670004,7.9369996 6.0670004,6.9369996 9.7090001,6.9369996 9.7090001,3.0829997 z M14.543,0 L19.543,0 19.543,4.9999998 14.543,4.9999998 z" HorizontalAlignment="Stretch" Height="Auto" Margin="1.933,1.709,3.524,3.32" Stretch="Fill" StrokeThickness="2" VerticalAlignment="Stretch" Width="Auto">
+									<Path.Effect>
+										<DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="#FF878787"/>
+									</Path.Effect>
+									<Path.Fill>
+										<SolidColorBrush Color="{DynamicResource white}"/>
+									</Path.Fill>
+								</Path>
+							</Grid>
+							<ContentPresenter RecognizesAccessKey="True" Grid.Column="1" d:LayoutOverrides="Width" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
 	</Application.Resources>
 </Application>

@@ -275,11 +275,47 @@
             						<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
             					</Path.Fill>
             				</Path>
-            				<ListBox Margin="21.179,37.097,23.85,15.569" Background="{x:Null}" BorderBrush="{x:Null}">
-            					<ListBoxItem Content="通知领导层" Style="{DynamicResource ListBoxItemTongzhi}"/>
-            					<ListBoxItem Content="通知预案人员" Style="{DynamicResource ListBoxItemTongzhi}" Margin="0,40,0,0"/>
-            					<ListBoxItem Content="ListBoxItem" Style="{DynamicResource ListBoxItemTongzhi}" Margin="0,40,0,0"/>
-            				</ListBox>
+            				<Grid Margin="34,39.333,30,39.333">
+            					<Grid.RowDefinitions>
+            						<RowDefinition Height="171.334"/>
+            					</Grid.RowDefinitions>
+            					<CheckBox Content="通知领导层" Style="{DynamicResource CheckBoxTongzhi}" FontFamily="Helvetica" FontWeight="Bold" Height="31.938" VerticalAlignment="Top" Margin="0,6.003,0,0">
+            						<VisualStateManager.VisualStateGroups>
+            							<VisualStateGroup x:Name="SelectionStates">
+            								<VisualStateGroup.Transitions>
+            									<VisualTransition GeneratedDuration="0"/>
+            								</VisualStateGroup.Transitions>
+            								<VisualState x:Name="Unselected"/>
+            								<VisualState x:Name="Selected"/>
+            								<VisualState x:Name="SelectedUnfocused"/>
+            							</VisualStateGroup>
+            						</VisualStateManager.VisualStateGroups>
+            					</CheckBox>
+            					<CheckBox Content="通知预案人员" Style="{DynamicResource CheckBoxTongzhi}" FontFamily="Helvetica" FontWeight="Bold" Margin="0,68.646,0,70.662" Width="166" HorizontalAlignment="Center">
+            						<VisualStateManager.VisualStateGroups>
+            							<VisualStateGroup x:Name="SelectionStates1">
+            								<VisualStateGroup.Transitions>
+            									<VisualTransition GeneratedDuration="0"/>
+            								</VisualStateGroup.Transitions>
+            								<VisualState x:Name="Unselected1"/>
+            								<VisualState x:Name="Selected1"/>
+            								<VisualState x:Name="SelectedUnfocused1"/>
+            							</VisualStateGroup>
+            						</VisualStateManager.VisualStateGroups>
+            					</CheckBox>
+            					<CheckBox Content="通知预案机构" Style="{DynamicResource CheckBoxTongzhi}" FontFamily="Helvetica" FontWeight="Bold" Margin="0,0,0,8" Height="32.026" VerticalAlignment="Bottom">
+            						<VisualStateManager.VisualStateGroups>
+            							<VisualStateGroup x:Name="SelectionStates2">
+            								<VisualStateGroup.Transitions>
+            									<VisualTransition GeneratedDuration="0"/>
+            								</VisualStateGroup.Transitions>
+            								<VisualState x:Name="Unselected2"/>
+            								<VisualState x:Name="Selected2"/>
+            								<VisualState x:Name="SelectedUnfocused2"/>
+            							</VisualStateGroup>
+            						</VisualStateManager.VisualStateGroups>
+            					</CheckBox>
+            				</Grid>
             			</Grid>
             			<StackPanel Margin="6.04,0,37.96,-0.003" d:LayoutOverrides="Height" Grid.Column="2" >
             				<Label Content="负责人联络" Height="26.666" HorizontalAlignment="Left" x:Name="label_ZiRanZaiHai_ShiJianQingKuang_Copy" VerticalAlignment="Top" Width="107" Padding="13,1,5,1" FontWeight="Bold" FontSize="16" >
