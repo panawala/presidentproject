@@ -676,8 +676,7 @@
             	</TextBlock.Foreground>
                 </TextBlock>
                 <Grid x:Name="newsvideo" Margin="0,37,0,0" Height="224" VerticalAlignment="Top">
-                    <WebBrowser x:Name="WebBrowserTV" Height="186" VerticalAlignment="Top" Margin="8,7.5,8,0"/>
-                    <Image Height="186" HorizontalAlignment="Left" Margin="6.5,6,0,0" x:Name="imageTVCover" Stretch="Fill" VerticalAlignment="Top" Width="280" Source="Images/TVCover.jpg" MouseLeftButtonDown="imageTVCover_MouseLeftButtonDown" />
+                    <WebBrowser x:Name="WebBrowserTV" Height="186" VerticalAlignment="Top" Margin="8,7.5,8,0" Visibility="Hidden"/>
                     <ComboBox x:Name="comboBox" Margin="6.5,196,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Background="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}" SelectionChanged="comboBox_SelectionChanged" Height="25" Foreground="{DynamicResource ButtonNormalBackground}" Style="{DynamicResource ComboBoxStyle2}" Cursor="Hand">
                         <ComboBoxItem Content="东方卫视" x:Name="Dongfangweishi" Opacity="0.8" >
                             <ComboBoxItem.Background>
@@ -691,7 +690,7 @@
                                 <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
                             </ComboBoxItem.Foreground>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" IsSelected="True" Opacity="0.8" >
+                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" Opacity="0.8" >
                             <ComboBoxItem.Background>
                                 <LinearGradientBrush EndPoint="1.018,0.913" StartPoint="-0.024,0.913">
                                     <GradientStop Color="#FF40413C" Offset="0"/>
@@ -728,6 +727,7 @@
                             </ComboBoxItem.Foreground>
                         </ComboBoxItem>
                     </ComboBox>
+                    <Image Height="186" HorizontalAlignment="Left" x:Name="imageTVCover" Stretch="Fill" VerticalAlignment="Top" Width="280" Source="Images/TVCover.jpg" MouseLeftButtonDown="imageTVCover_MouseLeftButtonDown" Margin="6.5,8,0,0" />
                 </Grid>
                 <Grid x:Name="RssNews" Width="286" HorizontalAlignment="Left" Margin="2,261.5,0,10">
                     <ListView x:Name="Rsslist" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0" />
@@ -765,7 +765,7 @@
                         </Grid>
                     </Border>
                 </Grid>
-                <WebBrowser Width="276" x:Name="wb_weibo" HorizontalAlignment="Left" Margin="8,0,0,11" Height="298" VerticalAlignment="Bottom" />
+                <WebBrowser Width="278" x:Name="wb_weibo" HorizontalAlignment="Left" Margin="6,0,0,11" Height="298" VerticalAlignment="Bottom" />
             </Grid>
         </Grid>
     </Grid>
