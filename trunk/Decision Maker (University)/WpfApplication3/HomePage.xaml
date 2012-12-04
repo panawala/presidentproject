@@ -911,15 +911,6 @@
                                 <DropShadowEffect/>
                             </Rectangle.Effect>
                         </Rectangle>
-                        <Grid Height="40.834" VerticalAlignment="Top">
-                            <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                                <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
-                                <Path Data="M0,1.3642421E-12 L121.74469,1.3642421E-12 136.99048,1.3642421E-12 C141.414,-2.5680852E-06 145,3.5817207 145,8.0000013 L144.94617,8.5333256 145,8.5333256 145,16.000003 136.99048,16.000003 121.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" />
-                            </StackPanel>
-                            <GridSplitter Margin="90,38.333,0,0.5" Width="140" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
-                            <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                        </Grid>
                         <StackPanel Margin="9,36,6,8" Orientation="Vertical">
                             <Calendar x:Name="calendar1" SelectedDatesChanged="calendar1_SelectedDatesChanged" Style="{DynamicResource CalendarStyle1}" Foreground="#FFF0F0F0" Background="{x:Null}" CalendarItemStyle="{DynamicResource CalendarItemStyle2}" CalendarDayButtonStyle="{DynamicResource CalendarDayButtonStyle1}" CalendarButtonStyle="{DynamicResource CalendarButtonStyle1}" Height="169" Width="187" />
                             <GridSplitter HorizontalAlignment="Stretch" Height="1" Margin="5,0">
@@ -933,9 +924,7 @@
                                 </TextBox.Foreground>
                             </TextBox>
                         </StackPanel>
-                        <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="21.497,16.669,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37.333" FontSize="14" FontFamily="Helvetica" Text="日  程" FontWeight="Bold"><TextBlock.Foreground>
-        			<SolidColorBrush Color="{DynamicResource #535353}"/>
-        		</TextBlock.Foreground></TextBlock>
+                        <Label Content="日程" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
                     </Grid>
                     <Grid Grid.Column="1" Name="gridWeather" Margin="10,0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -943,9 +932,7 @@
                                 <DropShadowEffect/>
                             </Rectangle.Effect>
                         </Rectangle>
-                        <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="21.84,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37.333" FontSize="14" FontFamily="Helvetica" Text="气  温" FontWeight="Bold"><TextBlock.Foreground>
-        			<SolidColorBrush Color="{DynamicResource #535353}"/>
-        		</TextBlock.Foreground></TextBlock>
+                        <Label Content="气温" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
                         <Grid HorizontalAlignment="Right" Height="22.625" Margin="0,17.4,16,0" VerticalAlignment="Top" Width="43.5">
                             <Button Content="+" HorizontalAlignment="Right" x:Name="btn_maxweather" Width="19.75" Click="btn_maxweather_Click" VerticalContentAlignment="Top" ContentTemplate="{DynamicResource DataTemplate2}" Style="{DynamicResource ButtonStyle6}" FontSize="14" FontWeight="Bold" Cursor="Hand" Background="{x:Null}" />
                             <Button Content="+" ContentTemplate="{DynamicResource DataTemplate2}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" x:Name="btnWeatherRefresh" Style="{DynamicResource ButtonStyle9}" VerticalContentAlignment="Top" Width="19.75" Click="btnWeatherRefresh_Click" Cursor="Hand" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment"/>
@@ -961,17 +948,6 @@
         				<SolidColorBrush Color="{DynamicResource #939393}"/>
         			</TextBlock.Foreground></TextBlock>
                         </Grid>
-                        <Grid Height="40.834" VerticalAlignment="Top">
-                            <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                                <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource GreenGredient}" Stretch="Fill" Width="80"/>
-                                <Path Data="M0,7.0485839E-12 L481.74469,7.0485839E-12 496.99048,7.0485839E-12 C501.414,-5.786743E-06 505,3.5817193 505,8.0000013 L504.94617,8.5333246 505,8.5333246 505,16.000003 496.99048,16.000003 481.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="504.75"/>
-                            </StackPanel>
-                            <GridSplitter Margin="90,38.333,0,0.5" Width="489" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
-                            <GridSplitter Margin="665,38.75,0,0.084" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left"/>
-                            <GridSplitter Margin="760.5,38.833,0,0" Width="70" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left"/>
-                            <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
@@ -981,18 +957,6 @@
                         <DropShadowEffect/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <Grid Height="40.834" VerticalAlignment="Top">
-                    <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                        <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource GreenGredient}" Stretch="Fill" Width="80"/>
-                        <Path Data="M0,7.0485839E-12 L296.74469,7.0485839E-12 311.99048,7.0485839E-12 C316.414,-5.786743E-06 320,3.5817193 320,8.0000013 L319.94617,8.5333246 320,8.5333246 320,16.000003 311.99048,16.000003 296.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="320"/>
-                    </StackPanel>
-                    <GridSplitter Margin="90,38.333,0,0.5" Width="310" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalMargin"/>
-                    <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="7.331,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="突发事件" FontWeight="Bold"><TextBlock.Foreground>
-        			<SolidColorBrush Color="{DynamicResource #535353}"/>
-        		</TextBlock.Foreground></TextBlock>
                 <Image x:Name="w_imageWeather" HorizontalAlignment="Left" Margin="21,44,20,0" Width="444" RenderTransformOrigin="0.5,0.5" Height="336" VerticalAlignment="Top" Panel.ZIndex="1" Visibility="Collapsed">
                     <Image.RenderTransform>
                         <TransformGroup>
@@ -1028,6 +992,7 @@
         				<SolidColorBrush Color="{DynamicResource #939393}"/>
         			</TextBlock.Foreground></TextBlock>
                 </Grid>
+                <Label Content="突发事件" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Margin="0,25,5,0">
@@ -1041,21 +1006,6 @@
                         <DropShadowEffect/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <Grid Height="40.834" VerticalAlignment="Top">
-                    <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                        <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
-
-                        <Path Data="M0,1.0572876E-11 L726.74463,1.0572876E-11 741.99042,1.0572876E-11 C746.41394,-7.0980515E-06 749.99994,3.5817174 749.99994,7.9999989 L749.94611,8.5333222 749.99994,8.5333222 749.99994,15.999998 741.99042,15.999998 726.74463,15.999998 0,15.999998 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="750" Margin="10,0,0,0" />
-                    </StackPanel>
-                    <GridSplitter Margin="90,38.333,0,0.5" Width="725" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="VerticalMargin"/>
-                    <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.837,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57.5" FontSize="14" FontFamily="Helvetica" Text="绿色监测" FontWeight="Bold">
-            	<TextBlock.Foreground>
-            		<SolidColorBrush Color="{DynamicResource #535353}"/>
-            	</TextBlock.Foreground>
-                </TextBlock>
                 <Grid HorizontalAlignment="Right" Height="23" Margin="0,17.4,25,0" VerticalAlignment="Top" Width="44.25">
                     <Button Content="Max" HorizontalAlignment="Right" x:Name="btn_maxemergency" Style="{DynamicResource ButtonStyle6}" Width="20.5" VerticalContentAlignment="Top" FontWeight="Bold" FontSize="14" Click="btn_maxemergency_Click" Cursor="Hand" Background="{x:Null}" />
                     <Button Content="" ContentTemplate="{DynamicResource DataTemplate2}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0.375" x:Name="btnEmergencyRefresh" Style="{DynamicResource ButtonStyle9}" VerticalContentAlignment="Top" Width="19.75" Click="btnEmergencyRefresh_Click" Cursor="Hand" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment"/>
@@ -1076,6 +1026,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
                     </Label.Foreground>
                 </Label>
+                <Label Content="绿色监测" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
             </Grid>
             <Grid Grid.Column="1" Name="gridTraffic" Margin="10,0,0,0">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -1083,20 +1034,6 @@
                         <DropShadowEffect/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <Grid Height="40.834" VerticalAlignment="Top">
-                    <StackPanel Height="16" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="Width">
-                        <Path Data="M7.9999995,5.6843419E-14 L17.875,5.6843419E-14 22,5.6843419E-14 80,5.6843419E-14 80,16 50.625,16 22,16 17.875,16 7.9999995,16 0,16 0,7.9999995 C0,3.5817213 3.581722,-4.768371E-07 7.9999995,5.6843419E-14 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Width="80"/>
-                        <Path Data="M0,7.0485839E-12 L296.74469,7.0485839E-12 311.99048,7.0485839E-12 C316.414,-5.786743E-06 320,3.5817193 320,8.0000013 L319.94617,8.5333246 320,8.5333246 320,16.000003 311.99048,16.000003 296.74469,16.000003 0,16.000003 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Margin="10,0,0,0" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" Width="320" Height="16" VerticalAlignment="Bottom"/>
-                    </StackPanel>
-                    <GridSplitter Margin="90,38.333,0,0.5" Width="310" Height="2" Background="#FFB7B7B7" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalMargin"/>
-                    <Path Data="M35.0625,0 L38.598583,7.6669999 73,7.6669999 73,9.6669998 39.521,9.6669998 30.604,9.6669998 0,9.6669998 0,7.6669999 31.526417,7.6669999 z" Fill="{DynamicResource bluegredient}" HorizontalAlignment="Left" Height="9.668" Margin="3.688,0,0,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="76.062" />
-
-                </Grid>
-                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="12.494,17.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.667" FontSize="14" FontFamily="Helvetica" Text="校园活动" FontWeight="Bold">
-            	<TextBlock.Foreground>
-            		<SolidColorBrush Color="{DynamicResource #535353}"/>
-            	</TextBlock.Foreground>
-                </TextBlock>
                 <WebBrowser Margin="10,51,10,20" x:Name="webbrowserTraffic" DataContext="{Binding}" Opacity="0.2"/>
                 <Grid x:Name="tag_Copy1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="81.25" Margin="0,-20,0,0" Visibility="Collapsed">
                     <Path Data="M8.6898117,0 L8.6954193,0 7.9829993,5.9129998 8.040822,5.5892226 C8.6935444,2.3994598 11.515867,1.5412924E-06 14.898618,0 L71.310722,0 C73.915741,1.2339613E-06 76.188416,1.4229701 77.393829,3.5340194 L77.571724,3.8724722 83.084785,15.404892 C85.541229,20.543368 90.54174,23.643922 95.855904,23.918912 L96.097,23.925521 96.097,24.000001 0,24.000001 0.096316285,23.96971 C3.617126,22.767218 6.323638,19.639165 6.7984657,15.698118 z" Margin="0" Stretch="Fill">
@@ -1117,6 +1054,7 @@
                     <Button Content="Max" HorizontalAlignment="Right" x:Name="btn_maxtraffic" Style="{DynamicResource ButtonStyle6}" Width="20.5" Click="btn_maxtraffic_Click" VerticalContentAlignment="Top" FontWeight="Bold" FontSize="14" Cursor="Hand" Background="{x:Null}" />
                     <Button Content="+" ContentTemplate="{DynamicResource DataTemplate2}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0.166" x:Name="btnTrafficRefresh" Style="{DynamicResource ButtonStyle9}" VerticalContentAlignment="Top" Width="19.75" Click="btnTrafficRefresh_Click" Cursor="Hand" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
+                <Label Content="校园活动" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
             </Grid>
         </Grid>
     </Grid>

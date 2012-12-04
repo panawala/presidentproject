@@ -206,141 +206,7 @@ namespace WpfApplication3
             img_yibanshiwuzhongdu.Visibility = System.Windows.Visibility.Collapsed;
             img_yanzhongshiwuzhongdu.Visibility = System.Windows.Visibility.Visible;
         }
-        void lingdaoceng_unclick()
-        {
-            lingdaoceng_green.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_branch_green.Visibility = System.Windows.Visibility.Collapsed;
-            tongzhilingdao.Foreground = (Brush)Page.Resources["white"];
-        }
-        void lingdaoceng_click()
-        {
-            lingdaoceng_green.Visibility = System.Windows.Visibility.Visible;
-            lingdaoceng_branch_green.Visibility = System.Windows.Visibility.Visible;
-            tongzhilingdao.Foreground = (Brush)Page.Resources["black"];
-        }
 
-        void lingdaoceng()
-        {
-            if (lingdaoceng_green.Visibility == System.Windows.Visibility.Visible)
-            {
-                lingdaoceng_unclick();
-            }
-            else
-            {
-                lingdaoceng_click();
-            }
-        }
-        void yuanrenyuan_unclick()
-        {
-            lingdaoceng_green1.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_branch_green1.Visibility = System.Windows.Visibility.Collapsed;
-            tongzhilingdao1.Foreground = (Brush)Page.Resources["white"];
-        }
-        void yuanrenyuan_click()
-        {
-            lingdaoceng_green1.Visibility = System.Windows.Visibility.Visible;
-            lingdaoceng_branch_green1.Visibility = System.Windows.Visibility.Visible;
-            tongzhilingdao1.Foreground = (Brush)Page.Resources["black"];
-        }
-
-        void yuanrenyuan()
-        {
-            if (lingdaoceng_green1.Visibility == System.Windows.Visibility.Visible)
-            {
-                yuanrenyuan_unclick();
-            }
-            else
-            {
-                yuanrenyuan_click();
-            }
-        }
-        void yuanjigou_unclick()
-        {
-            lingdaoceng_green2.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_branch_green2.Visibility = System.Windows.Visibility.Collapsed;
-            tongzhilingdao2.Foreground = (Brush)Page.Resources["white"];
-        }
-        void yuanjigou_click()
-        {
-            lingdaoceng_green2.Visibility = System.Windows.Visibility.Visible;
-            lingdaoceng_branch_green2.Visibility = System.Windows.Visibility.Visible;
-            tongzhilingdao2.Foreground = (Brush)Page.Resources["black"];
-        }
-
-        void yuanjigou()
-        {
-            if (lingdaoceng_green2.Visibility == System.Windows.Visibility.Visible)
-            {
-                yuanjigou_unclick();
-            }
-            else
-            {
-                yuanjigou_click();
-            }
-        }
-
-        private void btn_lingdaoceng_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            lingdaoceng();
-        }
-
-        private void btn_yuanrenyuan_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            yuanrenyuan();
-        }
-
-        private void btn_yuanjigou_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            yuanjigou();
-        }
-        private void btn_dengji1_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            ImgGreen_dengji1.Visibility = System.Windows.Visibility.Visible;
-            ImgGreen_dengji2.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji3.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji4.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_click();
-            yuanrenyuan_click();
-            yuanjigou_click();
-
-        }
-        private void btn_dengji2_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            ImgGreen_dengji1.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji3.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji2.Visibility = System.Windows.Visibility.Visible;
-            ImgGreen_dengji4.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_click();
-            yuanrenyuan_click();
-            yuanjigou_click();
-        }
-        private void btn_dengji3_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            ImgGreen_dengji1.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji2.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji3.Visibility = System.Windows.Visibility.Visible;
-            ImgGreen_dengji4.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_unclick();
-            yuanrenyuan_click();
-            yuanjigou_click();
-        }
-        private void btn_dengji4_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            ImgGreen_dengji1.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji2.Visibility = System.Windows.Visibility.Collapsed;
-            ImgGreen_dengji4.Visibility = System.Windows.Visibility.Visible;
-            ImgGreen_dengji3.Visibility = System.Windows.Visibility.Collapsed;
-            lingdaoceng_unclick();
-            yuanrenyuan_unclick();
-            yuanjigou_click();
-        }
         private void btn_ggws_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             // TODO: Add event handler implementation here.
@@ -388,12 +254,7 @@ namespace WpfApplication3
             ds = new EmergencyBasic();
             webBrowser_ZiRanZaiHai.Navigate(new Uri(pathEmergency + @"/html/ZiRanZaiHai.htm", UriKind.RelativeOrAbsolute));//获取根目录的日历文件
             webBrowser_ZiRanZaiHai.ObjectForScripting = ds;//该对象可由显示在WebBrowser控件中的网页所包含的脚本代码访问
-            textBlock_TuFaShiJian_DiTuXinXi.Text = "可调用资源。。。。。。\r\n周边设施。。。。。。";
-            radioButton_ZiRanZaiHai_QuanBu.IsChecked = false;
-            radioButton_ZiRanZaiHai_HuoJin.IsChecked = true;
-            radioButton_ZiRanZaiHai_JiuHu.IsChecked = true;
-            radioButton_ZiRanZaiHai_MinJing.IsChecked = false;
-            radioButton_ZiRanZaiHai_YiYuan.IsChecked = false;
+          
             btn_ZiRanZaiHai_ZuZhiShiShi_Click(sender, e);
         }
         private void btn_ZiRanZaiHai_ZuZhiShiShi_Click(object sender, RoutedEventArgs e)
@@ -412,6 +273,23 @@ namespace WpfApplication3
         {
             label_ZiRanZaiHai_YingJiYuAn_Subtitle.Content = "三、注意事项";
             textBlock_ZiRanZaiHai_YingJiYuAn.Text = "注意事项内容";
+        }
+        private void dengji1_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+        private void dengji2_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+
+        }
+        private void dengji3_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+        private void dengji4_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
         }
     }
 }
