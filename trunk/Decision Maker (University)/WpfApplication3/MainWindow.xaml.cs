@@ -204,43 +204,7 @@ namespace WpfApplication3
             HomePage m_HomePage = new HomePage();
             FrameMiddleContent.Navigate(m_HomePage);
         }
-
-        private void btn_sgzh_Click(object sender, RoutedEventArgs e)
-        {
-            PageShiGuZaiHai m_PageShiGuZaiHai = new PageShiGuZaiHai();
-            FrameMiddleContent.Navigate(m_PageShiGuZaiHai);
-        }
-
-        private void btnTeacherStudentFeedback_Click(object sender, RoutedEventArgs e)
-        {
-            FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback();
-            FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
-        }
-
-        private void btnDocIssue_Click(object sender, RoutedEventArgs e)
-        {
-            Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
-            FrameMiddleContent.Navigate(m_PageDocIssue);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            LargeProject.PageProject m_PageProject = new LargeProject.PageProject();
-            FrameMiddleContent.Navigate(m_PageProject);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Case.PageCase m_PageCase = new Case.PageCase();
-            FrameMiddleContent.Navigate(m_PageCase);
-        }
-
-        private void Btn_VideoConferencing_Click(object sender, RoutedEventArgs e)
-        {
-            DailyManagement.VideoConferencing m_VideoConferencing = new DailyManagement.VideoConferencing();
-            FrameMiddleContent.Navigate(m_VideoConferencing);
-        }
-
+		
         private void Btn_Schedule_Click(object sender, RoutedEventArgs e)
         {
             DailyManagement.Schedule m_Schedule = new DailyManagement.Schedule();
@@ -370,6 +334,61 @@ namespace WpfApplication3
 				menu8.Visibility = System.Windows.Visibility.Visible;
 				menutitle8.Visibility = System.Windows.Visibility.Visible;
         }
+
+		private void menu6_3_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			PageShiGuZaiHai m_PageShiGuZaiHai = new PageShiGuZaiHai();
+            FrameMiddleContent.Navigate(m_PageShiGuZaiHai);
+
+		}
+
+		private void menu7_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback();
+            FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
+			
+			
+		}
+
+		private void menu4_2_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
+            FrameMiddleContent.Navigate(m_PageDocIssue);
+		}
+
+		private void menu8_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			LargeProject.PageProject m_PageProject = new LargeProject.PageProject();
+            FrameMiddleContent.Navigate(m_PageProject);
+
+		}
+
+		private void menu5_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			
+            Case.PageCase m_PageCase = new Case.PageCase();
+            FrameMiddleContent.Navigate(m_PageCase);
+		}
+
+		private void menu4_3_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+            DailyManagement.VideoConferencing m_VideoConferencing = new DailyManagement.VideoConferencing();
+            FrameMiddleContent.Navigate(m_VideoConferencing);
+		}
+
+		private void menu4_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+			DailyManagement.Schedule m_Schedule = new DailyManagement.Schedule();
+            FrameMiddleContent.Navigate(m_Schedule);
+
+		}
 		
     }
 }
