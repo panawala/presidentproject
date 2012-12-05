@@ -57,252 +57,6 @@ namespace WpfApplication3
             label_month_zh.Content = datehelper.getMonthzh();
         }
 
-        private void Menu1Btn1_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_1_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg1.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext1.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg1.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext1.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn2_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_2_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_2_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg2.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext2.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_2_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg2.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext2.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn3_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_3_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_3_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg3.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext3.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_3_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg3.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext3.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn4_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_4_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_4_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg4.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext4.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_4_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg4.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext4.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn5_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_5_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_5_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg5.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext5.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_5_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg5.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext5.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn6_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_6_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_6_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-
-            }
-
-            else
-            {
-                Menu_1_6_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-            }
-        }
-        private void Menu1Btn7_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_7_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_7_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_8.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg7.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext7.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_7_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_8.Visibility = System.Windows.Visibility.Visible;
-                MenuBg7.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext7.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-        private void Menu1Btn8_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            if (Menu_1_8_1.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                Menu_1_8_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_3.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_4.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_6.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_7.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_5.Visibility = System.Windows.Visibility.Collapsed;
-                MenuBg8.Fill = (Brush)Window.Resources["leftcontentmenu2"];
-                Menutext8.Foreground = (Brush)Window.Resources["white"];
-            }
-
-            else
-            {
-                Menu_1_8_1.Visibility = System.Windows.Visibility.Collapsed;
-                Menu_1_2.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_3.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_4.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_1.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_6.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_7.Visibility = System.Windows.Visibility.Visible;
-                Menu_1_5.Visibility = System.Windows.Visibility.Visible;
-                MenuBg8.Fill = (Brush)Window.Resources["leftcontentmenu1"];
-                Menutext8.Foreground = (Brush)Window.Resources["black"];
-            }
-        }
-
         private void imageTVCover_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Dongfangweishi.IsSelected = true;
@@ -444,6 +198,9 @@ namespace WpfApplication3
         private void Home_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             // TODO: Add event handler implementation here.
+			HideMenu();
+			UnselectMenus();
+			VisibleMenuTitle();
             HomePage m_HomePage = new HomePage();
             FrameMiddleContent.Navigate(m_HomePage);
         }
@@ -489,5 +246,130 @@ namespace WpfApplication3
             DailyManagement.Schedule m_Schedule = new DailyManagement.Schedule();
             FrameMiddleContent.Navigate(m_Schedule);
         }
+
+		private void HideMenu()
+		{
+                menu1.Visibility = System.Windows.Visibility.Collapsed;
+                menu2.Visibility = System.Windows.Visibility.Collapsed;
+                menu3.Visibility = System.Windows.Visibility.Collapsed;
+                menu4.Visibility = System.Windows.Visibility.Collapsed;
+                menu6.Visibility = System.Windows.Visibility.Collapsed;
+                menu7.Visibility = System.Windows.Visibility.Collapsed;
+                menu5.Visibility = System.Windows.Visibility.Collapsed;
+				menu8.Visibility = System.Windows.Visibility.Collapsed;    
+		}
+		private void VisibleMenuTitle()
+		{
+			    menutitle1.Visibility = System.Windows.Visibility.Visible;
+                menutitle2.Visibility = System.Windows.Visibility.Visible;
+                menutitle3.Visibility = System.Windows.Visibility.Visible;
+                menutitle4.Visibility = System.Windows.Visibility.Visible;
+                menutitle6.Visibility = System.Windows.Visibility.Visible;
+                menutitle7.Visibility = System.Windows.Visibility.Visible;
+                menutitle5.Visibility = System.Windows.Visibility.Visible;
+				menutitle8.Visibility = System.Windows.Visibility.Visible;    
+
+		}
+		
+		private void HideMenuTitle()
+		{
+			    menutitle1.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle2.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle3.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle4.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle6.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle7.Visibility = System.Windows.Visibility.Collapsed;
+                menutitle5.Visibility = System.Windows.Visibility.Collapsed;
+				menutitle8.Visibility = System.Windows.Visibility.Collapsed;    
+
+		}
+		private void UnselectMenus()
+		{
+			menutitle1.IsSelected=false;
+			menutitle2.IsSelected=false;
+			menutitle3.IsSelected=false;
+			menutitle4.IsSelected=false;
+			menutitle5.IsSelected=false;
+			menutitle6.IsSelected=false;
+			menutitle7.IsSelected=false;
+			menutitle8.IsSelected=false;			
+		}
+		        
+		private void menutitle1_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu1.Visibility = System.Windows.Visibility.Visible;
+				menutitle1.Visibility = System.Windows.Visibility.Visible;
+        }
+				
+		private void menutitle2_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu2.Visibility = System.Windows.Visibility.Visible;
+				menutitle2.Visibility = System.Windows.Visibility.Visible;
+
+        }
+
+
+        private void menutitle3_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu3.Visibility = System.Windows.Visibility.Visible;
+				menutitle3.Visibility = System.Windows.Visibility.Visible;
+        }
+				        
+		private void menutitle4_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+			if (menu4.Visibility == System.Windows.Visibility.Collapsed)
+				HideMenuTitle();
+				menu4.Visibility = System.Windows.Visibility.Visible;
+				menutitle4.Visibility = System.Windows.Visibility.Visible;
+        }
+		        
+		private void menutitle5_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu5.Visibility = System.Windows.Visibility.Visible;
+				menutitle5.Visibility = System.Windows.Visibility.Visible;
+        }
+		        
+		private void menutitle6_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu6.Visibility = System.Windows.Visibility.Visible;
+				menutitle6.Visibility = System.Windows.Visibility.Visible;
+        }
+		        
+		private void menutitle7_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu7.Visibility = System.Windows.Visibility.Visible;
+				menutitle7.Visibility = System.Windows.Visibility.Visible;
+
+        }
+		        
+		private void menutitle8_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			HideMenu();
+				HideMenuTitle();
+				menu8.Visibility = System.Windows.Visibility.Visible;
+				menutitle8.Visibility = System.Windows.Visibility.Visible;
+        }
+		
     }
 }
