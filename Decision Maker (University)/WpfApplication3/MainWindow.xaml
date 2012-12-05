@@ -450,27 +450,27 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu1" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="学术研究" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu1_1" Content="学术研究" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="协作发展" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu1_2" Content="协作发展" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="社会声誉" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu1_3" Content="社会声誉" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="教学水平" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu1_4" Content="教学水平" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="大学排行" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu1_5" Content="大学排行" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -482,22 +482,22 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu2" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="空间资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu2_1" Content="空间资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="人力资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu2_2" Content="人力资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="经费资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu2_3" Content="经费资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="设备资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu2_4" Content="设备资源" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -509,12 +509,12 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu3" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="下发文件" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu3_1" Content="下发文件" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="市局沟通" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu3_2" Content="市局沟通" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -526,17 +526,17 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu4" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="日程管理" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu4_1" Content="日程管理" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu4_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="文件批阅" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu4_2" Content="文件批阅" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu4_2_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="远程会议" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu4_3" Content="远程会议" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu4_3_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -548,17 +548,17 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu5" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="校园管理经营" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu5_1" Content="校园管理经营" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu5_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="学科建设发展" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu5_2" Content="学科建设发展" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="生态智慧校园建设" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu5_3" Content="生态智慧校园建设" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -570,22 +570,22 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu6" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="自然灾害" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu6_1" Content="自然灾害" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="社会安全" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu6_2" Content="社会安全" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="事故灾害" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu6_3" Content="事故灾害" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu6_3_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="公共卫生" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu6_4" Content="公共卫生" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -597,17 +597,17 @@
                 		</ListBoxItem.Foreground>
                 	</ListBoxItem>
                 	<ListBox x:Name="menu7" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="师生信息反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu7_1" Content="师生信息反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu7_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="政府机构反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu7_2" Content="政府机构反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="企业联盟反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu7_3" Content="企业联盟反馈" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -615,32 +615,32 @@
                 	</ListBox>
                 	<ListBoxItem x:Name="menutitle8" Content="重大项目" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Foreground="#FF404040" Selected="menutitle8_Selected"/>
                 	<ListBox x:Name="menu8" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem Content="设计创意中心" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_1" Content="设计创意中心" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menu8_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="学校体育馆" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_2" Content="学校体育馆" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="校外合作项目" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_3" Content="校外合作项目" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="211校园建设" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_4" Content="211校园建设" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="海外校区" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_5" Content="海外校区" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem Content="同济-张江科技园" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_6" Content="同济-张江科技园" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
