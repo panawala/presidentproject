@@ -103,14 +103,13 @@
                 			<TextBox x:Name="tbx_ZiRanZaiHai_ShiJianQingKuang" TextWrapping="Wrap" Height="199.337"  Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" />
                 		</StackPanel>
                 	</Grid>
-                	<Grid Margin="21,165,38.768,2.764" Grid.Column="1">
-                		<Image Source="CutImages/图像/emergency_bg-07-07.png" Stretch="Fill" Width="40" Height="220"/>
-                		<Image x:Name="Select_green" HorizontalAlignment="Left" Source="CutImages/图像/select_green-07.png" Stretch="Fill" Width="40" Height="55" VerticalAlignment="Top"/>
-                		<Image Source="CutImages/图像/emergency_fg-07.png" Stretch="Fill" Margin="4,13,4,15"/>
-                		<Button x:Name="Minjing" Content="Button" VerticalAlignment="Top" Height="55" Opacity="0" Click="Minjing_Click"/>
-                		<Button x:Name="Huojing" Content="Button" VerticalAlignment="Top" Height="55" Opacity="0" Click="Huojing_Click" Margin="0,55,0,0"/>
-                		<Button x:Name="Yiyuan" Content="Button" Margin="0,110,0,0" Height="55" VerticalAlignment="Top" Opacity="0" Click="Yiyuan_Click"/>
-                		<Button x:Name="Wuran" Content="Button" Opacity="0" Height="55" VerticalAlignment="Top" Click="Wuran_Click" Margin="0,165,0,0"/>
+                	<Grid Margin="21,165,38.768,2.764" Grid.Column="1" Height="220" Width="40" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                		<ListBox Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                			<ListBoxItem Content="" Height="54" Style="{DynamicResource ListBoxItemEmergency}" IsSelected="True"/>
+                			<ListBoxItem Content="" Height="54" Style="{DynamicResource ListBoxItemHuoJIng}"/>
+                			<ListBoxItem Content="" Height="54" Style="{DynamicResource ListBoxItemYiLiao}"/>
+                			<ListBoxItem Content="" Height="54" Style="{DynamicResource ListBoxItemWeixianyuan}"/>
+                		</ListBox>
                 	</Grid>
                 </Grid>
             </Grid>
@@ -125,110 +124,49 @@
             				<SolidColorBrush Color="{DynamicResource #235235235}"/>
             			</Rectangle.Fill>
             		</Rectangle>
-            		<TabControl Height="465" HorizontalAlignment="Left" Margin="0" x:Name="tabControl_ZiRanZaiHai" VerticalAlignment="Top" Width="618" >
-            			<TabItem Header="" x:Name="tabItem_ZiRanZaiHai_YingJiYuAn" Style="{DynamicResource TabItemFirst}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" IsSelected="True" Width="80" Margin="-2,-2,0,0">
-            				<Grid>
-            					<Label Content="火灾应急预案" Height="34" HorizontalAlignment="Left" Margin="231,6,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Title" VerticalAlignment="Top" Width="124" />
-            					<TextBlock Height="228" HorizontalAlignment="Left" Margin="15,98,0,0" x:Name="textBlock_ZiRanZaiHai_YingJiYuAn" Text="TextBlock" VerticalAlignment="Top" Width="586" />
-            					<Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="15,50,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Subtitle" VerticalAlignment="Top" Width="99" />
-            					<Button Content="一、组织实施" Height="23" HorizontalAlignment="Left" Margin="206,344,0,0" x:Name="btn_ZiRanZaiHai_ZuZhiShiShi" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZuZhiShiShi_Click" />
-            					<Button Content="二、扑救方法" Height="23" HorizontalAlignment="Left" Margin="355,345,0,0" x:Name="btn_ZiRanZaiHai_PuJiuFangFa" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_PuJiuFangFa_Click"/>
-            					<Button Content="三、注意事项" Height="23" HorizontalAlignment="Left" Margin="499,344,0,0" x:Name="btn_ZiRanZaiHai_ZhuYiShiXiang" VerticalAlignment="Top" Width="90" Click="btn_ZiRanZaiHai_ZhuYiShiXiang_Click"/>
+            		<TabControl x:Name="tabControl_ZiRanZaiHai" Style="{DynamicResource TabControlStyle2}">
+            			<TabItem Header="应急预案" Style="{DynamicResource TabItemFirst}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,-2,0,0">
+            				<Grid Margin="0">
+            					<Label Content="火灾应急预案" Height="34" HorizontalAlignment="Left" Margin="5,5,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Title" VerticalAlignment="Top" Width="124" d:LayoutOverrides="HorizontalAlignment" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" />
+            					<TabControl Style="{DynamicResource TabControlSubContent}" Background="{x:Null}">
+            						<TabItem Header="组织实施" Style="{DynamicResource TabItem2ndmenuMIddle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="25" MouseLeftButtonDown="btn_ZiRanZaiHai_ZuZhiShiShi_Click" Margin="340,0,-340,0">
+            							<Grid>
+            								<Label Content="Label" Height="28" HorizontalAlignment="Left" x:Name="label_ZiRanZaiHai_YingJiYuAn_Subtitle" VerticalAlignment="Top" Width="99" />
+            								<TextBlock Margin="0,48,0,0" x:Name="textBlock_ZiRanZaiHai_YingJiYuAn" Text="TextBlock" />
+            							</Grid>
+            						</TabItem>
+            						<TabItem Header="扑救方法" Style="{DynamicResource TabItem2ndmenuMIddle}" MouseLeftButtonDown="btn_ZiRanZaiHai_PuJiuFangFa_Click" HorizontalAlignment="Left" Margin="330,0,-330,0" Width="89" VerticalAlignment="Top">
+            							<Grid Background="#FFE5E5E5"/>
+            						</TabItem>
+            						<TabItem Header="注意事项" Style="{DynamicResource TabItem2ndmenulast}" MouseLeftButtonDown="btn_ZiRanZaiHai_ZhuYiShiXiang_Click" Margin="320,0,-320,0" HorizontalAlignment="Left" Width="89" VerticalAlignment="Top">
+            							<Grid Background="#FFE5E5E5"/>
+            						</TabItem>
+            					</TabControl>
+            					<Grid HorizontalAlignment="Left" Height="25" Margin="149,50,0,0" VerticalAlignment="Top" Width="80"/>
+            					<ListBox HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="25"/>
             				</Grid>
             			</TabItem>
-            			<TabItem Header="历史记录" x:Name="tabItem_ZiRanZaiHai_LiShiJiLu" Style="{DynamicResource TabItemMiddle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="1.666,-2,0,0" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
-            				<Grid />
+            			<TabItem Header="历史记录" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
+            				<Grid Background="#FFE5E5E5"/>
             			</TabItem>
-            			<TabItem Header="重大危险源" x:Name="tabItem_ZiRanZaiHai_ZhongDaWeiXianYuan" Style="{DynamicResource TabItemMiddle}" HorizontalAlignment="Left" Width="80" Margin="0,-2,0,1.997" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            				<Grid />
+            			<TabItem Header="重大危险源" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
+            				<Grid Background="#FFE5E5E5"/>
             			</TabItem>
-            			<TabItem Header="案例链接" x:Name="tabItem_ZiRanZaiHai_AnLiLianJie" Style="{DynamicResource TabItemMiddle}" Width="80" HorizontalAlignment="Left" Margin="0,-2,0,1.832" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            				<Grid />
+            			<TabItem Header="案例链接" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
+            				<Grid Background="#FFE5E5E5"/>
             			</TabItem>
             		</TabControl>
-            		<Grid x:Name="tab" VerticalAlignment="Top" Height="48" Visibility="Collapsed" d:IsLocked="True" d:IsHidden="True">
-            			<Image x:Name="tag1" Source="CutImages/图像/tag1-07.png" Stretch="Fill"/>
-            			<Image x:Name="tag2" Source="CutImages/图像/tag02-07.png" Stretch="Fill" Visibility="Hidden"/>
-            			<Image x:Name="tag3" Source="CutImages/图像/tag03-07.png" Stretch="Fill" Visibility="Hidden"/>
-            			<Image x:Name="tag4" Source="CutImages/图像/tag4-07.png" Stretch="Fill" Visibility="Hidden"/>
-            		</Grid>
-            		<Grid x:Name="yingjiyuan" HorizontalAlignment="Left" Height="21.837" Margin="0,15.375,0,0" VerticalAlignment="Top" Width="87.375" Visibility="Collapsed" d:IsLocked="True">
-            			<TextBlock Margin="7.906,2,4.761,1.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Center"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground><Run Language="zh-cn" Text="应急预案"/></TextBlock>
-            			<Button Content="Button" d:LayoutOverrides="Height" Opacity="0" Cursor="Hand" Click="yingjiyuan_tag1_Click"/>
-            		</Grid>
-            		<Grid x:Name="lishijilu" HorizontalAlignment="Left" Height="21.837" Margin="101.5,17.375,0,0" VerticalAlignment="Top" Width="87.375" Visibility="Collapsed" d:IsLocked="True">
-            			<TextBlock Margin="15.864,0,9.178,3.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground><Run Language="zh-cn" Text="历史记录"/></TextBlock>
-            			<Button Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="lishijilu_tag2_Click"/>
-            		</Grid>
-            		<Grid x:Name="zhongdaweixianyuan" Height="21.837" Margin="206,17.375,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88.697" Visibility="Collapsed" d:IsLocked="True">
-            			<TextBlock HorizontalAlignment="Center" Height="18.333" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground><Run Language="zh-cn" Text="重大危险源"/></TextBlock>
-            			<Button Content="Button" Opacity="0" Cursor="Hand" Width="87.375" d:LayoutOverrides="Height" Click="zhongdaweixian_tag3_Click"/>
-            		</Grid>
-            		<Grid x:Name="anlilianjie" Height="21.837" Margin="0,17.375,224.954,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="87.375" Visibility="Collapsed" d:IsLocked="True">
-            			<TextBlock Margin="15.026,0,10.016,3.504" TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground><Run Language="zh-cn" Text="案例链接"/></TextBlock>
-            			<Button Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="anlilianjie_tag4_Click"/>
-            		</Grid>
-            		<Grid x:Name="Content_yingjiyuan" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" d:IsHidden="True" Visibility="Collapsed" d:IsLocked="True">
-            			<Image x:Name="img_yibanshiwuzhongdu" Source="CutImages/图像/yingjiyuan-07.png" Stretch="Fill"/>
-            			<Image x:Name="img_yanzhongshiwuzhongdu" Source="CutImages/图像/yingjiyuan1-07.png" Stretch="Fill" Visibility="Collapsed"/>
-            			<TextBlock TextWrapping="Wrap" FontSize="18" FontFamily="Helvetica" FontWeight="Bold" Text="食物中毒应急预案" Height="21.837" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1.332,1.334,0,0"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground></TextBlock>
-            			<Grid Height="21.837" Margin="242.083,8,216.292,0" VerticalAlignment="Top">
-            				<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="一般食物中毒事故" Margin="3,0,0,0"><TextBlock.Foreground>
-            						<SolidColorBrush Color="{DynamicResource #535353}"/>
-            					</TextBlock.Foreground></TextBlock>
-            				<Button x:Name="btn_yibanshiwuzhongdu" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_yibanshiwuzhongdu_Click"/>
-            			</Grid>
-            			<Grid Height="21.837" Margin="0,8,9.615,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="121.625">
-            				<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="重大食物中毒事故" Margin="3,0,0,0"><TextBlock.Foreground>
-            						<SolidColorBrush Color="{DynamicResource #535353}"/>
-            					</TextBlock.Foreground></TextBlock>
-            				<Button x:Name="btn_yanzhongshiwuzhongdu" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_yanzhongshiwuzhongdu_Click"/>
-            			</Grid>
-            		</Grid>
-            		<Grid x:Name="Content_lishijilu" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed" d:IsLocked="True">
-            			<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
-            		</Grid>
-            		<Grid x:Name="Content_zhongdaweixianyuan" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed" d:IsLocked="True">
-            			<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
-            		</Grid>
-            		<Grid x:Name="Content_anlilianjie" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed" d:IsLocked="True">
-            			<Image Source="CutImages/图像/frame-07.png" Stretch="Fill"/>
-            		</Grid>
-            		<Grid x:Name="Content_shiguzaihai" HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="580" Margin="20.5,60.5,0,0" Visibility="Collapsed" d:IsLocked="True">
-            			<Image x:Name="img_huozaiyuan1" Source="CutImages/图像/huozaiyuan1-07.png" Stretch="Fill"/>
-            			<Image x:Name="img_huozaiyuan2" Source="CutImages/图像/huozaiyuan2-07.png" Stretch="Fill" Visibility="Collapsed"/>
-            			<Image x:Name="img_huozaiyuan3" Source="CutImages/图像/huozaiyuan3-07.png" Stretch="Fill" Visibility="Collapsed"/>
-            			<TextBlock TextWrapping="Wrap" FontSize="18" FontFamily="Helvetica" FontWeight="Bold" Text="火灾应急预案" Height="21.837" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1.332,1.334,0,0"><TextBlock.Foreground>
-            					<SolidColorBrush Color="{DynamicResource #535353}"/>
-            				</TextBlock.Foreground></TextBlock>
-            			<Grid Height="21.837" Margin="219.083,8,287.292,0" VerticalAlignment="Top">
-            				<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="组织实施" Margin="6,0,0,0"><TextBlock.Foreground>
-            						<SolidColorBrush Color="{DynamicResource #535353}"/>
-            					</TextBlock.Foreground></TextBlock>
-            				<Button x:Name="btn_zzss" Content="Button" Opacity="0" Cursor="Hand" Click="btn_zzss_Click" VerticalAlignment="Top"/>
-            			</Grid>
-            			<Grid Height="21.837" Margin="0,8,151.948,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64.292">
-            				<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="扑救办法" Margin="3,0,0,0"><TextBlock.Foreground>
-            						<SolidColorBrush Color="{DynamicResource #535353}"/>
-            					</TextBlock.Foreground></TextBlock>
-            				<Button x:Name="btn_pjbf" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_pjbf_Click"/>
-            			</Grid>
-            			<Grid Height="21.837" Margin="0,8,7.292,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="73.625">
-            				<TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" Text="注意事项" Margin="6,0,0,0"><TextBlock.Foreground>
-            						<SolidColorBrush Color="{DynamicResource #535353}"/>
-            					</TextBlock.Foreground></TextBlock>
-            				<Button x:Name="btn_zysx" Content="Button" Opacity="0" Cursor="Hand" d:LayoutOverrides="Height" Click="btn_zysx_Click"/>
-            			</Grid>
+            		<Grid Margin="390,0,0.08,0" Height="40" VerticalAlignment="Top">
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition/>
+            			</Grid.ColumnDefinitions>
+            			<Path Grid.ColumnSpan="1" Grid.Column="0" Data="M0,3.0013325E-11 L1.6560059,3.0013325E-11 C6.0814209,-1.1935911E-05 9.6689453,3.5817131 9.6689453,7.9999956 L9.6151123,8.5333151 9.6689453,8.5333151 9.6689453,15.999991 1.6560059,15.999991 0,15.999991 z" Fill="#FF7A7A7A" HorizontalAlignment="Right" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="9.638"/>
+            			<Rectangle Grid.Column="0" Fill="#FF7A7A7A" HorizontalAlignment="Stretch" Height="16" Margin="0,0,8,0" VerticalAlignment="Top" Width="Auto" Grid.ColumnSpan="1"/>
+            			<Rectangle Height="2" Margin="5,0,16,0" VerticalAlignment="Bottom">
+            				<Rectangle.Fill>
+            					<SolidColorBrush Color="{DynamicResource LineColor#184184184}"/>
+            				</Rectangle.Fill>
+            			</Rectangle>
             		</Grid>
             	</Grid>
             	<Grid x:Name="grid_ZiRanZaiHai_YuAnQiDong" Grid.Column="1">
