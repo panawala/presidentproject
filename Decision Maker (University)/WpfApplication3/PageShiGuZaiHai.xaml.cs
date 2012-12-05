@@ -97,154 +97,6 @@ namespace WpfApplication3
             }
 
         }
-        void yingjiyuan_tag1()
-        {
-            tag1.Visibility = System.Windows.Visibility.Visible;
-            tag2.Visibility = System.Windows.Visibility.Collapsed;
-            tag3.Visibility = System.Windows.Visibility.Collapsed;
-            tag4.Visibility = System.Windows.Visibility.Collapsed;
-            Content_yingjiyuan.Visibility = System.Windows.Visibility.Visible;
-            Content_shiguzaihai.Visibility = System.Windows.Visibility.Collapsed;
-            Content_lishijilu.Visibility = System.Windows.Visibility.Collapsed;
-            Content_zhongdaweixianyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_anlilianjie.Visibility = System.Windows.Visibility.Collapsed;
-        }
-        void shiguzaihai_tag1()
-        {
-            tag1.Visibility = System.Windows.Visibility.Visible;
-            tag2.Visibility = System.Windows.Visibility.Collapsed;
-            tag3.Visibility = System.Windows.Visibility.Collapsed;
-            tag4.Visibility = System.Windows.Visibility.Collapsed;
-            Content_shiguzaihai.Visibility = System.Windows.Visibility.Visible;
-            Content_yingjiyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_lishijilu.Visibility = System.Windows.Visibility.Collapsed;
-            Content_zhongdaweixianyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_anlilianjie.Visibility = System.Windows.Visibility.Collapsed;
-        }
-        private void yingjiyuan_tag1_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            yingjiyuan_tag1();
-        }
-
-        private void lishijilu_tag2_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            tag2.Visibility = System.Windows.Visibility.Visible;
-            tag1.Visibility = System.Windows.Visibility.Collapsed;
-            tag3.Visibility = System.Windows.Visibility.Collapsed;
-            tag4.Visibility = System.Windows.Visibility.Collapsed;
-            Content_yingjiyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_lishijilu.Visibility = System.Windows.Visibility.Visible;
-            Content_zhongdaweixianyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_anlilianjie.Visibility = System.Windows.Visibility.Collapsed;
-            Content_shiguzaihai.Visibility = System.Windows.Visibility.Collapsed;
-
-        }
-        private void zhongdaweixian_tag3_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            tag3.Visibility = System.Windows.Visibility.Visible;
-            tag2.Visibility = System.Windows.Visibility.Collapsed;
-            tag1.Visibility = System.Windows.Visibility.Collapsed;
-            tag4.Visibility = System.Windows.Visibility.Collapsed;
-            Content_yingjiyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_lishijilu.Visibility = System.Windows.Visibility.Collapsed;
-            Content_zhongdaweixianyuan.Visibility = System.Windows.Visibility.Visible;
-            Content_anlilianjie.Visibility = System.Windows.Visibility.Collapsed;
-            Content_shiguzaihai.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void anlilianjie_tag4_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            tag4.Visibility = System.Windows.Visibility.Visible;
-            tag2.Visibility = System.Windows.Visibility.Collapsed;
-            tag3.Visibility = System.Windows.Visibility.Collapsed;
-            tag1.Visibility = System.Windows.Visibility.Collapsed;
-            Content_yingjiyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_lishijilu.Visibility = System.Windows.Visibility.Collapsed;
-            Content_zhongdaweixianyuan.Visibility = System.Windows.Visibility.Collapsed;
-            Content_anlilianjie.Visibility = System.Windows.Visibility.Visible;
-            Content_shiguzaihai.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void Huojing_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Select_green.Margin = new Thickness(0, 55, 0, 0);
-        }
-
-        private void Minjing_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Select_green.Margin = new Thickness(0, 0, 0, 0);
-        }
-
-        private void Yiyuan_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Select_green.Margin = new Thickness(0, 110, 0, 0);
-        }
-
-        private void Wuran_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Select_green.Margin = new Thickness(0, 165, 0, 0);
-        }
-
-        private void btn_yibanshiwuzhongdu_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            img_yibanshiwuzhongdu.Visibility = System.Windows.Visibility.Visible;
-            img_yanzhongshiwuzhongdu.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void btn_yanzhongshiwuzhongdu_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            img_yibanshiwuzhongdu.Visibility = System.Windows.Visibility.Collapsed;
-            img_yanzhongshiwuzhongdu.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void btn_ggws_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            yingjiyuan_tag1();
-        }
-
-        private void btn_sgzh_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            shiguzaihai_tag1();
-
-        }
-
-        private void btn_zzss_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            img_huozaiyuan1.Visibility = System.Windows.Visibility.Visible;
-            img_huozaiyuan2.Visibility = System.Windows.Visibility.Collapsed;
-            img_huozaiyuan3.Visibility = System.Windows.Visibility.Collapsed;
-
-        }
-
-        private void btn_pjbf_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            img_huozaiyuan2.Visibility = System.Windows.Visibility.Visible;
-            img_huozaiyuan1.Visibility = System.Windows.Visibility.Collapsed;
-            img_huozaiyuan3.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void btn_zysx_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            img_huozaiyuan3.Visibility = System.Windows.Visibility.Visible;
-            img_huozaiyuan2.Visibility = System.Windows.Visibility.Collapsed;
-            img_huozaiyuan1.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             tbx_ZiRanZaiHai_ShiJianShiShiGengXin.Text = "事件实时更新\r\n发生时间：2012年8月13日，13：56\r\n发生地点：同济大学体育馆工地西北\r\n事件情况：";
@@ -288,6 +140,21 @@ namespace WpfApplication3
         	// TODO: Add event handler implementation here.
         }
         private void dengji4_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void btn_ZiRanZaiHai_ZhuYiShiXiang_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void btn_ZiRanZaiHai_PuJiuFangFa_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void btn_ZiRanZaiHai_ZuZhiShiShi_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
         	// TODO: Add event handler implementation here.
         }

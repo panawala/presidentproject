@@ -913,7 +913,7 @@
                             <SolidColorBrush Color="{DynamicResource #535353}"/>
                         </Label.Foreground>
                     </Label>
-                    <Label Content="天气" VerticalAlignment="Top" Style="{DynamicResource LabelStyle}" FontFamily="Helvetica" FontWeight="Bold"/>
+                    <Label Content="天  气" VerticalAlignment="Top" Style="{DynamicResource LabelStyle}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
                 </Grid>
                 <Grid Grid.Row="1" Margin="0,10,0,5">
                     <Grid.ColumnDefinitions>
@@ -939,7 +939,7 @@
                                 </TextBox.Foreground>
                             </TextBox>
                         </StackPanel>
-                        <Label Content="日程" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
+                        <Label Content="日  程" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
                     </Grid>
                     <Grid Grid.Column="1" Name="gridWeather" Margin="10,0">
                         <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -947,7 +947,7 @@
                                 <DropShadowEffect/>
                             </Rectangle.Effect>
                         </Rectangle>
-                        <Label Content="气温" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
+                        <Label Content="气  温" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
                         <Grid HorizontalAlignment="Right" Height="22.625" Margin="0,17.4,16,0" VerticalAlignment="Top" Width="43.5">
                             <Button Content="+" HorizontalAlignment="Right" x:Name="btn_maxweather" Width="19.75" Click="btn_maxweather_Click" VerticalContentAlignment="Top" ContentTemplate="{DynamicResource DataTemplate2}" Style="{DynamicResource ButtonStyle6}" FontSize="14" FontWeight="Bold" Cursor="Hand" Background="{x:Null}" />
                             <Button Content="+" ContentTemplate="{DynamicResource DataTemplate2}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" x:Name="btnWeatherRefresh" Style="{DynamicResource ButtonStyle9}" VerticalContentAlignment="Top" Width="19.75" Click="btnWeatherRefresh_Click" Cursor="Hand" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment"/>
@@ -1007,7 +1007,7 @@
         				<SolidColorBrush Color="{DynamicResource #939393}"/>
         			</TextBlock.Foreground></TextBlock>
                 </Grid>
-                <Label Content="突发事件" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
+                <Label Content="突发事件" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Margin="0,25,5,0">
@@ -1041,7 +1041,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
                     </Label.Foreground>
                 </Label>
-                <Label Content="绿色监测" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
+                <Label Content="绿色监测" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
             </Grid>
             <Grid Grid.Column="1" Name="gridTraffic" Margin="10,0,0,0">
                 <Rectangle RadiusX="8" RadiusY="8" Style="{DynamicResource RectangleStyle1}">
@@ -1069,7 +1069,7 @@
                     <Button Content="Max" HorizontalAlignment="Right" x:Name="btn_maxtraffic" Style="{DynamicResource ButtonStyle6}" Width="20.5" Click="btn_maxtraffic_Click" VerticalContentAlignment="Top" FontWeight="Bold" FontSize="14" Cursor="Hand" Background="{x:Null}" />
                     <Button Content="+" ContentTemplate="{DynamicResource DataTemplate2}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0.166" x:Name="btnTrafficRefresh" Style="{DynamicResource ButtonStyle9}" VerticalContentAlignment="Top" Width="19.75" Click="btnTrafficRefresh_Click" Cursor="Hand" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
-                <Label Content="校园活动" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold"/>
+                <Label Content="校园活动" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" FontFamily="Helvetica" FontWeight="Bold" FontSize="14"/>
             </Grid>
         </Grid>
     </Grid>
