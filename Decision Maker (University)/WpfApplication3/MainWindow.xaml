@@ -404,7 +404,7 @@
                 </Grid>
             </Grid>
             <Grid x:Name="Menu1" Grid.Row="1">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-237">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0">
                     <ScrollViewer.Content>
                         <StackPanel x:Name="Menu_1">
                             <StackPanel x:Name="Home">
@@ -443,7 +443,7 @@
                         </StackPanel>
                     </ScrollViewer.Content>
                 </ScrollViewer>
-                <ListBox Background="{x:Null}" Style="{DynamicResource ListBoxMenu}" BorderThickness="0" Margin="0,70,0,-70">
+                <ListBox Background="{x:Null}" Style="{DynamicResource ListBoxMenu}" BorderThickness="0" Margin="0,70,0,0">
                 	<ListBoxItem x:Name="menutitle1" Content="发展状态" Style="{DynamicResource ListBoxItemStyle1}" Height="70" FontSize="16" Selected="menutitle1_Selected">
                 		<ListBoxItem.Foreground>
                 			<SolidColorBrush Color="{DynamicResource #646464}"/>
@@ -651,7 +651,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Name="MiddleContent" Margin="29,30,0,40">
-            <Frame Name="FrameMiddleContent" NavigationUIVisibility="Hidden" Margin="0,8,0,-8"/>
+            <Frame Name="FrameMiddleContent" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Column="2" Name="RightContent" Margin="24,30,4,40">
             <Grid.RowDefinitions>
