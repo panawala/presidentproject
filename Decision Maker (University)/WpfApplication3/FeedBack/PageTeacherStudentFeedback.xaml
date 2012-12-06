@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1300"
+      d:DesignHeight="977" d:DesignWidth="1265"
 	Title="PageTeacherStudentFeedback">
 
     <Grid>
@@ -12,116 +12,143 @@
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Margin="0,0,10,5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
+            <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+            	<Rectangle.Effect>
+            		<DropShadowEffect/>
+            	</Rectangle.Effect>
+            	<Rectangle.Fill>
+            		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            	</Rectangle.Fill>
+            </Rectangle>
+            <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
+                	<RowDefinition Height="50"/>
+                	<RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0">师生信息反馈</Label>
-                </Grid>
-                <Grid Grid.Row="1" Margin="5,5,5,5">
-                    <ListBox Name="listboxFeedback" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="listboxFeedback_SelectionChanged">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="5*"/>
-                                        <ColumnDefinition Width="30*"/>
-                                        <ColumnDefinition Width="65*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0">
-                                        <Button Name="btnFeedbackShow" Click="btnFeedbackShow_Click" Content="->" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-                                        <Label Content="{Binding Path=SubmissionDate}" Margin="5,10,5,10"/>
-                                    </Grid>
-                                    <Grid Grid.Column="2">
-                                        <Button Name="btnFeedbackTitle" Content="{Binding Path=FeedbackTitle}" Click="btnFeedbackShow_Click" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
+                <Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="师生信息反馈"/>
+                <ListBox x:Name="listboxFeedback" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="listboxFeedback_SelectionChanged" Grid.RowSpan="2" Grid.Row="1" Margin="10" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}">
+                	<ListBox.ItemTemplate>
+                		<DataTemplate>
+                			<Grid Height="70">
+                				<Grid.ColumnDefinitions>
+                					<ColumnDefinition Width="0.167*"/>
+                					<ColumnDefinition Width="0.54*"/>
+                					<ColumnDefinition Width="0.293*"/>
+                				</Grid.ColumnDefinitions>
+                				<Button x:Name="btnFeedbackTitle" Content="{Binding FeedbackTitle}" Click="btnFeedbackShow_Click" Focusable="False" HorizontalAlignment="Center" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Margin="0,15"/>
+                				<Label Content="{Binding SubmissionDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
+                				<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+                					<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+                						<Ellipse.Fill>
+                							<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+                								<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+                								<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+                							</LinearGradientBrush>
+                						</Ellipse.Fill>
+                					</Ellipse>
+                					<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+                						<Path.Fill>
+                							<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                						</Path.Fill>
+                					</Path>
+                				</Grid>
+                			</Grid>
+                		</DataTemplate>
+                	</ListBox.ItemTemplate>
+                </ListBox>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="0.262*"/>
+                    <ColumnDefinition Width="0.538*"/>
+                    <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Button Name="btnHistory" Margin="10,5,10,5">历史记录？这按钮干嘛的？</Button>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <TextBox Name="tbxSearch" VerticalAlignment="Center" Margin="0,5,0,5" MaxLength="50" />
-                </Grid>
-                <Grid Grid.Column="2">
-                    <Button Name="btnSearch" VerticalAlignment="Center" Margin="10,14,10,14" Content="搜索" Click="btnSearch_Click"/>
-                </Grid>
+                <Button x:Name="btnHistory" Content="历史记录？这按钮干嘛的？" VerticalAlignment="Center" Margin="5,0" Style="{DynamicResource ButtonFeedbacknormal}" Height="20"/>
+                <TextBox x:Name="tbxSearch" VerticalAlignment="Center" MaxLength="50" Grid.Column="1" />
+                <Button x:Name="btnSearch" VerticalAlignment="Center" Content="搜索" Click="btnSearch_Click" Grid.Column="2" Margin="5,0" Style="{DynamicResource ButtonFeedbacknormal}" Width="60" Height="20"/>
             </Grid>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Margin="0,0,5,5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="40*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
+            <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="293.1"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">文件内容</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Border Margin="10,20,10,20">
-                        <TextBox Name="tbxFeedbackContent" Margin="40,20,40,20" TextWrapping="Wrap"></TextBox>
-                    </Border>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="80"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <Label Content="姓名" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="label1" VerticalAlignment="Center" />
-                        <Label Content="Label" Height="28" Margin="45,0,0,0" Name="labelName" VerticalAlignment="Center" />
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Label Content="联系方式" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="label2" VerticalAlignment="Center" />
-                        <Label Content="Label" Height="28" Margin="80,0,0,0" Name="labelContact" VerticalAlignment="Center" />
-                    </Grid>
-                    <Grid Grid.Column="2">
-                        <Label Content="日期" Height="28" Margin="10,0,0,0" Name="label3" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                        <Label Content="Label" Height="28" Margin="45,0,0,0" Name="labelDate" VerticalAlignment="Center" />
-                    </Grid>
-                    <Grid Grid.Column="3">
-                        <Button Content="&lt;" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="btnPrevious" VerticalAlignment="Center" Width="23" Click="btnPrevious_Click" />
-                        <Button Content="&gt;" Height="23" HorizontalAlignment="Right" Margin="0,0,5,0" Name="btnNext" VerticalAlignment="Center" Width="23" Click="btnNext_Click" />
-                    </Grid>
-                </Grid>
+            	<Grid>
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="0.167*"/>
+            			<RowDefinition Height="0.833*"/>
+            		</Grid.RowDefinitions>
+            		<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+            			<Rectangle.Effect>
+            				<DropShadowEffect/>
+            			</Rectangle.Effect>
+            			<Rectangle.Fill>
+            				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            			</Rectangle.Fill>
+            		</Rectangle>
+            		<Label VerticalAlignment="Top" Content="文件内容" Style="{DynamicResource Labeltopheader}"/>
+            		<Grid Margin="20,12,20,30" Grid.Row="1">
+            			<Grid.RowDefinitions>
+            				<RowDefinition/>
+            				<RowDefinition Height="48.112"/>
+            			</Grid.RowDefinitions>
+            			<Grid.Background>
+            				<SolidColorBrush Color="{DynamicResource LineColor#184184184}"/>
+            			</Grid.Background>
+            			<TextBox x:Name="tbxFeedbackContent" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="{x:Null}" Margin="0,0,0,0.42"/>
+            			<Grid Margin="2,9.58,372.59,10.499" Grid.Row="1" d:LayoutOverrides="Height">
+            				<Grid.ColumnDefinitions>
+            					<ColumnDefinition Width="120"/>
+            					<ColumnDefinition/>
+            					<ColumnDefinition Width="137.41"/>
+            				</Grid.ColumnDefinitions>
+            				<Grid Grid.Column="0">
+            					<Label Content="姓名" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" x:Name="label1" VerticalAlignment="Center" />
+            					<Label Content="李某" Height="28" Margin="45,0,0,0" x:Name="labelName" VerticalAlignment="Center" />
+            				</Grid>
+            				<Grid Grid.Column="1">
+            					<Label Content="联系方式" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" x:Name="label2" VerticalAlignment="Center" />
+            					<Label Content="139*****" Height="28" Margin="80,0,0,0" x:Name="labelContact" VerticalAlignment="Center" />
+            				</Grid>
+            				<Grid Grid.Column="2" HorizontalAlignment="Left">
+            					<Label Content="日期" Height="28" Margin="10,0,0,0" x:Name="label3" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            					<Label Content="2012.12.31" Height="28" Margin="45,0,0,0" x:Name="labelDate" VerticalAlignment="Center" />
+            				</Grid>
+            			</Grid>
+            			<Grid HorizontalAlignment="Right" Width="80" Height="50.002" VerticalAlignment="Bottom" Grid.Row="1">
+            				<Button Content="&lt;" Height="20" HorizontalAlignment="Left" Margin="13.671,0,0,0" x:Name="btnPrevious" VerticalAlignment="Center" Width="20" Click="btnPrevious_Click" Style="{DynamicResource ButtonFeedbacknormal}" FontFamily="Helvetica" />
+            				<Button Content="&gt;" Height="20" Margin="0,0,14.338,0" x:Name="btnNext" VerticalAlignment="Center" Click="btnNext_Click" Style="{DynamicResource ButtonFeedbacknormal}" HorizontalAlignment="Right" Width="20" FontFamily="Helvetica" />
+            			</Grid>
+            		</Grid>
+            	</Grid>
             </Grid>
-            <Grid Grid.Row="1" Margin="5,5,5,5" Background="#FFEBEBEB">
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">抄送部门</Label>
-                </Grid>
+                <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="4">
+                	<Rectangle.Effect>
+                		<DropShadowEffect/>
+                	</Rectangle.Effect>
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Label Content="抄送部门" Style="{DynamicResource Labeltopheader}" VerticalAlignment="Top"/>
+                <Grid Grid.Row="0"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25*"/>
@@ -130,7 +157,7 @@
                         <ColumnDefinition Width="25*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox1" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                        <ComboBox Height="23" Margin="20,0,20,0" x:Name="comboBox1" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
                             <ComboBoxItem Content="学校主要领导" IsEnabled="False" IsSelected="True" />
                             <CheckBox Content="张三" />
                             <CheckBox Content="李四" />
@@ -138,7 +165,7 @@
                         </ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox2" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                        <ComboBox Height="23" Margin="20,0,20,0" x:Name="comboBox2" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
                             <ComboBoxItem Content="学校行政机构" IsEnabled="False" IsSelected="True" />
                             <CheckBox Content="校长办公室" />
                             <CheckBox Content="发展规划研究中心" />
@@ -169,7 +196,7 @@
                         </ComboBox>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox3" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                        <ComboBox Height="23" Margin="20,0,20,0" x:Name="comboBox3" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
                             <ComboBoxItem Content="学校院系A" IsEnabled="False" IsSelected="True" />
                             <CheckBox Content="土木工程学院" />
                             <CheckBox Content="经济与管理学院" />
@@ -193,7 +220,7 @@
                         </ComboBox>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox4" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
+                        <ComboBox Height="23" Margin="20,0,20,0" x:Name="comboBox4" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
                             <ComboBoxItem Content="学校院系B" IsEnabled="False" IsSelected="True" />
                             <CheckBox Content="建筑与城市规划学院" />
                             <CheckBox Content="机械与能源工程学院" />
@@ -220,7 +247,7 @@
                 </Grid>
                 <Grid Grid.Row="2">
                     <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="20,5,20,5">
-                        <ListBox Name="listboxSend">
+                        <ListBox x:Name="listboxSend">
                             <ListBox.Template>
                                 <ControlTemplate TargetType="{x:Type ListBox}">
                                     <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
@@ -247,77 +274,82 @@
                     
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button Name="btnSend" Content="发送" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Button x:Name="btnSend" Content="发送" Width="69" HorizontalAlignment="Right" Margin="0,5,33,22" Style="{DynamicResource ButtonFeedbacknormal}"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="2" Margin="5,5,5,5" Background="#FFEBEBEB">
+            <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">批示区</Label>
-                </Grid>
+                <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="3">
+                	<Rectangle.Effect>
+                		<DropShadowEffect/>
+                	</Rectangle.Effect>
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Label VerticalAlignment="Top" Content="批示区" Style="{DynamicResource Labeltopheader}"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30*"/>
-                        <ColumnDefinition Width="70*"/>
+                    	<ColumnDefinition Width="0.185*"/>
+                    	<ColumnDefinition Width="0.815*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" Margin="20,5,20,5">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50*"/>
-                            <ColumnDefinition Width="50*"/>
+                        	<ColumnDefinition Width="50*"/>
+                        	<ColumnDefinition Width="50*"/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <Button Name="rbtBlackInk" Width="40" Height="20" Content="黑" Click="rbtBlackInk_Click"/>
+                                <Button x:Name="rbtBlackInk" Content="黑" Click="rbtBlackInk_Click" Style="{DynamicResource Buttonblack}" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <Button Name="rbtRedInk" Width="40" Height="20" Content="红" Click="rbtRedInk_Click"/>
+                                <Button x:Name="rbtRedInk" Content="红" Click="rbtRedInk_Click" Style="{DynamicResource Buttonred}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <Grid Grid.Row="2">
-                                <Button Name="rbtGreenInk" Width="40" Height="20" Content="绿" Click="rbtGreenInk_Click"/>
+                                <Button x:Name="rbtGreenInk" Content="绿" Click="rbtGreenInk_Click" Style="{DynamicResource ButtonGreen}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <Grid Grid.Row="3">
-                                <Button Name="rbtBlueInk" Width="40" Height="20" Content="蓝" Click="rbtBlueInk_Click"/>
+                                <Button x:Name="rbtBlueInk" Content="蓝" Click="rbtBlueInk_Click" Style="{DynamicResource Buttonblue}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
+                            	<RowDefinition Height="25*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <Button Width="40" Height="20" Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click"/>
+                                <Button x:Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click" Style="{DynamicResource Buttonthick}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <Button Width="40" Height="20" Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click"/>
+                                <Button x:Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click" Style="{DynamicResource ButtonLinenormal}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <Grid Grid.Row="2">
-                                <Button Width="40" Height="20" Name="rbtThinInk" Content="细" Click="rbtThinInk_Click"/>
+                                <Button x:Name="rbtThinInk" Content="细" Click="rbtThinInk_Click" Style="{DynamicResource Buttonthin}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <Grid Grid.Row="3">
-                                <Button Width="40" Height="20" Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click"/>
+                                <Button x:Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click" Style="{DynamicResource Buttonerase}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid Grid.Column="1">
-                        <InkCanvas Name="InkCanvasAnnotation1" Margin="10,20,10,20" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink">
-                        </InkCanvas>
+                    <Grid Grid.Column="1" Margin="0,0,20,0">
+                        <InkCanvas x:Name="InkCanvasAnnotation1" Margin="10,20,10,20" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Button Height="23" Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,10,0" Width="69" Content="确认" Click="btnCommentOK_Click"/>
-                    <Button Height="23" Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,89,0" Width="69" Content="清空" Click="btnCommentClear_Click" />
+                    <Button Height="23" x:Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,30,20" Width="69" Content="确 认" Click="btnCommentOK_Click" Style="{DynamicResource ButtonFeedbacknormal}"/>
+                    <Button Height="23" x:Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,120,20" Width="69" Content="清 空" Click="btnCommentClear_Click" Style="{DynamicResource ButtonFeedbacknormal}" Background="{x:Null}" BorderBrush="{x:Null}" />
                 </Grid>
             </Grid>
         </Grid>
