@@ -413,9 +413,13 @@
     <Resource Include="CutImages\图像\FeiJing.png" />
     <Resource Include="CutImages\图像\Fushe.png" />
     <Resource Include="CutImages\图像\HuoJing.png" />
+    <Resource Include="CutImages\图像\Opacitymask.png" />
     <Resource Include="CutImages\图像\YiLiao.png" />
+    <Resource Include="FeedBack\dot_bg-07.png" />
+    <Resource Include="FeedBack\Opacitymask.png" />
     <Resource Include="loginbuttonbg.png" />
     <Resource Include="logout.png" />
+    <Resource Include="Opacitymask.png" />
     <Resource Include="switch1.png" />
     <Resource Include="weatherlogo\0.gif" />
     <Resource Include="weatherlogo\1.gif" />
