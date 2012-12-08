@@ -7,8 +7,7 @@
       xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="WpfApplication3.PageShiGuZaiHai"
       x:Name="Page"
       mc:Ignorable="d" 
-      d:DesignHeight="977" d:DesignWidth="1265"
-	Title="PageShiGuZaiHai">
+      d:DesignHeight="972" d:DesignWidth="1265" Title="PageShiGuZaiHai">
     <Page.Resources>
         <Color x:Key="#535353">#FF353535</Color>
         <Color x:Key="#235235235">#FFEBEBEB</Color>
@@ -113,7 +112,7 @@
                 	</Grid>
                 </Grid>
             </Grid>
-            <Grid Margin="0,19.667,5,6.764" Grid.Row="1">
+            <Grid Margin="0,19.667,5,0" Grid.Row="1">
             	<Grid.ColumnDefinitions>
             		<ColumnDefinition Width="0.504*"/>
             		<ColumnDefinition Width="0.496*"/>
@@ -176,13 +175,21 @@
             			</Rectangle.Fill>
             		</Rectangle>
             		<Label Content="预案启动" Height="40.834" Style="{DynamicResource Labeltopheader}" VerticalAlignment="Top" FontFamily="Helvetica" FontSize="14" FontWeight="Bold"/>
-            		<Grid Margin="50,80,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width" >
+            		<Grid Margin="0,80,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width" >
+            			<Grid.RowDefinitions>
+            				<RowDefinition Height="321.13"/>
+            				<RowDefinition/>
+            			</Grid.RowDefinitions>
             			<Grid.ColumnDefinitions>
-            				<ColumnDefinition Width="0.23*"/>
-            				<ColumnDefinition Width="0.493*"/>
-            				<ColumnDefinition Width="0.277*"/>
+            				<ColumnDefinition Width="0.339*"/>
+            				<ColumnDefinition Width="114"/>
+            				<ColumnDefinition Width="0.19*"/>
+            				<ColumnDefinition Width="227.132"/>
+            				<ColumnDefinition Width="0.134*"/>
+            				<ColumnDefinition Width="129.274"/>
+            				<ColumnDefinition Width="0.336*"/>
             			</Grid.ColumnDefinitions>
-            			<ListBox Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,41.31,15.46,-18.691">
+            			<ListBox Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,41.31,0,8.945" Grid.Column="1">
             				<ListBoxItem x:Name="dengji1" Content="Ⅰ级（特大）" Style="{DynamicResource ListBoxItemGreen}" MouseLeftButtonDown="dengji1_MouseLeftButtonDown" Width="100" Height="33" FontFamily="Helvetica" FontWeight="Bold" IsSelected="True">
             					<ListBoxItem.Foreground>
             						<SolidColorBrush Color="{DynamicResource #235235235}"/>
@@ -204,7 +211,7 @@
             					</ListBoxItem.Foreground>
             				</ListBoxItem>
             			</ListBox>
-            			<Grid Height="250" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Margin="29.54,40,0,0" d:LayoutOverrides="VerticalMargin" Grid.Column="1">
+            			<Grid Margin="0,41.31,0,29.82" Grid.Column="3" Height="250">
             				<Grid.RowDefinitions>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
@@ -255,7 +262,7 @@
             					</CheckBox>
             				</Grid>
             			</Grid>
-            			<StackPanel Margin="6.04,0,37.96,-0.003" d:LayoutOverrides="Height" Grid.Column="2" >
+            			<StackPanel Margin="6.04,0,7.96,27.629" d:LayoutOverrides="Height" Grid.Column="5" >
             				<Label Content="负责人联络" Height="26.666" HorizontalAlignment="Left" x:Name="label_ZiRanZaiHai_ShiJianQingKuang_Copy" VerticalAlignment="Top" Width="107" Padding="13,1,5,1" FontWeight="Bold" FontSize="16" >
             					<Label.Foreground>
             						<SolidColorBrush Color="{DynamicResource #235235235}"/>

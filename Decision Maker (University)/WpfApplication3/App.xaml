@@ -2417,7 +2417,7 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
-		<Style x:Key="ListBoxItemfeedbck" TargetType="{x:Type ListBoxItem}">
+		<Style TargetType="{x:Type ListBoxItem}" x:Key="ListBoxItemfeedbck">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
 			<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
@@ -2425,7 +2425,12 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="{x:Type ListBoxItem}">
-						<Grid x:Name="Bd" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+						<Grid x:Name="Bd" SnapsToDevicePixels="true">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="28.044"/>
+								<ColumnDefinition Width="0.561*"/>
+								<ColumnDefinition Width="0.439*"/>
+							</Grid.ColumnDefinitions>
 							<VisualStateManager.VisualStateGroups>
 								<VisualStateGroup x:Name="SelectionStates">
 									<VisualState x:Name="Unselected"/>
@@ -2439,10 +2444,25 @@
 											</ColorAnimationUsingKeyFrames>
 										</Storyboard>
 									</VisualState>
-									<VisualState x:Name="SelectedUnfocused"/>
+									<VisualState x:Name="SelectedUnfocused">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+											</ColorAnimationUsingKeyFrames>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+									</VisualState>
+									<VisualState x:Name="Disabled"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2">
+							<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
 								<Rectangle.Fill>
 									<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
 										<GradientStop Color="{DynamicResource #235235235}" Offset="0"/>
@@ -2450,7 +2470,23 @@
 									</LinearGradientBrush>
 								</Rectangle.Fill>
 							</Rectangle>
-							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0"/>
+							<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+								<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+									<Ellipse.Fill>
+										<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+											<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+											<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+										</LinearGradientBrush>
+									</Ellipse.Fill>
+								</Ellipse>
+								<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+									<Path.Fill>
+										<SolidColorBrush Color="{DynamicResource #235235235}"/>
+									</Path.Fill>
+								</Path>
+							</Grid>
+							<Label Content="{Binding SubmissionDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
+							<ContentPresenter Content="{Binding FeedbackTitle}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsSelected" Value="true">
@@ -2501,7 +2537,7 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
-		<Style x:Key="ButtonFeedbacknormal" TargetType="{x:Type Button}">
+		<Style TargetType="{x:Type Button}" x:Key="ButtonFeedbacknormal">
 			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
 			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
 			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
@@ -2608,7 +2644,7 @@
 									<VisualState x:Name="Indeterminate"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0.312,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Grid.Column="1"/>
+							<ContentPresenter Margin="0.312,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Grid.Column="1"/>
 							<Path x:Name="path" Data="M12.328399,0 L12.328399,12.328399 0,12.328399 z" HorizontalAlignment="Center" Height="12.328" Stretch="Fill" Stroke="{x:Null}" Width="12.328" VerticalAlignment="Center">
 								<Path.Fill>
 									<LinearGradientBrush EndPoint="1.14,1.113" StartPoint="-0.089,0.066">
@@ -2855,7 +2891,7 @@
 								</Microsoft_Windows_Themes:SystemDropShadowChrome>
 							</Popup>
 							<ToggleButton Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}"/>
-							<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" IsHitTestVisible="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" IsHitTestVisible="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,12,0"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
@@ -2889,6 +2925,126 @@
 					<Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
 				</Trigger>
 			</Style.Triggers>
+		</Style>
+		<Style x:Key="ComboBoxItemfeedback" TargetType="{x:Type ComboBoxItem}">
+			<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="Padding" Value="3,0,3,0"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ComboBoxItem}">
+						<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsHighlighted" Value="true">
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<ItemsPanelTemplate x:Key="ItemsPanelTemplatetest">
+			<VirtualizingStackPanel IsItemsHost="True"/>
+		</ItemsPanelTemplate>
+		<Style x:Key="Buttonfeedbacktitle" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Rectangle x:Name="rectangle" HorizontalAlignment="Stretch" Height="Auto" RadiusY="8" RadiusX="8" VerticalAlignment="Stretch" Width="Auto">
+								<Rectangle.Effect>
+									<DropShadowEffect ShadowDepth="0"/>
+								</Rectangle.Effect>
+								<Rectangle.Fill>
+									<LinearGradientBrush EndPoint="1.017,1.037" StartPoint="0.021,0.095">
+										<GradientStop Color="White" Offset="0"/>
+										<GradientStop Color="{DynamicResource #235235235}" Offset="1"/>
+									</LinearGradientBrush>
+								</Rectangle.Fill>
+							</Rectangle>
+							<ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="12,0"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsKeyboardFocused" Value="true"/>
+							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="#ADADAD"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ListBoxItemfeedbackbg" TargetType="{x:Type ListBoxItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="Padding" Value="2,0,0,0"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListBoxItem}">
+						<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="Selector.IsSelectionActive" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+							</MultiTrigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ListBoxItemfeedbackBg" TargetType="{x:Type ListBoxItem}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListBoxItem}">
+						<Grid/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
 		</Style>
 	</Application.Resources>
 </Application>
