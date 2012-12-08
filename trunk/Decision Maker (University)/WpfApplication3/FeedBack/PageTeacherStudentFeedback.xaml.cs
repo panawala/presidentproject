@@ -43,9 +43,10 @@ namespace WpfApplication3.FeedBack
         {
             object obj = listboxFeedback.ContainerFromElement((Button)sender);
             iCurrentItem = listboxFeedback.Items.IndexOf(((ListBoxItem)obj).Content);
-
+			
             ShowFeedBack(iCurrentItem);
         }
+
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
@@ -215,6 +216,16 @@ namespace WpfApplication3.FeedBack
         private void rbtRubber_Click(object sender, RoutedEventArgs e)
         {
             InkCanvasAnnotation1.EditingMode = InkCanvasEditingMode.EraseByPoint;
+        }
+
+        private void ListBoxItem_Selected(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			object obj = listboxFeedback.ContainerFromElement((Button)sender);
+            iCurrentItem = listboxFeedback.Items.IndexOf(((ListBoxItem)obj).Content);
+			
+            ShowFeedBack(iCurrentItem);
+			
         }
     }
 }

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="992"
+      d:DesignHeight="972" d:DesignWidth="1265"
 	Title="VideoConferencing" Loaded="Page_Loaded">
     <Page.Resources>
         <DataTemplate x:Key="listBoxTemplate">
@@ -22,120 +22,161 @@
 
         </DataTemplate>
         <DataTemplate x:Key="listBoxTemplate1">
-            <Grid>
+            <Grid d:DesignWidth="129.5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"></ColumnDefinition>
-                    <ColumnDefinition Width="60*"></ColumnDefinition>
-                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.161*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.839*"></ColumnDefinition>
+                    <ColumnDefinition Width="49.21"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
                 <Button Grid.Column="1" Content="{Binding Path=Title}" Click="Button_FaYan"/>
-                <Button Grid.Column="2" Content="共享" Click="Button_Share"/>
+                <Button Grid.Column="2" Content="共享" Click="Button_Share" Style="{DynamicResource ButtonFeedbacknormal}"/>
             </Grid>
 
         </DataTemplate>
     </Page.Resources>
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75*">
-            </ColumnDefinition>
-            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="446.545"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Margin="0,0,10,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="65*"></RowDefinition>
-                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="0.469*"></RowDefinition>
+                <RowDefinition Height="0.531*"></RowDefinition>
             </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="视频会议" FontSize="20" Name="groupBox2">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="66*" ></ColumnDefinition>
-                        <ColumnDefinition Width="34*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Name="ImageVideo1" Stretch="Fill" Grid.Column="1" Source="/WpfApplication3;component/Images/ImageVideo1.jpg" />
-                    <Grid Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="67*"></RowDefinition>
-                            <RowDefinition Height="33*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" x:Name="Video"   d:IsHidden="True" d:IsLocked="True" Background="Black">
-
-                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,62,9" x:Name="buttonfullscreen" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}"  Cursor="Hand">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/WpfApplication3;component/zoom-fit-best.png" />
-                                </Button.Background>
-                            </Button>
-                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,6,9" x:Name="buttonswitch" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/WpfApplication3;component/switch1.png" />
-                                </Button.Background>
-                            </Button>
-                            <Button Height="20" HorizontalAlignment="Right" Margin="0,0,122,9" x:Name="buttonStart" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/WpfApplication3;component/Cam.jpg" />
-                                </Button.Background>
-                            </Button>
-                            <Label Height="39" Margin="0,0,185,-1" x:Name="msglabel" VerticalAlignment="Bottom" Content="状态提示" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="92">
-                                <Label.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform />
-                                        <SkewTransform />
-                                        <RotateTransform Angle="-0.139" />
-                                        <TranslateTransform />
-                                    </TransformGroup>
-                                </Label.RenderTransform>
-                                <Label.Foreground>
-                                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}" />
-                                </Label.Foreground>
-                            </Label>
-
-                            <!--daimaxiezaizheli-->
-                        </Grid>
-
-                        <Image   Name="ImageVideo3" Stretch="Fill" Grid.Row="1" Source="/WpfApplication3;component/Images/ImageVideo3.jpg" />
+            <Grid Margin="0,0,0,10">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="45.033"/>
+            		<RowDefinition/>
+            	</Grid.RowDefinitions>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="66*" />
+        			<ColumnDefinition Width="34*"/>
+        		</Grid.ColumnDefinitions>
+        		<Rectangle RadiusX="8" RadiusY="8" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        			<Rectangle.Effect>
+        				<DropShadowEffect/>
+        			</Rectangle.Effect>
+        			<Rectangle.Fill>
+        				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        			</Rectangle.Fill>
+        		</Rectangle>
+        		<Label Content="视频会议" Style="{DynamicResource Labeltopheader}" Grid.ColumnSpan="2" Margin="0,0,0,4.166" d:LayoutOverrides="Height"/>
+        		<Grid Grid.ColumnSpan="2" Grid.Row="1" Margin="5,0,5,5">
+        			<Grid.RowDefinitions>
+        				<RowDefinition/>
+        			</Grid.RowDefinitions>
+        			<Grid.ColumnDefinitions>
+        				<ColumnDefinition Width="0.656*"/>
+        				<ColumnDefinition Width="0.344*"/>
+        			</Grid.ColumnDefinitions>
+        			<Image x:Name="ImageVideo1" Stretch="Fill" Source="/WpfApplication3;component/Images/ImageVideo1.jpg" Grid.Column="1" />
                  
-                    </Grid>
+        			<Grid Grid.Column="0" Margin="0,0,-0.08,0">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="67*"/>
+        					<RowDefinition Height="33*"/>
+        				</Grid.RowDefinitions>
+                 
+        				<Grid Grid.Row="0" x:Name="Video" Background="Black" d:IsLocked="True">
+
+        					<Button Height="20" HorizontalAlignment="Right" Margin="0,0,62,9" x:Name="buttonfullscreen" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}"  Cursor="Hand">
+        						<Button.Background>
+        							<ImageBrush ImageSource="/WpfApplication3;component/zoom-fit-best.png" />
+        						</Button.Background>
+        					</Button>
+        					<Button Height="20" HorizontalAlignment="Right" Margin="0,0,6,9" x:Name="buttonswitch" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
+        						<Button.Background>
+        							<ImageBrush ImageSource="/WpfApplication3;component/switch1.png" />
+        						</Button.Background>
+        					</Button>
+        					<Button Height="20" HorizontalAlignment="Right" Margin="0,0,122,9" x:Name="buttonStart" VerticalAlignment="Bottom" Width="20" Content="" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle8}" Cursor="Hand">
+        						<Button.Background>
+        							<ImageBrush ImageSource="/WpfApplication3;component/Cam.jpg" />
+        						</Button.Background>
+        					</Button>
+        					<Label Height="39" Margin="0,0,185,-1" x:Name="msglabel" VerticalAlignment="Bottom" Content="状态提示" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="92">
+        						<Label.RenderTransform>
+        							<TransformGroup>
+        								<ScaleTransform />
+        								<SkewTransform />
+        								<RotateTransform Angle="-0.139" />
+        								<TranslateTransform />
+        							</TransformGroup>
+        						</Label.RenderTransform>
+        						<Label.Foreground>
+        							<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}" />
+        						</Label.Foreground>
+        					</Label>
+
+        					<!--daimaxiezaizheli-->
                    
-                </Grid>
-            </GroupBox>
-            <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="发演讲稿" FontSize="20" Name="groupBox3">
+        				</Grid>
 
-                <Grid>
-                    <WebBrowser Name="webBrower1"/>
-                </Grid>
-            </GroupBox>
-        </Grid>
-        <GroupBox Grid.Column="1" Grid.ColumnSpan="2" Header="相关材料" FontSize="20" Name="groupBox4">
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30*"></RowDefinition>
-                    <RowDefinition Height="40*"></RowDefinition>
-                    <RowDefinition Height="30*"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" >
-                    <TabItem Header="发演讲稿" Width="80" >
-                        <ListBox  Name="listBox1" ItemTemplate="{StaticResource listBoxTemplate1}" ItemsSource="{Binding}"/>
-                    </TabItem>
-                    <TabItem Header="收到共享" Width="80" >
-                        <ListBox  Name="listBox2" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
-                    </TabItem>
-                    <TabItem Header="未共享" Width="72" >
-                        <ListBox  Name="listBox3" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
-                    </TabItem>
-                    <TabItem Header="已共享" Width="72" >
-                        <ListBox  Name="listBox4" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
-                    </TabItem>
-                </TabControl>
-                <Grid Grid.Row="1" >
-                    <WebBrowser Name="webBrower2"/>
-                </Grid>
-                <Grid Grid.Row="2" >
-                    <Button Content="添加相关文件"   Name="button1" Click="Button_ChooseFile"  />
-                </Grid>
+        				<Image   x:Name="ImageVideo3" Stretch="Fill" Grid.Row="1" Source="/WpfApplication3;component/Images/ImageVideo3.jpg" />
+                 
+        			</Grid>
+                   
+        		</Grid>
+                   
+        	</Grid>
+            <Grid Grid.Row="1">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="44.906"/>
+            		<RowDefinition/>
+            	</Grid.RowDefinitions>
+            	<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+            		<Rectangle.Effect>
+            			<DropShadowEffect/>
+            		</Rectangle.Effect>
+            		<Rectangle.Fill>
+            			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            		</Rectangle.Fill>
+            	</Rectangle>
+            	<Label VerticalAlignment="Top" Content="发演讲稿" Style="{DynamicResource Labeltopheader}"/>
+            	<WebBrowser x:Name="webBrower1" Grid.Row="1" Margin="20,20,20,30" Opacity="0.44"/>
             </Grid>
-        </GroupBox>
+        </Grid>
+        <Grid Grid.Column="1" >
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="339"/>
+        		<RowDefinition/>
+        		<RowDefinition Height="58.5"/>
+        	</Grid.RowDefinitions>
+
+        	<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="3">
+        		<Rectangle.Effect>
+        			<DropShadowEffect/>
+        		</Rectangle.Effect>
+        		<Rectangle.Fill>
+        			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        		</Rectangle.Fill>
+        	</Rectangle>
+        	<Label VerticalAlignment="Top" Content="相关材料" Style="{DynamicResource LabelRightContent}" d:LayoutOverrides="VerticalAlignment"/>
+
+        	<TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" Margin="0,44.834,0,0" Style="{DynamicResource TabControlSubContent}" Background="{x:Null}" BorderBrush="{x:Null}" >
+        		<TabItem Header="发演讲稿" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="116.5,0,-116.5,0" >
+        			<ListBox  x:Name="listBox1" ItemTemplate="{StaticResource listBoxTemplate1}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        		</TabItem>
+        		<TabItem Header="收到共享" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="110.917,0,-110.917,0" >
+        			<ListBox  x:Name="listBox2" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        		</TabItem>
+        		<TabItem Header="未共享" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="105,0,-105,0" >
+        			<ListBox  x:Name="listBox3" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}"/>
+        		</TabItem>
+        		<TabItem Header="已共享" Style="{DynamicResource TabItem2ndmenulast}" Margin="98.545,0,-98.545,0" >
+        			<ListBox  x:Name="listBox4" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        		</TabItem>
+        	</TabControl>
+        	<Grid Grid.Row="1" Margin="10,10,10,5" >
+        		<WebBrowser x:Name="webBrower2" Opacity="0.61"/>
+        	</Grid>
+        	<Grid Grid.Row="2" Margin="0" >
+        		<Button Content="添加相关文件"   x:Name="button1" Click="Button_ChooseFile" HorizontalAlignment="Right" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" VerticalAlignment="Top" Margin="0,5,20,0" Width="95"  />
+        	</Grid>
+        </Grid>
     </Grid>
 </Page>

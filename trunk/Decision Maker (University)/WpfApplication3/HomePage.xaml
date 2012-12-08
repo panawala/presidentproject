@@ -6,9 +6,7 @@
       xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
       xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
       mc:Ignorable="d" 
-      d:DesignHeight="977" d:DesignWidth="1265
-	  "
-	Title="HomePage" Foreground="{x:Null}">
+      d:DesignHeight="972" d:DesignWidth="1265" Title="HomePage" Foreground="{x:Null}">
     <Page.Resources>
         <Color x:Key="#122122122">#FF7A7A7A</Color>
         <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">

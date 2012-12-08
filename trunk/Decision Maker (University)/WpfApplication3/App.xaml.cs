@@ -23,6 +23,7 @@ namespace WpfApplication3
             //ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.Engine);
             //InitializeEngineLicense();
         }
+
         //private void InitializeEngineLicense()
         //{
         //    AoInitialize aoi = new AoInitialize();
