@@ -4,341 +4,613 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1300"
+      d:DesignHeight="972" d:DesignWidth="1265"
 	Title="PageDocIssue" Loaded="Page_Loaded">
-
+	<Page.Resources>
+		 <ControlTemplate x:Key="listBoxItemDocIssue" TargetType="{x:Type ListBoxItem}">
+            							<Grid x:Name="Bd" SnapsToDevicePixels="true">
+            								<Grid.ColumnDefinitions>
+            									<ColumnDefinition Width="28.044"/>
+            									<ColumnDefinition Width="0.561*"/>
+            									<ColumnDefinition Width="0.439*"/>
+            								</Grid.ColumnDefinitions>
+            								<VisualStateManager.VisualStateGroups>
+            									<VisualStateGroup x:Name="SelectionStates">
+            										<VisualState x:Name="Unselected"/>
+            										<VisualState x:Name="Selected">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="SelectedUnfocused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="CommonStates">
+            										<VisualStateGroup.Transitions>
+            											<VisualTransition GeneratedDuration="0:0:0.02"/>
+            										</VisualStateGroup.Transitions>
+            										<VisualState x:Name="Normal"/>
+            										<VisualState x:Name="MouseOver">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="Disabled"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="FocusStates">
+            										<VisualState x:Name="Unfocused"/>
+            										<VisualState x:Name="Focused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="VisualStateGroup">
+            										<VisualState x:Name="VisualStatetest"/>
+            									</VisualStateGroup>
+            								</VisualStateManager.VisualStateGroups>
+            								<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+            									<Rectangle.Fill>
+            										<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
+            											<GradientStop Color="#FFEBEBEB" Offset="0"/>
+            											<GradientStop Color="#FFEBEBEB" Offset="1"/>
+            										</LinearGradientBrush>
+            									</Rectangle.Fill>
+            								</Rectangle>
+            								<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+            									<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+            										<Ellipse.Fill>
+            											<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+            												<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+            												<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+            											</LinearGradientBrush>
+            										</Ellipse.Fill>
+            									</Ellipse>
+            									<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+            										<Path.Fill>
+            											<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            										</Path.Fill>
+            									</Path>
+            								</Grid>
+            								<Label Content="{Binding SubmissionDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
+            								<ContentPresenter Content="{Binding DocTitle}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
+            								<Button x:Name="btnDocSearchShow" Content="{Binding DocTitle}" Click="btnDocSearchShow_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0"/>
+            							</Grid>
+            							<ControlTemplate.Triggers>
+            								<Trigger Property="IsSelected" Value="true"/>
+            								<Trigger Property="IsMouseOver" Value="true">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+            								</Trigger>
+            								<MultiTrigger>
+            									<MultiTrigger.Conditions>
+            										<Condition Property="IsSelected" Value="true"/>
+            										<Condition Property="Selector.IsSelectionActive" Value="false"/>
+            									</MultiTrigger.Conditions>
+            								</MultiTrigger>
+            								<Trigger Property="IsEnabled" Value="false">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            								</Trigger>
+            							</ControlTemplate.Triggers>
+            						</ControlTemplate>
+	</Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="444.6"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Margin="0,0,15,0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="308"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Button Name="btnAlready" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Width="70" Height="30" Content="已批阅文件" Click="btnAlready_Click" />
-                    <Button Name="btnNotyet" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" Width="70" Height="30" Content="待批阅文件" Click="btnNotyet_Click" />
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Label Height="31" Width="82" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0">最新文件</Label>
-                </Grid>
-                <Grid Grid.Row="2" Margin="5,5,5,5">
-                    <ListBox Name="listboxLatestDocs" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" >
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="5*"/>
-                                        <ColumnDefinition Width="30*"/>
-                                        <ColumnDefinition Width="65*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0">
-                                        <Button Name="btnLatestDocShow" Click="btnLatestDocShow_Click" Content="->" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-                                        <Label Content="{Binding Path=SubmissionDate}" Margin="5,10,5,10"/>
-                                    </Grid>
-                                    <Grid Grid.Column="2">
-                                        <Button Name="btnLatestDocTitle" Content="{Binding Path=DocTitle}" Click="btnLatestDocShow_Click" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="33.3*"/>
-                        <ColumnDefinition Width="33.3*"/>
-                        <ColumnDefinition Width="33.3*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <Button Name="btnDocTypeA" Content="行政文件" VerticalAlignment="Center" HorizontalAlignment="Center" Width="70" Height="30" Click="btnDocTypeA_Click" />
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Button Name="btnDocTypeB" Content="法规文件" VerticalAlignment="Center" HorizontalAlignment="Center" Width="70" Height="30" Click="btnDocTypeB_Click" />
-                    </Grid>
-                    <Grid Grid.Column="2">
-                        <Button Name="btnDocTypeC" Content="公开文件" VerticalAlignment="Center" HorizontalAlignment="Center" Width="70" Height="30" Click="btnDocTypeC_Click" />
-                    </Grid>
-                </Grid>
-                <Grid Grid.Row="4" Margin="5,5,5,5">
-                    <ListBox Name="listboxDocs" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" >
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="5*"/>
-                                        <ColumnDefinition Width="30*"/>
-                                        <ColumnDefinition Width="65*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0">
-                                        <Button Name="btnDocShow" Click="btnDocShow_Click" Content="->" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-                                        <Label Content="{Binding Path=SubmissionDate}" Margin="5,10,5,10"/>
-                                    </Grid>
-                                    <Grid Grid.Column="2">
-                                        <Button Name="btnDocTitle" Content="{Binding Path=DocTitle}" Click="btnDocShow_Click" Margin="5,10,5,10" Focusable="False"/>
-                                    </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
-            </Grid>
+            <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+            	<Rectangle.Fill>
+            		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            	</Rectangle.Fill>
+        		<Rectangle.Effect>
+        			<DropShadowEffect/>
+        		</Rectangle.Effect>
+        	</Rectangle>
+            <TabControl Grid.RowSpan="1" Style="{DynamicResource TabControlStyle2}" BorderBrush="{x:Null}" Background="{x:Null}">
+            	<TabItem x:Name="Already" Header="已批阅文件" Style="{DynamicResource TabItemFirst}" Margin="-2,-2,2,2">
+            		<Grid x:Name="GridAlready" Loaded="GridAlready_Loaded">
+            			<Grid.RowDefinitions>
+            				<RowDefinition Height="0.399*"/>
+            				<RowDefinition Height="0.601*"/>
+            			</Grid.RowDefinitions>
+            			<Label Content="最新文件" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource LabelNormal}" Margin="10,7,0,0">
+            				<Label.Foreground>
+            					<SolidColorBrush Color="{DynamicResource white}"/>
+            				</Label.Foreground>
+            			</Label>
+            			<ListBox x:Name="listboxLatestDocsIsRead" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Margin="10,40,10,5" BorderThickness="0" >
+            				<ListBox.Background>
+            					<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            				</ListBox.Background>
+            				<ListBox.ItemContainerStyle>
+            					<Style TargetType="{x:Type ListBoxItem}" >
+            						<Setter Property="Background" Value="Transparent"/>
+            						<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            						<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            						<Setter Property="Padding" Value="2,0,0,0"/>
+            						<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+
+            						</Setter>
+            					</Style>
+            				</ListBox.ItemContainerStyle>
+            			</ListBox>
+            			<Grid Margin="0,10,0,0" Grid.Row="1">
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="45.261"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<TabControl Style="{DynamicResource TabControlSubContent}" Background="{x:Null}" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            					<TabItem x:Name="DocType1" Header="行政文件" Style="{DynamicResource TabItemLargeProjects}" Margin="43.5,-2,-43.5,-1">
+            						<Grid x:Name="GridDocType1" Background="#FFE5E5E5" Loaded="GridDocType1_Loaded">
+            							<ListBox x:Name="listboxDocsType1" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+            
+            										</Setter>
+            									</Style>
+            								</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            					<TabItem x:Name="DocType2" Header="法规文件" Style="{DynamicResource TabItemLargeProjects}" Margin="67.5,-2,-67.5,-1">
+            						<Grid x:Name="GridDocType2" Background="#FFE5E5E5" Loaded="GridDocType2_Loaded" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            							<ListBox x:Name="listboxDocsType2" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+            									
+            										</Setter>
+            									</Style>
+            								</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            					<TabItem x:Name="DocType3" Header="公开文件" Style="{DynamicResource TabItemLargeProjects}" Margin="92,-2,-92,-1">
+            						<Grid x:Name="GridDocType3" Background="#FFE5E5E5" Loaded="GridDocType3_Loaded" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            							<ListBox x:Name="listboxDocsType3" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+												<Style TargetType="{x:Type ListBoxItem}" >
+													<Setter Property="Background" Value="Transparent"/>
+													<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+													<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+													<Setter Property="Padding" Value="2,0,0,0"/>
+													<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+						
+													</Setter>
+												</Style>
+											</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            				</TabControl>
+            			</Grid>
+            		</Grid>
+            	</TabItem>
+            	<TabItem x:Name="NotYet" Header="待批阅文件" Style="{DynamicResource TabItemMiddle}" Margin="0,-2,0,2">
+            		<Grid x:Name="GridNotYet" Loaded="GridNotYet_Loaded">
+            			<Grid.RowDefinitions>
+            				<RowDefinition Height="0.399*"/>
+            				<RowDefinition Height="0.601*"/>
+            			</Grid.RowDefinitions>
+            			<Label Content="最新文件" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource LabelNormal}" Margin="10,7,0,0"/>
+            			<ListBox x:Name="listboxLatestDocsNotRead" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Margin="10,40,10,5" BorderThickness="0" >
+            				<ListBox.Background>
+            					<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            				</ListBox.Background>
+            				<ListBox.ItemContainerStyle>
+            					<Style TargetType="{x:Type ListBoxItem}" >
+            						<Setter Property="Background" Value="Transparent"/>
+            						<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            						<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            						<Setter Property="Padding" Value="2,0,0,0"/>
+            						<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+            				
+            						</Setter>
+            					</Style>
+            				</ListBox.ItemContainerStyle>
+            			</ListBox>
+            			<Grid Margin="0,10,0,0" Grid.Row="1">
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="45.261"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<TabControl Style="{DynamicResource TabControlSubContent}" Background="{x:Null}" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            					<TabItem x:Name="DocType4" Header="行政文件" Style="{DynamicResource TabItemLargeProjects}" Margin="43.5,-2,-43.5,-1">
+            						<Grid x:Name="GridDocType4" Background="#FFE5E5E5" Loaded="GridDocType4_Loaded">
+            							<ListBox x:Name="listboxDocsType4" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+            						
+            										</Setter>
+            									</Style>
+            								</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            					<TabItem x:Name="DocType5" Header="法规文件" Style="{DynamicResource TabItemLargeProjects}" Margin="67.5,-2,-67.5,-1">
+            						<Grid x:Name="GridDocType5" Background="#FFE5E5E5" Loaded="GridDocType5_Loaded">
+            							<ListBox x:Name="listboxDocsType5" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+            		
+            										</Setter>
+            									</Style>
+            								</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            					<TabItem x:Name="DocType6" Header="公开文件" Style="{DynamicResource TabItemLargeProjects}" Margin="92,-2,-92,-1">
+            						<Grid x:Name="GridDocType6" Background="#FFE5E5E5" Loaded="GridDocType6_Loaded">
+            							<ListBox x:Name="listboxDocsType6" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" BorderBrush="{x:Null}" >
+            								<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+ 
+            										</Setter>
+            									</Style>
+            								</ListBox.ItemContainerStyle>
+            							</ListBox>
+            						</Grid>
+            					</TabItem>
+            				</TabControl>
+            			</Grid>
+            		</Grid>
+            	</TabItem>
+        	</TabControl>
             <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="20*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Button Name="btnHistory" Margin="10,5,10,5">历史记录？这按钮干嘛的？</Button>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <TextBox Name="tbxSearch" VerticalAlignment="Center" Margin="0,5,0,5" MaxLength="50" />
-                </Grid>
-                <Grid Grid.Column="2">
-                    <Button Name="btnSearch" VerticalAlignment="Center" Margin="10,14,10,14" Content="搜索" Click="btnSearch_Click"/>
-                </Grid>
+            	<Grid.RowDefinitions>
+            		<RowDefinition/>
+            		<RowDefinition Height="56.98"/>
+            	</Grid.RowDefinitions>
+            	<Rectangle Margin="10,5,10,0" StrokeDashArray="3 3">
+            		<Rectangle.Stroke>
+            			<SolidColorBrush Color="{DynamicResource #122122122}"/>
+            		</Rectangle.Stroke>
+            		<Rectangle.Fill>
+            			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            		</Rectangle.Fill>
+            	</Rectangle>
+            	<ListBox x:Name="listboxDocs" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Margin="25,20,25,15" BorderThickness="0" >
+            		<ListBox.Background>
+            			<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            		</ListBox.Background>
+            		<ListBox.ItemContainerStyle>
+            			<Style TargetType="{x:Type ListBoxItem}" >
+            				<Setter Property="Background" Value="Transparent"/>
+            				<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            				<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            				<Setter Property="Padding" Value="2,0,0,0"/>
+            				<Setter Property="Template" Value="{StaticResource listBoxItemDocIssue}">
+               				</Setter>
+            			</Style>
+            		</ListBox.ItemContainerStyle>
+            	</ListBox>
+            	<Grid Grid.Row="1">
+            		<Grid.ColumnDefinitions>
+            			<ColumnDefinition Width="108.805"/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition Width="104.596"/>
+            		</Grid.ColumnDefinitions>
+            		<Grid Grid.Column="0">
+            			<Button x:Name="btnHistory" Margin="10,5,10,5" Content="历史记录" Style="{DynamicResource ButtonFeedbacknormal}" Width="80" Height="23"/>
+            		</Grid>
+            		<Grid Grid.Column="1">
+            			<TextBox x:Name="tbxSearch" VerticalAlignment="Center" Margin="0,5,0,5" MaxLength="50" GotMouseCapture="tbxSearch_GotMouseCapture" KeyDown="tbxSearch_KeyDown" Height="23" >
+            				<TextBox.Background>
+            					<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            				</TextBox.Background>
+            			</TextBox>
+            		</Grid>
+            		<Grid Grid.Column="2">
+            			<Button x:Name="btnSearch" VerticalAlignment="Center" Content="搜索" Click="btnSearch_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="69" Height="23" HorizontalAlignment="Center"/>
+            		</Grid>
+            	</Grid>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Margin="192,0,0,0">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<Path Grid.ColumnSpan="1" Grid.Column="0" Data="M0,3.0013325E-11 L1.6560059,3.0013325E-11 C6.0814209,-1.1935911E-05 9.6689453,3.5817131 9.6689453,7.9999956 L9.6151123,8.5333151 9.6689453,8.5333151 9.6689453,15.999991 1.6560059,15.999991 0,15.999991 z" Fill="#FF7A7A7A" HorizontalAlignment="Right" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="9.638"/>
+            	<Rectangle Grid.Column="0" Fill="#FF7A7A7A" HorizontalAlignment="Stretch" Height="16" Margin="0,0,8,0" VerticalAlignment="Top" Width="Auto" Grid.ColumnSpan="1"/>
+            	<Rectangle Height="2" Margin="5,0,16,0" VerticalAlignment="Bottom">
+            		<Rectangle.Fill>
+            			<SolidColorBrush Color="{DynamicResource LineColor#184184184}"/>
+            		</Rectangle.Fill>
+            	</Rectangle>
             </Grid>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="40*"/>
+                <RowDefinition Height="0.472*"/>
+                <RowDefinition Height="0.24*"/>
+                <RowDefinition Height="0.288*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5,5,5,5" Background="#FFEBEBEB">
+            <Grid Grid.Row="0" Margin="0,0,5,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">文件内容</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <WebBrowser Name="webbrowserDocContent" Margin="30,20,30,20"></WebBrowser>
-                </Grid>
+                <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+                	</Rectangle.Fill>
+                	<Rectangle.Effect>
+                		<DropShadowEffect/>
+                	</Rectangle.Effect>
+                </Rectangle>
+                <Label Style="{DynamicResource Labeltopheader}" Content="文件内容" VerticalAlignment="Top"/>
+                <WebBrowser x:Name="webbrowserDocContent" Margin="15,10,15,25" Grid.Row="1" Opacity="0.145"/>
             </Grid>
-            <Grid Grid.Row="1" Margin="5,5,5,5" Background="#FFEBEBEB">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">抄送部门</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="25*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox1" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
-                            <ComboBoxItem Content="学校主要领导" IsEnabled="False" IsSelected="True" />
-                            <CheckBox Content="张三" />
-                            <CheckBox Content="李四" />
-                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
-                        </ComboBox>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox2" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
-                            <ComboBoxItem Content="学校行政机构" IsEnabled="False" IsSelected="True" />
-                            <CheckBox Content="校长办公室" />
-                            <CheckBox Content="发展规划研究中心" />
-                            <CheckBox Content="教务处" />
-                            <CheckBox Content="研究生院" />
-                            <CheckBox Content="科学技术处" />
-                            <CheckBox Content="文科办" />
-                            <CheckBox Content="人事处、人才中心" />
-                            <CheckBox Content="学生处" />
-                            <CheckBox Content="财务处" />
-                            <CheckBox Content="医管处" />
-                            <CheckBox Content="外事办公室、港澳台事务办公室" />
-                            <CheckBox Content="宣传处" />
-                            <CheckBox Content="审计处" />
-                            <CheckBox Content="监察处" />
-                            <CheckBox Content="基建处" />
-                            <CheckBox Content="实验室与设备管理处" />
-                            <CheckBox Content="资产管理处" />
-                            <CheckBox Content="教学质量管理办公室" />
-                            <CheckBox Content="保卫处" />
-                            <CheckBox Content="产业管理办公室" />
-                            <CheckBox Content="离退休工作办公室" />
-                            <CheckBox Content="对外联络与发展办公室" />
-                            <CheckBox Content="沪西校区管理委员会" />
-                            <CheckBox Content="沪北校区管理委员会" />
-                            <CheckBox Content="嘉定校区管理委员会" />
-                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-                        </ComboBox>
-                    </Grid>
-                    <Grid Grid.Column="2">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox3" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
-                            <ComboBoxItem Content="学校院系A" IsEnabled="False" IsSelected="True" />
-                            <CheckBox Content="土木工程学院" />
-                            <CheckBox Content="经济与管理学院" />
-                            <CheckBox Content="材料科学与工程学院" />
-                            <CheckBox Content="理学部" />
-                            <CheckBox Content="生命科学与技术学院" />
-                            <CheckBox Content="医学院" />
-                            <CheckBox Content="口腔医学院" />
-                            <CheckBox Content="人文学院" />
-                            <CheckBox Content="法学院/知识产权学院" />
-                            <CheckBox Content="马克思主义学院" />
-                            <CheckBox Content="政治与国际关系学院" />
-                            <CheckBox Content="中德学院" />
-                            <CheckBox Content="中德工程学院" />
-                            <CheckBox Content="联合国环境规划署环境与可持续发展学院" />
-                            <CheckBox Content="中意学院" />
-                            <CheckBox Content="高等技术学院/同科学院" />
-                            <CheckBox Content="继续教育/网络教育学院" />
-                            <CheckBox Content="出国培训学院" />
-                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-                        </ComboBox>
-                    </Grid>
-                    <Grid Grid.Column="3">
-                        <ComboBox Height="23" Margin="20,0,20,0" Name="comboBox4" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed">
-                            <ComboBoxItem Content="学校院系B" IsEnabled="False" IsSelected="True" />
-                            <CheckBox Content="建筑与城市规划学院" />
-                            <CheckBox Content="机械与能源工程学院" />
-                            <CheckBox Content="环境科学与工程学院" />
-                            <CheckBox Content="电子与信息工程学院" />
-                            <CheckBox Content="外国语学院" />
-                            <CheckBox Content="交通运输工程学院" />
-                            <CheckBox Content="汽车学院" />
-                            <CheckBox Content="轨道与城市轨道交通研究院" />
-                            <CheckBox Content="软件学院" />
-                            <CheckBox Content="设计与艺术学院" />
-                            <CheckBox Content="测绘与地理信息学院" />
-                            <CheckBox Content="体育教学部" />
-                            <CheckBox Content="职业技术教育学院" />
-                            <CheckBox Content="女子学院" />
-                            <CheckBox Content="国际文化交流学院" />
-                            <CheckBox Content="中法工程和管理学院" />
-                            <CheckBox Content="中芬中心" />
-                            <CheckBox Content="中西学院" />
-                            <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <Grid Grid.Row="1" Margin="0,0,5,10">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="43.573"/>
+            		<RowDefinition Height="36.667"/>
+            		<RowDefinition Height="0.778*"/>
+            		<RowDefinition Height="0.222*"/>
+            	</Grid.RowDefinitions>
+            	<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="4">
+            		<Rectangle.Effect>
+            			<DropShadowEffect/>
+            		</Rectangle.Effect>
+            		<Rectangle.Fill>
+            			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            		</Rectangle.Fill>
+            	</Rectangle>
+            	<Label Content="抄送部门" Style="{DynamicResource Labeltopheader}" VerticalAlignment="Top"/>
+            	<Grid Grid.Row="1">
+            		<Grid.ColumnDefinitions>
+            			<ColumnDefinition Width="25*"/>
+            			<ColumnDefinition Width="25*"/>
+            			<ColumnDefinition Width="25*"/>
+            			<ColumnDefinition Width="25*"/>
+            		</Grid.ColumnDefinitions>
+            		<Grid Grid.Column="0">
+            			<ComboBox Height="23" x:Name="comboBox1" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed" Style="{DynamicResource ComboBoxFeedback}" ItemContainerStyle="{DynamicResource ComboBoxItemfeedback}" HorizontalAlignment="Center">
+            				<ComboBox.Foreground>
+            					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            				</ComboBox.Foreground>
+            				<ComboBoxItem Content="学校主要领导" IsEnabled="False" IsSelected="True" />
+            				<CheckBox Content="张三" Style="{DynamicResource CheckBoxfeedback}" />
+            				<CheckBox Content="李四" Style="{DynamicResource CheckBoxfeedback}" />
+            				<CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Style="{DynamicResource CheckBoxfeedback}" />
+            			</ComboBox>
+            		</Grid>
+            		<Grid Grid.Column="1">
+            			<ComboBox Height="23" x:Name="comboBox2" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed" Style="{DynamicResource ComboBoxFeedback}" ItemContainerStyle="{DynamicResource ComboBoxItemfeedback}" HorizontalAlignment="Center">
+            				<ComboBox.Foreground>
+            					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            				</ComboBox.Foreground>
+            				<ComboBoxItem Content="学校行政机构" IsEnabled="False" IsSelected="True" />
+            				<CheckBox Content="校长办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="发展规划研究中心" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="教务处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="研究生院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="科学技术处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="文科办" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="人事处、人才中心" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="学生处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="财务处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="医管处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="外事办公室、港澳台事务办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="宣传处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="审计处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="监察处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="基建处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="实验室与设备管理处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="资产管理处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="教学质量管理办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="保卫处" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="产业管理办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="离退休工作办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="对外联络与发展办公室" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="沪西校区管理委员会" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="沪北校区管理委员会" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="嘉定校区管理委员会" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Style="{DynamicResource CheckBoxfeedback}"/>
+            			</ComboBox>
+            		</Grid>
+            		<Grid Grid.Column="2">
+            			<ComboBox Height="23" x:Name="comboBox3" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed" Style="{DynamicResource ComboBoxFeedback}" ItemContainerStyle="{DynamicResource ComboBoxItemfeedback}" HorizontalAlignment="Center">
+            				<ComboBox.Foreground>
+            					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            				</ComboBox.Foreground>
+            				<ComboBoxItem Content="学校院系A" IsEnabled="False" IsSelected="True" />
+            				<CheckBox Content="土木工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="经济与管理学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="材料科学与工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="理学部" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="生命科学与技术学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="医学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="口腔医学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="人文学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="法学院/知识产权学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="马克思主义学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="政治与国际关系学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中德学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中德工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="联合国环境规划署环境与可持续发展学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中意学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="高等技术学院/同科学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="继续教育/网络教育学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="出国培训学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Style="{DynamicResource CheckBoxfeedback}"/>
+            			</ComboBox>
+            		</Grid>
+            		<Grid Grid.Column="3">
+            			<ComboBox Height="23" x:Name="comboBox4" VerticalAlignment="Center" DropDownClosed="comboBox1_DropDownClosed" Style="{DynamicResource ComboBoxFeedback}" Background="{x:Null}" BorderBrush="{x:Null}" ItemContainerStyle="{DynamicResource ComboBoxItemfeedback}" HorizontalAlignment="Center">
+            				<ComboBox.Foreground>
+            					<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            				</ComboBox.Foreground>
+            				<ComboBoxItem Content="学校院系B" IsEnabled="False" IsSelected="True" />
+            				<CheckBox Content="建筑与城市规划学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="机械与能源工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="环境科学与工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="电子与信息工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="外国语学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="交通运输工程学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="汽车学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="轨道与城市轨道交通研究院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="软件学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="设计与艺术学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="测绘与地理信息学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="体育教学部" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="职业技术教育学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="女子学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="国际文化交流学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中法工程和管理学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中芬中心" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="中西学院" Style="{DynamicResource CheckBoxfeedback}"/>
+            				<CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Style="{DynamicResource CheckBoxfeedback}"/>
 
-                        </ComboBox>
-                    </Grid>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="20,5,20,5">
-                        <ListBox Name="listboxSend">
-                            <ListBox.Template>
-                                <ControlTemplate TargetType="{x:Type ListBox}">
-                                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
-                                </ControlTemplate>
-                            </ListBox.Template>
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Margin="5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid Grid.Column="0">
-                                            <Image Source="/WpfApplication3;component/CutImages/图像/dot_bg-green-07.png" Width="10" Height="10"/>
-                                        </Grid>
-                                        <Grid Grid.Column="1">
-                                            <TextBlock Text="{Binding}"/>
-                                        </Grid>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </ScrollViewer>
-
-                </Grid>
-                <Grid Grid.Row="3">
-                    <Button Name="btnSend" Content="发送" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Click="btnSend_Click" />
-                </Grid>
+            			</ComboBox>
+            		</Grid>
+            	</Grid>
+            	<Grid Grid.Row="2">
+            		<ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="20,5,20,5">
+            			<ListBox x:Name="listboxSend">
+            				<ListBox.Background>
+            					<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            				</ListBox.Background>
+            				<ListBox.Template>
+            					<ControlTemplate TargetType="{x:Type ListBox}">
+            						<WrapPanel Orientation="Horizontal" IsItemsHost="True">
+            							<WrapPanel.Background>
+            								<SolidColorBrush Color="{DynamicResource #229229229}"/>
+            							</WrapPanel.Background>
+            						</WrapPanel>
+            					</ControlTemplate>
+            				</ListBox.Template>
+            				<ListBox.ItemTemplate>
+            					<DataTemplate>
+            						<Grid Margin="5" Height="Auto" Width="Auto">
+            							<Grid.ColumnDefinitions>
+            								<ColumnDefinition Width="14.88"/>
+            								<ColumnDefinition Width="*"/>
+            							</Grid.ColumnDefinitions>
+            							<Grid Grid.Column="0" Grid.ColumnSpan="1">
+            								<Image Source="/WpfApplication3;component/CutImages/图像/dot_bg-green-07.png" Width="10" Height="10"/>
+            							</Grid>
+            							<Grid Grid.Column="2" Grid.ColumnSpan="1" d:LayoutOverrides="GridBox">
+            								<TextBlock Text="{Binding}" VerticalAlignment="Stretch"/>
+            							</Grid>
+            						</Grid>
+            					</DataTemplate>
+            				</ListBox.ItemTemplate>
+            			</ListBox>
+            		</ScrollViewer>
+                    
+            	</Grid>
+            	<Grid Grid.Row="3">
+            		<Button x:Name="btnSend" Content="发送" Width="69" HorizontalAlignment="Right" Style="{DynamicResource ButtonFeedbacknormal}" Height="23" VerticalAlignment="Top" Margin="0,0,30,0" Click="btnSend_Click"/>
+            	</Grid>
             </Grid>
-            <Grid Grid.Row="2" Margin="5,5,5,5" Background="#FFEBEBEB">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Height="31" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">批示区</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30*"/>
-                        <ColumnDefinition Width="70*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Margin="20,5,20,5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50*"/>
-                            <ColumnDefinition Width="50*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Button Name="rbtBlackInk" Width="40" Height="20" Content="黑" Click="rbtBlackInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Button Name="rbtRedInk" Width="40" Height="20" Content="红" Click="rbtRedInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Button Name="rbtGreenInk" Width="40" Height="20" Content="绿" Click="rbtGreenInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Button Name="rbtBlueInk" Width="40" Height="20" Content="蓝" Click="rbtBlueInk_Click"/>
-                            </Grid>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="25*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Button Width="40" Height="20" Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Button Width="40" Height="20" Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Button Width="40" Height="20" Name="rbtThinInk" Content="细" Click="rbtThinInk_Click"/>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Button Width="40" Height="20" Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click"/>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <InkCanvas Name="InkCanvasAnnotation1" Margin="10,20,10,20" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink">
-                        </InkCanvas>
-                    </Grid>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Button Height="23" Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,10,0" Width="69" Content="确认" Click="btnCommentOK_Click"/>
-                    <Button Height="23" Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,89,0" Width="69" Content="清空" Click="btnCommentClear_Click" />
-                </Grid>
+            <Grid Grid.Row="2" Margin="0,0,5,0">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="50"/>
+            		<RowDefinition Height="*"/>
+            		<RowDefinition Height="50"/>
+            	</Grid.RowDefinitions>
+            	<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="3">
+            		<Rectangle.Effect>
+            			<DropShadowEffect/>
+            		</Rectangle.Effect>
+            		<Rectangle.Fill>
+            			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            		</Rectangle.Fill>
+            	</Rectangle>
+            	<Label VerticalAlignment="Top" Content="批示区" Style="{DynamicResource Labeltopheader}"/>
+            	<Grid Grid.Row="1">
+            		<Grid.ColumnDefinitions>
+            			<ColumnDefinition Width="162.893"/>
+            			<ColumnDefinition/>
+            		</Grid.ColumnDefinitions>
+            		<Grid Grid.Column="0" Margin="20,5,20,5">
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition Width="61.446"/>
+            				<ColumnDefinition Width="61.447"/>
+            			</Grid.ColumnDefinitions>
+            			<Grid Grid.Column="0">
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            				</Grid.RowDefinitions>
+            				<Grid Grid.Row="0">
+            					<Button x:Name="rbtBlackInk" Content="黑" Click="rbtBlackInk_Click" Style="{DynamicResource Buttonblack}" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+            				</Grid>
+            				<Grid Grid.Row="1">
+            					<Button x:Name="rbtRedInk" Content="红" Click="rbtRedInk_Click" Style="{DynamicResource Buttonred}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            				<Grid Grid.Row="2">
+            					<Button x:Name="rbtGreenInk" Content="绿" Click="rbtGreenInk_Click" Style="{DynamicResource ButtonGreen}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            				<Grid Grid.Row="3">
+            					<Button x:Name="rbtBlueInk" Content="蓝" Click="rbtBlueInk_Click" Style="{DynamicResource Buttonblue}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            			</Grid>
+            			<Grid Grid.Column="1">
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            					<RowDefinition Height="25*"/>
+            				</Grid.RowDefinitions>
+            				<Grid Grid.Row="0">
+            					<Button x:Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click" Style="{DynamicResource Buttonthick}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            				<Grid Grid.Row="1">
+            					<Button x:Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click" Style="{DynamicResource ButtonLinenormal}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            				<Grid Grid.Row="2">
+            					<Button x:Name="rbtThinInk" Content="细" Click="rbtThinInk_Click" Style="{DynamicResource Buttonthin}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            				<Grid Grid.Row="3">
+            					<Button x:Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click" Style="{DynamicResource Buttonerase}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            				</Grid>
+            			</Grid>
+            		</Grid>
+            		<Grid Grid.Column="1" Margin="0,0,20,0">
+            			<InkCanvas x:Name="InkCanvasAnnotation1" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink" Margin="0,0,0,5"/>
+            		</Grid>
+            	</Grid>
+            	<Grid Grid.Row="2">
+            		<Button Height="23" x:Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,30,20" Width="69" Content="确 认" Click="btnCommentOK_Click" Style="{DynamicResource ButtonFeedbacknormal}"/>
+            		<Button Height="23" x:Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,120,20" Width="69" Content="清 空" Click="btnCommentClear_Click" Style="{DynamicResource ButtonFeedbacknormal}" Background="{x:Null}" BorderBrush="{x:Null}" />
+            	</Grid>
             </Grid>
         </Grid>
     </Grid>

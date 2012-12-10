@@ -46,7 +46,7 @@ namespace WpfApplication3.LargeProject
             ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.jpg", UriKind.Relative));
             CurrentSence.Source = new BitmapImage(new Uri("/Images/sence.png", UriKind.Relative));
             ImageSolution.Source = new BitmapImage(new Uri("/Images/solute.png", UriKind.Relative));
-            image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
+            //image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
 
             TextProject.Text = "上海国际设计一场”的前身是巴士一汽停车场，占地面积约120亩。在上海市高校布局新一轮调整中，该停车场划归同济大学。杨浦区政府与同济大学决定联手，在此建设集设计教育、设计研发、国际交流、活动展览等多种功能于一体的“上海国际设计一场”，将其建设成为国际化的高端设计创意平台、同济大学设计创意教育与实践基地、环同济设计创意产业的航空母舰、知识杨浦国际化的高端平台，以及上海创意之都的核心引擎项目。";
 
@@ -255,14 +255,14 @@ namespace WpfApplication3.LargeProject
             {
                 //当前进度的高度
                 double percentHeight = actualPercentList[i] * rectangle0.ActualHeight;
-                Rectangle rect = createRectangle(nowTop, percentHeight, Brushes.Red, Brushes.Pink);
+                Rectangle rect = createRectangle(nowTop, percentHeight, Brushes.CadetBlue , Brushes.Transparent);
                 FeeGrid.Children.Add(rect);
                 rect.SetValue(Grid.ColumnProperty, 0);                  //设置按钮所在Grid控件的列
               
                 //当前进度条的上部margin
                 nowTop = nowTop + percentList[i] * rectangle0.ActualHeight;
 
-                Ellipse ellipse = createEllipse(nowTop, percentHeight, Brushes.Yellow, Brushes.Pink);
+                Ellipse ellipse = createEllipse(nowTop, percentHeight, Brushes.CadetBlue , Brushes.Transparent);
                 FeeGrid.Children.Add(ellipse);
                 ellipse.SetValue(Grid.ColumnProperty, 0);                  //设置按钮所在Grid控件的列
             }
@@ -306,7 +306,7 @@ namespace WpfApplication3.LargeProject
             // Create a Rectangle
             Ellipse ellipse = new Ellipse();
             ellipse.Height = 10;
-            ellipse.Width = 20;
+            ellipse.Width = 14;
 
             ellipse.Margin = new Thickness(0, top-5, 0, 0);
 

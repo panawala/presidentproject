@@ -106,57 +106,50 @@ namespace WpfApplication3
             ds = new EmergencyBasic();
             webBrowser_ZiRanZaiHai.Navigate(new Uri(pathEmergency + @"/html/ZiRanZaiHai.htm", UriKind.RelativeOrAbsolute));//获取根目录的日历文件
             webBrowser_ZiRanZaiHai.ObjectForScripting = ds;//该对象可由显示在WebBrowser控件中的网页所包含的脚本代码访问
-          
-            btn_ZiRanZaiHai_ZuZhiShiShi_Click(sender, e);
         }
-        private void btn_ZiRanZaiHai_ZuZhiShiShi_Click(object sender, RoutedEventArgs e)
+		
+        private void dengji1_Selected(object sender, System.Windows.RoutedEventArgs e)
         {
-            label_ZiRanZaiHai_YingJiYuAn_Subtitle.Content = "一、组织实施";
-            textBlock_ZiRanZaiHai_YingJiYuAn.Text = "1、要迅速组织人员逃生，原则是“先救人，后救物”。\r\n2、参加人员：在消防车到来之前，在确保自身安全的情况下均有义务参加扑救。\r\n3、消防车到来之后，要配合消防专业人员扑救或做好辅助工作。\r\n4、使用器具：灭火器、水桶、消防水带等。";
+        	// TODO: Add event handler implementation here.
+			lingdaoceng.IsChecked=true;
+			yuanrenyuan.IsChecked=true;
+			yuanjigou.IsChecked=true;
         }
 
-        private void btn_ZiRanZaiHai_PuJiuFangFa_Click(object sender, RoutedEventArgs e)
+        private void dengji2_Selected(object sender, System.Windows.RoutedEventArgs e)
         {
-            label_ZiRanZaiHai_YingJiYuAn_Subtitle.Content = "二、扑救方法";
-            textBlock_ZiRanZaiHai_YingJiYuAn.Text = "扑救方法内容";
+			lingdaoceng.IsChecked=true;
+			yuanrenyuan.IsChecked=true;
+			yuanjigou.IsChecked=true;
         }
 
-        private void btn_ZiRanZaiHai_ZhuYiShiXiang_Click(object sender, RoutedEventArgs e)
+        private void dengji3_Selected(object sender, System.Windows.RoutedEventArgs e)
         {
-            label_ZiRanZaiHai_YingJiYuAn_Subtitle.Content = "三、注意事项";
-            textBlock_ZiRanZaiHai_YingJiYuAn.Text = "注意事项内容";
-        }
-        private void dengji1_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
-        }
-        private void dengji2_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
-
-        }
-        private void dengji3_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
-        }
-        private void dengji4_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
+			lingdaoceng.IsChecked=false;
+			yuanrenyuan.IsChecked=true;
+			yuanjigou.IsChecked=true;
         }
 
-        private void btn_ZiRanZaiHai_ZhuYiShiXiang_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void dengji4_Selected(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+			lingdaoceng.IsChecked=false;
+			yuanrenyuan.IsChecked=false;
+			yuanjigou.IsChecked=true;
         }
 
-        private void btn_ZiRanZaiHai_PuJiuFangFa_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Gridzzss_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+			textBlockzzss.Text = "1、要迅速组织人员逃生，原则是“先救人，后救物”。\r\n2、参加人员：在消防车到来之前，在确保自身安全的情况下均有义务参加扑救。\r\n3、消防车到来之后，要配合消防专业人员扑救或做好辅助工作。\r\n4、使用器具：灭火器、水桶、消防水带等。";
         }
 
-        private void btn_ZiRanZaiHai_ZuZhiShiShi_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Gridpjff_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            textBlockbjff.Text = "扑救方法内容";
+        }
+
+        private void Gridzysx_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            textBlockzysx.Text = "注意事项内容";
         }
     }
 }

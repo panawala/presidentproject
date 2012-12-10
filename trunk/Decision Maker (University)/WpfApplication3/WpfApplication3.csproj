@@ -396,6 +396,9 @@
     <None Include="FeedBack\DataSetFeedback.xss">
       <DependentUpon>DataSetFeedback.xsd</DependentUpon>
     </None>
+    <None Include="Images\CurrentScence.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="PDF\2012年5月内部文件情况报告.pdf" />
     <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
     <None Include="PDF\2012年5月项目经费使用情况报告.pdf" />

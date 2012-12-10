@@ -7,34 +7,187 @@
       d:DesignHeight="972" d:DesignWidth="1265"
 	Title="VideoConferencing" Loaded="Page_Loaded">
     <Page.Resources>
-        <DataTemplate x:Key="listBoxTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"></ColumnDefinition>
-                    <ColumnDefinition Width="60*"></ColumnDefinition>
-                    <ColumnDefinition Width="30*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+        <ControlTemplate x:Key="listBoxItemVideoConference" TargetType="{x:Type ListBoxItem}">
+            							<Grid x:Name="Bd" SnapsToDevicePixels="true">
+            								<Grid.ColumnDefinitions>
+            									<ColumnDefinition Width="28.044"/>
+            									<ColumnDefinition/>
+            									<ColumnDefinition Width="59.5"/>
+            								</Grid.ColumnDefinitions>
+            								<VisualStateManager.VisualStateGroups>
+            									<VisualStateGroup x:Name="SelectionStates">
+            										<VisualState x:Name="Unselected"/>
+            										<VisualState x:Name="Selected">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="SelectedUnfocused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="CommonStates">
+            										<VisualStateGroup.Transitions>
+            											<VisualTransition GeneratedDuration="0:0:0.02"/>
+            										</VisualStateGroup.Transitions>
+            										<VisualState x:Name="Normal"/>
+            										<VisualState x:Name="MouseOver">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="Disabled"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="FocusStates">
+            										<VisualState x:Name="Unfocused"/>
+            										<VisualState x:Name="Focused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="VisualStateGroup">
+            										<VisualState x:Name="VisualStatetest"/>
+            									</VisualStateGroup>
+            								</VisualStateManager.VisualStateGroups>
+            								<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+            									<Rectangle.Fill>
+            										<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
+            											<GradientStop Color="#FFEBEBEB" Offset="0"/>
+            											<GradientStop Color="#FFEBEBEB" Offset="1"/>
+            										</LinearGradientBrush>
+            									</Rectangle.Fill>
+            								</Rectangle>
+            								<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+            									<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+            										<Ellipse.Fill>
+            											<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+            												<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+            												<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+            											</LinearGradientBrush>
+            										</Ellipse.Fill>
+            									</Ellipse>
+            									<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+            										<Path.Fill>
+            											<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            										</Path.Fill>
+            									</Path>
+            								</Grid>
+											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45"/>
+            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
+    										<Button x:Name="btnDocSearchShow" Content="{Binding Path=Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0"/>
+            							</Grid>
+            							<ControlTemplate.Triggers>
+            								<Trigger Property="IsSelected" Value="true"/>
+            								<Trigger Property="IsMouseOver" Value="true">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+            								</Trigger>
+            								<MultiTrigger>
+            									<MultiTrigger.Conditions>
+            										<Condition Property="IsSelected" Value="true"/>
+            										<Condition Property="Selector.IsSelectionActive" Value="false"/>
+            									</MultiTrigger.Conditions>
+            								</MultiTrigger>
+            								<Trigger Property="IsEnabled" Value="false">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            								</Trigger>
+            							</ControlTemplate.Triggers>
+            						</ControlTemplate>
+		<ControlTemplate x:Key="listBoxItemVideoConferenceFayan" TargetType="{x:Type ListBoxItem}">
+            							<Grid x:Name="Bd" SnapsToDevicePixels="true">
+            								<Grid.ColumnDefinitions>
+            									<ColumnDefinition Width="28.044"/>
+            									<ColumnDefinition/>
+            									<ColumnDefinition Width="56.5"/>
+            								</Grid.ColumnDefinitions>
+            								<VisualStateManager.VisualStateGroups>
+            									<VisualStateGroup x:Name="SelectionStates">
+            										<VisualState x:Name="Unselected"/>
+            										<VisualState x:Name="Selected">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="SelectedUnfocused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="CommonStates">
+            										<VisualStateGroup.Transitions>
+            											<VisualTransition GeneratedDuration="0:0:0.02"/>
+            										</VisualStateGroup.Transitions>
+            										<VisualState x:Name="Normal"/>
+            										<VisualState x:Name="MouseOver">
+            											<Storyboard>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+            													<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+            												</ColorAnimationUsingKeyFrames>
+            											</Storyboard>
+            										</VisualState>
+            										<VisualState x:Name="Disabled"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="FocusStates">
+            										<VisualState x:Name="Unfocused"/>
+            										<VisualState x:Name="Focused"/>
+            									</VisualStateGroup>
+            									<VisualStateGroup x:Name="VisualStateGroup">
+            										<VisualState x:Name="VisualStatetest"/>
+            									</VisualStateGroup>
+            								</VisualStateManager.VisualStateGroups>
+            								<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+            									<Rectangle.Fill>
+            										<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
+            											<GradientStop Color="#FFEBEBEB" Offset="0"/>
+            											<GradientStop Color="#FFEBEBEB" Offset="1"/>
+            										</LinearGradientBrush>
+            									</Rectangle.Fill>
+            								</Rectangle>
+            								<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+            									<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+            										<Ellipse.Fill>
+            											<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+            												<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+            												<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+            											</LinearGradientBrush>
+            										</Ellipse.Fill>
+            									</Ellipse>
+            									<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+            										<Path.Fill>
+            											<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            										</Path.Fill>
+            									</Path>
+            								</Grid>
+											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45"/>
+            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
+    										<Button x:Name="btn" Content="{Binding Path=Title}" Click="Button_FaYan" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0"/>
+            							</Grid>
+            							<ControlTemplate.Triggers>
+            								<Trigger Property="IsSelected" Value="true"/>
+            								<Trigger Property="IsMouseOver" Value="true">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+            								</Trigger>
+            								<MultiTrigger>
+            									<MultiTrigger.Conditions>
+            										<Condition Property="IsSelected" Value="true"/>
+            										<Condition Property="Selector.IsSelectionActive" Value="false"/>
+            									</MultiTrigger.Conditions>
+            								</MultiTrigger>
+            								<Trigger Property="IsEnabled" Value="false">
+            									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            								</Trigger>
+            							</ControlTemplate.Triggers>
+            						</ControlTemplate>
 
-                <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
-                <Button Grid.Column="1" Content="{Binding Path=Title}" Click="Button_Click"/>
-                <Button Grid.Column="2" Content="共享" Click="Button_Share"/>
-            </Grid>
-
-        </DataTemplate>
-        <DataTemplate x:Key="listBoxTemplate1">
-            <Grid d:DesignWidth="129.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.161*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.839*"></ColumnDefinition>
-                    <ColumnDefinition Width="49.21"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
-                <Button Grid.Column="1" Content="{Binding Path=Title}" Click="Button_FaYan"/>
-                <Button Grid.Column="2" Content="共享" Click="Button_Share" Style="{DynamicResource ButtonFeedbacknormal}"/>
-            </Grid>
-
-        </DataTemplate>
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -42,7 +195,7 @@
             <ColumnDefinition Width="446.545"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Margin="0,0,10,0">
+        <Grid Grid.Column="0" Margin="0,0,15,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.469*"></RowDefinition>
                 <RowDefinition Height="0.531*"></RowDefinition>
@@ -137,7 +290,7 @@
             		</Rectangle.Fill>
             	</Rectangle>
             	<Label VerticalAlignment="Top" Content="发演讲稿" Style="{DynamicResource Labeltopheader}"/>
-            	<WebBrowser x:Name="webBrower1" Grid.Row="1" Margin="20,20,20,30" Opacity="0.44"/>
+            	<WebBrowser x:Name="webBrower1" Grid.Row="1" Margin="20,20,20,30" Opacity="0.15"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="1" >
@@ -157,22 +310,66 @@
         	</Rectangle>
         	<Label VerticalAlignment="Top" Content="相关材料" Style="{DynamicResource LabelRightContent}" d:LayoutOverrides="VerticalAlignment"/>
 
-        	<TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" Margin="0,44.834,0,0" Style="{DynamicResource TabControlSubContent}" Background="{x:Null}" BorderBrush="{x:Null}" >
-        		<TabItem Header="发演讲稿" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="116.5,0,-116.5,0" >
-        			<ListBox  x:Name="listBox1" ItemTemplate="{StaticResource listBoxTemplate1}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        	<TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" Margin="0,44.834,0,0" Style="{DynamicResource TabControlStyle2}" Background="{x:Null}" BorderBrush="{x:Null}" >
+        		<TabItem Header="发演讲稿" Style="{DynamicResource TabItemLargeProjects}" Margin="40,0,-40,0" >
+        			<ListBox  x:Name="listBox1" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
+        				<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemVideoConferenceFayan}">
+            										</Setter>
+            									</Style>
+            			</ListBox.ItemContainerStyle>
+					</ListBox>
         		</TabItem>
-        		<TabItem Header="收到共享" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="110.917,0,-110.917,0" >
-        			<ListBox  x:Name="listBox2" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        		<TabItem Header="收到共享" Style="{DynamicResource TabItemLargeProjects}" Margin="50,0,-50,0" >
+        			<ListBox  x:Name="listBox2" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
+        				<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemVideoConference}">
+            										</Setter>
+            									</Style>
+            			</ListBox.ItemContainerStyle>
+					</ListBox>
         		</TabItem>
-        		<TabItem Header="未共享" Style="{DynamicResource TabItem2ndmenuMIddle}" Margin="105,0,-105,0" >
-        			<ListBox  x:Name="listBox3" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}"/>
+        		<TabItem Header="未共享" Style="{DynamicResource TabItemLargeProjects}" Margin="60,0,-60,0" >
+        			<ListBox  x:Name="listBox3" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" >
+        				<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemVideoConference}">
+            										</Setter>
+            									</Style>
+            			</ListBox.ItemContainerStyle>
+					</ListBox>
         		</TabItem>
-        		<TabItem Header="已共享" Style="{DynamicResource TabItem2ndmenulast}" Margin="98.545,0,-98.545,0" >
-        			<ListBox  x:Name="listBox4" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemfeedbck}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        		<TabItem Header="已共享" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,0" >
+        			<ListBox  x:Name="listBox4" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
+					<ListBox.ItemContainerStyle>
+            									<Style TargetType="{x:Type ListBoxItem}" >
+            										<Setter Property="Background" Value="Transparent"/>
+            										<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            										<Setter Property="Padding" Value="2,0,0,0"/>
+            										<Setter Property="Template" Value="{StaticResource listBoxItemVideoConference}">
+            										</Setter>
+            									</Style>
+            			</ListBox.ItemContainerStyle>
+					</ListBox>
         		</TabItem>
         	</TabControl>
         	<Grid Grid.Row="1" Margin="10,10,10,5" >
-        		<WebBrowser x:Name="webBrower2" Opacity="0.61"/>
+        		<WebBrowser x:Name="webBrower2" Opacity="0.145"/>
         	</Grid>
         	<Grid Grid.Row="2" Margin="0" >
         		<Button Content="添加相关文件"   x:Name="button1" Click="Button_ChooseFile" HorizontalAlignment="Right" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" VerticalAlignment="Top" Margin="0,5,20,0" Width="95"  />
