@@ -389,6 +389,11 @@ namespace WpfApplication3
             FrameMiddleContent.Navigate(m_Schedule);
 
 		}
+
+		private void menutitle_Selected(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+		}
 		
     }
 }

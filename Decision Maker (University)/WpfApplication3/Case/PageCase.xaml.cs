@@ -173,6 +173,16 @@ namespace WpfApplication3.Case
             }
             dataGridSearchResult.SelectedIndex = -1;
         }
+
+        private void tbxSearch_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	tbxSearch.Clear();// TODO: Add event handler implementation here.
+        }
+
+        private void tbxSearchCase_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	tbxSearchCase.Clear();// TODO: Add event handler implementation here.
+        }
     }
 
 }

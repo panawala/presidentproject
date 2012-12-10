@@ -27,42 +27,38 @@ namespace WpfApplication3.Communicate
         int DocType;
         DataSetDoc.T_DocDataTable dtDocs;
         DataSetDoc.T_DocDataTable dtLatestDocs;
-        DataSetDoc.T_DocDataTable dtCurrent;
+//        DataSetDoc.T_DocDataTable dtCurrent;
+//		DataSetDoc.T_DocDataTable dtLatestCurrent;
+		string fileCurrentPDF;
+		
         int iCurrent;
         public PageDocIssue()
         {
             InitializeComponent();
             dtDocs = new DataSetDoc.T_DocDataTable();
             dtLatestDocs = new DataSetDoc.T_DocDataTable();
-            dtCurrent = new DataSetDoc.T_DocDataTable();
+//            dtCurrent = new DataSetDoc.T_DocDataTable();
             this.InkCanvasAnnotation1.IsEnabled = false;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             IsRead = false;
-            DocType = 1;
-            listboxLatestDocsRefresh();
-            listboxDocsRefresh();
+            for(DocType = 1;DocType<4;DocType++)
+			{
+				listboxLatestDocsRefresh(IsRead);
+            	listboxDocsRefresh(IsRead,DocType);
+			}
+			IsRead=true;
+			for(DocType = 1;DocType<4;DocType++)
+			{
+				listboxLatestDocsRefresh(IsRead);
+            	listboxDocsRefresh(IsRead,DocType);
+			}
+
         }
 
-        private void btnDocShow_Click(object sender, RoutedEventArgs e)
-        {
-            object obj = listboxDocs.ContainerFromElement((Button)sender);
-            iCurrent = listboxDocs.Items.IndexOf(((ListBoxItem)obj).Content);
-            dtCurrent = dtDocs;
-            showDoc(iCurrent, dtCurrent);
-        }
-
-        private void btnLatestDocShow_Click(object sender, RoutedEventArgs e)
-        {
-            object obj = listboxLatestDocs.ContainerFromElement((Button)sender);
-            iCurrent = listboxLatestDocs.Items.IndexOf(((ListBoxItem)obj).Content);
-            dtCurrent = dtLatestDocs;
-            showDoc(iCurrent, dtCurrent);
-        }
-
-        private void comboBox1_DropDownClosed(object sender, EventArgs e)
+		private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
             ComboBox m_ComboBox = (ComboBox)sender;
             for (int i = 1; i < m_ComboBox.Items.Count - 1; i++)
@@ -174,7 +170,7 @@ namespace WpfApplication3.Communicate
         {
             DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
             string strPath = di.Parent.Parent.FullName;
-            string filename = dtCurrent[iCurrent].DocTitle;
+            string filename = fileCurrentPDF;
             if (Directory.Exists(strPath + @"/Comment") == false)
             {
                 Directory.CreateDirectory(strPath + @"/Comment");
@@ -185,59 +181,129 @@ namespace WpfApplication3.Communicate
             MessageBox.Show("批示保存成功！");
         }
 
-        private void btnAlready_Click(object sender, RoutedEventArgs e)
-        {
-            IsRead = true;
-            listboxLatestDocsRefresh();
-            listboxDocsRefresh();
-        }
-
-        private void btnNotyet_Click(object sender, RoutedEventArgs e)
-        {
-            IsRead = false;
-            listboxLatestDocsRefresh();
-            listboxDocsRefresh();
-        }
-
-        private void btnDocTypeA_Click(object sender, RoutedEventArgs e)
-        {
-            DocType = 1;
-            listboxDocsRefresh();
-        }
-
-        private void btnDocTypeB_Click(object sender, RoutedEventArgs e)
-        {
-            DocType = 2;
-            listboxDocsRefresh();
-        }
-
-        private void btnDocTypeC_Click(object sender, RoutedEventArgs e)
-        {
-            DocType = 3;
-            listboxDocsRefresh();
-        }
-
-        private void listboxLatestDocsRefresh()
+        private void listboxLatestDocsRefresh(bool Isread)
         {
             //IsRead
             DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
-            dtLatestDocs = adapter.GetLatestDataByState(IsRead);
-            listboxLatestDocs.ItemsSource = dtLatestDocs;
+            dtLatestDocs = adapter.GetLatestDataByState(Isread);
+//			dtLatestCurrent=dtLatestDocs;
+			if(Isread==true)
+            	listboxLatestDocsIsRead.ItemsSource = dtLatestDocs;
+			else
+				listboxLatestDocsNotRead.ItemsSource = dtLatestDocs;
+
         }
 
-        private void listboxDocsRefresh()
+        private void listboxDocsRefresh(bool Isread,int Doctype)
         {
             //IsRead&&DocType
             DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
-            dtDocs = adapter.GetDataByDocStateAndDocType(IsRead, DocType);
-            listboxDocs.ItemsSource = dtDocs;
+            dtDocs = adapter.GetDataByDocStateAndDocType(Isread, Doctype);
+//			dtCurrent=dtDocs;
+			if(Isread==true)
+			{
+				if(Doctype==1)
+				{
+					listboxDocsType1.ItemsSource = dtDocs;
+				}
+				else if(Doctype==2)
+				{
+					listboxDocsType2.ItemsSource = dtDocs;
+				}
+				else
+				{
+					listboxDocsType2.ItemsSource = dtDocs;
+				}
+			}
+
+			else
+			{
+				if(Doctype==1)
+				{
+					listboxDocsType4.ItemsSource = dtDocs;
+				}
+				else if(Doctype==2)
+				{
+					listboxDocsType5.ItemsSource = dtDocs;
+				}
+				else
+				{
+					listboxDocsType6.ItemsSource = dtDocs;
+				}
+			}
+
+        }
+       private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("发送成功！");
+        }
+		
+
+        private void GridDocType1_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxDocsRefresh(true,1);
         }
 
-        private void showDoc(int index, DataSetDoc.T_DocDataTable dt)
+        private void GridDocType2_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            DataSetDoc.T_DocRow row = dt[index];
-            string filePDF = row.DocAddress;
-            string FileISF = row.DocTitle+".isf";
+			listboxDocsRefresh(true,2);
+        }
+
+        private void GridDocType3_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxDocsRefresh(true,3);
+        }
+
+        private void GridDocType4_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxDocsRefresh(false,1);
+        }
+
+        private void GridDocType5_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxDocsRefresh(false,2);
+        }
+
+        private void GridDocType6_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxDocsRefresh(false,3);
+        }
+
+        private void GridAlready_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			listboxLatestDocsRefresh(true);
+            listboxDocsRefresh(true,1);
+        }
+
+        private void GridNotYet_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			listboxLatestDocsRefresh(false);
+            listboxDocsRefresh(false,1);
+        }
+
+        private void tbxSearch_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	tbxSearch.Clear();// TODO: Add event handler implementation here.
+        }
+
+        private void tbxSearch_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			if (tbxSearch.Text != "")
+            {
+                DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
+                dtDocs = adapter.GetDataByKey(tbxSearch.Text);
+                listboxDocs.ItemsSource = dtDocs;
+            }
+        }
+
+        private void btnDocSearchShow_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+			Button btn = sender as Button;
+            string content = btn.Content as string;
+			string filePDF = content + ".pdf";
+			string FileISF = content+".isf";
             DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
             string strPath = di.Parent.Parent.FullName;
             if (System.IO.File.Exists(strPath + @"/PDF/" + filePDF))
@@ -257,11 +323,10 @@ namespace WpfApplication3.Communicate
             else
                 this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection();
             this.InkCanvasAnnotation1.IsEnabled = true;
+			fileCurrentPDF=content;
+//            PDFReader pdfReader = new PDFReader();
+//            pdfReader.showPdf(content + ".pdf");
         }
-
-        private void btnSend_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("发送成功！");
-        }
+		
     }
 }

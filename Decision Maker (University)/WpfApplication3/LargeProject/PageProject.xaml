@@ -4,117 +4,354 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="772" d:DesignWidth="1265"
+      d:DesignHeight="972" d:DesignWidth="1265"
 	Title="PageProject" Loaded="Page_Loaded">
     <Page.Resources>
-        <DataTemplate x:Key="listBoxTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"></ColumnDefinition>
-                    <ColumnDefinition Width="20*"></ColumnDefinition>
-                    <ColumnDefinition Width="70*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Image Grid.Column="0" Source="{Binding Path=ImageSource}"/>
-                <TextBlock Grid.Column="1" Text="{Binding Path=FileDate}" />
-                <Button Grid.Column="2" Content="{Binding Path=Title}" Click="Button_Click"/>
-            </Grid>
-                
-        </DataTemplate>
+			<ControlTemplate x:Key="listBoxItemContainerTemplate" TargetType="{x:Type ListBoxItem}">
+										<Grid x:Name="Bd" SnapsToDevicePixels="true">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="28.044"/>
+												<ColumnDefinition Width="0.561*"/>
+												<ColumnDefinition Width="0.439*"/>
+											</Grid.ColumnDefinitions>
+											<VisualStateManager.VisualStateGroups>
+												<VisualStateGroup x:Name="SelectionStates">
+													<VisualState x:Name="Unselected"/>
+													<VisualState x:Name="Selected">
+														<Storyboard>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															</ColorAnimationUsingKeyFrames>
+														</Storyboard>
+													</VisualState>
+													<VisualState x:Name="SelectedUnfocused"/>
+												</VisualStateGroup>
+												<VisualStateGroup x:Name="CommonStates">
+													<VisualStateGroup.Transitions>
+														<VisualTransition GeneratedDuration="0:0:0.02"/>
+													</VisualStateGroup.Transitions>
+													<VisualState x:Name="Normal"/>
+													<VisualState x:Name="MouseOver">
+														<Storyboard>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource #235235235}"/>
+															</ColorAnimationUsingKeyFrames>
+														</Storyboard>
+													</VisualState>
+													<VisualState x:Name="Disabled"/>
+												</VisualStateGroup>
+												<VisualStateGroup x:Name="FocusStates">
+													<VisualState x:Name="Unfocused"/>
+													<VisualState x:Name="Focused">
+														
+													</VisualState>
+												</VisualStateGroup>
+												<VisualStateGroup x:Name="VisualStateGroup">
+													<VisualState x:Name="VisualStatetest"/>
+												</VisualStateGroup>
+											</VisualStateManager.VisualStateGroups>
+											<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+												<Rectangle.Fill>
+													<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
+														<GradientStop Color="#FFEBEBEB" Offset="0"/>
+														<GradientStop Color="#FFEBEBEB" Offset="1"/>
+													</LinearGradientBrush>
+												</Rectangle.Fill>
+											</Rectangle>
+											<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+												<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+													<Ellipse.Fill>
+														<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+															<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+															<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+														</LinearGradientBrush>
+													</Ellipse.Fill>
+												</Ellipse>
+												<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+													<Path.Fill>
+														<SolidColorBrush Color="{DynamicResource #235235235}"/>
+													</Path.Fill>
+												</Path>
+											</Grid>
+											<Label x:Name="label" Content="{Binding FileDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
+											<ContentPresenter Content="{Binding Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
+											<Button x:Name="btn" Content="{Binding Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0"/>
+										</Grid>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsSelected" Value="true">
+											</Trigger>
+											<Trigger Property="IsMouseOver" Value="true">
+												<Setter Property="Foreground" Value="{DynamicResource white2}"/>
+											</Trigger>
+											<MultiTrigger>
+												<MultiTrigger.Conditions>
+													<Condition Property="IsSelected" Value="true"/>
+													<Condition Property="Selector.IsSelectionActive" Value="false"/>
+												</MultiTrigger.Conditions>
+											</MultiTrigger>
+											<Trigger Property="IsEnabled" Value="false">
+												<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+									
+		
     </Page.Resources>
-        <Grid ShowGridLines="True">
+        <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="45*"></ColumnDefinition>
-            <ColumnDefinition Width="55*"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <!--左上角-->
-        <GroupBox Grid.Column="0" Header="项目进度" Name="groupBox1">
-                <TabControl Grid.Row="0" SelectionChanged="TabControl_SelectionChanged" Name="TabProject">
-                <TabItem Header="建设情况" Name="ConsTab">
-                    <Grid Name="ConstrutGrid">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="70*"></ColumnDefinition>
-                            <ColumnDefinition Width="30*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Name="ConstructImg" Grid.Column="0" Stretch="Fill" />
-                        <Rectangle Grid.Column="1" StrokeThickness="0"  Name="rectangle0" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40"  RadiusX="5" RadiusY="5" />
-                        <Rectangle Grid.Column="1" StrokeThickness="0" Name="rectangle4" Stroke="Black" Width="14" Fill="Red" Margin="0 40"  RadiusX="5" RadiusY="5" VerticalAlignment="Top"/>
-                        <Label Content="Label" Grid.Column="1" Height="28" HorizontalAlignment="Left" Margin="0,12,0,0" Name="label6" VerticalAlignment="Top" />
-                    </Grid>
-                </TabItem>
-                <TabItem Header="经费使用" Name="FeeTab">
-                    <Grid Name="FeeGrid">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50*"></ColumnDefinition>
-                            <ColumnDefinition Width="50*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Rectangle Grid.Column="0" StrokeThickness="0"  Name="rectangle1" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40" RadiusX="5" RadiusY="5" />
-                        <Rectangle Grid.Column="1" StrokeThickness="0"  Name="rectangle2" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40" RadiusX="5" RadiusY="5" />
-                        <Rectangle Grid.Column="1" StrokeThickness="0" Name="rectangle3" Stroke="Black" Width="14" Fill="Red" Margin="0 40" RadiusX="5" RadiusY="5" VerticalAlignment="Top" />
-                        <Label Content="前期开发" Height="28" HorizontalAlignment="Left" Margin="30,78,0,0" Name="label1" VerticalAlignment="Top" />
-                        <Label Content="建设费用" Height="28" HorizontalAlignment="Left" Margin="30,267,0,0" Name="label2" VerticalAlignment="Top" />
-                        <Label Content="管理费用" Height="31" HorizontalAlignment="Left" Margin="30,0,0,239" Name="label3" VerticalAlignment="Bottom" />
-                        <Label Content="其他" Height="28" HorizontalAlignment="Left" Margin="30,580,0,0" Name="label4" VerticalAlignment="Top" />
-                        <Label Content="使用情况" Grid.Column="1" Height="28" HorizontalAlignment="Left" Margin="55,6,0,0" Name="label5" VerticalAlignment="Top"/>
-                    </Grid>
+        <Grid Margin="0,0,15,0">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="43.232"/>
+        		<RowDefinition/>
+        	</Grid.RowDefinitions>
+        		<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+        		<Rectangle.Effect>
+        			<DropShadowEffect/>
+        		</Rectangle.Effect>
+        		<Rectangle.Fill>
+        			<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        		</Rectangle.Fill>
+        	</Rectangle>
+        		<Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="项目进度"/>
+
+        		<TabControl Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" x:Name="TabProject" Margin="0,6.583,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabControlStyle2}">
+        			<TabItem Header="建设情况" x:Name="ConsTab" Style="{DynamicResource TabItemLargeProjects}" Margin="90,-2,-90,-1">
+        				<Grid x:Name="ConstrutGrid">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition Width="0.769*"/>
+        						<ColumnDefinition Width="0.231*"/>
+        					</Grid.ColumnDefinitions>
+        					<Image x:Name="ConstructImg" Grid.Column="0" Stretch="Fill" />
+        					<Rectangle Grid.Column="1" StrokeThickness="0"  x:Name="rectangle0" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40"  RadiusX="5" RadiusY="5" HorizontalAlignment="Center" />
+        					<Rectangle Grid.Column="1" StrokeThickness="0" x:Name="rectangle4" Stroke="Black" Width="14" Margin="0,40,0,0"  RadiusX="5" RadiusY="5" VerticalAlignment="Top" HorizontalAlignment="Center">
+        						<Rectangle.Fill>
+        							<LinearGradientBrush EndPoint="1.009,0.487" StartPoint="-0.008,0.491">
+        								<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+        								<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Fill>
+        					</Rectangle>
+        					<Label Content="Label" Grid.Column="1" Height="28" HorizontalAlignment="Center" Margin="0,12,0,0" x:Name="label6" VerticalAlignment="Top" />
+        				</Grid>
+        			</TabItem>
+        			<TabItem Header="经费使用" x:Name="FeeTab" Style="{DynamicResource TabItemLargeProjects}" Margin="120,-2,-120,-1">
+        				<Grid x:Name="FeeGrid">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition Width="50*"/>
+        						<ColumnDefinition Width="50*"/>
+        					</Grid.ColumnDefinitions>
+        					<Rectangle Grid.Column="0" StrokeThickness="0"  x:Name="rectangle1" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40" RadiusX="5" RadiusY="5" HorizontalAlignment="Center" />
+        					<Rectangle Grid.Column="1" StrokeThickness="0"  x:Name="rectangle2" Stroke="Black" Width="14" Fill="#FFC7C7C7" Margin="0 40" RadiusX="5" RadiusY="5" HorizontalAlignment="Center" />
+        					<Rectangle Grid.Column="1" StrokeThickness="0" x:Name="rectangle3" Stroke="Black" Width="14" Margin="0,40,0,0" RadiusX="5" RadiusY="5" VerticalAlignment="Top" Height="0" HorizontalAlignment="Center" >
+        						<Rectangle.Fill>
+        							<LinearGradientBrush EndPoint="1.103,0.514" StartPoint="-0.093,0.512">
+        								<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+        								<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Fill>
+        					</Rectangle>
+        					<Label Content="前期开发" Height="28" HorizontalAlignment="Left" Margin="20,78,0,0" x:Name="label1" VerticalAlignment="Top" />
+        					<Label Content="建设费用" Height="28" HorizontalAlignment="Left" Margin="20,267,0,0" x:Name="label2" VerticalAlignment="Top" />
+        					<Label Content="管理费用" Height="31" HorizontalAlignment="Left" Margin="20,0,0,239" x:Name="label3" VerticalAlignment="Bottom" />
+        					<Label Content="其他" Height="28" HorizontalAlignment="Left" Margin="32,750,0,0" x:Name="label4" VerticalAlignment="Top" />
+        					<Label Content="使用情况" Grid.Column="1" Height="28" HorizontalAlignment="Center" x:Name="label5" VerticalAlignment="Top"/>
+        				</Grid>
                         
-                </TabItem>
-            </TabControl>
-        </GroupBox>
+        			</TabItem>
+        		</TabControl>
+        	</Grid>
+        <!--左上角-->
        
         <!--右边框-->
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Margin="0,0,5,0">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.523*"/>
+                <RowDefinition Height="0.477*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"></ColumnDefinition>
-                <ColumnDefinition Width="70*"></ColumnDefinition>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
             <!--右上角文件信息-->
-            <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="相关信息" Name="groupBox2">
-                <TabControl>
-                    <TabItem Header="方案详情">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Name="ImageSolution" Stretch="Fill" Grid.Column="0" />
-                            <ScrollViewer Grid.Column="1">
-                                <TextBlock Name="TextProject" Text="TextBlockdfgsTefsdfgsdfgsdgfsdgfsgfsgfsdfgsdf" TextWrapping="WrapWithOverflow"/>
-                            </ScrollViewer>
-                        </Grid>
+            <!--右上角文件信息-->
+            <Grid Margin="0,0,5,10">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="44.464"/>
+            		<RowDefinition/>
+            	</Grid.RowDefinitions>
+        		<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+        			<Rectangle.Effect>
+        				<DropShadowEffect/>
+        			</Rectangle.Effect>
+        			<Rectangle.Fill>
+        				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        			</Rectangle.Fill>
+        		</Rectangle>
+        		<Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="相关信息"/>
+        		<TabControl Margin="0,5.5,0,0" Grid.Row="1" Style="{DynamicResource TabControlStyle2}" Background="{x:Null}" BorderBrush="{x:Null}">
+        			<TabItem Header="方案详情" Style="{DynamicResource TabItemLargeProjects}" Margin="200,-2,-200,-1" Width="89">
+        				<Grid>
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition/>
+        						<ColumnDefinition/>
+        					</Grid.ColumnDefinitions>
+        					<Image x:Name="ImageSolution" Stretch="Fill" Grid.Column="0" />
+        					<ScrollViewer Grid.Column="1">
+        						<TextBlock x:Name="TextProject" Text="TextBlockdfgsTefsdfgsdfgsdgfsdgfsgfsgfsdfgsdf" TextWrapping="WrapWithOverflow"/>
+        					</ScrollViewer>
+        				</Grid>
                         
-                    </TabItem>
-                    <TabItem Header="项目经费">
-                        <ListBox Margin="17,8,15,26" Name="listBox1" ItemTemplate="{StaticResource listBoxTemplate}" ItemsSource="{Binding}"/>
-                    </TabItem>
+        			</TabItem>
+        			<TabItem Header="项目经费" Style="{DynamicResource TabItemLargeProjects}" Margin="225,0,-225,0" Width="85">
+        				<ListBox x:Name="listBox1" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10">
+        					<ListBox.ItemContainerStyle>
+								<Style TargetType="{x:Type ListBoxItem}" >
+							<Setter Property="Background" Value="Transparent"/>
+							<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="Padding" Value="2,0,0,0"/>
+							<Setter Property="Template" Value="{StaticResource listBoxItemContainerTemplate}">
+							</Setter>
+						</Style>
+					</ListBox.ItemContainerStyle>
+                </ListBox>
+        			</TabItem>
                  
-                    <TabItem Header="内部文件">
-                        <ListBox Margin="17,8,15,26" Name="listBox2" ItemTemplate="{StaticResource listBoxTemplate}"  ItemsSource="{Binding}"/>
-                    </TabItem>
+        			<TabItem Header="内部文件" Style="{DynamicResource TabItemLargeProjects}" Margin="250,0,-250,0" Width="85">
+        				<ListBox Margin="17,8,15,26" x:Name="listBox2"   ItemsSource="{Binding}" BorderBrush="{x:Null}" Background="{x:Null}">
+        					<ListBox.ItemContainerStyle>
+								<Style TargetType="{x:Type ListBoxItem}" >
+							<Setter Property="Background" Value="Transparent"/>
+							<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="Padding" Value="2,0,0,0"/>
+							<Setter Property="Template" Value="{StaticResource listBoxItemContainerTemplate}">
+							</Setter>
+						</Style>
+					</ListBox.ItemContainerStyle>
+                </ListBox>
+        			</TabItem>
                     
-                    <TabItem Header="媒体报道">
-                        <ListBox Margin="17,8,15,26" Name="listBox3" ItemTemplate="{StaticResource listBoxTemplate}"  ItemsSource="{Binding}"/>
-                    </TabItem>
+        			<TabItem Header="媒体报道" Style="{DynamicResource TabItemLargeProjects}" Margin="275,0,-275,0" Width="85">
+        				<ListBox Margin="17,8,15,26" x:Name="listBox3" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
+        					<ListBox.ItemContainerStyle>
+								<Style TargetType="{x:Type ListBoxItem}" >
+							<Setter Property="Background" Value="Transparent"/>
+							<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+							<Setter Property="Padding" Value="2,0,0,0"/>
+							<Setter Property="Template" Value="{StaticResource listBoxItemContainerTemplate}">
+							</Setter>
+						</Style>
+					</ListBox.ItemContainerStyle>
+                </ListBox>
+        			</TabItem>
                     
-                </TabControl>
-            </GroupBox>
+        		</TabControl>
+        	</Grid>
+            <Grid Margin="0,0,5,0" Grid.Row="1">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="204.5"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<Grid Margin="0,0,7,0">
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="44.226"/>
+            			<RowDefinition/>
+            		</Grid.RowDefinitions>
+            		<Rectangle RadiusX="8" RadiusY="8" Margin="0,0,-0.001,0" Grid.RowSpan="2">
+            			<Rectangle.Effect>
+            				<DropShadowEffect/>
+            			</Rectangle.Effect>
+            			<Rectangle.Fill>
+            				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            			</Rectangle.Fill>
+            		</Rectangle>
+            		<Label VerticalAlignment="Top" Style="{DynamicResource LabelRightContent}" Content="项目机构" Margin="0,0,-0.001,0"/>
+            		<Label Content="负责人联络" VerticalAlignment="Top" Padding="13,1,5,1" FontWeight="Bold" FontSize="14" Grid.Row="1" Margin="21.5,42,86,0" Style="{DynamicResource LabelNormal}" Background="{x:Null}" d:LayoutOverrides="Width" >
+            			<Label.Foreground>
+            				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            			</Label.Foreground>
+            		</Label>
+            		<StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="48.613,69,33.613,0" >
+            			<TextBlock TextWrapping="Wrap" Text="项目负责人：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontWeight="Bold" FontSize="14"/>
+            			<Grid Height="35" Margin="0,15,0,0">
+            				<Grid.ColumnDefinitions>
+            					<ColumnDefinition Width="28.25"/>
+            					<ColumnDefinition/>
+            				</Grid.ColumnDefinitions>
+            				<Image Source="/WpfApplication3;component/CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+            				<TextBlock TextWrapping="Wrap" Text="林涛" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+            				<Button x:Name="btn_ZiRanZaiHai_Phone_A" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+            			</Grid>
+            			<TextBlock TextWrapping="Wrap" Text="下设部门：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontWeight="Bold" FontSize="14"/>
+            			<Grid Height="35" Margin="0,15,0,0">
+            				<Grid.ColumnDefinitions>
+            					<ColumnDefinition Width="28.25"/>
+            					<ColumnDefinition/>
+            				</Grid.ColumnDefinitions>
+            				<Image Source="/WpfApplication3;component/CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+            				<TextBlock TextWrapping="Wrap" Text="基建部门" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+            				<Button x:Name="btn_ZiRanZaiHai_Phone_A1" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+            			</Grid>
+            			<Grid Height="35" Margin="0,10,0,0">
+            				<Grid.ColumnDefinitions>
+            					<ColumnDefinition Width="28.25"/>
+            					<ColumnDefinition/>
+            				</Grid.ColumnDefinitions>
+            				<Image Source="/WpfApplication3;component/CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+            				<TextBlock TextWrapping="Wrap" Text="建设部门" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+            				<Button x:Name="btn_ZiRanZaiHai_Phone_A2" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+            			</Grid>
+            			<Grid Height="35" Margin="0,10,0,0">
+            				<Grid.ColumnDefinitions>
+            					<ColumnDefinition Width="28.25"/>
+            					<ColumnDefinition/>
+            				</Grid.ColumnDefinitions>
+            				<Image Source="/WpfApplication3;component/CutImages/图像/phone-07.png" Stretch="Fill" Width="18" Height="23" HorizontalAlignment="Right"/>
+            				<TextBlock TextWrapping="Wrap" Text="后勤部门" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
+            				<Button x:Name="btn_ZiRanZaiHai_Phone_A3" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
+            			</Grid>
+            		</StackPanel>
+            	</Grid>
+            	<Grid Grid.Column="1">
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="43.254"/>
+            			<RowDefinition/>
+            		</Grid.RowDefinitions>
+
+            		<Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+            			<Rectangle.Effect>
+            				<DropShadowEffect/>
+            			</Rectangle.Effect>
+            			<Rectangle.Fill>
+            				<SolidColorBrush Color="{DynamicResource #235235235}"/>
+            			</Rectangle.Fill>
+            		</Rectangle>
+            		<Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="项目现场"/>
+            		<Image Stretch="Fill" x:Name="CurrentSence" Margin="10" Grid.Row="1"/>
+            	</Grid>
+            </Grid>
+<!--右上角文件信息-->
 
             <!--右下角左-->
-            <GroupBox Grid.Row="1" Grid.Column="0" Header="项目机构" Name="groupBox3">
-                <Image Name="image_ProjectOrg" Stretch="Fill" />
-            </GroupBox>
 
 
             <!--右下角右-->
-            <GroupBox Grid.Row="1" Grid.Column="1" Header="项目现场" Name="groupBox4">
-                    <Image Stretch="Fill" Name="CurrentSence"/>
-            </GroupBox>
 
         </Grid>
 

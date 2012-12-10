@@ -227,5 +227,20 @@ namespace WpfApplication3.FeedBack
             ShowFeedBack(iCurrentItem);
 			
         }
+
+        private void tbxSearch_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (tbxSearch.Text != "")
+            {
+                DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+                dtCurrent = adapter.GetDataByKey(1, tbxSearch.Text);
+                listboxFeedback.ItemsSource = dtCurrent;
+            }
+        }
+
+        private void tbxSearch_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	tbxSearch.Clear();// TODO: Add event handler implementation here.
+        }
     }
 }
