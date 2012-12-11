@@ -87,8 +87,8 @@
             									</Path>
             								</Grid>
             								<Label x:Name="label" Content="{Binding SubmissionDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
-            								<ContentPresenter Content="{Binding DocTitle}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
-            								<Button x:Name="btnDocSearchShow" Content="{Binding DocTitle}" Click="btnDocSearchShow_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0"/>
+            								<ContentPresenter Content="{Binding DocTitle}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand"/>
+            								<Button x:Name="btnDocSearchShow" Content="{Binding DocTitle}" Click="btnDocSearchShow_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand"/>
             							</Grid>
             							<ControlTemplate.Triggers>
             								<Trigger Property="IsSelected" Value="true"/>
@@ -587,16 +587,16 @@
             					<RowDefinition Height="25*"/>
             				</Grid.RowDefinitions>
             				<Grid Grid.Row="0">
-            					<Button x:Name="rbtBlackInk" Content="黑" Click="rbtBlackInk_Click" Style="{DynamicResource Buttonblack}" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+            					<Button x:Name="rbtBlackInk" Content="黑" Click="rbtBlackInk_Click" Style="{DynamicResource Buttonblack}" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="1">
-            					<Button x:Name="rbtRedInk" Content="红" Click="rbtRedInk_Click" Style="{DynamicResource Buttonred}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtRedInk" Content="红" Click="rbtRedInk_Click" Style="{DynamicResource Buttonred}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="2">
-            					<Button x:Name="rbtGreenInk" Content="绿" Click="rbtGreenInk_Click" Style="{DynamicResource ButtonGreen}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtGreenInk" Content="绿" Click="rbtGreenInk_Click" Style="{DynamicResource ButtonGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="3">
-            					<Button x:Name="rbtBlueInk" Content="蓝" Click="rbtBlueInk_Click" Style="{DynamicResource Buttonblue}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtBlueInk" Content="蓝" Click="rbtBlueInk_Click" Style="{DynamicResource Buttonblue}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             			</Grid>
             			<Grid Grid.Column="1">
@@ -607,16 +607,16 @@
             					<RowDefinition Height="25*"/>
             				</Grid.RowDefinitions>
             				<Grid Grid.Row="0">
-            					<Button x:Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click" Style="{DynamicResource Buttonthick}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtThickInk" Content="粗" Click="rbtThickInk_Click" Style="{DynamicResource Buttonthick}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="1">
-            					<Button x:Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click" Style="{DynamicResource ButtonLinenormal}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtNormalInk" Content="普通" Click="rbtNormalInk_Click" Style="{DynamicResource ButtonLinenormal}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="2">
-            					<Button x:Name="rbtThinInk" Content="细" Click="rbtThinInk_Click" Style="{DynamicResource Buttonthin}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtThinInk" Content="细" Click="rbtThinInk_Click" Style="{DynamicResource Buttonthin}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             				<Grid Grid.Row="3">
-            					<Button x:Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click" Style="{DynamicResource Buttonerase}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            					<Button x:Name="rbtRubber" Content="橡皮擦" Click="rbtRubber_Click" Style="{DynamicResource Buttonerase}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             				</Grid>
             			</Grid>
             		</Grid>

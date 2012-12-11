@@ -189,7 +189,7 @@
 									</VisualState>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Rectangle x:Name="rectangle" RadiusY="5" RadiusX="5" StrokeThickness="2">
+							<Rectangle x:Name="rectangle" RadiusY="5" RadiusX="5" StrokeThickness="2" Cursor="Hand">
 								<Rectangle.Effect>
 									<DropShadowEffect Color="#FF646464" BlurRadius="3" ShadowDepth="3"/>
 								</Rectangle.Effect>
@@ -200,7 +200,7 @@
 									</LinearGradientBrush>
 								</Rectangle.Fill>
 							</Rectangle>
-							<ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 						</Grid>
 					</ControlTemplate>
 				</Setter.Value>
@@ -400,7 +400,7 @@
 									<VisualState x:Name="Disabled"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Ellipse x:Name="ellipse" StrokeThickness="2" HorizontalAlignment="Center" Height="8" Width="8" VerticalAlignment="Center">
+							<Ellipse x:Name="ellipse" StrokeThickness="2" HorizontalAlignment="Center" Height="8" Width="8" VerticalAlignment="Center" Cursor="Hand">
 								<Ellipse.Effect>
 									<DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="{DynamicResource #122122122}"/>
 								</Ellipse.Effect>
@@ -408,7 +408,7 @@
 									<SolidColorBrush Color="{DynamicResource white}"/>
 								</Ellipse.Fill>
 							</Ellipse>
-							<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6">
+							<Grid Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="4,6,0,6" Cursor="Hand">
 								<Path x:Name="path" Data="M14.543,9.9709995 L19.543,9.9709995 19.543,14.970999 14.543,14.970999 z M0,4.9274995 L5,4.9274995 5,9.9274995 0,9.9274995 z M9.7090001,2.0829997 L10.709,2.0829997 13.709,2.0829997 13.709,3.0829997 10.709,3.0829997 10.709,12.083 13.709,12.083 13.709,13.083 10.709,13.083 9.7090001,13.083 9.7090001,12.083 9.7090001,7.9369996 6.0670004,7.9369996 6.0670004,6.9369996 9.7090001,6.9369996 9.7090001,3.0829997 z M14.543,0 L19.543,0 19.543,4.9999998 14.543,4.9999998 z" HorizontalAlignment="Stretch" Height="Auto" Margin="1.933,1.709,3.524,3.32" Stretch="Fill" StrokeThickness="2" VerticalAlignment="Stretch" Width="Auto">
 									<Path.Effect>
 										<DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="#FF878787"/>
@@ -418,7 +418,7 @@
 									</Path.Fill>
 								</Path>
 							</Grid>
-							<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" Grid.Column="1" d:LayoutOverrides="Width" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" Grid.Column="1" d:LayoutOverrides="Width" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsChecked" Value="true">
@@ -623,7 +623,7 @@
 									</LinearGradientBrush>
 								</Path.Fill>
 							</Path>
-							<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,12.163,0,6" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+							<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,12.163,0,6" HorizontalAlignment="Center" VerticalAlignment="Bottom" Cursor="Hand"/>
 							<Path x:Name="path" Data="M7.9999995,0 L12.000001,0 22.749998,0 78,0 80,0 80.999992,0 89.999992,0 90,16 80.999992,16 80,16 78,16 25.124998,16 22.749998,16 12.000001,16 7.9999995,16 0,16 0,7.9999997 C0,3.5817226 3.581722,2.145768E-07 7.9999995,0 z" Height="16" Margin="0" Stretch="Fill" VerticalAlignment="Top">
 								<Path.Fill>
 									<LinearGradientBrush EndPoint="1.003,0.493" StartPoint="-0.017,0.493">
@@ -756,7 +756,7 @@
 									</LinearGradientBrush>
 								</Path.Fill>
 							</Path>
-							<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,0,0,6" HorizontalAlignment="Center" VerticalAlignment="Bottom" d:LayoutOverrides="Width"/>
+							<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,0,0,6" HorizontalAlignment="Center" VerticalAlignment="Bottom" d:LayoutOverrides="Width" Cursor="Hand"/>
 							<Path x:Name="path" Data="M0,0 L100,0 100,15.999999 0,15.999999 z" Height="16" Stretch="Fill" VerticalAlignment="Top">
 								<Path.Fill>
 									<LinearGradientBrush EndPoint="1.003,0.493" StartPoint="-0.017,0.493">
@@ -1024,7 +1024,7 @@
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Grid x:Name="Bd" Width="85" Height="25">
-								<Path x:Name="path" Data="M5.68117,0 L85.660629,0 85.660629,6.8173975 79.977997,12.499999 85.660629,18.182601 85.660629,24.999997 5.68117,24.999997 5.68117,18.182601 0,12.499999 5.68117,6.8173975 z" Stretch="Fill" StrokeThickness="1">
+								<Path x:Name="path" Data="M5.68117,0 L85.660629,0 85.660629,6.8173975 79.977997,12.499999 85.660629,18.182601 85.660629,24.999997 5.68117,24.999997 5.68117,18.182601 0,12.499999 5.68117,6.8173975 z" Stretch="Fill" StrokeThickness="1" Cursor="Hand">
 									<Path.Fill>
 										<LinearGradientBrush EndPoint="1.01,0.499" StartPoint="-0.027,0.487">
 											<GradientStop Color="{DynamicResource LineColor#184184184}" Offset="0"/>
@@ -1032,7 +1032,7 @@
 										</LinearGradientBrush>
 									</Path.Fill>
 								</Path>
-								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 							</Grid>
 						</Grid>
 						<ControlTemplate.Triggers>
@@ -1117,7 +1117,7 @@
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Grid x:Name="Bd" Width="85" Height="25">
-								<Path x:Name="path" Data="M5.6826018,0 L85.682602,0 85.682602,25 5.6826018,25 5.6826018,18.182602 0,12.5 5.6826018,6.8173977 z" Stretch="Fill" StrokeThickness="1">
+								<Path x:Name="path" Data="M5.6826018,0 L85.682602,0 85.682602,25 5.6826018,25 5.6826018,18.182602 0,12.5 5.6826018,6.8173977 z" Stretch="Fill" StrokeThickness="1" Cursor="Hand">
 									<Path.Fill>
 										<LinearGradientBrush EndPoint="1.011,0.5" StartPoint="-0.012,0.499">
 											<GradientStop Color="{DynamicResource LineColor#184184184}" Offset="0"/>
@@ -1125,7 +1125,7 @@
 										</LinearGradientBrush>
 									</Path.Fill>
 								</Path>
-								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 							</Grid>
 						</Grid>
 						<ControlTemplate.Triggers>
@@ -1286,7 +1286,7 @@
 									</VisualState>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Path x:Name="path" Data="M7.9999997,0 L28,0 C32.418277,0 36,3.581722 36,8 L36,20 36,46 36,54 28,54 7.9999997,54 2.8421709E-14,54 2.8421709E-14,46 2.8421709E-14,20 2.8421709E-14,8 C-2.6822087E-07,3.581722 3.5817218,0 7.9999997,0 z" Stretch="Fill" StrokeThickness="1">
+							<Path x:Name="path" Data="M7.9999997,0 L28,0 C32.418277,0 36,3.581722 36,8 L36,20 36,46 36,54 28,54 7.9999997,54 2.8421709E-14,54 2.8421709E-14,46 2.8421709E-14,20 2.8421709E-14,8 C-2.6822087E-07,3.581722 3.5817218,0 7.9999997,0 z" Stretch="Fill" StrokeThickness="1" Cursor="Hand">
 								<Path.Fill>
 									<LinearGradientBrush EndPoint="1.007,0.5" StartPoint="0,0.505">
 										<GradientStop Color="{DynamicResource #122122122}" Offset="0"/>
@@ -1294,7 +1294,7 @@
 									</LinearGradientBrush>
 								</Path.Fill>
 							</Path>
-							<Image Source="CutImages/图像/FeiJing.png" Stretch="Fill" Height="36" Width="34" Margin="2,9,0,9"/>
+							<Image Source="CutImages/图像/FeiJing.png" Stretch="Fill" Height="36" Width="34" Margin="2,9,0,9" Cursor="Hand"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsSelected" Value="true">
@@ -1557,13 +1557,13 @@
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Grid x:Name="grid">
-								<Rectangle x:Name="rectangle" Fill="White" RadiusY="8" RadiusX="8" Height="30">
+								<Rectangle x:Name="rectangle" Fill="White" RadiusY="8" RadiusX="8" Height="30" Cursor="Hand">
 									<Rectangle.Effect>
 										<DropShadowEffect Direction="315" ShadowDepth="0.5" BlurRadius="4"/>
 									</Rectangle.Effect>
 								</Rectangle>
-								<Ellipse x:Name="ellipse" Margin="10.791,10.492,12.209,0" StrokeThickness="4" VerticalAlignment="Top" Height="7" Fill="{DynamicResource bluegredient}"/>
-								<Path x:Name="path" Data="M21.011086,17.817692 L18.182692,20.646086 21.142607,23.605999 23.971001,20.777607 z M14.290925,7.4920001 C10.701116,7.4920001 7.7909999,10.402115 7.7909999,13.991924 7.7909999,17.581734 10.701116,20.491848 14.290925,20.491848 17.880733,20.491848 20.79085,17.581734 20.79085,13.991924 20.79085,10.402115 17.880733,7.4920001 14.290925,7.4920001 z M8,0 L22,0 C26.418278,0 30,3.581722 30,8 L30,22 C30,26.418278 26.418278,30 22,30 L8,30 C3.581722,30 0,26.418278 0,22 L0,8 C0,3.581722 3.581722,0 8,0 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" />
+								<Ellipse x:Name="ellipse" Margin="10.791,10.492,12.209,0" StrokeThickness="4" VerticalAlignment="Top" Height="7" Fill="{DynamicResource bluegredient}" Cursor="Hand"/>
+								<Path x:Name="path" Data="M21.011086,17.817692 L18.182692,20.646086 21.142607,23.605999 23.971001,20.777607 z M14.290925,7.4920001 C10.701116,7.4920001 7.7909999,10.402115 7.7909999,13.991924 7.7909999,17.581734 10.701116,20.491848 14.290925,20.491848 17.880733,20.491848 20.79085,17.581734 20.79085,13.991924 20.79085,10.402115 17.880733,7.4920001 14.290925,7.4920001 z M8,0 L22,0 C26.418278,0 30,3.581722 30,8 L30,22 C30,26.418278 26.418278,30 22,30 L8,30 C3.581722,30 0,26.418278 0,22 L0,8 C0,3.581722 3.581722,0 8,0 z" Fill="{DynamicResource bluegredient}" Stretch="Fill" Cursor="Hand" />
 							</Grid>
 							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
 						</Grid>
@@ -2575,7 +2575,7 @@
 									<VisualState x:Name="Disabled"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Rectangle x:Name="rectangle" HorizontalAlignment="Stretch" Height="Auto" RadiusY="6" RadiusX="6" VerticalAlignment="Stretch" Width="Auto">
+							<Rectangle x:Name="rectangle" HorizontalAlignment="Stretch" Height="Auto" RadiusY="6" RadiusX="6" VerticalAlignment="Stretch" Width="Auto" Cursor="Hand">
 								<Rectangle.Effect>
 									<DropShadowEffect ShadowDepth="0"/>
 								</Rectangle.Effect>
@@ -2586,7 +2586,7 @@
 									</LinearGradientBrush>
 								</Rectangle.Fill>
 							</Rectangle>
-							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsKeyboardFocused" Value="true"/>
@@ -2909,7 +2909,7 @@
 									<VisualState x:Name="Uneditable"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
+							<Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" Cursor="Hand">
 								<Microsoft_Windows_Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=MainGrid}">
 									<Border x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1">
 										<ScrollViewer x:Name="DropDownScrollViewer" VerticalScrollBarVisibility="Disabled">
@@ -2926,8 +2926,8 @@
 									</Border>
 								</Microsoft_Windows_Themes:SystemDropShadowChrome>
 							</Popup>
-							<ToggleButton Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}"/>
-							<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" IsHitTestVisible="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,12,0"/>
+							<ToggleButton Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}" Cursor="Hand"/>
+							<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" IsHitTestVisible="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,12,0" Cursor="Hand"/>
 						</Grid>
 						<ControlTemplate.Triggers>
 							<Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
@@ -3110,7 +3110,7 @@
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Grid x:Name="Bd" Width="85" Height="25">
-								<Rectangle x:Name="rectangle" RadiusY="8" RadiusX="8" StrokeThickness="1">
+								<Rectangle x:Name="rectangle" RadiusY="8" RadiusX="8" StrokeThickness="1" Cursor="Hand">
 									<Rectangle.Fill>
 										<LinearGradientBrush EndPoint="1.01,0.499" StartPoint="-0.027,0.487">
 											<GradientStop Color="{DynamicResource LineColor#184184184}" Offset="0"/>
@@ -3126,7 +3126,7 @@
 										</LinearGradientBrush>
 									</Path.Fill>
 								</Path>
-								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+								<ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="7,2,7,1" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 							</Grid>
 						</Grid>
 						<ControlTemplate.Triggers>
@@ -3344,8 +3344,8 @@
 									<VisualState x:Name="Disabled"/>
 								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
-							<Rectangle x:Name="MenuBg2" Style="{DynamicResource RectangleStyle1}" Stroke="#FF414141" />
-							<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" OpacityMask="{x:Null}" Height="21.117" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Rectangle x:Name="MenuBg2" Style="{DynamicResource RectangleStyle1}" Stroke="#FF414141" Cursor="Hand" />
+							<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" OpacityMask="{x:Null}" Height="21.117" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
 							<Path x:Name="path" Data="M24.657486,0.5 L24.657486,33.806126 0.5,33.806126 z" HorizontalAlignment="Right" Height="27" Margin="0,0,1,1" Stretch="Fill" VerticalAlignment="Bottom" Width="20" Visibility="Collapsed">
 								<Path.Fill>
 									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

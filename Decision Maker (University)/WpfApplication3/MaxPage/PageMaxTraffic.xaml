@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1300"
+      d:DesignHeight="972" d:DesignWidth="1265"
 	Title="PageMaxTraffic">
 
     <Page.Resources>
@@ -51,13 +51,13 @@
         </Style>
     </Page.Resources>
 
-    <Grid>
-        <Rectangle Stroke="Black" Margin="-1,0" StrokeThickness="2">
+    <Grid Margin="0,0,5,0">
+        <Rectangle StrokeThickness="2" RadiusX="8" RadiusY="8">
             <Rectangle.Fill>
-                <SolidColorBrush Color="{DynamicResource Contentbg}"/>
+                <SolidColorBrush Color="{DynamicResource #235235235}"/>
             </Rectangle.Fill>
         </Rectangle>
         <WebBrowser x:Name="webbrowserMaxTraffic" Margin="10,30,10,10" />
-        <Button Content="Min" Height="23" HorizontalAlignment="Left" Margin="8,4,8,0" x:Name="btn_minTraffic" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle7}" VerticalContentAlignment="Top" FontSize="14" FontWeight="Bold" Click="btn_minTraffic_Click"/>
+        <Button Content="-" Height="15" HorizontalAlignment="Left" Margin="10,11,8,0" x:Name="btn_minTraffic" VerticalAlignment="Top" Style="{DynamicResource ButtonFeedbacknormal}" VerticalContentAlignment="Top" FontWeight="Bold" Click="btn_minTraffic_Click" Width="15" Padding="1,-3,1,1" Cursor="Hand" FontSize="14"/>
     </Grid>
 </Page>

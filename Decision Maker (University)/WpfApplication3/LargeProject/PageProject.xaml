@@ -19,11 +19,17 @@
 													<VisualState x:Name="Unselected"/>
 													<VisualState x:Name="Selected">
 														<Storyboard>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
 																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
 															</ColorAnimationUsingKeyFrames>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource #235235235}"/>
 															</ColorAnimationUsingKeyFrames>
 														</Storyboard>
 													</VisualState>
@@ -36,14 +42,17 @@
 													<VisualState x:Name="Normal"/>
 													<VisualState x:Name="MouseOver">
 														<Storyboard>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
-															</ColorAnimationUsingKeyFrames>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
-															</ColorAnimationUsingKeyFrames>
 															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
 																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource #235235235}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
 															</ColorAnimationUsingKeyFrames>
 														</Storyboard>
 													</VisualState>
@@ -59,20 +68,17 @@
 													<VisualState x:Name="VisualStatetest"/>
 												</VisualStateGroup>
 											</VisualStateManager.VisualStateGroups>
-											<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+											<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70" RadiusX="5" RadiusY="5" Cursor="Hand">
 												<Rectangle.Fill>
-													<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
-														<GradientStop Color="#FFEBEBEB" Offset="0"/>
-														<GradientStop Color="#FFEBEBEB" Offset="1"/>
-													</LinearGradientBrush>
+													<SolidColorBrush Color="{DynamicResource white}"/>
 												</Rectangle.Fill>
 											</Rectangle>
-											<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
-												<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+											<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15" Cursor="Hand">
+												<Ellipse x:Name="ellipse" Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
 													<Ellipse.Fill>
 														<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
-															<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
-															<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+															<GradientStop Color="{DynamicResource #122122122}" Offset="0"/>
+															<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
 														</LinearGradientBrush>
 													</Ellipse.Fill>
 												</Ellipse>
@@ -82,9 +88,9 @@
 													</Path.Fill>
 												</Path>
 											</Grid>
-											<Label x:Name="label" Content="{Binding FileDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
-											<ContentPresenter Content="{Binding Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
-											<Button x:Name="btn" Content="{Binding Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0"/>
+											<Label x:Name="label" Content="{Binding FileDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center" Cursor="Hand"/>
+											<ContentPresenter Content="{Binding Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand"/>
+											<Button x:Name="btn" Content="{Binding Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand"/>
 										</Grid>
 										<ControlTemplate.Triggers>
 											<Trigger Property="IsSelected" Value="true">
