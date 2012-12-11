@@ -279,8 +279,8 @@
         							<VisualState x:Name="Disabled"/>
         						</VisualStateGroup>
         					</VisualStateManager.VisualStateGroups>
-        					<Rectangle x:Name="MenuBg2" Style="{DynamicResource RectangleStyle1}" Stroke="#FF414141" />
-        					<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" OpacityMask="{x:Null}" Height="21.117" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        					<Rectangle x:Name="MenuBg2" Style="{DynamicResource RectangleStyle1}" Stroke="#FF414141" Cursor="Hand" />
+        					<ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" OpacityMask="{x:Null}" Height="21.117" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
         				</Grid>
         				<ControlTemplate.Triggers>
         					<Trigger Property="Selector.IsSelected" Value="True">
@@ -421,32 +421,32 @@
                                     <Rectangle x:Name="MenuBg0" Stroke="#FF414141" Style="{DynamicResource RectangleStyle1}"/>
                                     <Grid Width="29" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" MinHeight="27"/>
-                                            <RowDefinition Height="Auto"/>
+                                        	<RowDefinition Height="Auto" MinHeight="27"/>
+                                        	<RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
-                                        <Border Margin="-0.957,-1.334,-0.952,0" Width="30.909" Height="28.334">
-                                            <Border.Effect>
-                                                <DropShadowEffect ShadowDepth="1" BlurRadius="2"/>
-                                            </Border.Effect>
-                                            <Grid Width="30" Height="28">
-                                                <ed:BlockArrow Margin="0,1.334,0,0" Orientation="Up" Stroke="#FFD0D0D0" HorizontalAlignment="Center" Width="26.418" VerticalAlignment="Top" Height="27" StrokeThickness="1.6" ArrowBodySize="0.85" ArrowheadAngle="105"/>
-                                                <Path Data="M181.5,905.33333 L164.83333,918.33333" HorizontalAlignment="Left" Height="14.169" Stretch="Fill" Stroke="#FFD0D0D0" StrokeThickness="3.5" VerticalAlignment="Top" Width="17.5" Margin="0,1.334,0,0" StrokeEndLineCap="Round"/>
-                                                <Path Data="M181.5,905.33333 L164.83333,918.33333" HorizontalAlignment="Right" Height="14.169" Stretch="Fill" Stroke="#FFD0D0D0" StrokeThickness="3.5" VerticalAlignment="Top" Width="17.5" Margin="0,1.334,0,0" StrokeEndLineCap="Round" RenderTransformOrigin="0.5,0.5">
-                                                    <Path.RenderTransform>
-                                                        <TransformGroup>
-                                                            <ScaleTransform ScaleX="-1"/>
-                                                            <SkewTransform/>
-                                                            <RotateTransform/>
-                                                            <TranslateTransform/>
-                                                        </TransformGroup>
-                                                    </Path.RenderTransform>
-                                                </Path>
-                                                <Path Data="M23.125,1.75 L23.125,15.879977" Height="9.5" Stretch="Fill" StrokeEndLineCap="Round" Stroke="#FFD0D0D0" StrokeThickness="3.5" Width="3.5" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Margin="21.206,0,0,0"/>
-                                                <Rectangle RadiusY="8" Stroke="#FFD0D0D0" StrokeThickness="2" Fill="#FFD0D0D0" Height="8" VerticalAlignment="Bottom" Margin="0,0,0,0.25" HorizontalAlignment="Center" Width="6"/>
-                                                <Button x:Name="Home1" Margin="0,0,0,1.334" Opacity="0" HorizontalAlignment="Left" Width="29" Click="Home_Click" Cursor="Hand"/>
-                                            </Grid>
-                                        </Border>
+                                    	<Border Margin="-0.957,-1.334,-0.952,0" Width="30.909" Height="28.334">
+                                    		<Border.Effect>
+                                    			<DropShadowEffect ShadowDepth="1" BlurRadius="2"/>
+                                    		</Border.Effect>
+                                    		<Grid Width="30" Height="28">
+                                    			<ed:BlockArrow Margin="0,1.334,0,0" Orientation="Up" Stroke="#FFD0D0D0" HorizontalAlignment="Center" Width="26.418" VerticalAlignment="Top" Height="27" StrokeThickness="1.6" ArrowBodySize="0.85" ArrowheadAngle="105"/>
+                                    			<Path Data="M181.5,905.33333 L164.83333,918.33333" HorizontalAlignment="Left" Height="14.169" Stretch="Fill" Stroke="#FFD0D0D0" StrokeThickness="3.5" VerticalAlignment="Top" Width="17.5" Margin="0,1.334,0,0" StrokeEndLineCap="Round"/>
+                                    			<Path Data="M181.5,905.33333 L164.83333,918.33333" HorizontalAlignment="Right" Height="14.169" Stretch="Fill" Stroke="#FFD0D0D0" StrokeThickness="3.5" VerticalAlignment="Top" Width="17.5" Margin="0,1.334,0,0" StrokeEndLineCap="Round" RenderTransformOrigin="0.5,0.5">
+                                    				<Path.RenderTransform>
+                                    					<TransformGroup>
+                                    						<ScaleTransform ScaleX="-1"/>
+                                    						<SkewTransform/>
+                                    						<RotateTransform/>
+                                    						<TranslateTransform/>
+                                    					</TransformGroup>
+                                    				</Path.RenderTransform>
+                                    			</Path>
+                                    			<Path Data="M23.125,1.75 L23.125,15.879977" Height="9.5" Stretch="Fill" StrokeEndLineCap="Round" Stroke="#FFD0D0D0" StrokeThickness="3.5" Width="3.5" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Margin="21.206,0,0,0"/>
+                                    			<Rectangle RadiusY="8" Stroke="#FFD0D0D0" StrokeThickness="2" Fill="#FFD0D0D0" Height="8" VerticalAlignment="Bottom" Margin="0,0,0,0.25" HorizontalAlignment="Center" Width="6"/>
+                                    		</Grid>
+                                    	</Border>
                                     </Grid>
+                                    <Button x:Name="Home1" Opacity="0" Click="Home_Click" Cursor="Hand"/>
                                 </Grid>
                             </StackPanel>
                         </StackPanel>
@@ -663,7 +663,7 @@
                                 <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
                             </ComboBoxItem.Foreground>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" Opacity="0.8" IsSelected="True" >
+                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" Opacity="0.8" >
                             <ComboBoxItem.Background>
                                 <LinearGradientBrush EndPoint="1.018,0.913" StartPoint="-0.024,0.913">
                                     <GradientStop Color="#FF40413C" Offset="0"/>

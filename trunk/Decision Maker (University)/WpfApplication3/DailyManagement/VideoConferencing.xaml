@@ -80,9 +80,9 @@
             										</Path.Fill>
             									</Path>
             								</Grid>
-											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45"/>
-            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
-    										<Button x:Name="btnDocSearchShow" Content="{Binding Path=Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0"/>
+											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45" Cursor="Hand"/>
+            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand"/>
+    										<Button x:Name="btnDocSearchShow" Content="{Binding Path=Title}" Click="Button_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0" Cursor="Hand"/>
             							</Grid>
             							<ControlTemplate.Triggers>
             								<Trigger Property="IsSelected" Value="true"/>
@@ -173,9 +173,9 @@
             										</Path.Fill>
             									</Path>
             								</Grid>
-											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45"/>
-            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
-    										<Button x:Name="btn" Content="{Binding Path=Title}" Click="Button_FaYan" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0"/>
+											<Button Grid.Column="2" Content="共享" Click="Button_Share" Height="23" Style="{DynamicResource ButtonFeedbacknormal}" Width="45" Cursor="Hand"/>
+            								<ContentPresenter Content="{Binding Path=Title}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand"/>
+    										<Button x:Name="btn" Content="{Binding Path=Title}" Click="Button_FaYan" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="1" Opacity="0" Cursor="Hand"/>
             							</Grid>
             							<ControlTemplate.Triggers>
             								<Trigger Property="IsSelected" Value="true"/>
