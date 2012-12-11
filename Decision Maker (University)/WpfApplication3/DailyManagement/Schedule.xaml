@@ -23,7 +23,7 @@
     			</Rectangle.Effect>
     		</Rectangle>
     		<Label Style="{DynamicResource Labeltopheader}" Content="日程安排" Margin="0,0,0,5.833" d:LayoutOverrides="Height"/>
-    		<WebBrowser Margin="20,20,20,40" x:Name="webBrowser_GoogleCalendar" Visibility="Visible" Grid.Row="1" />
+    		<WebBrowser Margin="20,20,20,40" x:Name="webBrowser_GoogleCalendar" Visibility="Visible" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Visible" />
     	</Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -140,27 +140,42 @@
                     <CheckBox Content="全选" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Style="{DynamicResource CheckBoxfeedback}" />
                 </ComboBox>
             </Grid>
-            <Grid Grid.Row="5">
-                <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="20,5,20,5">
+            <Grid Grid.Row="5" Margin="15,5">
+                <Rectangle RadiusY="8" RadiusX="8">
+                	<Rectangle.Stroke>
+                		<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                	</Rectangle.Stroke>
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource white}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Disabled" Margin="5">
                     <ListBox x:Name="listboxSend">
                         <ListBox.Template>
                             <ControlTemplate TargetType="{x:Type ListBox}">
-                                <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                                <WrapPanel Orientation="Horizontal" IsItemsHost="True" d:LayoutOverrides="Width, Height"/>
                             </ControlTemplate>
                         </ListBox.Template>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="5">
                                     <Grid.ColumnDefinitions>
-                                    	<ColumnDefinition/>
-                                    	<ColumnDefinition/>
+                                    	<ColumnDefinition Width="15"/>
+                                    	<ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0">
-                                        <Image Source="/WpfApplication3;component/CutImages/图像/dot_bg-green-07.png" Width="10" Height="10"/>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-                                        <TextBlock Text="{Binding}"/>
-                                    </Grid>
+                                    <Grid Grid.Column="0" Grid.ColumnSpan="1">
+                                		<Ellipse Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                			<Ellipse.Fill>
+                                				<LinearGradientBrush EndPoint="0.987,0.863" StartPoint="0.033,0.16">
+                                					<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+                                					<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+                                				</LinearGradientBrush>
+                                			</Ellipse.Fill>
+                                		</Ellipse>
+                                	</Grid>
+                                	<Grid Grid.Column="1" Grid.ColumnSpan="1">
+                                		<TextBlock Text="{Binding}" VerticalAlignment="Stretch"/>
+                                	</Grid>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

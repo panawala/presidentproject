@@ -850,15 +850,15 @@
 							</Grid.RowDefinitions>
 							<TabPanel x:Name="HeaderPanel" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
 							<Grid x:Name="ContentPanel" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-								<Rectangle HorizontalAlignment="Stretch" Height="Auto" StrokeThickness="1" VerticalAlignment="Stretch" Width="Auto" StrokeDashArray="3 3" Margin="10">
+								<Rectangle HorizontalAlignment="Stretch" Height="Auto" StrokeThickness="1" VerticalAlignment="Stretch" Width="Auto" StrokeDashArray="1 0" Margin="15" RadiusX="8" RadiusY="8">
 									<Rectangle.Stroke>
 										<SolidColorBrush Color="{DynamicResource #122122122}"/>
 									</Rectangle.Stroke>
 									<Rectangle.Fill>
-										<SolidColorBrush Color="{DynamicResource #235235235}"/>
+										<SolidColorBrush Color="{DynamicResource white}"/>
 									</Rectangle.Fill>
 								</Rectangle>
-								<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="15" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+								<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="20" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
 							</Grid>
 						</Grid>
 						<ControlTemplate.Triggers>
@@ -3330,7 +3330,13 @@
 											</ObjectAnimationUsingKeyFrames>
 										</Storyboard>
 									</VisualState>
-									<VisualState x:Name="SelectedUnfocused"/>
+									<VisualState x:Name="SelectedUnfocused">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
 								</VisualStateGroup>
 								<VisualStateGroup x:Name="CommonStates">
 									<VisualState x:Name="Normal"/>
