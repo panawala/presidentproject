@@ -171,7 +171,14 @@
                     		<ColumnDefinition Width="31.011"/>
                     	</Grid.ColumnDefinitions>
                         <Grid>
-                    		<Rectangle IsEnabled="False" Margin="0" RadiusY="6" RadiusX="6" Stroke="#EABCB9B9" Fill="{DynamicResource searchbox}"/>
+                    		<Rectangle IsEnabled="False" Margin="0" RadiusY="6" RadiusX="6">
+                    			<Rectangle.Stroke>
+                    				<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                    			</Rectangle.Stroke>
+                    			<Rectangle.Fill>
+                    				<SolidColorBrush Color="{DynamicResource white}"/>
+                    			</Rectangle.Fill>
+                    		</Rectangle>
                     		<TextBox x:Name="tbxSearch" HorizontalAlignment="Stretch" Text="请输入关键词。。" Style="{DynamicResource TextBoxSearchbar}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="4" GotMouseCapture="tbxSearch_GotMouseCapture"/>
                     	</Grid>
                         <Button x:Name="btnSearch" Content="搜" VerticalAlignment="Top" Height="30" Click="btnSearch_Click" Style="{DynamicResource ButtonSearch}" Width="30" Grid.Column="2" />
@@ -226,24 +233,41 @@
                 	</Grid.ColumnDefinitions>
                     <Label Content="排序" Margin="34.5,0,29.167,0" d:LayoutOverrides="Width, Height" />
                     <Grid Grid.Column="1" Margin="0,0,20,0">
-                    	<Rectangle IsEnabled="False" RadiusY="6" RadiusX="6" Stroke="#EABCB9B9" Fill="{DynamicResource searchbox}"/>
+                    	<Rectangle IsEnabled="False" RadiusY="6" RadiusX="6">
+                    		<Rectangle.Stroke>
+                    			<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                    		</Rectangle.Stroke>
+                    		<Rectangle.Fill>
+                    			<SolidColorBrush Color="{DynamicResource white}"/>
+                    		</Rectangle.Fill>
+                    	</Rectangle>
                     	<TextBox x:Name="tbxSearchCase" HorizontalAlignment="Stretch" GotMouseCapture="tbxSearchCase_GotMouseCapture" Background="{x:Null}" Margin="4" BorderBrush="{x:Null}" Text="请输入关键词。。"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" CanUserDeleteRows="False" CanUserResizeColumns="False" HorizontalAlignment="Stretch" Margin="20" x:Name="dataGridSearchResult" VerticalAlignment="Stretch" Foreground="#F1000019" FontSize="14" SelectionChanged="dataGridSearchResult_SelectionChanged" SelectionMode="Single">
-                        <DataGrid.ColumnHeaderStyle>
-                            <Style TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            </Style>
-                        </DataGrid.ColumnHeaderStyle>
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="项目名称" Width="40*" Binding="{Binding CaseTitle}"/>
-                            <DataGridTextColumn Header="创建时间" Width="15*" Binding="{Binding CreateTime}"/>
-                            <DataGridTextColumn Header="推荐程度" Width="15*" Binding="{Binding StarLevel}"/>
-                            <DataGridTextColumn Header="标签" Width="30*" Binding="{Binding CaseTopic}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                	<Grid Margin="20">
+                		<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
+                			<Rectangle.Stroke>
+                				<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                			</Rectangle.Stroke>
+                			<Rectangle.Fill>
+                				<SolidColorBrush Color="{DynamicResource white}"/>
+                			</Rectangle.Fill>
+                		</Rectangle>
+                		<DataGrid AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" CanUserDeleteRows="False" CanUserResizeColumns="False" HorizontalAlignment="Stretch" x:Name="dataGridSearchResult" VerticalAlignment="Stretch" Foreground="#F1000019" FontSize="14" SelectionChanged="dataGridSearchResult_SelectionChanged" SelectionMode="Single" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,0">
+                			<DataGrid.ColumnHeaderStyle>
+                				<Style TargetType="{x:Type DataGridColumnHeader}">
+                					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+                				</Style>
+                			</DataGrid.ColumnHeaderStyle>
+                			<DataGrid.Columns>
+                				<DataGridTextColumn Header="项目名称" Width="40*" Binding="{Binding CaseTitle}"/>
+                				<DataGridTextColumn Header="创建时间" Width="15*" Binding="{Binding CreateTime}"/>
+                				<DataGridTextColumn Header="推荐程度" Width="15*" Binding="{Binding StarLevel}"/>
+                				<DataGridTextColumn Header="标签" Width="30*" Binding="{Binding CaseTopic}"/>
+                			</DataGrid.Columns>
+                		</DataGrid>
+                	</Grid>
                 </Grid>
                 <Grid Grid.Row="3">
                 	<Grid.ColumnDefinitions>
@@ -263,7 +287,11 @@
                 		</Grid.ColumnDefinitions>
                 		<TextBlock Text="转到" VerticalAlignment="Center" d:LayoutOverrides="Width" FontSize="14" />
                 		<Grid Grid.Column="1" Height="23" Width="24">
-                			<Rectangle IsEnabled="False" RadiusY="6" RadiusX="6" Stroke="#EABCB9B9" Fill="{DynamicResource searchbox}" Height="23"/>
+                			<Rectangle IsEnabled="False" RadiusY="6" RadiusX="6" Height="23" Fill="White">
+                				<Rectangle.Stroke>
+                					<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                				</Rectangle.Stroke>
+                			</Rectangle>
                 			<TextBox x:Name="tbxPageNum" Text="" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Margin="3" Padding="0" />
                 		</Grid>
                 		<TextBlock Text="页" Grid.Column="2" VerticalAlignment="Center" FontSize="14" />

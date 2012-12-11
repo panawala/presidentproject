@@ -663,7 +663,7 @@
                                 <SolidColorBrush Color="{DynamicResource TVCharacterColor}"/>
                             </ComboBoxItem.Foreground>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" Opacity="0.8" >
+                        <ComboBoxItem Content="CCTV新闻" x:Name="CCTV13" Opacity="0.8" IsSelected="True" >
                             <ComboBoxItem.Background>
                                 <LinearGradientBrush EndPoint="1.018,0.913" StartPoint="-0.024,0.913">
                                     <GradientStop Color="#FF40413C" Offset="0"/>

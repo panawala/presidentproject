@@ -19,11 +19,17 @@
 													<VisualState x:Name="Unselected"/>
 													<VisualState x:Name="Selected">
 														<Storyboard>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
 																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
 															</ColorAnimationUsingKeyFrames>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource #235235235}"/>
 															</ColorAnimationUsingKeyFrames>
 														</Storyboard>
 													</VisualState>
@@ -36,14 +42,17 @@
 													<VisualState x:Name="Normal"/>
 													<VisualState x:Name="MouseOver">
 														<Storyboard>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
-															</ColorAnimationUsingKeyFrames>
-															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
-																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
-															</ColorAnimationUsingKeyFrames>
 															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
 																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource #235235235}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
+															</ColorAnimationUsingKeyFrames>
+															<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+																<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
 															</ColorAnimationUsingKeyFrames>
 														</Storyboard>
 													</VisualState>
@@ -59,20 +68,17 @@
 													<VisualState x:Name="VisualStatetest"/>
 												</VisualStateGroup>
 											</VisualStateManager.VisualStateGroups>
-											<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70">
+											<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="3" Height="70" RadiusX="5" RadiusY="5">
 												<Rectangle.Fill>
-													<LinearGradientBrush EndPoint="1.018,0.466" StartPoint="-0.027,0.466">
-														<GradientStop Color="#FFEBEBEB" Offset="0"/>
-														<GradientStop Color="#FFEBEBEB" Offset="1"/>
-													</LinearGradientBrush>
+													<SolidColorBrush Color="{DynamicResource white}"/>
 												</Rectangle.Fill>
 											</Rectangle>
 											<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
-												<Ellipse Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+												<Ellipse x:Name="ellipse" Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
 													<Ellipse.Fill>
 														<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
-															<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
-															<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+															<GradientStop Color="{DynamicResource #122122122}" Offset="0"/>
+															<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
 														</LinearGradientBrush>
 													</Ellipse.Fill>
 												</Ellipse>
@@ -127,21 +133,27 @@
                 	<RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="师生信息反馈"/>
-                <ListBox x:Name="listboxFeedback" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="listboxFeedback_SelectionChanged" Grid.RowSpan="2" Grid.Row="1" Margin="10" BorderBrush="{x:Null}">
-                	<ListBox.Background>
-                		<SolidColorBrush Color="{DynamicResource #229229229}"/>
-                	</ListBox.Background>
-					<ListBox.ItemContainerStyle>
-						<Style TargetType="{x:Type ListBoxItem}" >
-							<Setter Property="Background" Value="Transparent"/>
-							<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-							<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-							<Setter Property="Padding" Value="2,0,0,0"/>
-							<Setter Property="Template" Value="{StaticResource listBoxItemFeedback}">
-							</Setter>
-						</Style>
-					</ListBox.ItemContainerStyle>
-                </ListBox>
+                <Grid Margin="10" Grid.Row="1">
+                	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1">
+                		<Rectangle.Fill>
+                			<SolidColorBrush Color="{DynamicResource white}"/>
+                		</Rectangle.Fill>
+                		<Rectangle.Stroke>
+                			<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                		</Rectangle.Stroke>
+                	</Rectangle>
+                	<ListBox x:Name="listboxFeedback" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="listboxFeedback_SelectionChanged" BorderBrush="{x:Null}" Background="{x:Null}">
+                		<ListBox.ItemContainerStyle>
+                			<Style TargetType="{x:Type ListBoxItem}" >
+                				<Setter Property="Background" Value="Transparent"/>
+                				<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                				<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                				<Setter Property="Padding" Value="2,0,0,0"/>
+                				<Setter Property="Template" Value="{StaticResource listBoxItemFeedback}"/>
+                			</Style>
+                		</ListBox.ItemContainerStyle>
+                	</ListBox>
+                </Grid>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -150,12 +162,18 @@
                     <ColumnDefinition Width="86.874"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnHistory" Content="历史记录" VerticalAlignment="Center" Margin="5,0" Style="{DynamicResource ButtonFeedbacknormal}" Height="23" Width="80" HorizontalAlignment="Center"/>
-                <TextBox x:Name="tbxSearch" VerticalAlignment="Center" MaxLength="50" Grid.Column="1" KeyDown="tbxSearch_KeyDown" GotMouseCapture="tbxSearch_GotMouseCapture" Height="23" >
-                	<TextBox.Background>
-                		<SolidColorBrush Color="{DynamicResource #229229229}"/>
-                	</TextBox.Background>
-                </TextBox>
                 <Button x:Name="btnSearch" VerticalAlignment="Center" Content="搜索" Click="btnSearch_Click" Grid.Column="2" Style="{DynamicResource ButtonFeedbacknormal}" Width="60" Height="23"/>
+                <Grid Grid.Column="1" Height="25">
+                	<Rectangle RadiusY="8" RadiusX="8">
+                		<Rectangle.Fill>
+                			<SolidColorBrush Color="{DynamicResource white}"/>
+                		</Rectangle.Fill>
+                		<Rectangle.Stroke>
+                			<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                		</Rectangle.Stroke>
+                	</Rectangle>
+                	<TextBox x:Name="tbxSearch" VerticalAlignment="Center" Margin="4,3" MaxLength="50" GotMouseCapture="tbxSearch_GotMouseCapture" KeyDown="tbxSearch_KeyDown" Background="{x:Null}" BorderBrush="{x:Null}" />
+                </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Margin="0,0,5,0">
@@ -190,6 +208,14 @@
             			<Grid.Background>
             				<SolidColorBrush Color="{DynamicResource #229229229}"/>
             			</Grid.Background>
+            			<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1" Grid.RowSpan="2">
+            				<Rectangle.Fill>
+            					<SolidColorBrush Color="{DynamicResource white}"/>
+            				</Rectangle.Fill>
+            				<Rectangle.Stroke>
+            					<SolidColorBrush Color="{DynamicResource #122122122}"/>
+            				</Rectangle.Stroke>
+            			</Rectangle>
             			<TextBox x:Name="tbxFeedbackContent" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="{x:Null}" Margin="0,0,0,0.42" FontSize="14"/>
             			<Grid Grid.Row="1" d:LayoutOverrides="Height">
             				<Grid.ColumnDefinitions>
@@ -343,38 +369,49 @@
                         </ComboBox>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="2">
-                    <ListBox x:Name="listboxSend" d:LayoutOverrides="Width, Height" Margin="20,10">
-                		<ListBox.Background>
-                			<SolidColorBrush Color="{DynamicResource #229229229}"/>
-                		</ListBox.Background>
-                		<ListBox.Template>
-                			<ControlTemplate TargetType="{x:Type ListBox}">
-                				<WrapPanel Orientation="Horizontal" IsItemsHost="True">
-                					<WrapPanel.Background>
-                						<SolidColorBrush Color="{DynamicResource #229229229}"/>
-                					</WrapPanel.Background>
-                				</WrapPanel>
-                			</ControlTemplate>
-                		</ListBox.Template>
-                		<ListBox.ItemTemplate>
-                			<DataTemplate>
-                				<Grid Margin="5" Height="Auto" Width="Auto">
-                					<Grid.ColumnDefinitions>
-                						<ColumnDefinition Width="14.88"/>
-                						<ColumnDefinition Width="*"/>
-                					</Grid.ColumnDefinitions>
-                					<Grid Grid.Column="0" Grid.ColumnSpan="1">
-                						<Image Source="/WpfApplication3;component/CutImages/图像/dot_bg-green-07.png" Width="10" Height="10"/>
-                					</Grid>
-                					<Grid Grid.Column="2" Grid.ColumnSpan="1" d:LayoutOverrides="GridBox">
-                						<TextBlock Text="{Binding}" VerticalAlignment="Stretch"/>
-                					</Grid>
-                				</Grid>
-                			</DataTemplate>
-                		</ListBox.ItemTemplate>
-                	</ListBox>
+                <Grid Grid.Row="2" Margin="20,10">
+                	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
+                		<Rectangle.Stroke>
+                			<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                		</Rectangle.Stroke>
+                		<Rectangle.Fill>
+                			<SolidColorBrush Color="{DynamicResource white}"/>
+                		</Rectangle.Fill>
+                	</Rectangle>
+                	<ScrollViewer Margin="5" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     
+                		<ListBox x:Name="listboxSend" Background="{x:Null}" BorderBrush="{x:Null}">
+                			<ListBox.Template>
+                				<ControlTemplate TargetType="{x:Type ListBox}">
+                					<WrapPanel Orientation="Horizontal" IsItemsHost="True" Background="{x:Null}"/>
+                				</ControlTemplate>
+                			</ListBox.Template>
+                			<ListBox.ItemTemplate>
+                				<DataTemplate>
+                					<Grid Margin="5" Height="Auto" Width="Auto">
+                						<Grid.ColumnDefinitions>
+                							<ColumnDefinition Width="14.88"/>
+                							<ColumnDefinition Width="*"/>
+                						</Grid.ColumnDefinitions>
+                						<Grid Grid.Column="0" Grid.ColumnSpan="1">
+                							<Ellipse Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                								<Ellipse.Fill>
+                									<LinearGradientBrush EndPoint="0.987,0.863" StartPoint="0.033,0.16">
+                										<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+                										<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+                									</LinearGradientBrush>
+                								</Ellipse.Fill>
+                							</Ellipse>
+                						</Grid>
+                						<Grid Grid.Column="2" Grid.ColumnSpan="1" d:LayoutOverrides="GridBox">
+                							<TextBlock Text="{Binding}" VerticalAlignment="Stretch"/>
+                						</Grid>
+                					</Grid>
+                				</DataTemplate>
+                			</ListBox.ItemTemplate>
+                		</ListBox>
+                    
+                	</ScrollViewer>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Button x:Name="btnSend" Content="发送" Width="69" HorizontalAlignment="Right" Margin="0,5,33,22" Style="{DynamicResource ButtonFeedbacknormal}"/>
@@ -447,12 +484,20 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1" Margin="0,0,20,0">
-                        <InkCanvas x:Name="InkCanvasAnnotation1" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink" Margin="0,10,0,5"/>
+                        <Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1">
+                        	<Rectangle.Fill>
+                        		<SolidColorBrush Color="{DynamicResource white}"/>
+                        	</Rectangle.Fill>
+                        	<Rectangle.Stroke>
+                        		<SolidColorBrush Color="{DynamicResource #122122122}"/>
+                        	</Rectangle.Stroke>
+                        </Rectangle>
+                        <InkCanvas x:Name="InkCanvasAnnotation1" MinHeight="0" MinWidth="0" Strokes="{Binding Strokes}" EditingMode="Ink" Background="{x:Null}"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Button Height="23" x:Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,0,30,20" Width="69" Content="确 认" Click="btnCommentOK_Click" Style="{DynamicResource ButtonFeedbacknormal}"/>
-                    <Button Height="23" x:Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,0,120,20" Width="69" Content="清 空" Click="btnCommentClear_Click" Style="{DynamicResource ButtonFeedbacknormal}" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Height="23" x:Name="btnCommentOK" HorizontalAlignment="Right" Margin="0,8,30,19" Width="69" Content="确 认" Click="btnCommentOK_Click" Style="{DynamicResource ButtonFeedbacknormal}"/>
+                    <Button Height="23" x:Name="btnCommentClear" HorizontalAlignment="Right" Margin="0,8,120,19" Width="69" Content="清 空" Click="btnCommentClear_Click" Style="{DynamicResource ButtonFeedbacknormal}" Background="{x:Null}" BorderBrush="{x:Null}" />
                 </Grid>
             </Grid>
         </Grid>
