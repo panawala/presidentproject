@@ -257,6 +257,9 @@
     <Compile Include="ResourcesAndManpower\PageOrganizationStructure.xaml.cs">
       <DependentUpon>PageOrganizationStructure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ResourcesAndManpower\PageSpatialResource.xaml.cs">
+      <DependentUpon>PageSpatialResource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WeatherWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -372,6 +375,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourcesAndManpower\PageOrganizationStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourcesAndManpower\PageSpatialResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
