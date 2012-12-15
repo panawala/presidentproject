@@ -51,12 +51,32 @@
     </Page.Resources>
 
     <Grid Margin="0,0,5,0">
-        <Rectangle StrokeThickness="2" RadiusX="8" RadiusY="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Grid.RowSpan="2" StrokeThickness="2" RadiusX="8" RadiusY="8">
             <Rectangle.Fill>
                 <SolidColorBrush Color="{DynamicResource #235235235}"/>
             </Rectangle.Fill>
         </Rectangle>
-        <WebBrowser x:Name="webBrowsermaxenvironment" Margin="10,30,10,10" />
-        <Button Content="-" Height="15" HorizontalAlignment="Left" Margin="10,11,0,0" x:Name="btn_minenvironment" VerticalAlignment="Top" Style="{DynamicResource ButtonFeedbacknormal}" VerticalContentAlignment="Top" FontSize="14" FontWeight="Bold" Click="btn_minenvironment_Click" Padding="1,-3,1,1" Width="15" Cursor="Hand"/>
+        <Grid Grid.Row="1">
+            <TabControl Name="tabControl2" Margin="5">
+                <TabItem Header="已完成" Name="tabItem2">
+                    <WebBrowser x:Name="webBrowsermaxenvironment" />
+                </TabItem>
+                <TabItem Header="当前行程">
+                    <WebBrowser x:Name="webBrowsermaxenvironment1" />
+                </TabItem>
+                <TabItem Header="已安排">
+                    <WebBrowser x:Name="webBrowsermaxenvironment2" />
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <Grid Grid.Row="0">
+            <Button Content="-" Height="15" HorizontalAlignment="Left" Margin="10,11,0,0" x:Name="btn_minenvironment" VerticalAlignment="Top" Style="{DynamicResource ButtonFeedbacknormal}" VerticalContentAlignment="Top" FontSize="14" FontWeight="Bold" Click="btn_minenvironment_Click" Padding="1,-3,1,1" Width="15" Cursor="Hand"/>
+        </Grid>
+        
+        
     </Grid>
 </Page>
