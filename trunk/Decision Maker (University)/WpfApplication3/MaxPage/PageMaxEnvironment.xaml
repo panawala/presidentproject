@@ -62,14 +62,14 @@
         </Rectangle>
         <Grid Grid.Row="1">
             <TabControl Name="tabControl2" Margin="5">
-                <TabItem Header="已完成" Name="tabItem2">
-                    <WebBrowser x:Name="webBrowsermaxenvironment" />
+                <TabItem Header="已完成" Name="tabItem2" Style="{DynamicResource TabItemHomePage}" Width="70" FontSize="16">
+                    <WebBrowser x:Name="webBrowsermaxenvironment" Margin="0" />
                 </TabItem>
-                <TabItem Header="当前行程">
-                    <WebBrowser x:Name="webBrowsermaxenvironment1" />
+                <TabItem Header="当前行程" Style="{DynamicResource TabItemHomePage}" Width="85" FontSize="16">
+                    <WebBrowser x:Name="webBrowsermaxenvironment1" Margin="0" />
                 </TabItem>
-                <TabItem Header="已安排">
-                    <WebBrowser x:Name="webBrowsermaxenvironment2" />
+                <TabItem Header="已安排" Style="{DynamicResource TabItemHomePage}" Width="70" FontSize="16">
+                    <WebBrowser x:Name="webBrowsermaxenvironment2" Margin="0" />
                 </TabItem>
             </TabControl>
         </Grid>

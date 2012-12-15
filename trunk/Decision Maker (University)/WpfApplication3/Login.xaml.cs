@@ -91,7 +91,18 @@ namespace WpfApplication3
 			passwordBox.Clear();
         }
 
+        private void userName_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	userName.Text="";// TODO: Add event handler implementation here.
+        }
 
+        private void passwordBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			passbg.Text="";
+			passwordBox.Clear();
+
+        }
 
     }
 }

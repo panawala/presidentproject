@@ -35,15 +35,34 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderDefaulted="{TemplateBinding IsDefaulted}" SnapsToDevicePixels="true">
-                            <Microsoft_Windows_Themes:ButtonChrome.Background>
-                                <ImageBrush ImageSource="logout.png"/>
-                            </Microsoft_Windows_Themes:ButtonChrome.Background>
-                        </Microsoft_Windows_Themes:ButtonChrome>
+                        <Grid>
+                    		<VisualStateManager.VisualStateGroups>
+                    			<VisualStateGroup x:Name="CommonStates">
+                    				<VisualState x:Name="Normal"/>
+                    				<VisualState x:Name="MouseOver"/>
+                    				<VisualState x:Name="Pressed">
+                    					<Storyboard>
+                    						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" Storyboard.TargetName="rectangle">
+                    							<EasingDoubleKeyFrame KeyTime="0" Value="5"/>
+                    						</DoubleAnimationUsingKeyFrames>
+                    					</Storyboard>
+                    				</VisualState>
+                    				<VisualState x:Name="Disabled"/>
+                    			</VisualStateGroup>
+                    		</VisualStateManager.VisualStateGroups>
+                    		<Rectangle x:Name="rectangle" Fill="#FFBA2108" Stroke="{x:Null}" RadiusX="5" RadiusY="5">
+                    			<Rectangle.Effect>
+                    				<DropShadowEffect ShadowDepth="0" BlurRadius="20" Color="{DynamicResource #122122122}"/>
+                    			</Rectangle.Effect>
+                    		</Rectangle>
+                    		<Path Data="M7.0683312,4.0524998 L9.9882927,7.9934764 9.6974351,8.1078825 C7.1132467,9.198288 5.2999997,11.750998 5.2999992,14.726203 5.2999997,18.693142 8.5235497,21.908981 12.5,21.908981 16.47645,21.908981 19.7,18.693142 19.7,14.726203 19.7,11.874966 18.034708,9.411747 15.621498,8.2517252 L15.33126,8.1208239 18.235982,4.2089934 18.722436,4.4880309 C22.18622,6.5876436 24.5,10.387363 24.5,14.726203 24.5,21.337767 19.127417,26.697498 12.5,26.697498 5.8725829,26.697498 0.5,21.337767 0.5,14.726203 0.5,10.180752 3.0393848,6.2269878 6.7800875,4.1997766 z M10.6875,0.5 L14.6875,0.5 14.6875,9.5 10.6875,9.5 z" Height="27" Stretch="Fill" Stroke="#FF782012" VerticalAlignment="Center" Width="25" HorizontalAlignment="Center">
+                    			<Path.Fill>
+                    				<SolidColorBrush Color="{DynamicResource white}"/>
+                    			</Path.Fill>
+                    		</Path>
+                    	</Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="ToggleButton.IsChecked" Value="true">
-                                <Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
-                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Foreground" Value="#ADADAD"/>
                             </Trigger>
@@ -120,7 +139,7 @@
         			<RowDefinition Height="113.093"/>
         		</Grid.RowDefinitions>
         		<Image Source="Images/login_head.png" Stretch="Fill" Width="140" Height="140" HorizontalAlignment="Center"/>
-        		<TextBox x:Name="userName" TextWrapping="Wrap" Text="用户名" Width="470" HorizontalAlignment="Center" Style="{DynamicResource TextBoxlogin}" Height="80" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" GotMouseCapture="userName_GotMouseCapture" Foreground="{DynamicResource BrushLoginWord}">
+        		<TextBox x:Name="userName" TextWrapping="Wrap" Text="用户名" Width="470" HorizontalAlignment="Center" Style="{DynamicResource TextBoxlogin}" Height="80" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" GotMouseCapture="userName_GotMouseCapture" Foreground="{DynamicResource BrushLoginWord}" GotFocus="userName_GotFocus" TabIndex="1">
         			<TextBox.Effect>
         				<DropShadowEffect ShadowDepth="0" Color="{DynamicResource #122122122}" BlurRadius="20"/>
         			</TextBox.Effect>
@@ -137,13 +156,13 @@
         					<SolidColorBrush Color="{DynamicResource LineColor#184184184}"/>
         				</TextBlock.Foreground>
         			</TextBlock>
-        			<PasswordBox x:Name="passwordBox" VerticalContentAlignment="Center" FontSize="36" Background="{x:Null}" GotMouseCapture="passwordBox_GotMouseCapture" Style="{DynamicResource PasswordBoxlogin}" VerticalAlignment="Center">
+        			<PasswordBox x:Name="passwordBox" VerticalContentAlignment="Center" FontSize="36" Background="{x:Null}" GotMouseCapture="passwordBox_GotMouseCapture" Style="{DynamicResource PasswordBoxlogin}" VerticalAlignment="Center" TabIndex="2" GotFocus="passwordBox_GotFocus">
         				<PasswordBox.BorderBrush>
         					<SolidColorBrush Color="{DynamicResource loginbg}"/>
         				</PasswordBox.BorderBrush>
         			</PasswordBox>
         		</Grid>
-        		<Button x:Name="btnLogin" Content="登陆" Margin="81.383,8,81.383,0" Grid.Row="3" Height="80" VerticalAlignment="Top" Style="{DynamicResource ButtonLogin}" FontSize="36" Click="btnLogin_Click" Width="470">
+        		<Button x:Name="btnLogin" Content="登陆" Margin="81.383,8,81.383,0" Grid.Row="3" Height="80" VerticalAlignment="Top" Style="{DynamicResource ButtonLogin}" FontSize="36" Click="btnLogin_Click" Width="470" TabIndex="3" IsDefault="True">
         			<Button.Foreground>
         				<SolidColorBrush Color="{DynamicResource white}"/>
         			</Button.Foreground>
@@ -225,12 +244,8 @@
                 </Button>
             </Grid>
         </Grid>
-        <Grid x:Name="logout" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="897,738,901,0">
-            <Button x:Name="btnLogout" Margin="0" VerticalAlignment="Center" Width="40" Height="40" HorizontalAlignment="Center" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="btnLogout_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="logout.png"/>
-                </Button.Background>
-            </Button>
+        <Grid x:Name="logout" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,40,40">
+            <Button x:Name="btnLogout" Margin="0" VerticalAlignment="Center" Width="40" Height="40" HorizontalAlignment="Center" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="btnLogout_Click" Background="{x:Null}"/>
         </Grid>
     </Grid>
 </Window>
