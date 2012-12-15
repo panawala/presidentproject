@@ -63,11 +63,11 @@
         </Rectangle>
         <Grid Grid.Row="1">
             <TabControl Margin="5">
-                <TabItem Header="即将开始">
-                    <WebBrowser x:Name="webbrowserMaxTraffic" />
+                <TabItem Header="即将开始" Style="{DynamicResource TabItemHomePage}" Width="85" FontSize="16">
+                    <WebBrowser x:Name="webbrowserMaxTraffic" Margin="0" />
                 </TabItem>
-                <TabItem Header="正在进行">
-                    <WebBrowser x:Name="webbrowserMaxTraffic1" />
+                <TabItem Header="正在进行" Style="{DynamicResource TabItemHomePage}" Width="85" FontSize="16">
+                    <WebBrowser x:Name="webbrowserMaxTraffic1" Margin="0" />
                 </TabItem>
             </TabControl>
         </Grid>

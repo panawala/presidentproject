@@ -143,15 +143,15 @@
             				</Grid>
             			</TabItem>
             			<TabItem Header="历史记录" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
-            				<Grid Background="#FFE5E5E5"/>
+            				<Grid/>
             			</TabItem>
             			<TabItem Header="重大危险源" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
-            				<Grid x:Name="Gridzdwxy" Background="#FFE5E5E5">
+            				<Grid x:Name="Gridzdwxy">
             					<TextBlock x:Name="textBlockzdwxy" Text="TextBlock" Margin="0,0,20,60" />
             				</Grid>
             			</TabItem>
             			<TabItem Header="案例链接" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
-            				<Grid Background="#FFE5E5E5"/>
+            				<Grid/>
             			</TabItem>
             		</TabControl>
             		<Grid Margin="390,0,0.08,0" Height="40" VerticalAlignment="Top">
