@@ -33,8 +33,12 @@ namespace WpfApplication3
             di = new DirectoryInfo(System.Environment.CurrentDirectory);
             strPATH = di.Parent.Parent.FullName;
             webbrowserEnvironment.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
+            webbrowserEnvironment1.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
+            webbrowserEnvironment2.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
+
             //webbrowserTraffic.Navigate(new Uri(strPATH + @"/html/Traffic.htm", UriKind.RelativeOrAbsolute));
             webbrowserTraffic.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
+            webbrowserTraffic1.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
             ds = new EmergencyBasic();
             //webbrowserEmergency.Navigate(new Uri(strPATH + @"/html/Emergency.htm", UriKind.RelativeOrAbsolute));
             webbrowserEmergency.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
@@ -204,9 +208,9 @@ namespace WpfApplication3
             image1.Source = new BitmapImage(new Uri(diDebug+@"\"+timeStr+@".png", UriKind.RelativeOrAbsolute));
             */
 
-            Uri uri = new Uri(imgPath, UriKind.Absolute);
-            BitmapImage bmp = new BitmapImage(uri);
-            w_imageWeather.Source = bmp;
+            //Uri uri = new Uri(imgPath, UriKind.Absolute);
+            //BitmapImage bmp = new BitmapImage(uri);
+            //w_imageWeather.Source = bmp;
             webbrowserWeather.Source = new Uri("http://flash.weather.com.cn/sk2/shikuang.swf?id=101020100");
 
             WeatherWebService.WeatherWebServiceSoapClient ws = new WeatherWebService.WeatherWebServiceSoapClient();
@@ -277,6 +281,10 @@ namespace WpfApplication3
         {
             if (webbrowserEnvironment.Document != null)
                 webbrowserEnvironment.Refresh();
+            if (webbrowserEnvironment1.Document != null)
+                webbrowserEnvironment1.Refresh();
+            if (webbrowserEnvironment2.Document != null)
+                webbrowserEnvironment2.Refresh();
         }
 
         private void btn_maxenvironment_Click(object sender, RoutedEventArgs e)
@@ -289,6 +297,8 @@ namespace WpfApplication3
         {
             if (webbrowserTraffic.Document != null)
                 webbrowserTraffic.Refresh();
+            if (webbrowserTraffic1.Document != null)
+                webbrowserTraffic1.Refresh();
         }
 
         private void btn_maxtraffic_Click(object sender, RoutedEventArgs e)
