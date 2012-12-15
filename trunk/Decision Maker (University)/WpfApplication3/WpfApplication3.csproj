@@ -424,6 +424,9 @@
     <None Include="FeedBack\DataSetFeedback.xss">
       <DependentUpon>DataSetFeedback.xsd</DependentUpon>
     </None>
+    <None Include="Images\Login_bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="PDF\2012年5月内部文件情况报告.pdf" />
     <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
     <None Include="PDF\2012年5月项目经费使用情况报告.pdf" />
@@ -438,6 +441,11 @@
     <Resource Include="Cam.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="CutImages\图像\FeiJing.png" />
+    <Resource Include="CutImages\图像\Fushe.png" />
+    <Resource Include="CutImages\图像\HuoJing.png" />
+    <Resource Include="CutImages\图像\YiLiao.png" />
+    <Resource Include="Images\login_head.png" />
     <Resource Include="loginbuttonbg.png" />
     <Resource Include="logout.png" />
     <Resource Include="switch1.png" />
