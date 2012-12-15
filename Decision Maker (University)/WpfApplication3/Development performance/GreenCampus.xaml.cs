@@ -37,7 +37,7 @@ namespace WpfApplication3.Development_performance
             di = new DirectoryInfo(System.Environment.CurrentDirectory);
             strPATH = di.Parent.Parent.FullName;
             ds = new EmergencyBasic();
-            W_xiaohao.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
+            W_xiaohao.Navigate(new Uri(strPATH + @"/html/GreenDetect1.htm", UriKind.RelativeOrAbsolute));
             W_xiaohao.ObjectForScripting = ds;
             W_huanjing.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
             W_huanjing.ObjectForScripting = ds;
