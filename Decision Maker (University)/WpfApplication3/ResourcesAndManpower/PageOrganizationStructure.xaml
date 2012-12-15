@@ -1,0 +1,29 @@
+﻿<Page x:Class="WpfApplication3.ResourcesAndManpower.PageOrganizationStructure"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="972" d:DesignWidth="1265"
+	Title="PageOrganizationStructure" Loaded="Page_Loaded">
+
+    <Grid>
+        <TabControl Name="tabControlOrganizationStructure" SelectionChanged="tabControlOrganizationStructure_SelectionChanged">
+            <TabItem Header="院系构架" Name="tabItem1" IsSelected="True">
+                <Grid>
+                    <Frame Name="frame1"></Frame>
+                </Grid>
+            </TabItem>
+            <TabItem Header="行政机构" Name="tabItem2">
+                <Grid>
+                    <Frame Name="frame2"></Frame>
+                </Grid>
+            </TabItem>
+            <TabItem Header="直/附属单位" Name="tabItem3">
+                <Grid>
+                    <Frame Name="frmae3"></Frame>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
