@@ -254,7 +254,7 @@
                 				<SolidColorBrush Color="{DynamicResource white}"/>
                 			</Rectangle.Fill>
                 		</Rectangle>
-                		<DataGrid AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" CanUserDeleteRows="False" CanUserResizeColumns="False" HorizontalAlignment="Stretch" x:Name="dataGridSearchResult" VerticalAlignment="Stretch" Foreground="#F1000019" FontSize="14" SelectionChanged="dataGridSearchResult_SelectionChanged" SelectionMode="Single" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,0">
+                		<DataGrid AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" CanUserDeleteRows="False" CanUserResizeColumns="False" HorizontalAlignment="Stretch" x:Name="dataGridSearchResult" VerticalAlignment="Stretch" Foreground="#F1000019" FontSize="14" SelectionChanged="dataGridSearchResult_SelectionChanged" SelectionMode="Single" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,0" >
                 			<DataGrid.ColumnHeaderStyle>
                 				<Style TargetType="{x:Type DataGridColumnHeader}">
                 					<Setter Property="HorizontalContentAlignment" Value="Center"/>

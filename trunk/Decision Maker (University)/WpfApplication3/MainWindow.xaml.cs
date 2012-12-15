@@ -424,6 +424,12 @@ namespace WpfApplication3
 		{
 			// TODO: Add event handler implementation here.
 		}
+
+        private void menu2_2_Selected(object sender, RoutedEventArgs e)
+        {
+            ResourcesAndManpower.PageOrganizationStructure m_OrganizationStructure = new ResourcesAndManpower.PageOrganizationStructure();
+            FrameMiddleContent.Navigate(m_OrganizationStructure);
+        }
 		
     }
 }

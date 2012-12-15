@@ -243,6 +243,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ResourcesAndManpower\DataSetFacultyStructure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFacultyStructure.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesAndManpower\PageFacultyStructure.xaml.cs">
+      <DependentUpon>PageFacultyStructure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesAndManpower\PageFacultyStructureMenu.xaml.cs">
+      <DependentUpon>PageFacultyStructureMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesAndManpower\PageOrganizationStructure.xaml.cs">
+      <DependentUpon>PageOrganizationStructure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WeatherWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -349,6 +363,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourcesAndManpower\PageFacultyStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourcesAndManpower\PageFacultyStructureMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourcesAndManpower\PageOrganizationStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -434,6 +460,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyStructure.xsc">
+      <DependentUpon>DataSetFacultyStructure.xsd</DependentUpon>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyStructure.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFacultyStructure.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyStructure.xss">
+      <DependentUpon>DataSetFacultyStructure.xsd</DependentUpon>
     </None>
     <None Include="Service References\WeatherWebService\WeatherWebService.wsdl" />
   </ItemGroup>
@@ -611,6 +648,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\学院船.png" />
     <Resource Include="Images\construct.jpg" />
     <Resource Include="Images\ImageVideo1.jpg" />
     <Resource Include="Images\ImageVideo3.jpg" />
