@@ -1,0 +1,239 @@
+﻿<Page x:Class="WpfApplication3.Development_performance.ScientificResearch"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="972" d:DesignWidth="1265"
+	Title="ScientificResearch" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <DataTemplate x:Key="listboxTemplate1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=xingming}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=zhiwu}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=biyeshijian}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=zhuanye}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=lianxifangshi}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="listboxTemplate2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=zhuanyemingcheng}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=xuekedengji}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=xueyuan}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=qita}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=qita1}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Content="  34.00" FontSize="16">
+                </Label>
+                <Rectangle Grid.Column="0" Fill="#FFCEF2BA" RadiusX="8" RadiusY="8">
+                </Rectangle>
+                <Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" Name="MyRectangle" Width="1" Fill="#FF0A9920" HorizontalAlignment="Left">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Page.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard  >
+                                    <DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="1" To="200" Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+                <Label Content="  科学研究" FontSize="20" Foreground="White" >
+                </Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel   Orientation="Horizontal" >
+                    <Button Click="jiaoyujiaoxue_Click" Content="科研成果" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="shizishuiping_Click" Content="科研基地" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="xuekeshuiping_Click" Content="科研项目" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal"  Name="jiaoyujiaoxue" Visibility="Collapsed">
+                        <Label Content="成果名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="成果等级" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Name="shizishuiping" Visibility="Visible">
+                        <Label Content="基地名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="基地等级" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Name="xuekeshuiping" Visibility="Collapsed">
+                        <Label Content="项目名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="项目等级" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3">
+                <StackPanel>
+                    <ListBox Name="L_jiaoyujiaoxue" ItemTemplate="{StaticResource listboxTemplate2}"   ItemsSource="{Binding}" Visibility="Collapsed">
+                    </ListBox>
+                    <ListBox Name="L_shizishuiping" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" Visibility="Visible">
+                    </ListBox>
+                    <ListBox Name="L_xuekeshuiping" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" Visibility="Collapsed">
+                    </ListBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_jiaoyujiaoxue" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="jiuqisan1"  Content="973国家重大基础研究项目成果" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongda1" Content="国家重大科学研究计划项目成果" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="ziran1"  Content="国家自然科学基金项目成果" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="shehui1"  Content="国家社会科学基金项目成果" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" >
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="指科研人员在他所从事的某一科学技术研究项目或课题研究范围内，通过实验观察、调查研究、综合分析等一系列脑力、体力劳动所取得的、并经过评审或鉴定，确认具有学术意义和实用价值的创造性结果。它是科技工作者辛勤劳动的结晶，是人类重要的精神财富和物质财富；是一种具有特殊意义的生产力，也是衡量科学研究任务完成与否，质量优劣，以及科研人员贡献大小的重要标志。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" Name="G_shizishuiping" Visibility="Visible" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="jiuqisan2"  Content="973国家重大基础研究基地" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongda2" Content="国家重大科学研究计划基地" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="ziran2"  Content="国家自然科学研究基地" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="shehui2"  Content="国家社会科学研究基地" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shizishuiping_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="学校按照应用领先、基础突破、协调发展的科技发展方略，初步构建起了覆盖基础研究层、高新技术研究层、技术开发层三个层次的科技创新体系。光电国家实验室（筹）和脉冲强磁场实验装置国家重大科技基础设施，还拥有5个国家重点实验室、1个国防重点实验室、6个国家工程（技术）研究中心、1个国家工程实验室等一批国家级和部、省级研究基地。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_xuekeshuiping" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="jiuqisan3"  Content="973国家重大基础研究项目" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongda3" Content="国家重大科学研究计划项目" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="ziran3"  Content="国家自然科学基金项目" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="shehui3"  Content="国家社会科学基金项目" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="科研项目是指课题从项目申请、立项论证、组织实施、检查评估、验收鉴定、成果申报、科技推广、档案入卷的全程管理。其目的是使科研项目实行制度化和科学化的管理，保证科研计划圆满完成，出成果、出人才、出效益，提高竞争力。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>

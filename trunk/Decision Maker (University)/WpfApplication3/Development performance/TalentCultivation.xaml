@@ -1,0 +1,246 @@
+﻿<Page x:Class="WpfApplication3.Development_performance.TalentCultivation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="972" d:DesignWidth="1265"
+	Title="TalentCultivation" Loaded="Page_Loaded">
+    <Page.Resources>
+        <DataTemplate x:Key="listboxTemplate1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=xingming}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=zhiwu}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=biyeshijian}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=zhuanye}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=lianxifangshi}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="listboxTemplate2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=zhuanyemingcheng}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=xuekedengji}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=xueyuan}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=qita}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=qita1}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Content="  41.50" FontSize="16">
+                </Label>
+                <Rectangle Grid.Column="0" Fill="#FFB7ABAB" RadiusX="8" RadiusY="8">
+                </Rectangle>
+                <Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" Name="MyRectangle" Width="1" Fill="#FF2BEF48" HorizontalAlignment="Left">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Page.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard  >
+                                    <DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="1" To="220" Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+                <Label Content="  人才培养" FontSize="20" Foreground="White" >
+                </Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel   Orientation="Horizontal" >
+                    <Button Click="jiaoyujiaoxue_Click" Content="教育教学" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="shizishuiping_Click" Content="师资水平" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="xuekeshuiping_Click" Content="学科水平" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal"  Name="jiaoyujiaoxue" Visibility="Collapsed">
+                        <Label Content="教育教学" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="  教学" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Name="shizishuiping" Visibility="Visible">
+                        <Label Content="  姓名" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="现任职务" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="毕业时间" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  专业" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="联系方式" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Name="xuekeshuiping" Visibility="Collapsed">
+                        <Label Content="专业名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="学科等级" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3">
+                <StackPanel>
+                    <ListBox Name="L_jiaoyujiaoxue" ItemTemplate="{StaticResource listboxTemplate2}"   ItemsSource="{Binding}" Visibility="Collapsed">
+                    </ListBox>
+                    <ListBox Name="L_shizishuiping" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" Visibility="Visible">
+                    </ListBox>
+                    <ListBox Name="L_xuekeshuiping" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" Visibility="Collapsed">
+                    </ListBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_jiaoyujiaoxue" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="gaoxiaoxueke1"  Content="高校学科创新引智基地(111计划)" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="yijizhongdian1" Content="国家一级重点学科" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="erjizhongdian1"  Content="国家二级重点学科" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongdianpeiyu1"  Content="国家重点培育学科" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="liudongzhan1"  Content="博士后流动站" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" >
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="教育教学由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" Name="G_shizishuiping" Visibility="Visible" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="zhongkeyuan"  Content="中国科学院院士" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhonggongyuan" Content="中国工程院院士" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="guowaiyuan"  Content="国外院士" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="renwenshehui"  Content="杰出人文社会科学家" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="jiaoxuemingshi"  Content="国家级教学名师" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="qianrenjihua"  Content="千人计划入选者" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shizishuiping_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="师资水平由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_xuekeshuiping" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="gaoxiaoxueke"  Content="高校学科创新引智基地(111计划)" FontSize="16" IsChecked="False">
+                </CheckBox>
+                <CheckBox Name="yijizhongdian" Content="国家一级重点学科" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="erjizhongdian"  Content="国家二级重点学科" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongdianpeiyu"  Content="国家重点培育学科" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="liudongzhan"  Content="博士后流动站" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="学科水平由高校学科创新引智基地(111计划)、国家一级重点学科、国家二级重点学科、国家重点培育学科、博士后流动站、二级学科博士点、二级学科硕士点和高等学校特色专业建设点等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>
