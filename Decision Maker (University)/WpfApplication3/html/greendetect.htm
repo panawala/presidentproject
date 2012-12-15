@@ -112,7 +112,7 @@ body, html,#container {width: 100%;height: 100%;overflow: hidden;margin:0;}
     }
 
     function addMarker(point1, text, water, energy) {
-        var mouseoverTxt = "水耗：" +water+", 能耗："+energy;
+        var mouseoverTxt = "API指数：" +water+", PM2.5："+energy;
         var myCompOverlay = new ComplexCustomOverlay(point1, mouseoverTxt, mouseoverTxt);
         map.addOverlay(myCompOverlay);
 
