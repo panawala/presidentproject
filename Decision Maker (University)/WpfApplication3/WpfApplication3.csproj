@@ -177,6 +177,18 @@
       <DependentUpon>DataSet_HumanResource.xsd</DependentUpon>
     </Compile>
     <Compile Include="DateHelper.cs" />
+    <Compile Include="Development performance\ComprehensiveReputation.xaml.cs">
+      <DependentUpon>ComprehensiveReputation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development performance\GreenCampus.xaml.cs">
+      <DependentUpon>GreenCampus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development performance\ScientificResearch.xaml.cs">
+      <DependentUpon>ScientificResearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development performance\TalentCultivation.xaml.cs">
+      <DependentUpon>TalentCultivation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EggModel\CxEggModel.xaml.cs">
       <DependentUpon>CxEggModel.xaml</DependentUpon>
     </Compile>
@@ -266,6 +278,22 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="DailyManagement\VideoConferencing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Development performance\ComprehensiveReputation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Development performance\GreenCampus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Development performance\ScientificResearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Development performance\TalentCultivation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -396,9 +424,6 @@
     <None Include="FeedBack\DataSetFeedback.xss">
       <DependentUpon>DataSetFeedback.xsd</DependentUpon>
     </None>
-    <None Include="Images\CurrentScence.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="PDF\2012年5月内部文件情况报告.pdf" />
     <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
     <None Include="PDF\2012年5月项目经费使用情况报告.pdf" />
@@ -413,16 +438,8 @@
     <Resource Include="Cam.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CutImages\图像\FeiJing.png" />
-    <Resource Include="CutImages\图像\Fushe.png" />
-    <Resource Include="CutImages\图像\HuoJing.png" />
-    <Resource Include="CutImages\图像\Opacitymask.png" />
-    <Resource Include="CutImages\图像\YiLiao.png" />
-    <Resource Include="FeedBack\dot_bg-07.png" />
-    <Resource Include="FeedBack\Opacitymask.png" />
     <Resource Include="loginbuttonbg.png" />
     <Resource Include="logout.png" />
-    <Resource Include="Opacitymask.png" />
     <Resource Include="switch1.png" />
     <Resource Include="weatherlogo\0.gif" />
     <Resource Include="weatherlogo\1.gif" />
