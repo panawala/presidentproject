@@ -1,0 +1,389 @@
+﻿<Page x:Class="WpfApplication3.Development_performance.ComprehensiveReputation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="972" d:DesignWidth="1265"
+	Title="ComprehensiveReputation" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <DataTemplate x:Key="listboxTemplate1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=xingming}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=zhiwu}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=biyeshijian}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=zhuanye}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=lianxifangshi}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="listboxTemplate2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=zhuanyemingcheng}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=xuekedengji}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=xueyuan}"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=qita}"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=qita1}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="82*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Content="  27.50" FontSize="16">
+                </Label>
+                <Rectangle Grid.Column="0" Fill="#FFFFC900" RadiusX="8" RadiusY="8">
+                </Rectangle>
+                <Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" Name="MyRectangle" Width="1" Fill="#FFBE9100" HorizontalAlignment="Left">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Page.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard  >
+                                    <DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="1" To="220" Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+                <Label Content="  综合声誉" FontSize="20" Foreground="White" >
+                </Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel   Orientation="Horizontal" >
+                    <Button Click="xueshushengyu_Click" Content="学术声誉" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="shehuishengyu_Click" Content="社会声誉" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="jiechuxiaoyou_Click" Content="杰出校友" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                    <Button Click="shehuijuanzeng_Click" Content="社会捐赠" Width="200" Margin="8" FontSize="16">
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <Grid Grid.Row="2" Name="G_xueshushengyu" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="34*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <WebBrowser x:Name="leftWebBrowser" Grid.Column="0" >
+                    </WebBrowser>
+                    <WebBrowser x:Name="midWebBrowser" Grid.Column="1">
+                    </WebBrowser>
+                    <WebBrowser x:Name="rightWebBrowser" Grid.Column="2">
+                    </WebBrowser>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <UniformGrid Columns="12" Rows="1" Margin="1">
+                            <TextBlock Text="1月份" TextAlignment="Left"/>
+                            <TextBlock Text="2月份" TextAlignment="Left"/>
+                            <TextBlock Text="3月份" TextAlignment="Left"/>
+                            <TextBlock Text="4月份" TextAlignment="Left"/>
+                            <TextBlock Text="5月份" TextAlignment="Center"/>
+                            <TextBlock Text="6月份" TextAlignment="Center"/>
+                            <TextBlock Text="7月份" TextAlignment="Center"/>
+                            <TextBlock Text="8月份" TextAlignment="Center"/>
+                            <TextBlock Text="9月份" TextAlignment="Right"/>
+                            <TextBlock Text="10月份" TextAlignment="Right"/>
+                            <TextBlock Text="11月份" TextAlignment="Right"/>
+                            <TextBlock Text="12月份" TextAlignment="Right"/>
+                        </UniformGrid>
+
+                        <Slider Name="slider"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" />
+                        <UniformGrid Columns="12" Rows="1" Margin="1">
+                            <TextBlock Text="1月份" TextAlignment="Left"/>
+                            <TextBlock Text="2月份" TextAlignment="Left"/>
+                            <TextBlock Text="3月份" TextAlignment="Left"/>
+                            <TextBlock Text="4月份" TextAlignment="Left"/>
+                            <TextBlock Text="5月份" TextAlignment="Center"/>
+                            <TextBlock Text="6月份" TextAlignment="Center"/>
+                            <TextBlock Text="7月份" TextAlignment="Center"/>
+                            <TextBlock Text="8月份" TextAlignment="Center"/>
+                            <TextBlock Text="9月份" TextAlignment="Right"/>
+                            <TextBlock Text="10月份" TextAlignment="Right"/>
+                            <TextBlock Text="11月份" TextAlignment="Right"/>
+                            <TextBlock Text="12月份" TextAlignment="Right"/>
+                        </UniformGrid>
+                    </StackPanel>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <WebBrowser x:Name="mainWebBrowser">
+                    </WebBrowser>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Name="G_shehuishengyu" Visibility="Visible" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="60*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="34*"/>
+                            <ColumnDefinition Width="33*"/>
+                        </Grid.ColumnDefinitions>
+                        <WebBrowser x:Name="leftWebBrowser1" Grid.Column="0">
+                        </WebBrowser>
+                        <WebBrowser x:Name="midWebBrowser1" Grid.Column="1">
+                        </WebBrowser>
+                        <WebBrowser x:Name="rightWebBrowser1" Grid.Column="2">
+                        </WebBrowser>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel>
+                            <UniformGrid Columns="12" Rows="1" Margin="1">
+                                <TextBlock Text="1月份" TextAlignment="Left"/>
+                                <TextBlock Text="2月份" TextAlignment="Left"/>
+                                <TextBlock Text="3月份" TextAlignment="Left"/>
+                                <TextBlock Text="4月份" TextAlignment="Left"/>
+                                <TextBlock Text="5月份" TextAlignment="Center"/>
+                                <TextBlock Text="6月份" TextAlignment="Center"/>
+                                <TextBlock Text="7月份" TextAlignment="Center"/>
+                                <TextBlock Text="8月份" TextAlignment="Center"/>
+                                <TextBlock Text="9月份" TextAlignment="Right"/>
+                                <TextBlock Text="10月份" TextAlignment="Right"/>
+                                <TextBlock Text="11月份" TextAlignment="Right"/>
+                                <TextBlock Text="12月份" TextAlignment="Right"/>
+                            </UniformGrid>
+
+                            <Slider Name="slider1"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" />
+                            <UniformGrid Columns="12" Rows="1" Margin="1">
+                                <TextBlock Text="1月份" TextAlignment="Left"/>
+                                <TextBlock Text="2月份" TextAlignment="Left"/>
+                                <TextBlock Text="3月份" TextAlignment="Left"/>
+                                <TextBlock Text="4月份" TextAlignment="Left"/>
+                                <TextBlock Text="5月份" TextAlignment="Center"/>
+                                <TextBlock Text="6月份" TextAlignment="Center"/>
+                                <TextBlock Text="7月份" TextAlignment="Center"/>
+                                <TextBlock Text="8月份" TextAlignment="Center"/>
+                                <TextBlock Text="9月份" TextAlignment="Right"/>
+                                <TextBlock Text="10月份" TextAlignment="Right"/>
+                                <TextBlock Text="11月份" TextAlignment="Right"/>
+                                <TextBlock Text="12月份" TextAlignment="Right"/>
+                            </UniformGrid>
+                        </StackPanel>
+
+                    </Grid>
+                <Grid Grid.Row="2">
+                    <WebBrowser x:Name="mainWebBrowser1">
+                    </WebBrowser>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Name="G_jiechuxiaoyou" Visibility="Collapsed" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="85*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" Name="jiechuxiaoyou" >
+                        <Label Content="  姓名" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="现任职务" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="毕业时间" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  类型" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="联系方式" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <ListBox Name="L_jiechuxiaoyou" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" >
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Name="G_shehuijuanzeng" Visibility="Collapsed" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="85*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal"  >
+                        <Label Content="捐赠名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
+                        </Label>
+                        <Label Content="捐赠物品" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="捐赠数额" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
+                        </Label>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <ListBox Name="L_shehuijuanzeng" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" >
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+   
+   
+        <Grid Grid.Column="1" Name="G_R_xueshushengyu" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <Label Content="推荐关键词" FontSize="18" FontWeight="Bold" />
+                <CheckBox Content="同济大学" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="同济设计" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="同济新闻" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="同济建筑" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xueshushengyu_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <WebBrowser Name="Q_xueshushengyu">
+                </WebBrowser>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <WebBrowser Name="D_xueshushengyu">
+                </WebBrowser>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_R_shehuishengyu" Visibility="Visible" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <Label Content="推荐关键词" FontSize="18" FontWeight="Bold" />
+                <CheckBox Content="知名人士捐赠" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="公益基金捐赠" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="海外华侨捐赠" FontSize="16">
+                </CheckBox>
+                <CheckBox Content="同济学子捐赠" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shehuishengyu_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <WebBrowser Name="Q_shehuishengyu">
+                </WebBrowser>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <WebBrowser Name="D_shehuishengyu">
+                </WebBrowser>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Name="G_R_jiechuxiaoyou" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="gaoxiaoxueke"  Content="杰出政治家" FontSize="16" IsChecked="False">
+                </CheckBox>
+                <CheckBox Name="yijizhongdian" Content="杰出科学家" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="erjizhongdian"  Content="杰出企业家" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhongdianpeiyu"  Content="其他杰出校友" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiechuxiaoyou_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="杰出校友:是指高校毕业生中杰出的政治家、企业家、科学家和优秀博士等。杰出政治家是指国家级正职领导、国家级副职领导、省部级等正职领导，中央委员及候补委员等。杰出企业家是指国内外上市公司、国资委直管中央企业、国有重点企业董事长、总裁/总经理，国有商业银行、股份制商业银行董事长、行长等企业" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" Name="G_R_shehuijuanzeng" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+                <CheckBox Name="zhongkeyuan"  Content="企业捐赠" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="zhonggongyuan" Content="基金捐赠" FontSize="16" >
+                </CheckBox>
+                <CheckBox Name="guowaiyuan"  Content="海外捐赠" FontSize="16">
+                </CheckBox>
+                <CheckBox Name="renwenshehui"  Content="个人捐赠" FontSize="16">
+                </CheckBox>
+            </StackPanel>
+            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shehuijuanzeng_Click">
+            </Button>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
+                </Label>
+                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg">
+                </Image>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
+                </Label>
+                <TextBox Text="高等教育一方面通过提高人的自身素质生产社会资本，另一方面使接受高等教育而获得社会资本的人们实现社会阶层的流动与发展。因此，积极倡导高校社会捐赠，以期引起蝴蝶效应，不断涌现的捐赠者会带动越来越多的人参与，形成良性互动，营造社会和谐氛围。 " TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
+                </TextBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
+
