@@ -29,7 +29,7 @@ namespace WpfApplication3
             strPATH = di.Parent.Parent.FullName;
             //webbrowserMaxTraffic.Navigate(new Uri(strPATH + @"/html/Traffic.htm", UriKind.RelativeOrAbsolute));
             webbrowserMaxTraffic.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
-            webbrowserMaxTraffic1.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
+            webbrowserMaxTraffic1.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong1.htm", UriKind.RelativeOrAbsolute));
        
         }
 

@@ -33,12 +33,12 @@ namespace WpfApplication3
             di = new DirectoryInfo(System.Environment.CurrentDirectory);
             strPATH = di.Parent.Parent.FullName;
             webbrowserEnvironment.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
-            webbrowserEnvironment1.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
-            webbrowserEnvironment2.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
+            webbrowserEnvironment1.Navigate(new Uri(strPATH + @"/html/tufashijian1.html", UriKind.RelativeOrAbsolute));
+            webbrowserEnvironment2.Navigate(new Uri(strPATH + @"/html/tufashijian2.html", UriKind.RelativeOrAbsolute));
 
             //webbrowserTraffic.Navigate(new Uri(strPATH + @"/html/Traffic.htm", UriKind.RelativeOrAbsolute));
             webbrowserTraffic.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
-            webbrowserTraffic1.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong.htm", UriKind.RelativeOrAbsolute));
+            webbrowserTraffic1.Navigate(new Uri(strPATH + @"/html/xiaoyuanhuodong1.htm", UriKind.RelativeOrAbsolute));
             ds = new EmergencyBasic();
             //webbrowserEmergency.Navigate(new Uri(strPATH + @"/html/Emergency.htm", UriKind.RelativeOrAbsolute));
             webbrowserEmergency.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));

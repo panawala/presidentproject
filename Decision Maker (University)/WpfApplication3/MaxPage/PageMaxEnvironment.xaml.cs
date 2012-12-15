@@ -29,8 +29,8 @@ namespace WpfApplication3
             strPATH = di.Parent.Parent.FullName;
             //webBrowsermaxenvironment.Navigate(new Uri(strPATH + @"/html/PM25.htm", UriKind.RelativeOrAbsolute));
             webBrowsermaxenvironment.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
-            webBrowsermaxenvironment1.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
-            webBrowsermaxenvironment2.Navigate(new Uri(strPATH + @"/html/tufashijian.html", UriKind.RelativeOrAbsolute));
+            webBrowsermaxenvironment1.Navigate(new Uri(strPATH + @"/html/tufashijian1.html", UriKind.RelativeOrAbsolute));
+            webBrowsermaxenvironment2.Navigate(new Uri(strPATH + @"/html/tufashijian2.html", UriKind.RelativeOrAbsolute));
         }
 
         private void btn_minenvironment_Click(object sender, RoutedEventArgs e)

@@ -686,6 +686,9 @@
     <Resource Include="CutImages\图像\yingjiyuan-07.png" />
     <Resource Include="CutImages\图像\yingjiyuan1-07.png" />
     <Resource Include="CutImages\图像\yuan_bg-07.png" />
+    <Content Include="html\tufashijian2.html" />
+    <Content Include="html\tufashijian1.html" />
+    <Content Include="html\xiaoyuanhuodong1.htm" />
     <Content Include="html\tufashijian.html" />
     <Content Include="html\GoogleCalendar.htm" />
     <Content Include="html\GreenDetect.htm" />
