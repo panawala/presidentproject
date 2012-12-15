@@ -28,25 +28,6 @@ namespace WpfApplication3
 
         }
 
-        private void Image_ImageFailed(object sender, ExceptionRoutedEventArgs e)
-        {
-
-        }
-
-        private void btn_imageLogin_Click(object sender, RoutedEventArgs e)
-        {
-            if (userName.Text.Equals("tongji") && passwordBox.Password.Equals("tongji"))
-            {
-                pingBaidu();
-                return;
-            }
-            else
-            {
-                MessageBox.Show("User name or Password is wrong!");
-                return;
-            }
-        }
-
         private void pingBaidu()
         {
 
@@ -80,6 +61,37 @@ namespace WpfApplication3
             // TODO: Add event handler implementation here.
             this.Close();
         }
+
+        private void btnLogin_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			if (userName.Text.Equals("tongji") && passwordBox.Password.Equals("tongji"))
+            {
+                pingBaidu();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("User name or Password is wrong!");
+                return;
+            }
+
+        }
+
+        private void userName_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			userName.Text="";
+        }
+
+        private void passwordBox_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			passbg.Text="";
+			passwordBox.Clear();
+        }
+
+
 
     }
 }

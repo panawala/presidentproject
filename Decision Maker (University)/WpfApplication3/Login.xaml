@@ -7,7 +7,7 @@
 	x:Class="WpfApplication3.Login"
 	x:Name="Window"
 	Title="Login"
-	Width="1920" Height="1080" WindowState="Maximized" WindowStyle="None">
+	Width="1920" Height="1080" WindowState="Maximized" WindowStyle="SingleBorderWindow">
     <Window.Resources>
         <Color x:Key="loginbg">#FFB1CCDE</Color>
         <Geometry x:Key="Checkmark">M 0,5.1 L 1.7,5.2 L 3.4,7.1 L 8,0.4 L 9.2,0 L 3.3,10.8 Z</Geometry>
@@ -83,16 +83,6 @@
             </Setter>
         </Style>
         <Storyboard x:Key="OnLoaded1">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock">
-                <EasingColorKeyFrame KeyTime="0" Value="White"/>
-            </ColorAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
-            </DoubleAnimationUsingKeyFrames>
-            <Int32AnimationUsingKeyFrames Storyboard.TargetProperty="(KeyboardNavigation.TabIndex)" Storyboard.TargetName="userName">
-                <EasingInt32KeyFrame KeyTime="0:0:3" Value="1"/>
-            </Int32AnimationUsingKeyFrames>
             <Int32AnimationUsingKeyFrames Storyboard.TargetProperty="(KeyboardNavigation.TabIndex)" Storyboard.TargetName="passwordBox">
                 <EasingInt32KeyFrame KeyTime="0:0:3" Value="2"/>
             </Int32AnimationUsingKeyFrames>
@@ -108,43 +98,59 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded" SourceName="textBlock">
-            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
-        </EventTrigger>
-    </Window.Triggers>
 
     <Grid x:Name="LayoutRoot">
-        <Image Margin="0" Source="Images/login.jpg" Stretch="Fill"/>
-        <Grid x:Name="logintitle" HorizontalAlignment="Center" Height="140" VerticalAlignment="Top" Width="783.667" Margin="0,160,0,0">
-            <TextBlock x:Name="textBlock" Margin="68.784,54.096,62.783,0" TextWrapping="Wrap" FontSize="64">
-				<TextBlock.Foreground>
-					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
-				</TextBlock.Foreground><TextBlock.Effect>
-					<DropShadowEffect BlurRadius="1" ShadowDepth="4"/>
-				</TextBlock.Effect><Run Language="zh-cn" Text="智慧校园校长桌面系统"/></TextBlock>
-            <GridSplitter HorizontalAlignment="Left" Width="1" Margin="90.916,-60.166,0,-69.834" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
-                <GridSplitter.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-90"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </GridSplitter.RenderTransform>
-            </GridSplitter>
-            <GridSplitter Width="1" Margin="0,-61.582,92.75,-71.25" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
-                <GridSplitter.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-90"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </GridSplitter.RenderTransform>
-            </GridSplitter>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.502*"/>
+    		<ColumnDefinition Width="632.766"/>
+    		<ColumnDefinition Width="0.498*"/>
+    	</Grid.ColumnDefinitions>
+        <Image Source="pack://siteoforigin:,,,/Images/Login_bg.png" Stretch="Fill" Grid.ColumnSpan="3"/>
+        <Grid Grid.Column="1">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="0.424*"/>
+        		<RowDefinition Height="533.123"/>
+        		<RowDefinition Height="0.576*"/>
+        	</Grid.RowDefinitions>
+        	<Grid Grid.Row="1">
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="156.205"/>
+        			<RowDefinition Height="128.906"/>
+        			<RowDefinition Height="134.919"/>
+        			<RowDefinition Height="113.093"/>
+        		</Grid.RowDefinitions>
+        		<Image Source="Images/login_head.png" Stretch="Fill" Width="140" Height="140" HorizontalAlignment="Center"/>
+        		<TextBox x:Name="userName" TextWrapping="Wrap" Text="用户名" Width="470" HorizontalAlignment="Center" Style="{DynamicResource TextBoxlogin}" Height="80" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" GotMouseCapture="userName_GotMouseCapture" Foreground="{DynamicResource BrushLoginWord}">
+        			<TextBox.Effect>
+        				<DropShadowEffect ShadowDepth="0" Color="{DynamicResource #122122122}" BlurRadius="20"/>
+        			</TextBox.Effect>
+        		</TextBox>
+        		<Grid Margin="81.383,19.516" Grid.Row="2" Width="470" Height="80">
+        			<Grid.Effect>
+        				<DropShadowEffect ShadowDepth="0" BlurRadius="20" Color="{DynamicResource #122122122}"/>
+        			</Grid.Effect>
+        			<Grid.Background>
+        				<SolidColorBrush Color="{DynamicResource white}"/>
+        			</Grid.Background>
+        			<TextBlock x:Name="passbg" TextWrapping="Wrap" Text="登录密码" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="36">
+        				<TextBlock.Foreground>
+        					<SolidColorBrush Color="{DynamicResource LineColor#184184184}"/>
+        				</TextBlock.Foreground>
+        			</TextBlock>
+        			<PasswordBox x:Name="passwordBox" VerticalContentAlignment="Center" FontSize="36" Background="{x:Null}" GotMouseCapture="passwordBox_GotMouseCapture" Style="{DynamicResource PasswordBoxlogin}" VerticalAlignment="Center">
+        				<PasswordBox.BorderBrush>
+        					<SolidColorBrush Color="{DynamicResource loginbg}"/>
+        				</PasswordBox.BorderBrush>
+        			</PasswordBox>
+        		</Grid>
+        		<Button x:Name="btnLogin" Content="登陆" Margin="81.383,8,81.383,0" Grid.Row="3" Height="80" VerticalAlignment="Top" Style="{DynamicResource ButtonLogin}" FontSize="36" Click="btnLogin_Click" Width="470">
+        			<Button.Foreground>
+        				<SolidColorBrush Color="{DynamicResource white}"/>
+        			</Button.Foreground>
+        		</Button>
+        	</Grid>
         </Grid>
-        <Grid x:Name="login" HorizontalAlignment="Center" Height="375" VerticalAlignment="Top" Width="675" Margin="0,315,0,0">
+        <Grid x:Name="login" HorizontalAlignment="Center" Height="375" VerticalAlignment="Top" Width="675" Margin="0,315,0,0" Visibility="Collapsed">
             <Rectangle RadiusX="16" RadiusY="16">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="{DynamicResource loginbg}"/>
@@ -173,13 +179,7 @@
                             <SolidColorBrush Color="{DynamicResource loginbg}"/>
                         </GridSplitter.Background>
                     </GridSplitter>
-                    <Grid Margin="10,10,17,10" Grid.Column="2">
-                        <TextBox x:Name="userName" TextWrapping="Wrap" Margin="10" FontSize="18" VerticalContentAlignment="Center" Padding="1">
-                            <TextBox.BorderBrush>
-                                <SolidColorBrush Color="{DynamicResource loginbg}"/>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
+                    <Grid Margin="10,10,17,10" Grid.Column="2"/>
                 </Grid>
             </Grid>
             <Grid x:Name="Password" HorizontalAlignment="Center" Width="610" Margin="0,144">
@@ -210,16 +210,11 @@
                             <RowDefinition Height="0.284*"/>
                             <RowDefinition Height="0.716*"/>
                         </Grid.RowDefinitions>
-                        <PasswordBox x:Name="passwordBox" Margin="10,-9,10,10" VerticalContentAlignment="Center" FontSize="18" Grid.Row="1">
-                            <PasswordBox.BorderBrush>
-                                <SolidColorBrush Color="{DynamicResource loginbg}"/>
-                            </PasswordBox.BorderBrush>
-                        </PasswordBox>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid x:Name="loginbutton" HorizontalAlignment="Center" Width="610" Margin="0,0,0,36" Height="87" VerticalAlignment="Bottom" Background="#FF7FA3C0">
-                <Button Margin="0" x:Name="btn_imageLogin" Click="btn_imageLogin_Click" Style="{DynamicResource ButtonStyle2}" IsDefault="True">
+                <Button Margin="0" x:Name="btn_imageLogin"  Style="{DynamicResource ButtonStyle2}" IsDefault="True">
                     <Grid>
                         <TextBlock TextWrapping="Wrap" FontSize="31" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock.Effect>
 								<DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="1" Opacity="0.75"/>
