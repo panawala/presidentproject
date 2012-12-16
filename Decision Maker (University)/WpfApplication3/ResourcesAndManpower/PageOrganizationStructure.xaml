@@ -8,22 +8,54 @@
 	Title="PageOrganizationStructure" Loaded="Page_Loaded">
 
     <Grid>
-        <TabControl Name="tabControlOrganizationStructure" SelectionChanged="tabControlOrganizationStructure_SelectionChanged">
-            <TabItem Header="院系构架" Name="tabItem1" IsSelected="True">
-                <Grid>
-                    <Frame Name="frame1"></Frame>
-                </Grid>
-            </TabItem>
-            <TabItem Header="行政机构" Name="tabItem2">
-                <Grid>
-                    <Frame Name="frame2"></Frame>
-                </Grid>
-            </TabItem>
-            <TabItem Header="直/附属单位" Name="tabItem3">
-                <Grid>
-                    <Frame Name="frmae3"></Frame>
-                </Grid>
-            </TabItem>
-        </TabControl>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="17.496"/>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+        <Rectangle RadiusX="8" RadiusY="8" Grid.RowSpan="2">
+        	<Rectangle.Effect>
+        		<DropShadowEffect/>
+        	</Rectangle.Effect>
+        	<Rectangle.Fill>
+        		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        	</Rectangle.Fill>
+        </Rectangle>
+        <Grid Margin="0,0,0,1.333">
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition/>
+        	</Grid.ColumnDefinitions>
+        	<Path Grid.ColumnSpan="1" Grid.Column="0" Data="M0,3.0013325E-11 L1.6560059,3.0013325E-11 C6.0814209,-1.1935911E-05 9.6689453,3.5817131 9.6689453,7.9999956 L9.6151123,8.5333151 9.6689453,8.5333151 9.6689453,15.999991 1.6560059,15.999991 0,15.999991 z" Fill="#FF7A7A7A" HorizontalAlignment="Right" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="9.638"/>
+        	<Rectangle Grid.Column="0" Fill="#FF7A7A7A" HorizontalAlignment="Stretch" Height="16" Margin="8,0" VerticalAlignment="Top" Width="Auto" Grid.ColumnSpan="1"/>
+        	<Path Grid.ColumnSpan="1" Grid.Column="0" Data="M0,3.0013325E-11 L1.6560059,3.0013325E-11 C6.0814209,-1.1935911E-05 9.6689453,3.5817131 9.6689453,7.9999956 L9.6151123,8.5333151 9.6689453,8.5333151 9.6689453,15.999991 1.6560059,15.999991 0,15.999991 z" Fill="#FF7A7A7A" HorizontalAlignment="Left" IsEnabled="False" Style="{DynamicResource PathStyle1}" Stretch="Fill" Visibility="Visible" VerticalAlignment="Top" Width="9.638" RenderTransformOrigin="0.5,0.5">
+        		<Path.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1" ScaleX="-1"/>
+        				<SkewTransform AngleY="0" AngleX="0"/>
+        				<RotateTransform Angle="0"/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Path.RenderTransform>
+        	</Path>
+        </Grid>
+        <Grid Margin="0,10,5,0" Grid.Row="1">
+        	<TabControl x:Name="tabControlOrganizationStructure" SelectionChanged="tabControlOrganizationStructure_SelectionChanged" Style="{DynamicResource TabControlStyle2}">
+        		<TabItem Header="院系构架" x:Name="tabItem1" IsSelected="True" Style="{DynamicResource TabItemResource}" Margin="10,0,-10,0" Width="70" FontSize="14">
+        			<Grid>
+        				<Frame x:Name="frame1"/>
+        			</Grid>
+        		</TabItem>
+        		<TabItem Header="行政机构" x:Name="tabItem2" Style="{DynamicResource TabItemResource}" Margin="10,0,-10,0" Width="70" FontSize="14">
+        			<Grid>
+        				<Frame x:Name="frame2"/>
+        			</Grid>
+        		</TabItem>
+        		<TabItem Header="直/附属单位" x:Name="tabItem3" Style="{DynamicResource TabItemResource}" Margin="10,0,-10,0" Width="90" FontSize="14">
+        			<Grid>
+        				<Frame x:Name="frmae3"/>
+        			</Grid>
+        		</TabItem>
+        	</TabControl>
+        </Grid>
+        <Button Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40.25" Margin="0,8,23.417,0" Click="Button_Click" Grid.Row="1" Style="{DynamicResource ButtonResourceHomeButton}" Height="38.587"/>
     </Grid>
 </Page>
