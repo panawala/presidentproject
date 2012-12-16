@@ -72,7 +72,7 @@
                 <TextBlock Text="12月份" TextAlignment="Right"/>
             </UniformGrid>
 
-            <Slider Name="slider1"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" />
+            <Slider Name="slider1"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" ValueChanged="slider1_ValueChanged" />
             <UniformGrid Columns="12" Rows="1" Margin="1">
                 <TextBlock Text="1月份" TextAlignment="Left"/>
                 <TextBlock Text="2月份" TextAlignment="Left"/>
