@@ -501,7 +501,7 @@
                 	</ListBox>
                 	<ListBoxItem x:Name="menutitle3" Content="向上联络" Height="70" Style="{DynamicResource ListBoxItemStyle1}" FontSize="16" Selected="menutitle3_Selected"/>
                 	<ListBox x:Name="menu3" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem x:Name="menu3_1" Content="下发文件" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu3_1" Content="下发文件" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" Selected="menu3_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>

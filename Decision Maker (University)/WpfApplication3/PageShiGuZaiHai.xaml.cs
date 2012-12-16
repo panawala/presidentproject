@@ -151,5 +151,10 @@ namespace WpfApplication3
         {
             textBlockzysx.Text = "注意事项内容";
         }
+
+        private void Gridzdwxy_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+			textBlockzdwxy.Text="1、各学生食堂，是最主要的食品提供单位；\r\n2、各类聚集性传染病，如流感、伤寒等；\r\n3、校园环境卫生状况特别是东南角垃圾房附近的卫生环境；\r\n4、校区供水安全；\r\n5、校园内的各小卖部和教育超市；\r\n";        
+		}
     }
 }
