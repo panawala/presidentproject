@@ -54,6 +54,9 @@ namespace WpfApplication3.ResourcesAndManpower
             DataSetFacultyStructureTableAdapters.T_FacultyStructureTableAdapter adapter = new DataSetFacultyStructureTableAdapters.T_FacultyStructureTableAdapter();
             DataSetFacultyStructure.T_FacultyStructureDataTable dt = adapter.GetDataByCollegeAndMenu(strCollegeName,"现任领导");
             int PK_FacultyMember = dt[iCurrentItem].Id;
+            WindowFacultyMember m_window = new WindowFacultyMember(PK_FacultyMember);
+            m_window.Show();
+
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)

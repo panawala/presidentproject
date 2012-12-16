@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApplication3.ResourcesAndManpower.WindowFacultyMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindowFacultyMember" Height="900" Width="900" WindowStartupLocation="CenterScreen" Deactivated="Window_Deactivated" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"></Grid>
+            <Grid Grid.Column="1">
+                <Label Content="Title1" Height="38" Margin="46,18,0,0" Name="lblTitle1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="523" />
+                <Label Content="Title2" Height="28" HorizontalAlignment="Left" Margin="46,62,0,0" Name="lblTitle2" VerticalAlignment="Top" Width="183" />
+                <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="333,62,0,0" Name="lblName" VerticalAlignment="Top" Width="146" />
+                <Label Content="ProfessionalTitle" Height="28" HorizontalAlignment="Left" Margin="485,62,0,0" Name="lblProfessionalTitle" VerticalAlignment="Top" Width="123" />
+                <Label Content="Tel：" Height="28" HorizontalAlignment="Left" Margin="46,130,0,0" Name="lblTel" VerticalAlignment="Top" Width="281" />
+                <Label Content="Fax：" Height="28" HorizontalAlignment="Left" Margin="333,130,0,0" Name="lblFax" VerticalAlignment="Top" Width="275" />
+                <Label Content="Email：" Height="28" HorizontalAlignment="Left" Margin="46,180,0,0" Name="lblEmail" VerticalAlignment="Top" Width="348" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1"></Grid>
+    </Grid>
+</Window>

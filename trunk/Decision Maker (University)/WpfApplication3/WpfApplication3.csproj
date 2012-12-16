@@ -243,6 +243,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ResourcesAndManpower\DataSetFacultyMember.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFacultyMember.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ResourcesAndManpower\DataSetFacultyStructure.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +264,9 @@
     </Compile>
     <Compile Include="ResourcesAndManpower\PageSpatialResource.xaml.cs">
       <DependentUpon>PageSpatialResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesAndManpower\WindowFacultyMember.xaml.cs">
+      <DependentUpon>WindowFacultyMember.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service References\WeatherWebService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -382,6 +390,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourcesAndManpower\WindowFacultyMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -467,6 +479,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyMember.xsc">
+      <DependentUpon>DataSetFacultyMember.xsd</DependentUpon>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyMember.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFacultyMember.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResourcesAndManpower\DataSetFacultyMember.xss">
+      <DependentUpon>DataSetFacultyMember.xsd</DependentUpon>
     </None>
     <None Include="ResourcesAndManpower\DataSetFacultyStructure.xsc">
       <DependentUpon>DataSetFacultyStructure.xsd</DependentUpon>
