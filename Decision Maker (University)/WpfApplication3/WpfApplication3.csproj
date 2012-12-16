@@ -655,6 +655,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\图书馆.jpg" />
+    <Resource Include="Images\文远楼.jpg" />
+    <Resource Include="Images\游泳馆.jpg" />
+    <Resource Include="Images\西北四楼.jpg" />
     <Resource Include="Images\校长-资源统筹-map-15.jpg" />
     <Resource Include="Images\1.jpg" />
     <Resource Include="Images\2.jpg" />

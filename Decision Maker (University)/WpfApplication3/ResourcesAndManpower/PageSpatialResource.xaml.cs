@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WpfApplication3.ResourcesAndManpower
 {
@@ -26,7 +27,7 @@ namespace WpfApplication3.ResourcesAndManpower
             {
                 Name="文远楼",
                 Type="教学办公用楼",
-                ImageUrl="Image/sdf",
+                ImageUrl=@"\Images\文远楼.jpg",
                 BuildingIntro="BuildingIntro",
                 CurrentUse="CurrentUse",
                 Organization="vOrganization",
@@ -38,7 +39,7 @@ namespace WpfApplication3.ResourcesAndManpower
             {
                 Name="西北四楼",
                 Type="食宿用楼",
-                ImageUrl="Image/sdf",
+                ImageUrl=@"\Images\西北四楼.jpg",
                 BuildingIntro="BuildingIntro",
                 CurrentUse="CurrentUse",
                 Organization="vOrganization",
@@ -50,7 +51,7 @@ namespace WpfApplication3.ResourcesAndManpower
             {
                 Name="图书馆",
                 Type="设施和实验室",
-                ImageUrl="Image/sdf",
+                ImageUrl=@"\Images\图书馆.jpg",
                 BuildingIntro="BuildingIntro",
                 CurrentUse="CurrentUse",
                 Organization="vOrganization",
@@ -62,7 +63,7 @@ namespace WpfApplication3.ResourcesAndManpower
             {
                 Name="游泳馆",
                 Type="体育场馆",
-                ImageUrl="Image/sdf",
+                ImageUrl=@"\Images\游泳馆.jpg",
                 BuildingIntro="BuildingIntro",
                 CurrentUse="CurrentUse",
                 Organization="vOrganization",
@@ -114,11 +115,17 @@ namespace WpfApplication3.ResourcesAndManpower
             Button btn = (Button)sender;
             string strCollegeName = btn.Content.ToString();
             SpatialNode node = getSpatialNodeByName(strCollegeName);
-            if (System.IO.File.Exists(node.ImageUrl))
+            DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
+            string strPath = di.Parent.Parent.FullName;
+            if (System.IO.File.Exists(strPath + node.ImageUrl))
             {
-                BitmapImage image = new BitmapImage(new Uri(node.ImageUrl));
+                BitmapImage image = new BitmapImage(new Uri(strPath + node.ImageUrl));
                 imageBuilding.Source = image;
             }
+            TextBlock1.Text = node.BuildingIntro;
+            TextBlock2.Text = node.CurrentUse;
+            TextBlock3.Text = node.Organization;
+            TextBlock4.Text = node.RecentActivity;
         }
 
         private void btnAll_Click(object sender, RoutedEventArgs e)
@@ -138,6 +145,8 @@ namespace WpfApplication3.ResourcesAndManpower
                 else
                     btn.IsEnabled = false;
             }
+
+
         }
 
         private void btnAccommodation_Click(object sender, RoutedEventArgs e)
@@ -196,7 +205,7 @@ namespace WpfApplication3.ResourcesAndManpower
     }
 
 
-    class SpatialNode 
+    class SpatialNode
     {
         /// <summary>
         /// 名字
