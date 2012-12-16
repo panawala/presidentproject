@@ -91,6 +91,9 @@ namespace WpfApplication3.Development_performance
 
         public EmergencyBasic ds;
         [System.Runtime.InteropServices.ComVisibleAttribute(true)]//将该类设置为com可访问
+        
+            
+            
         public class EmergencyBasic
         {
             public static string name;
@@ -170,6 +173,175 @@ namespace WpfApplication3.Development_performance
             }
 
         }
+
+        public EmergencyBasic1 ds1;
+        [System.Runtime.InteropServices.ComVisibleAttribute(true)]//将该类设置为com可访问
+
+
+
+        public class EmergencyBasic1
+        {
+            public static string name;
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+            public void ClickEvent(string strlocation)
+            {
+                if (strlocation.Equals("绿色监测"))
+                {
+                    List<GreenDetect> m_greenDetectlist = new List<GreenDetect> { 
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.508837,
+                    Energy="23",
+                    Water="45",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.289236,
+                    Longitude=121.505837,
+                    Energy="55",
+                    Water="46",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.506837,
+                    Energy="76",
+                    Water="82",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.287236,
+                    Longitude=121.508837,
+                    Energy="22",
+                    Water="52",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.286236,
+                    Longitude=121.507837,
+                    Energy="12",
+                    Water="47",
+                    Name="水耗能耗"
+                    },
+                    };
+
+                    strlocation = ToJsJson(m_greenDetectlist);
+                    this.Name = strlocation;
+                    return;
+                }
+                int ijudge = 0;
+                if (strlocation == "突发事件")
+                    ijudge = 1;
+                else if (strlocation == "自然灾害")
+                    ijudge = 2;
+                DataTable dt = new DataTable();
+                SQLHelper.getPointsByCategory(ijudge, out dt);
+                List<Location> m_list = new List<Location>();
+
+                for (int ix = 0; ix < dt.Rows.Count; ix++)
+                {
+                    Location new_Location = new Location();
+                    new_Location.Name = dt.Rows[ix]["Name"].ToString();
+                    new_Location.Description = dt.Rows[ix]["Description"].ToString();
+                    new_Location.Tel = dt.Rows[ix]["Tel"].ToString();
+                    new_Location.Longitude = (double)dt.Rows[ix]["ilng"];
+                    new_Location.Latitude = (double)dt.Rows[ix]["ilat"];
+
+                    m_list.Add(new_Location);
+                }
+                strlocation = ToJsJson(m_list);
+                this.Name = strlocation;
+            }
+
+        }
+        public EmergencyBasic2 ds2;
+        [System.Runtime.InteropServices.ComVisibleAttribute(true)]//将该类设置为com可访问
+
+
+
+        public class EmergencyBasic2
+        {
+            public static string name;
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+            public void ClickEvent(string strlocation)
+            {
+                if (strlocation.Equals("绿色监测"))
+                {
+                    List<GreenDetect> m_greenDetectlist = new List<GreenDetect> { 
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.508837,
+                    Energy="107",
+                    Water="155",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.289236,
+                    Longitude=121.505837,
+                    Energy="256",
+                    Water="146",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.288236,
+                    Longitude=121.506837,
+                    Energy="89",
+                    Water="109",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.287236,
+                    Longitude=121.508837,
+                    Energy="79",
+                    Water="117",
+                    Name="水耗能耗"
+                    },
+                    new GreenDetect{
+                    Latitude=31.286236,
+                    Longitude=121.507837,
+                    Energy="114",
+                    Water="205",
+                    Name="水耗能耗"
+                    },
+                    };
+
+                    strlocation = ToJsJson(m_greenDetectlist);
+                    this.Name = strlocation;
+                    return;
+                }
+                int ijudge = 0;
+                if (strlocation == "突发事件")
+                    ijudge = 1;
+                else if (strlocation == "自然灾害")
+                    ijudge = 2;
+                DataTable dt = new DataTable();
+                SQLHelper.getPointsByCategory(ijudge, out dt);
+                List<Location> m_list = new List<Location>();
+
+                for (int ix = 0; ix < dt.Rows.Count; ix++)
+                {
+                    Location new_Location = new Location();
+                    new_Location.Name = dt.Rows[ix]["Name"].ToString();
+                    new_Location.Description = dt.Rows[ix]["Description"].ToString();
+                    new_Location.Tel = dt.Rows[ix]["Tel"].ToString();
+                    new_Location.Longitude = (double)dt.Rows[ix]["ilng"];
+                    new_Location.Latitude = (double)dt.Rows[ix]["ilat"];
+
+                    m_list.Add(new_Location);
+                }
+                strlocation = ToJsJson(m_list);
+                this.Name = strlocation;
+            }
+
+        }
         private void Button_xiaohao_Click(object sender, RoutedEventArgs e)
         {
             xiaohao.Visibility = System.Windows.Visibility.Visible;
@@ -189,5 +361,40 @@ namespace WpfApplication3.Development_performance
             shishishuju1.Visibility = System.Windows.Visibility.Collapsed;
             shishishuju2.Visibility = System.Windows.Visibility.Visible;
         }
+
+        private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        { 
+            string strPATH;
+            DirectoryInfo di;
+            di = new DirectoryInfo(System.Environment.CurrentDirectory);
+            strPATH = di.Parent.Parent.FullName;
+
+            if((slider1.Value == 0)||(slider1.Value == 3)||(slider1.Value == 6)||(slider1.Value == 9))
+            {
+               
+                ds = new EmergencyBasic();
+                W_xiaohao.Navigate(new Uri(strPATH + @"/html/GreenDetect1.htm", UriKind.RelativeOrAbsolute));
+                W_xiaohao.ObjectForScripting = ds;
+                W_huanjing.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
+                W_huanjing.ObjectForScripting = ds;
+            }
+            else if ((slider1.Value == 1) || (slider1.Value == 4) || (slider1.Value == 7) || (slider1.Value == 10))
+            {
+                ds1 = new EmergencyBasic1();
+                W_xiaohao.Navigate(new Uri(strPATH + @"/html/GreenDetect1.htm", UriKind.RelativeOrAbsolute));
+                W_xiaohao.ObjectForScripting = ds1;
+                W_huanjing.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
+                W_huanjing.ObjectForScripting = ds1;
+            }
+            else if ((slider1.Value == 2) || (slider1.Value == 8) || (slider1.Value == 11))
+            {
+                ds2 = new EmergencyBasic2();
+                W_xiaohao.Navigate(new Uri(strPATH + @"/html/GreenDetect1.htm", UriKind.RelativeOrAbsolute));
+                W_xiaohao.ObjectForScripting = ds2;
+                W_huanjing.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
+                W_huanjing.ObjectForScripting = ds2;
+            }
+        }
+    
     }
 }
