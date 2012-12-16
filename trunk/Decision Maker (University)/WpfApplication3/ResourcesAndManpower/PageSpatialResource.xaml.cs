@@ -192,6 +192,7 @@ namespace WpfApplication3.ResourcesAndManpower
                 btn.Content = node.Name;
                 btn.Click += button_Click;
                 canvasMap.Children.Add(btn);
+				btn.SetResourceReference(Button.StyleProperty,"ButtonSpatial");
                 canvasMap.RegisterName("btn" + node.Name, btn);
                 Canvas.SetLeft(btn, node.Left);
                 Canvas.SetTop(btn, node.Top);

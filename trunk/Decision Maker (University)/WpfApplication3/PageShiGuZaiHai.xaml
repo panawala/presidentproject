@@ -121,20 +121,20 @@
             			<TabItem Header="应急预案" Style="{DynamicResource TabItemFirst}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,-2,0,0">
             				<Grid Margin="0">
             					<Label Content="火灾应急预案" Height="34" HorizontalAlignment="Left" Margin="5,5,0,0" x:Name="label_ZiRanZaiHai_YingJiYuAn_Title" VerticalAlignment="Top" Width="124" d:LayoutOverrides="HorizontalAlignment" FontSize="14" FontFamily="Helvetica" FontWeight="Bold" />
-            					<TabControl Style="{DynamicResource TabControlSubContent}" Background="{x:Null}">
-            						<TabItem Header="组织实施" Style="{DynamicResource TabItem2ndmenuMIddle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="25" Margin="340,0,-340,0">
+            					<TabControl Style="{DynamicResource TabControlSubContent}" Background="{x:Null}" VerticalAlignment="Top" FontSize="16">
+            						<TabItem Header="组织实施" Style="{DynamicResource TabItem2ndmenuMIddle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="25" Margin="340,0,-340,0" FontSize="12">
             							<Grid x:Name="Gridzzss" Loaded="Gridzzss_Loaded">
-            								<TextBlock x:Name="textBlockzzss" Text="TextBlock" />
+            								<TextBlock x:Name="textBlockzzss" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Justify" LineHeight="10" FontSize="14" Margin="20,20,0,0" />
             							</Grid>
             						</TabItem>
-            						<TabItem Header="扑救方法" Style="{DynamicResource TabItem2ndmenuMIddle}" HorizontalAlignment="Left" Margin="330,0,-330,0" Width="89" VerticalAlignment="Top">
-            							<Grid x:Name="Gridpjff" Background="#FFE5E5E5" Loaded="Gridpjff_Loaded">
-            								<TextBlock x:Name="textBlockbjff" Text="TextBlock" />
+            						<TabItem Header="扑救方法" Style="{DynamicResource TabItem2ndmenuMIddle}" HorizontalAlignment="Left" Margin="330,0,-330,0" Width="89" VerticalAlignment="Top" FontSize="12">
+            							<Grid x:Name="Gridpjff" Loaded="Gridpjff_Loaded">
+            								<TextBlock x:Name="textBlockbjff" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Justify" LineHeight="10" FontSize="14" Margin="20,20,0,0" />
             							</Grid>
             						</TabItem>
-            						<TabItem Header="注意事项" Style="{DynamicResource TabItem2ndmenulast}" Margin="320,0,-320,0" HorizontalAlignment="Left" Width="89" VerticalAlignment="Top">
-            							<Grid x:Name="Gridzysx" Background="#FFE5E5E5" Loaded="Gridzysx_Loaded">
-            								<TextBlock x:Name="textBlockzysx" Text="TextBlock" />
+            						<TabItem Header="注意事项" Style="{DynamicResource TabItem2ndmenulast}" Margin="320,0,-320,0" HorizontalAlignment="Left" Width="89" VerticalAlignment="Top" FontSize="12">
+            							<Grid x:Name="Gridzysx" Loaded="Gridzysx_Loaded">
+            								<TextBlock x:Name="textBlockzysx" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Justify" LineHeight="10" FontSize="14" Margin="20,20,0,0" />
             							</Grid>
             						</TabItem>
             					</TabControl>
@@ -143,11 +143,13 @@
             				</Grid>
             			</TabItem>
             			<TabItem Header="历史记录" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
-            				<Grid/>
+            				<Grid>
+            					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="历史记录信息" VerticalAlignment="Top" TextAlignment="Justify" LineHeight="10" FontSize="14" Margin="20,20,0,0"/>
+            				</Grid>
             			</TabItem>
             			<TabItem Header="重大危险源" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
-            				<Grid x:Name="Gridzdwxy">
-            					<TextBlock x:Name="textBlockzdwxy" Text="TextBlock" Margin="0,0,20,60" />
+            				<Grid x:Name="Gridzdwxy" Loaded="Gridzdwxy_Loaded">
+            					<TextBlock x:Name="textBlockzdwxy" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" LineHeight="10" TextAlignment="Justify" Margin="20,20,0,0" />
             				</Grid>
             			</TabItem>
             			<TabItem Header="案例链接" Style="{DynamicResource TabItemMiddle}" Width="100" Height="40" Margin="-2.1,-2,1.918,1.959">
