@@ -53,5 +53,10 @@ namespace WpfApplication3.ResourcesAndManpower
             }
         }
 
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+			Page_Loaded(sender,e);
+        }
+
     }
 }

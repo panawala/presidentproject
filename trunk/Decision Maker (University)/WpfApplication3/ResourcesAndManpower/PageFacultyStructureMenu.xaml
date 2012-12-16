@@ -13,9 +13,9 @@
                 <Canvas.Background>
                     <ImageBrush ImageSource="/WpfApplication3;component/Images/学院船.png" />
                 </Canvas.Background>
-                <Button Canvas.Left="974" Canvas.Top="337" Height="23" Name="button1" Width="75" Background="#00000000" Click="button1_Click" />
-                <Button Canvas.Left="845" Canvas.Top="143" Content="Button" Height="23" Name="button2" Width="75" />
-                <Button Canvas.Left="791" Canvas.Top="170" Content="Button" Height="23" Name="button3" Width="75" />
+                <Button Canvas.Left="953.167" Canvas.Top="340.667" Height="23" Name="button1" Width="92.333" Background="Black" Click="button1_Click" Style="{DynamicResource ButtonSlope}" Content="" />
+                <Button Canvas.Left="824" Canvas.Top="143" Content="" Height="23" Name="button2" Width="75" Style="{DynamicResource ButtonSlopeUPside}" RenderTransformOrigin="0.5,0.5" />
+                <Button Canvas.Left="786" Canvas.Top="170" Content="" Height="23" Name="button3" Width="75" Style="{DynamicResource ButtonSlopeUPside}" />
             </Canvas>
         </Viewbox>
         
