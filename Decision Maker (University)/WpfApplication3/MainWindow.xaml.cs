@@ -430,6 +430,12 @@ namespace WpfApplication3
             ResourcesAndManpower.PageOrganizationStructure m_OrganizationStructure = new ResourcesAndManpower.PageOrganizationStructure();
             FrameMiddleContent.Navigate(m_OrganizationStructure);
         }
+
+        private void menu2_1_Selected(object sender, RoutedEventArgs e)
+        {
+            ResourcesAndManpower.PageSpatialResource m_Page = new ResourcesAndManpower.PageSpatialResource();
+            FrameMiddleContent.Navigate(m_Page);
+        }
 		
     }
 }

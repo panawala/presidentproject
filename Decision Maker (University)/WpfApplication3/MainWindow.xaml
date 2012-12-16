@@ -478,7 +478,7 @@
                 	</ListBox>
                 	<ListBoxItem x:Name="menutitle2" Content="资源统筹" Height="70" Style="{DynamicResource ListBoxItemStyle1}" FontSize="16" Selected="menutitle2_Selected"/>
                 	<ListBox x:Name="menu2" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem x:Name="menu2_1" Content="空间资源" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu2_1" Content="空间资源" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" Selected="menu2_1_Selected">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
