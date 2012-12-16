@@ -107,36 +107,36 @@ namespace WpfApplication3.Development_performance
                     new GreenDetect{
                     Latitude=31.288236,
                     Longitude=121.508837,
-                    Energy="23",
-                    Water="23",
+                    Energy="12",
+                    Water="33",
                     Name="水耗能耗"
                     },
                     new GreenDetect{
                     Latitude=31.289236,
                     Longitude=121.505837,
-                    Energy="23",
-                    Water="23",
+                    Energy="8",
+                    Water="14",
                     Name="水耗能耗"
                     },
                     new GreenDetect{
                     Latitude=31.288236,
                     Longitude=121.506837,
-                    Energy="23",
-                    Water="23",
+                    Energy="15",
+                    Water="21",
                     Name="水耗能耗"
                     },
                     new GreenDetect{
                     Latitude=31.287236,
                     Longitude=121.508837,
-                    Energy="23",
-                    Water="23",
+                    Energy="33",
+                    Water="9",
                     Name="水耗能耗"
                     },
                     new GreenDetect{
                     Latitude=31.286236,
                     Longitude=121.507837,
-                    Energy="23",
-                    Water="23",
+                    Energy="41",
+                    Water="35",
                     Name="水耗能耗"
                     },
                     };
