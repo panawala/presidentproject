@@ -655,6 +655,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\2.jpg" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\4.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\6.jpg" />
+    <Resource Include="Images\7.jpg" />
+    <Resource Include="Images\8.jpg" />
+    <Resource Include="Images\tubiao1.jpg" />
+    <Resource Include="Images\tubiao2.jpg" />
     <Resource Include="Images\学院船.png" />
     <Resource Include="Images\construct.jpg" />
     <Resource Include="Images\ImageVideo1.jpg" />
