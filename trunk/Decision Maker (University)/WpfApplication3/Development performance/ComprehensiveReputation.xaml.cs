@@ -85,12 +85,9 @@ namespace WpfApplication3.Development_performance
             };
 
             Rsslistleft.DataContext = shengyu;
-            Rsslistmid.DataContext = shengyu;
-            Rsslistright.DataContext = shengyu;
-
+        
             Rsslistleft1.DataContext = shengyu;
-            Rsslistmid1.DataContext = shengyu;
-            Rsslistright1.DataContext = shengyu;
+ 
             List<TeaInformation> TeaInfo = new List<TeaInformation>
             {
                 new TeaInformation
@@ -660,11 +657,8 @@ namespace WpfApplication3.Development_performance
 
             //添加绑定操作
             this.Rsslistleft.ItemsSource = items;
-            this.Rsslistmid.ItemsSource = items;
-            this.Rsslistright.ItemsSource = items;
+       
             this.Rsslistleft1.ItemsSource = items;
-            this.Rsslistmid1.ItemsSource = items;
-            this.Rsslistright1.ItemsSource = items;
         }
         private NewsItem getItem(XmlElement ele)
         {
@@ -756,63 +750,8 @@ namespace WpfApplication3.Development_performance
             }
 
         }
-        private void Rsslistmid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string strPATH;
-            DirectoryInfo di;
-            di = new DirectoryInfo(System.Environment.CurrentDirectory);
-            strPATH = di.Parent.Parent.FullName;
-            if (Rsslistmid.SelectedIndex == 0)
-            {
-                mainWebBrowser.Navigate(new Uri("http://sichuan.scol.com.cn/ybxw/content/2012-12/15/content_4465330.htm?node=949", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid.SelectedIndex == 1)
-            {
-                mainWebBrowser.Navigate(new Uri("http://www.chinanews.com/edu/2012/12-12/4402457.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid.SelectedIndex == 2)
-            {
-                mainWebBrowser.Navigate(new Uri("http://news.china.com.cn/txt/2012-12/14/content_27421302.htm", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid.SelectedIndex == 3)
-            {
-                mainWebBrowser.Navigate(new Uri("http://news.ifeng.com/gundong/detail_2012_12/12/20070418_0.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid.SelectedIndex == 4)
-            {
-                mainWebBrowser.Navigate(new Uri("http://zjnews.zjol.com.cn/05zjnews/system/2012/10/29/018906954.shtml", UriKind.RelativeOrAbsolute));
-            }
-
-        }
-        private void Rsslistright_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string strPATH;
-            DirectoryInfo di;
-            di = new DirectoryInfo(System.Environment.CurrentDirectory);
-            strPATH = di.Parent.Parent.FullName;
-            if (Rsslistright.SelectedIndex == 0)
-            {
-                mainWebBrowser.Navigate(new Uri("http://sichuan.scol.com.cn/ybxw/content/2012-12/15/content_4465330.htm?node=949", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright.SelectedIndex == 1)
-            {
-                mainWebBrowser.Navigate(new Uri("http://www.chinanews.com/edu/2012/12-12/4402457.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright.SelectedIndex == 2)
-            {
-                mainWebBrowser.Navigate(new Uri("http://news.china.com.cn/txt/2012-12/14/content_27421302.htm", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright.SelectedIndex == 3)
-            {
-                mainWebBrowser.Navigate(new Uri("http://news.ifeng.com/gundong/detail_2012_12/12/20070418_0.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright.SelectedIndex == 4)
-            {
-                mainWebBrowser.Navigate(new Uri("http://zjnews.zjol.com.cn/05zjnews/system/2012/10/29/018906954.shtml", UriKind.RelativeOrAbsolute));
-            }
-
-        }
-
+   
+    
 
         private void Rsslistleft1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -842,62 +781,8 @@ namespace WpfApplication3.Development_performance
             }
 
         }
-        private void Rsslistmid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string strPATH;
-            DirectoryInfo di;
-            di = new DirectoryInfo(System.Environment.CurrentDirectory);
-            strPATH = di.Parent.Parent.FullName;
-            if (Rsslistmid1.SelectedIndex == 0)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://sichuan.scol.com.cn/ybxw/content/2012-12/15/content_4465330.htm?node=949", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid1.SelectedIndex == 1)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://www.chinanews.com/edu/2012/12-12/4402457.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid1.SelectedIndex == 2)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://news.china.com.cn/txt/2012-12/14/content_27421302.htm", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid1.SelectedIndex == 3)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://news.ifeng.com/gundong/detail_2012_12/12/20070418_0.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistmid1.SelectedIndex == 4)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://zjnews.zjol.com.cn/05zjnews/system/2012/10/29/018906954.shtml", UriKind.RelativeOrAbsolute));
-            }
-
-        }
-        private void Rsslistright1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string strPATH;
-            DirectoryInfo di;
-            di = new DirectoryInfo(System.Environment.CurrentDirectory);
-            strPATH = di.Parent.Parent.FullName;
-            if (Rsslistright1.SelectedIndex == 0)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://sichuan.scol.com.cn/ybxw/content/2012-12/15/content_4465330.htm?node=949", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright1.SelectedIndex == 1)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://www.chinanews.com/edu/2012/12-12/4402457.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright1.SelectedIndex == 2)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://news.china.com.cn/txt/2012-12/14/content_27421302.htm", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright1.SelectedIndex == 3)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://news.ifeng.com/gundong/detail_2012_12/12/20070418_0.shtml", UriKind.RelativeOrAbsolute));
-            }
-            else if (Rsslistright1.SelectedIndex == 4)
-            {
-                mainWebBrowser1.Navigate(new Uri("http://zjnews.zjol.com.cn/05zjnews/system/2012/10/29/018906954.shtml", UriKind.RelativeOrAbsolute));
-            }
-
-        }
+   
+   
 
     }
 }

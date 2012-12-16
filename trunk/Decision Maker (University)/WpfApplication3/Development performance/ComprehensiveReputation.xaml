@@ -112,14 +112,8 @@
                     <RowDefinition Height="60*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="33*"/>
-                        <ColumnDefinition Width="34*"/>
-                        <ColumnDefinition Width="33*"/>
-                    </Grid.ColumnDefinitions>
-                    <ListView x:Name="Rsslistleft" Grid.Column="0" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistleft_SelectionChanged" />
-                    <ListView x:Name="Rsslistmid" Grid.Column="1" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}"  SelectionChanged="Rsslistmid_SelectionChanged"/>
-                    <ListView x:Name="Rsslistright" Grid.Column="2" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistright_SelectionChanged"/>
+                    <ListView x:Name="Rsslistleft" Grid.Column="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistleft_SelectionChanged" />
+             
                 </Grid>
                 <Grid Grid.Row="1">
                     <StackPanel>
@@ -168,15 +162,10 @@
                         <RowDefinition Height="60*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="33*"/>
-                            <ColumnDefinition Width="34*"/>
-                            <ColumnDefinition Width="33*"/>
-                        </Grid.ColumnDefinitions>
-                    <ListView x:Name="Rsslistleft1" Grid.Column="0" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistleft1_SelectionChanged" />
-                    <ListView x:Name="Rsslistmid1" Grid.Column="1" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistmid1_SelectionChanged" />
-                    <ListView x:Name="Rsslistright1" Grid.Column="2" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistright1_SelectionChanged" />
-                </Grid>
+                  
+                        <ListView x:Name="Rsslistleft1" Grid.Column="0" ItemsSource="{Binding}"  ItemTemplate="{StaticResource listviewTemplate}" SelectionChanged="Rsslistleft1_SelectionChanged" />
+     
+                    </Grid>
                     <Grid Grid.Row="1">
                         <StackPanel>
                             <UniformGrid Columns="12" Rows="1" Margin="1">
