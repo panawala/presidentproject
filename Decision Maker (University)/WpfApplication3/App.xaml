@@ -3107,19 +3107,24 @@
 										</Storyboard>
 									</VisualState>
 								</VisualStateGroup>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Grid x:Name="Bd" Width="85" Height="25">
 								<Rectangle x:Name="rectangle" RadiusY="8" RadiusX="8" StrokeThickness="1" Cursor="Hand">
 									<Rectangle.Fill>
-										<LinearGradientBrush EndPoint="1.01,0.499" StartPoint="-0.027,0.487">
-											<GradientStop Color="{DynamicResource LineColor#184184184}" Offset="0"/>
+										<LinearGradientBrush EndPoint="0.488,1.039" StartPoint="0.486,-0.05">
+											<GradientStop Color="{DynamicResource LineColor#184184184}"/>
 											<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
 										</LinearGradientBrush>
 									</Rectangle.Fill>
 								</Rectangle>
 								<Path x:Name="path" Data="M7.9999995,0 L77,0 C81.418282,2.9802322E-07 85,3.5817223 85,8.0000013 L85,17 C85,21.418278 81.418282,25 77,25 L49.650135,25 42.5,32.150135 35.349865,25 7.9999995,25 C3.581722,25 0,21.418278 0,17 L0,8.0000013 C0,3.5817223 3.581722,2.9802322E-07 7.9999995,0 z" Margin="0,0,0,-7.15" Stretch="Fill" StrokeThickness="1" Visibility="Hidden">
 									<Path.Fill>
-										<LinearGradientBrush EndPoint="1.01,0.499" StartPoint="-0.027,0.487">
+										<LinearGradientBrush EndPoint="0.501,0.77" StartPoint="0.5,-0.078">
 											<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
 											<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
 										</LinearGradientBrush>
@@ -3131,10 +3136,8 @@
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsMouseOver" Value="true"/>
 							<Trigger Property="IsSelected" Value="true">
-								<Setter Property="Panel.ZIndex" Value="1"/>						
-							</Trigger>
-							<Trigger Property="Selector.IsSelected" Value="true">
-								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+								<Setter Property="Panel.ZIndex" Value="1"/>		
+								<Setter Property="Foreground" Value="White"/>				
 							</Trigger>
 							<MultiTrigger>
 								<MultiTrigger.Conditions>
@@ -3145,38 +3148,6 @@
 							<Trigger Property="TabStripPlacement" Value="Bottom"/>
 							<Trigger Property="TabStripPlacement" Value="Left"/>
 							<Trigger Property="TabStripPlacement" Value="Right"/>
-							<MultiTrigger>
-								<MultiTrigger.Conditions>
-									<Condition Property="IsSelected" Value="true"/>
-									<Condition Property="TabStripPlacement" Value="Top"/>
-								</MultiTrigger.Conditions>
-								<Setter Property="Margin" Value="-2,-2,-2,-1"/>
-								<Setter Property="Margin" TargetName="Content" Value="0,0,0,1"/>
-							</MultiTrigger>
-							<MultiTrigger>
-								<MultiTrigger.Conditions>
-									<Condition Property="IsSelected" Value="true"/>
-									<Condition Property="TabStripPlacement" Value="Bottom"/>
-								</MultiTrigger.Conditions>
-								<Setter Property="Margin" Value="-2,-1,-2,-2"/>
-								<Setter Property="Margin" TargetName="Content" Value="0,1,0,0"/>
-							</MultiTrigger>
-							<MultiTrigger>
-								<MultiTrigger.Conditions>
-									<Condition Property="IsSelected" Value="true"/>
-									<Condition Property="TabStripPlacement" Value="Left"/>
-								</MultiTrigger.Conditions>
-								<Setter Property="Margin" Value="-2,-2,-1,-2"/>
-								<Setter Property="Margin" TargetName="Content" Value="0,0,1,0"/>
-							</MultiTrigger>
-							<MultiTrigger>
-								<MultiTrigger.Conditions>
-									<Condition Property="IsSelected" Value="true"/>
-									<Condition Property="TabStripPlacement" Value="Right"/>
-								</MultiTrigger.Conditions>
-								<Setter Property="Margin" Value="-1,-2,-2,-2"/>
-								<Setter Property="Margin" TargetName="Content" Value="1,0,0,0"/>
-							</MultiTrigger>
 							<Trigger Property="IsEnabled" Value="false">
 								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
 							</Trigger>
@@ -4367,6 +4338,112 @@
 					</ControlTemplate>
 				</Setter.Value>
 			</Setter>
+		</Style>
+		<LinearGradientBrush x:Key="ProgressbarBg" EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
+			<GradientStop Color="{DynamicResource Menu2ndSelected}"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="ProgressBarFg" EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+			<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+		</LinearGradientBrush>
+		<ControlTemplate x:Key="listBoxItemTalent" TargetType="{x:Type ListBoxItem}">
+			<Grid x:Name="Bd" SnapsToDevicePixels="true">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="28.044"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="SelectionStates">
+						<VisualState x:Name="Unselected"/>
+						<VisualState x:Name="Selected">
+							<Storyboard>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+								</ColorAnimationUsingKeyFrames>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
+								</ColorAnimationUsingKeyFrames>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="SelectedUnfocused"/>
+					</VisualStateGroup>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualStateGroup.Transitions>
+							<VisualTransition GeneratedDuration="0:0:0.02"/>
+						</VisualStateGroup.Transitions>
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="MouseOver">
+							<Storyboard>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenLeft}"/>
+								</ColorAnimationUsingKeyFrames>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ellipse">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource GreenRight}"/>
+								</ColorAnimationUsingKeyFrames>
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+									<EasingColorKeyFrame KeyTime="0" Value="{StaticResource Menu2ndSelected}"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Disabled"/>
+					</VisualStateGroup>
+					<VisualStateGroup x:Name="FocusStates">
+						<VisualState x:Name="Unfocused"/>
+						<VisualState x:Name="Focused"/>
+					</VisualStateGroup>
+					<VisualStateGroup x:Name="VisualStateGroup">
+						<VisualState x:Name="VisualStatetest"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Rectangle x:Name="rectangle" Stroke="Black" StrokeDashArray="3 3" Margin="0,2" Grid.ColumnSpan="2" Height="60" RadiusX="5" RadiusY="5">
+					<Rectangle.Fill>
+						<SolidColorBrush Color="{DynamicResource white}"/>
+					</Rectangle.Fill>
+				</Rectangle>
+				<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="15">
+					<Ellipse x:Name="ellipse" Stroke="{x:Null}" Width="15" Height="15" d:LayoutOverrides="Margin">
+						<Ellipse.Fill>
+							<LinearGradientBrush EndPoint="0.955,0.899" StartPoint="0.006,0.215">
+								<GradientStop Color="{DynamicResource #122122122}" Offset="0"/>
+								<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
+							</LinearGradientBrush>
+						</Ellipse.Fill>
+					</Ellipse>
+					<Path Data="M7.6011834,0 L10.977817,1.9494996 10.97651,1.9517625 11,1.9517625 11,2.9517623 10.968314,2.9517623 10.974816,2.9630251 7.5981836,4.9125252 7.0981836,4.0464997 8.9943237,2.9517623 0,2.9517623 0,1.9517625 8.9817362,1.9517625 7.1011834,0.86602509 z" HorizontalAlignment="Stretch" Height="4.913" Margin="2,0" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="0" VerticalAlignment="Center" Width="Auto" >
+						<Path.Fill>
+							<SolidColorBrush Color="{DynamicResource #235235235}"/>
+						</Path.Fill>
+					</Path>
+				</Grid>
+				<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand" Margin="0,0,10,0"/>
+			</Grid>
+			<ControlTemplate.Triggers>
+				<Trigger Property="IsSelected" Value="true"/>
+				<Trigger Property="IsMouseOver" Value="true">
+					<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+				</Trigger>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsSelected" Value="true"/>
+						<Condition Property="Selector.IsSelectionActive" Value="false"/>
+					</MultiTrigger.Conditions>
+				</MultiTrigger>
+				<Trigger Property="IsEnabled" Value="false">
+					<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+				</Trigger>
+			</ControlTemplate.Triggers>
+		</ControlTemplate>
+		<Style x:Key="ListBoxItemDevelopment" TargetType="{x:Type ListBoxItem}" >
+			<Setter Property="FontSize" Value="14px" /> 
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="Padding" Value="2,0,0,0"/>
+			<Setter Property="Template" Value="{StaticResource listBoxItemTalent}"/>
 		</Style>
 	</Application.Resources>
 </Application>
