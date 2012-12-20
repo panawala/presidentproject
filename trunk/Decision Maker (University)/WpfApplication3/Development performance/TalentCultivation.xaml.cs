@@ -259,45 +259,6 @@ namespace WpfApplication3.Development_performance
 
         }
 
-        private void jiaoyujiaoxue_Click(object sender, RoutedEventArgs e)
-        {
-            jiaoyujiaoxue.Visibility = System.Windows.Visibility.Visible;
-            shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-            L_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Visible;
-            L_shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            L_xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-            G_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Visible;
-            G_shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            G_xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-
-        }
-
-        private void shizishuiping_Click(object sender, RoutedEventArgs e)
-        {
-            jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            shizishuiping.Visibility = System.Windows.Visibility.Visible;
-            xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-            L_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            L_shizishuiping.Visibility = System.Windows.Visibility.Visible;
-            L_xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-            G_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            G_shizishuiping.Visibility = System.Windows.Visibility.Visible;
-            G_xuekeshuiping.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void xuekeshuiping_Click(object sender, RoutedEventArgs e)
-        {
-            jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            xuekeshuiping.Visibility = System.Windows.Visibility.Visible;
-            L_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            L_shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            L_xuekeshuiping.Visibility = System.Windows.Visibility.Visible;
-            G_jiaoyujiaoxue.Visibility = System.Windows.Visibility.Collapsed;
-            G_shizishuiping.Visibility = System.Windows.Visibility.Collapsed;
-            G_xuekeshuiping.Visibility = System.Windows.Visibility.Visible;
-        }
 
         protected void S_jiaoyujiaoxue_Click(object sender, RoutedEventArgs e)
         {

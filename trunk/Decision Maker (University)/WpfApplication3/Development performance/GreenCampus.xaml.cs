@@ -342,25 +342,6 @@ namespace WpfApplication3.Development_performance
             }
 
         }
-        private void Button_xiaohao_Click(object sender, RoutedEventArgs e)
-        {
-            xiaohao.Visibility = System.Windows.Visibility.Visible;
-            huanjing.Visibility = System.Windows.Visibility.Collapsed;
-            W_xiaohao.Visibility = System.Windows.Visibility.Visible;
-            W_huanjing.Visibility = System.Windows.Visibility.Collapsed;
-            shishishuju1.Visibility = System.Windows.Visibility.Visible;
-            shishishuju2.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void Button_huanjing_Click(object sender, RoutedEventArgs e)
-        {
-            xiaohao.Visibility = System.Windows.Visibility.Collapsed;
-            huanjing.Visibility = System.Windows.Visibility.Visible;
-            W_xiaohao.Visibility = System.Windows.Visibility.Collapsed;
-            W_huanjing.Visibility = System.Windows.Visibility.Visible;
-            shishishuju1.Visibility = System.Windows.Visibility.Collapsed;
-            shishishuju2.Visibility = System.Windows.Visibility.Visible;
-        }
 
         private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         { 

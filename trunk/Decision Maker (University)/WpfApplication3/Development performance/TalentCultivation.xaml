@@ -10,237 +10,316 @@
         <DataTemplate x:Key="listboxTemplate1">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding Path=xingming}"/>
-                <TextBlock Grid.Column="1" Text="{Binding Path=zhiwu}"/>
-                <TextBlock Grid.Column="2" Text="{Binding Path=biyeshijian}"/>
-                <TextBlock Grid.Column="3" Text="{Binding Path=zhuanye}"/>
-                <TextBlock Grid.Column="4" Text="{Binding Path=lianxifangshi}"/>
+            							<ColumnDefinition Width="0.2*"/>
+            							<ColumnDefinition Width="0.374*"/>
+            							<ColumnDefinition Width="0.117*"/>
+            							<ColumnDefinition Width="0.135*"/>
+            							<ColumnDefinition Width="0.174*"/>
+            						</Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=xingming}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=zhiwu}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=biyeshijian}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=zhuanye}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=lianxifangshi}" HorizontalAlignment="Left"/>
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="listboxTemplate2">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding Path=zhuanyemingcheng}"/>
-                <TextBlock Grid.Column="1" Text="{Binding Path=xuekedengji}"/>
-                <TextBlock Grid.Column="2" Text="{Binding Path=xueyuan}"/>
-                <TextBlock Grid.Column="3" Text="{Binding Path=qita}"/>
-                <TextBlock Grid.Column="4" Text="{Binding Path=qita1}"/>
+            							<ColumnDefinition Width="0.2*"/>
+            							<ColumnDefinition Width="0.374*"/>
+            							<ColumnDefinition Width="0.117*"/>
+            							<ColumnDefinition Width="0.135*"/>
+            							<ColumnDefinition Width="0.174*"/>
+            						</Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=zhuanyemingcheng}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=xuekedengji}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=xueyuan}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="3" Text="{Binding Path=qita}" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="4" Text="{Binding Path=qita1}" HorizontalAlignment="Left"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    <Grid>
+    <Grid Margin="0,0,5,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75*" />
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
+        <Rectangle RadiusX="8" RadiusY="8">
+        	<Rectangle.Fill>
+        		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        	</Rectangle.Fill>
+        	<Rectangle.Effect>
+        		<DropShadowEffect/>
+        	</Rectangle.Effect>
+        </Rectangle>
+        <Label Style="{DynamicResource Labeltopheader}" Content="人才培养" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+        <Grid Grid.Column="0" Margin="10,50,10,10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="70*"/>
+                <RowDefinition Height="38"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
+            <Grid Grid.Row="0" Margin="20,0,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="50*"/>
+                	<ColumnDefinition Width="50*"/>
+                	<ColumnDefinition Width="50*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="  41.50" FontSize="16">
-                </Label>
-                <Rectangle Grid.Column="0" Fill="#FFB7ABAB" RadiusX="8" RadiusY="8">
-                </Rectangle>
-                <Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" Name="MyRectangle" Width="1" Fill="#FF2BEF48" HorizontalAlignment="Left">
-                    <Rectangle.Triggers>
-                        <EventTrigger RoutedEvent="Page.Loaded">
-                            <BeginStoryboard>
-                                <Storyboard  >
-                                    <DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="1" To="220" Duration="0:0:1" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Rectangle.Triggers>
-                </Rectangle>
-                <Label Content="  人才培养" FontSize="20" Foreground="White" >
-                </Label>
+            	<Label Grid.Column="1" Content="  41.50" FontSize="16"/>
+            	<Rectangle x:Name="RecBg" Grid.Column="0" RadiusX="10" RadiusY="10" Fill="{DynamicResource ProgressbarBg}"/>
+            	<Rectangle Grid.Column="0" RadiusX="10" RadiusY="10" x:Name="MyRectangle" HorizontalAlignment="Left" Fill="{DynamicResource ProgressBarFg}">
+            		<Rectangle.Triggers>
+            			<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            				<BeginStoryboard>
+            					<Storyboard  >
+            						<DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="0" To="220" Duration="0:0:1" />
+            					</Storyboard>
+            				</BeginStoryboard>
+            			</EventTrigger>
+            		</Rectangle.Triggers>
+            	</Rectangle>
+            	<Label Content="培养进度" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
             </Grid>
-            <Grid Grid.Row="1">
-                <StackPanel   Orientation="Horizontal" >
-                    <Button Click="jiaoyujiaoxue_Click" Content="教育教学" Width="200" Margin="8" FontSize="16">
-                    </Button>
-                    <Button Click="shizishuiping_Click" Content="师资水平" Width="200" Margin="8" FontSize="16">
-                    </Button>
-                    <Button Click="xuekeshuiping_Click" Content="学科水平" Width="200" Margin="8" FontSize="16">
-                    </Button>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Row="2">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Orientation="Horizontal"  Name="jiaoyujiaoxue" Visibility="Collapsed">
-                        <Label Content="教育教学" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
-                        </Label>
-                        <Label Content="  教学" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Name="shizishuiping" Visibility="Visible">
-                        <Label Content="  姓名" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
-                        </Label>
-                        <Label Content="现任职务" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="毕业时间" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="  专业" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="联系方式" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Name="xuekeshuiping" Visibility="Collapsed">
-                        <Label Content="专业名称" FontSize="16" Width="174" Foreground="White" Background="#FF4BF350" Margin="8">
-                        </Label>
-                        <Label Content="学科等级" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="所属学院" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                        <Label Content="  其他" FontSize="16" Width="174" Background="#FF4BF350" Foreground="White" Margin="8">
-                        </Label>
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Row="3">
-                <StackPanel>
-                    <ListBox Name="L_jiaoyujiaoxue" ItemTemplate="{StaticResource listboxTemplate2}"   ItemsSource="{Binding}" Visibility="Collapsed">
-                    </ListBox>
-                    <ListBox Name="L_shizishuiping" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" Visibility="Visible">
-                    </ListBox>
-                    <ListBox Name="L_xuekeshuiping" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" Visibility="Collapsed">
-                    </ListBox>
-                </StackPanel>
-            </Grid>
-        </Grid>
-        <Grid Grid.Column="1" Name="G_jiaoyujiaoxue" Visibility="Collapsed" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
-                <CheckBox Name="gaoxiaoxueke1"  Content="高校学科创新引智基地(111计划)" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="yijizhongdian1" Content="国家一级重点学科" FontSize="16" >
-                </CheckBox>
-                <CheckBox Name="erjizhongdian1"  Content="国家二级重点学科" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="zhongdianpeiyu1"  Content="国家重点培育学科" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="liudongzhan1"  Content="博士后流动站" FontSize="16">
-                </CheckBox>
-            </StackPanel>
-            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" >
-            </Button>
-            <StackPanel Grid.Row="2" Orientation="Vertical">
-                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
-                </Label>
-                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
-                </Image>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Vertical">
-                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
-                </Label>
-                <TextBox Text="教育教学由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
-                </TextBox>
-            </StackPanel>
+            <TabControl Grid.Row="1" Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0">
+            	<TabItem Header="教育教学" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
+            		<Grid>
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition/>
+            				<ColumnDefinition Width="318"/>
+            			</Grid.ColumnDefinitions>
+            			<Grid>
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="37"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<Grid x:Name="jiaoyujiaoxue" Margin="5,5,5,2.475" d:LayoutOverrides="Height">
+            					<Grid.ColumnDefinitions>
+            						<ColumnDefinition Width="28"/>
+            						<ColumnDefinition Width="*"/>
+            					</Grid.ColumnDefinitions>
+            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
+            						<Grid.ColumnDefinitions>
+            							<ColumnDefinition Width="0.2*"/>
+            							<ColumnDefinition Width="0.374*"/>
+            							<ColumnDefinition Width="0.117*"/>
+            							<ColumnDefinition Width="0.135*"/>
+            							<ColumnDefinition Width="0.174*"/>
+            						</Grid.ColumnDefinitions>
+            						<Label Content="教育教学" FontSize="16" Background="{x:Null}">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="教学" FontSize="16" Background="{x:Null}" Grid.Column="1">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="所属学院" FontSize="16" Background="{x:Null}" Grid.Column="2">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="3">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="4">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            					</Grid>
+            				</Grid>
+            				<ListBox x:Name="L_jiaoyujiaoxue" ItemTemplate="{StaticResource listboxTemplate2}"   ItemsSource="{Binding}" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
+            			</Grid>
+            			<Grid x:Name="G_jiaoyujiaoxue" Width="315" Grid.Column="1" Margin="10" >
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="71.916"/>
+            					<RowDefinition Height="0.451*"/>
+            					<RowDefinition Height="0.325*"/>
+            				</Grid.RowDefinitions>
+            				<Grid Margin="10" Grid.Row="0">
+            					<CheckBox x:Name="gaoxiaoxueke1"  Content="高校学科创新引智基地(111计划)" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="yijizhongdian1" Content="国家一级重点学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,21.116,0,0" VerticalAlignment="Top" />
+            					<CheckBox x:Name="erjizhongdian1"  Content="国家二级重点学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,42.233,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="zhongdianpeiyu1"  Content="国家重点培育学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,63.35,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="liudongzhan1"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,84.466,0,104.425" d:LayoutOverrides="Height"/>
+            				</Grid>
+            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50" />
+            				<Grid Grid.Row="2" >
+            					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg" Margin="0,33.756,0,0" d:LayoutOverrides="Height"/>
+            				</Grid>
+            				<Grid Grid.Row="3" >
+            					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<TextBox Text="教育教学由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Margin="0,33.756,0,97.869" d:LayoutOverrides="Height"/>
+            				</Grid>
 
-        </Grid>
-        <Grid Grid.Column="1" Name="G_shizishuiping" Visibility="Visible" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
-                <CheckBox Name="zhongkeyuan"  Content="中国科学院院士" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="zhonggongyuan" Content="中国工程院院士" FontSize="16" >
-                </CheckBox>
-                <CheckBox Name="guowaiyuan"  Content="国外院士" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="renwenshehui"  Content="杰出人文社会科学家" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="jiaoxuemingshi"  Content="国家级教学名师" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="qianrenjihua"  Content="千人计划入选者" FontSize="16">
-                </CheckBox>
-            </StackPanel>
-            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shizishuiping_Click">
-            </Button>
-            <StackPanel Grid.Row="2" Orientation="Vertical">
-                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
-                </Label>
-                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg">
-                </Image>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Vertical">
-                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
-                </Label>
-                <TextBox Text="师资水平由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
-                </TextBox>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Column="1" Name="G_xuekeshuiping" Visibility="Collapsed" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
-                <CheckBox Name="gaoxiaoxueke"  Content="高校学科创新引智基地(111计划)" FontSize="16" IsChecked="False">
-                </CheckBox>
-                <CheckBox Name="yijizhongdian" Content="国家一级重点学科" FontSize="16" >
-                </CheckBox>
-                <CheckBox Name="erjizhongdian"  Content="国家二级重点学科" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="zhongdianpeiyu"  Content="国家重点培育学科" FontSize="16">
-                </CheckBox>
-                <CheckBox Name="liudongzhan"  Content="博士后流动站" FontSize="16">
-                </CheckBox>
-            </StackPanel>
-            <Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click">
-            </Button>
-            <StackPanel Grid.Row="2" Orientation="Vertical">
-                <Label Content="年份对比" FontSize="18" FontWeight="Bold">
-                </Label>
-                <Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg">
-                </Image>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Vertical">
-                <Label Content="指标解释" FontSize="18" FontWeight="Bold">
-                </Label>
-                <TextBox Text="学科水平由高校学科创新引智基地(111计划)、国家一级重点学科、国家二级重点学科、国家重点培育学科、博士后流动站、二级学科博士点、二级学科硕士点和高等学校特色专业建设点等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold">
-                </TextBox>
-            </StackPanel>
+            			</Grid>
+            		</Grid>
+            	</TabItem>
+            	<TabItem Header="师资水平" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-50,-3" Width="89" HorizontalAlignment="Right">
+            		<Grid>
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition/>
+            				<ColumnDefinition Width="318"/>
+            			</Grid.ColumnDefinitions>
+            			<Grid>
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="37"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<Grid x:Name="shizishuiping" Margin="5,5,5,1.475" d:LayoutOverrides="Height">
+            					<Grid.ColumnDefinitions>
+            						<ColumnDefinition Width="28"/>
+            						<ColumnDefinition Width="*"/>
+            					</Grid.ColumnDefinitions>
+            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
+            						<Grid.ColumnDefinitions>
+            							<ColumnDefinition Width="0.2*"/>
+            							<ColumnDefinition Width="0.374*"/>
+            							<ColumnDefinition Width="0.117*"/>
+            							<ColumnDefinition Width="0.135*"/>
+            							<ColumnDefinition Width="0.174*"/>
+            						</Grid.ColumnDefinitions>
+            						<Label Content="姓名" FontSize="16" Background="{x:Null}" Width="190" Grid.Column="0">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="现任职务" FontSize="16" Background="{x:Null}" Grid.Column="1">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="毕业时间" FontSize="16" Background="{x:Null}" Grid.Column="2">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="专业" FontSize="16" Background="{x:Null}" Grid.Column="3">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="联系方式" FontSize="16" Background="{x:Null}" Grid.Column="4">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            					</Grid>
+            				</Grid>
+            				<ListBox x:Name="L_shizishuiping" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" Visibility="Visible" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
+            			</Grid>
+            			<Grid x:Name="G_shizishuiping" Visibility="Visible" Grid.Column="1" Margin="10" >
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="71.916"/>
+            					<RowDefinition Height="0.451*"/>
+            					<RowDefinition Height="0.325*"/>
+            				</Grid.RowDefinitions>
+            				<Grid Margin="10" Grid.Row="0">
+            					<CheckBox x:Name="zhongkeyuan"  Content="中国科学院院士" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="zhonggongyuan" Content="中国工程院院士" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,21.116,0,0" VerticalAlignment="Top" />
+            					<CheckBox x:Name="guowaiyuan"  Content="国外院士" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,42.233,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="renwenshehui"  Content="杰出人文社会科学家" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,63.35,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="jiaoxuemingshi"  Content="国家级教学名师" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,84.466,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="qianrenjihua"  Content="千人计划入选者" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,105.583,0,0" VerticalAlignment="Top"/>
+            				</Grid>
+            				<Button Grid.Row="1" Content="搜索" FontSize="22" Click="S_shizishuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Margin="0,0,0,8" Width="200" Height="50"/>
+            				<Grid Grid.Row="2" >
+            					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg" Margin="0,33.756,0,72.376" d:LayoutOverrides="Height"/>
+            				</Grid>
+            				<Grid Grid.Row="3" >
+            					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<TextBox Text="师资水平由中国科学院院士和中国工程院院士、国外院士、杰出人文社会科学家、国家教学名师、国家级教学团队、千人计划入选者、青年千人计划入选者、长江学者及创新团队带头人和国家自然科学杰出青年基金获得者等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Margin="0,33.756,0,0" VerticalAlignment="Top"/>
+            				</Grid>
+            			</Grid>
+            		</Grid>
+            	</TabItem>
+            	<TabItem Header="学科水平" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,-3">
+            		<Grid>
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition/>
+            				<ColumnDefinition Width="318"/>
+            			</Grid.ColumnDefinitions>
+            			<Grid>
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="37"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<Grid x:Name="xuekeshuiping" Margin="5,5,5,3.475" d:LayoutOverrides="Height">
+            					<Grid.ColumnDefinitions>
+            						<ColumnDefinition Width="28"/>
+            						<ColumnDefinition Width="*"/>
+            					</Grid.ColumnDefinitions>
+            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
+            						<Grid.ColumnDefinitions>
+            							<ColumnDefinition Width="0.2*"/>
+            							<ColumnDefinition Width="0.374*"/>
+            							<ColumnDefinition Width="0.117*"/>
+            							<ColumnDefinition Width="0.135*"/>
+            							<ColumnDefinition Width="0.174*"/>
+            						</Grid.ColumnDefinitions>
+            						<Label Content="专业名称" FontSize="16" Background="{x:Null}">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="学科等级" FontSize="16" Background="{x:Null}" Grid.Column="1">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="所属学院" FontSize="16" Background="{x:Null}" Grid.Column="2">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="3">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="4">
+            							<Label.Foreground>
+            								<SolidColorBrush Color="{DynamicResource black}"/>
+            							</Label.Foreground>
+            						</Label>
+            					</Grid>
+            				</Grid>
+            				<ListBox x:Name="L_xuekeshuiping" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
+            			</Grid>
+            			<Grid x:Name="G_xuekeshuiping" Grid.Column="1" Margin="10" >
+            				<Grid.RowDefinitions>
+            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="71.916"/>
+            					<RowDefinition Height="0.451*"/>
+            					<RowDefinition Height="0.325*"/>
+            				</Grid.RowDefinitions>
+            				<Grid Margin="10" Grid.Row="0">
+            					<CheckBox x:Name="gaoxiaoxueke"  Content="高校学科创新引智基地(111计划)"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" IsChecked="False" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="yijizhongdian" Content="国家一级重点学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,21.116,0,0" VerticalAlignment="Top" />
+            					<CheckBox x:Name="erjizhongdian"  Content="国家二级重点学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,42.233,0,0" VerticalAlignment="Top"/>
+            					<CheckBox x:Name="zhongdianpeiyu"  Content="国家重点培育学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,63.35,0,57.764" d:LayoutOverrides="Height"/>
+            					<CheckBox x:Name="liudongzhan"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,0,0,36.647" VerticalAlignment="Bottom"/>
+            				</Grid>
+            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Grid Grid.Row="2">
+            					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg" Margin="0,33.756,0,9.56" d:LayoutOverrides="Height"/>
+            				</Grid>
+            				<Grid Grid.Row="3">
+            					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
+            					<TextBox Text="学科水平由高校学科创新引智基地(111计划)、国家一级重点学科、国家二级重点学科、国家重点培育学科、博士后流动站、二级学科博士点、二级学科硕士点和高等学校特色专业建设点等组成。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Margin="0,33.756,0,98.08" d:LayoutOverrides="Height"/>
+            				</Grid>
 
+            			</Grid>
+            		</Grid>
+            	</TabItem>
+            </TabControl>
         </Grid>
     </Grid>
 </Page>

@@ -9,108 +9,383 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="56*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="50*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="1" Content="  22.50" FontSize="16">
-            </Label>
-            <Rectangle Grid.Column="0" Fill="#FF9A7E16" RadiusX="8" RadiusY="8">
-            </Rectangle>
-            <Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" Name="MyRectangle" Width="1" Fill="#FF0A54FC" HorizontalAlignment="Left">
-                <Rectangle.Triggers>
-                    <EventTrigger RoutedEvent="Page.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard  >
-                                <DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="1" To="220" Duration="0:0:1" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Rectangle.Triggers>
-            </Rectangle>
-            <Label Content="  绿色校园" FontSize="20" Foreground="White" >
-            </Label>
-        </Grid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Margin="5" Width="200" Content="实时校园消耗" FontSize="16" Click="Button_xiaohao_Click"/>
-            <Button Margin="5" Width="200" Content="实时校园环境" FontSize="16" Click="Button_huanjing_Click"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <StackPanel Orientation="Horizontal" x:Name="xiaohao" Visibility="Visible">
-                <Image Source="/WpfApplication3;component/Images/1.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/2.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/3.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/4.jpg" Margin="8"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" x:Name="huanjing" Visibility="Collapsed">
-                <Image Source="/WpfApplication3;component/Images/5.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/6.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/7.jpg" Margin="8"/>
-                <Image Source="/WpfApplication3;component/Images/8.jpg" Margin="8"/>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Row="3">
-            <UniformGrid Columns="12" Rows="1" Margin="1">
-                <TextBlock Text="1月份" TextAlignment="Left"/>
-                <TextBlock Text="2月份" TextAlignment="Left"/>
-                <TextBlock Text="3月份" TextAlignment="Left"/>
-                <TextBlock Text="4月份" TextAlignment="Left"/>
-                <TextBlock Text="5月份" TextAlignment="Center"/>
-                <TextBlock Text="6月份" TextAlignment="Center"/>
-                <TextBlock Text="7月份" TextAlignment="Center"/>
-                <TextBlock Text="8月份" TextAlignment="Center"/>
-                <TextBlock Text="9月份" TextAlignment="Right"/>
-                <TextBlock Text="10月份" TextAlignment="Right"/>
-                <TextBlock Text="11月份" TextAlignment="Right"/>
-                <TextBlock Text="12月份" TextAlignment="Right"/>
-            </UniformGrid>
+        <Rectangle RadiusX="8" RadiusY="8" Margin="0,0,5,0">
+        	<Rectangle.Fill>
+        		<SolidColorBrush Color="{DynamicResource #235235235}"/>
+        	</Rectangle.Fill>
+        	<Rectangle.Effect>
+        		<DropShadowEffect/>
+        	</Rectangle.Effect>
+        </Rectangle>
+        <Label Style="{DynamicResource Labeltopheader}" Content="绿色校园" VerticalAlignment="Top" Margin="0,0,5,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Grid Margin="10,50,10,10">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="38
+				"/>
+        		<RowDefinition/>
+        	</Grid.RowDefinitions>
 
-            <Slider Name="slider1"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" ValueChanged="slider1_ValueChanged" />
-            <UniformGrid Columns="12" Rows="1" Margin="1">
-                <TextBlock Text="1月份" TextAlignment="Left"/>
-                <TextBlock Text="2月份" TextAlignment="Left"/>
-                <TextBlock Text="3月份" TextAlignment="Left"/>
-                <TextBlock Text="4月份" TextAlignment="Left"/>
-                <TextBlock Text="5月份" TextAlignment="Center"/>
-                <TextBlock Text="6月份" TextAlignment="Center"/>
-                <TextBlock Text="7月份" TextAlignment="Center"/>
-                <TextBlock Text="8月份" TextAlignment="Center"/>
-                <TextBlock Text="9月份" TextAlignment="Right"/>
-                <TextBlock Text="10月份" TextAlignment="Right"/>
-                <TextBlock Text="11月份" TextAlignment="Right"/>
-                <TextBlock Text="12月份" TextAlignment="Right"/>
-            </UniformGrid>
-        </StackPanel>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="75*"/>
-                <ColumnDefinition Width="25*"/>                   
-            </Grid.ColumnDefinitions>
-            <WebBrowser x:Name="W_xiaohao" Grid.Column="0"/>
-            <WebBrowser x:Name="W_huanjing" Grid.Column="0"/>
-            <Grid Grid.Column="1" Name="shishishuju1" Visibility="Visible">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50*" />
-                    <RowDefinition Height="50*" />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0" Source="/WpfApplication3;component/Images/table.png" />
-                <Image Grid.Row="1" Source="/WpfApplication3;component/Images/tubiao1.jpg" />
-            </Grid>
-            <Grid Grid.Column="1" Name="shishishuju2" Visibility="Collapsed">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50*" />
-                    <RowDefinition Height="50*" />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0" Source="/WpfApplication3;component/Images/tubiao2.jpg" />
-                <Image Grid.Row="1" Source="/WpfApplication3;component/Images/pan.png" />
-            </Grid>
+        	<Grid Grid.Row="0" Margin="20,0,0,0">
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="50*"/>
+        			<ColumnDefinition Width="50*"/>
+        		</Grid.ColumnDefinitions>
+        		<Label Grid.Column="1" Content="  22.50" FontSize="16"/>
+        		<Rectangle Grid.Column="0" Fill="{DynamicResource ProgressbarBg}" RadiusX="8" RadiusY="8"/>
+        		<Rectangle Grid.Column="0" RadiusX="8" RadiusY="8" x:Name="MyRectangle" Width="0" Fill="{DynamicResource ProgressBarFg}" HorizontalAlignment="Left">
+        			<Rectangle.Triggers>
+        				<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+        					<BeginStoryboard>
+        						<Storyboard  >
+        							<DoubleAnimation  Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Width"  From="0" To="220" Duration="0:0:1" />
+        						</Storyboard>
+        					</BeginStoryboard>
+        				</EventTrigger>
+        			</Rectangle.Triggers>
+        		</Rectangle>
+        		<Label Content="绿色校园" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
+        	</Grid>
+        	<TabControl Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0" Grid.Row="1">
+        		<TabItem Header="实时校园消耗" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-30,-3">
+        			<Grid>
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="193.644"/>
+        					<RowDefinition Height="83"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<StackPanel Orientation="Horizontal">
+        					<Image Source="/WpfApplication3;component/Images/2.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/3.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/4.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/1.jpg" Margin="8"/>
+        				</StackPanel>
+        				<Grid Grid.Row="1" Margin="5,0">
+        					<UniformGrid Columns="12" Rows="1" Margin="1,1,1,0" VerticalAlignment="Top">
+        						<TextBlock Text="1月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="2月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="3月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="4月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="5月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="6月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="7月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="8月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="9月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="10月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="11月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="12月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        					</UniformGrid>
+
+        					<Slider x:Name="slider1"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" ValueChanged="slider1_ValueChanged" Margin="0,17.836,0,37.923" d:LayoutOverrides="Height" />
+        					<UniformGrid Columns="12" Rows="1" Margin="1,0,1,21.086" VerticalAlignment="Bottom">
+        						<TextBlock Text="1月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="2月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="3月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="4月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="5月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="6月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="7月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="8月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="9月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="10月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="11月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="12月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        					</UniformGrid>
+        				</Grid>
+        				<Grid Grid.Row="2">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition/>
+        						<ColumnDefinition Width="318        "/>
+        					</Grid.ColumnDefinitions>
+        					<Grid Margin="10">
+        						<Rectangle StrokeDashArray="1 0">
+        							<Rectangle.Stroke>
+        								<SolidColorBrush Color="{DynamicResource #122122122}"/>
+        							</Rectangle.Stroke>
+        							<Rectangle.Fill>
+        								<SolidColorBrush Color="{DynamicResource white}"/>
+        							</Rectangle.Fill>
+        						</Rectangle>
+        						<WebBrowser x:Name="W_xiaohao" Grid.Column="0" Margin="10"/>
+        					</Grid>
+        					<Grid Grid.Column="1" x:Name="shishishuju1" Visibility="Visible">
+        						<Grid.RowDefinitions>
+        							<RowDefinition Height="50*" />
+        							<RowDefinition Height="50*" />
+        						</Grid.RowDefinitions>
+        						<Image Grid.Row="0" Source="/WpfApplication3;component/Images/table.png" />
+        						<Image Grid.Row="1" Source="/WpfApplication3;component/Images/tubiao1.jpg" />
+        					</Grid>
+        				</Grid>
+        			</Grid>
+        		</TabItem>
+        		<TabItem Header="实时校园环境" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
+        			<Grid>
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="193.644"/>
+        					<RowDefinition Height="83"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<StackPanel Orientation="Horizontal" x:Name="huanjing">
+        					<Image Source="/WpfApplication3;component/Images/5.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/6.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/7.jpg" Margin="8"/>
+        					<Image Source="/WpfApplication3;component/Images/8.jpg" Margin="8"/>
+        				</StackPanel>
+        				<Grid Grid.Row="1" Margin="5,0">
+        					<UniformGrid Columns="12" Rows="1" Margin="1,1,1,0" VerticalAlignment="Top">
+        						<TextBlock Text="1月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="2月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="3月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="4月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="5月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="6月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="7月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="8月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="9月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="10月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="11月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="12月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        					</UniformGrid>
+
+        					<Slider x:Name="slider2"  IsSnapToTickEnabled="True"  TickPlacement="TopLeft" Value="5" SmallChange="1" Maximum="11" ValueChanged="slider1_ValueChanged" Margin="0,17.836,0,37.923" d:LayoutOverrides="Height" />
+        					<UniformGrid Columns="12" Rows="1" Margin="1,0,1,21.086" VerticalAlignment="Bottom">
+        						<TextBlock Text="1月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="2月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="3月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="4月份" TextAlignment="Left">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="5月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="6月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="7月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="8月份" TextAlignment="Center">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="9月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="10月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="11月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        						<TextBlock Text="12月份" TextAlignment="Right">
+        							<TextBlock.Foreground>
+        								<SolidColorBrush Color="{DynamicResource black}"/>
+        							</TextBlock.Foreground>
+        						</TextBlock>
+        					</UniformGrid>
+        				</Grid>
+        				<Grid Grid.Row="2">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition/>
+        						<ColumnDefinition Width="318"/>
+        					</Grid.ColumnDefinitions>
+        					<Grid Margin="10">
+        						<Rectangle StrokeDashArray="1 0">
+        							<Rectangle.Stroke>
+        								<SolidColorBrush Color="{DynamicResource #122122122}"/>
+        							</Rectangle.Stroke>
+        							<Rectangle.Fill>
+        								<SolidColorBrush Color="{DynamicResource white}"/>
+        							</Rectangle.Fill>
+        						</Rectangle>
+        						<WebBrowser x:Name="W_huanjing" Grid.Column="0" Margin="10"/>
+        					</Grid>
+        					<Grid Grid.Column="1" x:Name="shishishuju2">
+        						<Grid.RowDefinitions>
+        							<RowDefinition Height="50*" />
+        							<RowDefinition Height="50*" />
+        						</Grid.RowDefinitions>
+        						<Image Grid.Row="0" Source="/WpfApplication3;component/Images/tubiao2.jpg" />
+        						<Image Grid.Row="1" Source="/WpfApplication3;component/Images/pan.png" />
+        					</Grid>
+        				</Grid>
+        			</Grid>
+        		</TabItem>
+        	</TabControl>
+
         </Grid>
 
     </Grid>
