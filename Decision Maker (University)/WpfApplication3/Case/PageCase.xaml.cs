@@ -52,29 +52,29 @@ namespace WpfApplication3.Case
         private void ShowTreeView()
         {
             List<ClassCatalogNodeItem> itemList = new List<ClassCatalogNodeItem>();
-            ClassCatalogNodeItem node = new ClassCatalogNodeItem() { strText = "城市发展案例", isOpen = true };
-            ClassCatalogNodeItem child = new ClassCatalogNodeItem() { strText = "区域规划", isOpen = true };
+            ClassCatalogNodeItem node = new ClassCatalogNodeItem() { strText = "学校发展案例", isOpen = true };
+            ClassCatalogNodeItem child = new ClassCatalogNodeItem() { strText = "校区规划", isOpen = true };
             node.Children.Add(child);
             child = new ClassCatalogNodeItem() { strText = "总体规划", isOpen = true };
             node.Children.Add(child);
             child = new ClassCatalogNodeItem() { strText = "详细规划", isOpen = true };
             node.Children.Add(child);
-            child = new ClassCatalogNodeItem() { strText = "城市设计", isOpen = true };
+            child = new ClassCatalogNodeItem() { strText = "校园设计", isOpen = true };
             node.Children.Add(child);
             child = new ClassCatalogNodeItem() { strText = "专项规划", isOpen = true };
             node.Children.Add(child);
             itemList.Add(node);
-            node = new ClassCatalogNodeItem() { strText = "城市百科知识", isOpen = true };
-            child = new ClassCatalogNodeItem() { strText = "城镇运营管理", isOpen = true };
-            ClassCatalogNodeItem grandChild = new ClassCatalogNodeItem() { strText = "城市发展", isOpen = true };
+            node = new ClassCatalogNodeItem() { strText = "学校百科知识", isOpen = true };
+            child = new ClassCatalogNodeItem() { strText = "学校运营管理", isOpen = true };
+            ClassCatalogNodeItem grandChild = new ClassCatalogNodeItem() { strText = "学校发展", isOpen = true };
             child.Children.Add(grandChild);
-            grandChild = new ClassCatalogNodeItem() { strText = "城市更新", isOpen = true };
+            grandChild = new ClassCatalogNodeItem() { strText = "学校更新", isOpen = true };
             child.Children.Add(grandChild);
             grandChild = new ClassCatalogNodeItem() { strText = "突发事件处理", isOpen = true };
             child.Children.Add(grandChild);
             node.Children.Add(child);
             itemList.Add(node);
-            node = new ClassCatalogNodeItem() { strText = "城市数据知识", isOpen = true };
+            node = new ClassCatalogNodeItem() { strText = "学校数据知识", isOpen = true };
             itemList.Add(node);
             this.treeViewCatalog.ItemsSource = itemList;
         }

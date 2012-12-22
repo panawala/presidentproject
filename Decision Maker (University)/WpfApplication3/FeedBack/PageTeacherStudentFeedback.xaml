@@ -132,7 +132,7 @@
                 	<RowDefinition Height="50"/>
                 	<RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="师生信息反馈"/>
+                <Label Name="lblWindowTitle" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="**信息反馈"/>
                 <Grid Margin="10" Grid.Row="1">
                 	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1">
                 		<Rectangle.Fill>
@@ -388,7 +388,7 @@
                 			</ListBox.Template>
                 			<ListBox.ItemTemplate>
                 				<DataTemplate>
-                					<Grid Margin="5" Height="Auto" Width="Auto">
+                					<Grid Margin="5" Height="Auto" Width="Auto" >
                 						<Grid.ColumnDefinitions>
                 							<ColumnDefinition Width="14.88"/>
                 							<ColumnDefinition Width="*"/>
@@ -404,7 +404,7 @@
                 							</Ellipse>
                 						</Grid>
                 						<Grid Grid.Column="2" Grid.ColumnSpan="1" d:LayoutOverrides="GridBox">
-                							<TextBlock Text="{Binding}" VerticalAlignment="Stretch"/>
+                                            <TextBlock Text="{Binding}" VerticalAlignment="Stretch" MouseDown="lblSend_MouseDown"/>
                 						</Grid>
                 					</Grid>
                 				</DataTemplate>

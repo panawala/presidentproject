@@ -947,7 +947,7 @@
                                     <SolidColorBrush Color="{DynamicResource #122122122}"/>
                                 </GridSplitter.Background>
                             </GridSplitter>
-                            <TextBox x:Name="textBox_Calendar" TextWrapping="Wrap" Background="{x:Null}" Style="{DynamicResource TextBoxStyle2}" Text="今天上午" Margin="3,3,3,0" FontSize="11" FontWeight="Bold" FontFamily="Helvetica" Height="91">
+                            <TextBox x:Name="textBox_Calendar" TextWrapping="Wrap" Background="{x:Null}" Style="{DynamicResource TextBoxStyle2}" Margin="3,3,3,0" FontSize="11" FontWeight="Bold" FontFamily="Helvetica" Height="91">
                                 <TextBox.Foreground>
                                     <SolidColorBrush Color="{DynamicResource #535353}"/>
                                 </TextBox.Foreground>

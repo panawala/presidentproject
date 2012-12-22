@@ -44,6 +44,7 @@ namespace WpfApplication3
             webbrowserEmergency.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
             webbrowserEmergency.ObjectForScripting = ds;
             loadWeather();
+            calendar1.SelectedDate = DateTime.Today;
         }
 
         public static string ToJsJson(object item)

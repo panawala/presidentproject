@@ -89,15 +89,15 @@
         									<SolidColorBrush Color="{DynamicResource Foregroundgray}"/>
         								</Expander.Foreground>
         								<Grid>
-        									<TextBlock x:Name="TextBlock1" FontSize="12" />
+                                            <TextBlock x:Name="TextBlock1" FontSize="12" TextWrapping="WrapWithOverflow"/>
         								</Grid>
         							</Expander>
-        							<Expander Header="使用现状" x:Name="expander2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ExpandDirection="Down">
+                                    <Expander Header="使用现状" x:Name="expander2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ExpandDirection="Down" IsExpanded="True">
         								<Expander.Foreground>
         									<SolidColorBrush Color="{DynamicResource Foregroundgray}"/>
         								</Expander.Foreground>
         								<Grid>
-        									<TextBlock x:Name="TextBlock2" FontSize="12" />
+                                            <TextBlock x:Name="TextBlock2" FontSize="12" TextWrapping="WrapWithOverflow"/>
         								</Grid>
         							</Expander>
         							<Expander Header="组织机构" x:Name="expander3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ExpandDirection="Down" IsExpanded="True">
@@ -105,7 +105,7 @@
         									<SolidColorBrush Color="{DynamicResource Foregroundgray}"/>
         								</Expander.Foreground>
         								<Grid>
-        									<TextBlock x:Name="TextBlock3" FontSize="12" />
+                                            <TextBlock x:Name="TextBlock3" FontSize="12" TextWrapping="WrapWithOverflow"/>
         								</Grid>
         							</Expander>
         							<Expander Header="近期活动" x:Name="expander4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ExpandDirection="Down" IsExpanded="True">
@@ -113,7 +113,7 @@
         									<SolidColorBrush Color="{DynamicResource Foregroundgray}"/>
         								</Expander.Foreground>
         								<Grid>
-        									<TextBlock x:Name="TextBlock4" FontSize="12" />
+        									<TextBlock x:Name="TextBlock4" FontSize="12" TextWrapping="WrapWithOverflow"/>
         								</Grid>
         							</Expander>
         						</StackPanel>

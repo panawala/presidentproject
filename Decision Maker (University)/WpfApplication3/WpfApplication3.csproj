@@ -238,8 +238,17 @@
     <Compile Include="MaxPage\PageMaxWeather.xaml.cs">
       <DependentUpon>PageMaxWeather.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageGongGongWeiSheng.xaml.cs">
+      <DependentUpon>PageGongGongWeiSheng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSheHuiAnQuan.xaml.cs">
+      <DependentUpon>PageSheHuiAnQuan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageShiGuZaiHai.xaml.cs">
       <DependentUpon>PageShiGuZaiHai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageZiRanZaiHai.xaml.cs">
+      <DependentUpon>PageZiRanZaiHai.xaml</DependentUpon>
     </Compile>
     <Compile Include="PDFReader.xaml.cs">
       <DependentUpon>PDFReader.xaml</DependentUpon>
@@ -380,7 +389,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PageGongGongWeiSheng.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSheHuiAnQuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageShiGuZaiHai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageZiRanZaiHai.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

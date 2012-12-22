@@ -376,7 +376,7 @@ namespace WpfApplication3
 		private void menu7_1_Selected(object sender, System.Windows.RoutedEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
-			FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback();
+			FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(1);
             FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
 			
 			
@@ -436,6 +436,36 @@ namespace WpfApplication3
         {
 			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
             FrameMiddleContent.Navigate(m_PageDocIssue);
+        }
+
+        private void menu7_2_Selected(object sender, RoutedEventArgs e)
+        {
+            FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(2);
+            FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
+        }
+
+        private void menu7_3_Selected(object sender, RoutedEventArgs e)
+        {
+            FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(3);
+            FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
+        }
+
+        private void menu6_2_Selected(object sender, RoutedEventArgs e)
+        {
+            PageSheHuiAnQuan page = new PageSheHuiAnQuan();
+            FrameMiddleContent.Navigate(page);
+        }
+
+        private void menu6_1_Selected(object sender, RoutedEventArgs e)
+        {
+            PageZiRanZaiHai page = new PageZiRanZaiHai();
+            FrameMiddleContent.Navigate(page);
+        }
+
+        private void menu6_4_Selected(object sender, RoutedEventArgs e)
+        {
+            PageGongGongWeiSheng page = new PageGongGongWeiSheng();
+            FrameMiddleContent.Navigate(page);
         }
 
         private void menu8_2_Selected(object sender, RoutedEventArgs e)

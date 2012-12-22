@@ -26,17 +26,25 @@ namespace WpfApplication3.FeedBack
         DataSetFeedback.T_FeedBackDataTable dtCurrent;
         int iCurrentItem;
         List<string> lstrSend;
-        public PageTeacherStudentFeedback()
+        public PageTeacherStudentFeedback(int type)
         {
             InitializeComponent();
             DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
-            dtCurrent = adapter.GetData(1);
+            dtCurrent = adapter.GetData(type);
             listboxFeedback.ItemsSource = dtCurrent;
             btnPrevious.IsEnabled = false;
             btnNext.IsEnabled = false;
             lstrSend = new List<string>();
             iCurrentItem = -1;
             this.InkCanvasAnnotation1.IsEnabled = false;
+            if (type == 1)
+                lblWindowTitle.Content = "师生信息反馈";
+            else if (type == 2)
+                lblWindowTitle.Content = "政府机构反馈";
+            else if (type == 3)
+                lblWindowTitle.Content = "企业联盟反馈";
+            if(dtCurrent.Count>0)
+                ShowFeedBack(0);
         }
 
         private void btnFeedbackShow_Click(object sender, RoutedEventArgs e)
@@ -241,6 +249,16 @@ namespace WpfApplication3.FeedBack
         private void tbxSearch_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
         {
         	tbxSearch.Clear();// TODO: Add event handler implementation here.
+        }
+
+        private void lblSend_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount != 2)
+                return;
+            object obj = listboxSend.ContainerFromElement((TextBlock)sender);
+            int i = listboxSend.Items.IndexOf(((ListBoxItem)obj).Content);
+            listboxSend.Items.RemoveAt(i);
+
         }
     }
 }
