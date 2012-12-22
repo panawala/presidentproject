@@ -18,9 +18,9 @@ namespace WpfApplication3.LargeProject
     /// <summary>
     /// Interaction logic for PageProject.xaml
     /// </summary>
-    public partial class PageProject : Page
+    public partial class PageProjectGym : Page
     {
-        public PageProject()
+        public PageProjectGym()
         {
             InitializeComponent();
         }
@@ -45,10 +45,10 @@ namespace WpfApplication3.LargeProject
 
             ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.jpg", UriKind.Relative));
             CurrentSence.Source = new BitmapImage(new Uri("/Images/sence.png", UriKind.Relative));
-            ImageSolution.Source = new BitmapImage(new Uri("/Images/solute.png", UriKind.Relative));
+            ImageSolution.Source = new BitmapImage(new Uri("/Images/outer.jpg", UriKind.Relative));
             //image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
 
-            TextProject.Text = "上海国际设计一场”的前身是巴士一汽停车场，占地面积约120亩。在上海市高校布局新一轮调整中，该停车场划归同济大学。杨浦区政府与同济大学决定联手，在此建设集设计教育、设计研发、国际交流、活动展览等多种功能于一体的“上海国际设计一场”，将其建设成为国际化的高端设计创意平台、同济大学设计创意教育与实践基地、环同济设计创意产业的航空母舰、知识杨浦国际化的高端平台，以及上海创意之都的核心引擎项目。";
+            TextProject.Text = "都柏林大学位于爱尔兰都柏林市郊南面一片广袤而美丽的土地上，距市中心只有5公里。都柏林大学（UCD）是一所朝气蓬勃的现代大学，也是爱尔兰规模最大的大学，课程设置包括人文、工商、社会学、医学、兽医学和自然科学等学士学位课程及研究生课程。都柏林大学致力于提供一流的教学和科研教育。";
 
 
             List<Information> infos = new List<Information>
@@ -242,9 +242,6 @@ namespace WpfApplication3.LargeProject
         {
 
             double nowTop = rectangle0.Margin.Top;
-
-
-
             for (int i = 0; i < percentList.Count;i++ )
             {
                 //当前进度的高度
@@ -420,13 +417,5 @@ namespace WpfApplication3.LargeProject
 
     }
 
-
-    class Information
-    {
-        public string ImageSource { get; set; }
-        public string FileDate { get; set; }
-        public string Title { get; set; }
-        public string Type { get; set; }
-    }
 
 }

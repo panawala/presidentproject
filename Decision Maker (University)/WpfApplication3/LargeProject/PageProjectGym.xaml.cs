@@ -18,9 +18,9 @@ namespace WpfApplication3.LargeProject
     /// <summary>
     /// Interaction logic for PageProject.xaml
     /// </summary>
-    public partial class PageProject : Page
+    public partial class PageProjectOuter : Page
     {
-        public PageProject()
+        public PageProjectOuter()
         {
             InitializeComponent();
         }
@@ -44,11 +44,11 @@ namespace WpfApplication3.LargeProject
             actualPercentList = new List<double> { 0.2, 0.2, 0.1, 0.05 };
 
             ConstructImg.Source = new BitmapImage(new Uri("/Images/construct.jpg", UriKind.Relative));
-            CurrentSence.Source = new BitmapImage(new Uri("/Images/sence.png", UriKind.Relative));
-            ImageSolution.Source = new BitmapImage(new Uri("/Images/solute.png", UriKind.Relative));
+            CurrentSence.Source = new BitmapImage(new Uri("/Images/gymsecene.jpg", UriKind.Relative));
+            ImageSolution.Source = new BitmapImage(new Uri("/Images/gym.jpg", UriKind.Relative));
             //image_ProjectOrg.Source=new BitmapImage(new Uri("/Images/projectorg.jpg",UriKind.Relative));
 
-            TextProject.Text = "上海国际设计一场”的前身是巴士一汽停车场，占地面积约120亩。在上海市高校布局新一轮调整中，该停车场划归同济大学。杨浦区政府与同济大学决定联手，在此建设集设计教育、设计研发、国际交流、活动展览等多种功能于一体的“上海国际设计一场”，将其建设成为国际化的高端设计创意平台、同济大学设计创意教育与实践基地、环同济设计创意产业的航空母舰、知识杨浦国际化的高端平台，以及上海创意之都的核心引擎项目。";
+            TextProject.Text = "吉安体育馆位于吉安市城南新区，始建于2005年7月，2009年12月全面竣工并投入使用。体育馆建筑构造为钢网架结构，总建筑面积为20695平方米，馆内篮球场地面积为2300平方米，体育馆总投资达7300万元。馆内中央为比赛大厅，观众座位有5194个，其中移动座位有829个，北面观众看台设有主席台和贵宾席。馆内首层设有贵宾休息室、运动员休息室、会议室、医务室、兴奋剂检测室、新闻发布中心、检录大厅、转播间等34个房间，二楼有12个进出口，观众出入方便。馆内通风透光合理，装修实用大方，体育馆以现代化、标准化要求安装了中央空调、音响系统与电子计时计分系统，现场灯光达1500勒克斯，还配置了宽频光纤信息网，能实现电脑联网信息资信共享和电视拍摄、转播及播放录像、影蝶、图文信息。吉安体育馆将承办“七城会” U16男子篮球赛，是吉安唯一一座集体育、休闲、健身、娱乐于一体的综合性场馆。 ";
 
 
             List<Information> infos = new List<Information>
@@ -242,9 +242,6 @@ namespace WpfApplication3.LargeProject
         {
 
             double nowTop = rectangle0.Margin.Top;
-
-
-
             for (int i = 0; i < percentList.Count;i++ )
             {
                 //当前进度的高度
@@ -420,13 +417,5 @@ namespace WpfApplication3.LargeProject
 
     }
 
-
-    class Information
-    {
-        public string ImageSource { get; set; }
-        public string FileDate { get; set; }
-        public string Title { get; set; }
-        public string Type { get; set; }
-    }
 
 }

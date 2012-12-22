@@ -211,6 +211,12 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LargeProject\PageProjectOuter.xaml.cs">
+      <DependentUpon>PageProjectOuter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LargeProject\PageProjectGym.xaml.cs">
+      <DependentUpon>PageProjectGym.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LargeProject\PageProject.xaml.cs">
       <DependentUpon>PageProject.xaml</DependentUpon>
     </Compile>
@@ -331,6 +337,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LargeProject\PageProjectOuter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LargeProject\PageProjectGym.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -678,6 +692,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\gymsecene.jpg" />
+    <Resource Include="Images\outer.jpg" />
+    <Resource Include="Images\gym.jpg" />
     <Resource Include="Images\图书馆.jpg" />
     <Resource Include="Images\文远楼.jpg" />
     <Resource Include="Images\游泳馆.jpg" />

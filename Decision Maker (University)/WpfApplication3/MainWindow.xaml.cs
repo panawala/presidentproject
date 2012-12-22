@@ -437,6 +437,18 @@ namespace WpfApplication3
 			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
             FrameMiddleContent.Navigate(m_PageDocIssue);
         }
+
+        private void menu8_2_Selected(object sender, RoutedEventArgs e)
+        {
+            LargeProject.PageProjectGym m_PageProject = new LargeProject.PageProjectGym();
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
+
+        private void menu8_3_Selected(object sender, RoutedEventArgs e)
+        {
+            LargeProject.PageProjectOuter m_PageProject = new LargeProject.PageProjectOuter();
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
 		
     }
 }
