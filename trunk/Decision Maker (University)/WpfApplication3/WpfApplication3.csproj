@@ -548,6 +548,7 @@
     <Resource Include="CutImages\图像\HuoJing.png" />
     <Resource Include="CutImages\图像\YiLiao.png" />
     <Resource Include="Images\login_head.png" />
+    <Resource Include="Images\wuchangfu.jpg" />
     <Resource Include="loginbuttonbg.png" />
     <Resource Include="logout.png" />
     <Resource Include="switch1.png" />
