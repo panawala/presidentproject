@@ -3589,6 +3589,11 @@
 										</Storyboard>
 									</VisualState>
 								</VisualStateGroup>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
 							</VisualStateManager.VisualStateGroups>
 							<Rectangle x:Name="rectangle1" Stroke="{x:Null}" Grid.ColumnSpan="2">
 								<Rectangle.Fill>

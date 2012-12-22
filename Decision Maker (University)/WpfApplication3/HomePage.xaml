@@ -967,16 +967,6 @@
                             <Button Content="+" HorizontalAlignment="Right" x:Name="btn_maxtraffic_Copy" Style="{DynamicResource ButtonFeedbacknormal}" Width="18" Click="btn_maxweather_Click" VerticalContentAlignment="Top" FontWeight="Bold" FontSize="16" Cursor="Hand" Background="{x:Null}" Height="18" Padding="1,-3,1,1" Margin="0,2.312" />
                         </Grid>
                         <WebBrowser x:Name="webbrowserWeather" Opacity="0.2" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="16,52,16,16"/>
-                        <Grid x:Name="tag_Copy3" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="81.25" Margin="0,-20,0,0" Visibility="Collapsed">
-                            <Path Data="M8.6898117,0 L8.6954193,0 7.9829993,5.9129998 8.040822,5.5892226 C8.6935444,2.3994598 11.515867,1.5412924E-06 14.898618,0 L71.310722,0 C73.915741,1.2339613E-06 76.188416,1.4229701 77.393829,3.5340194 L77.571724,3.8724722 83.084785,15.404892 C85.541229,20.543368 90.54174,23.643922 95.855904,23.918912 L96.097,23.925521 96.097,24.000001 0,24.000001 0.096316285,23.96971 C3.617126,22.767218 6.323638,19.639165 6.7984657,15.698118 z" Margin="0" Stretch="Fill">
-                                <Path.Fill>
-                                    <SolidColorBrush Color="{DynamicResource Contentbg}"/>
-                                </Path.Fill>
-                            </Path>
-                            <TextBlock Margin="12.412,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Text="交通总览"><TextBlock.Foreground>
-        				<SolidColorBrush Color="{DynamicResource #939393}"/>
-        			</TextBlock.Foreground></TextBlock>
-                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
