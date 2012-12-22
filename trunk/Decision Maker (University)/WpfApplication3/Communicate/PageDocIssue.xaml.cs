@@ -44,15 +44,15 @@ namespace WpfApplication3.Communicate
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             IsRead = false;
+            listboxLatestDocsRefresh(IsRead);
             for(DocType = 1;DocType<4;DocType++)
 			{
-				listboxLatestDocsRefresh(IsRead);
             	listboxDocsRefresh(IsRead,DocType);
 			}
 			IsRead=true;
+            listboxLatestDocsRefresh(IsRead);
 			for(DocType = 1;DocType<4;DocType++)
 			{
-				listboxLatestDocsRefresh(IsRead);
             	listboxDocsRefresh(IsRead,DocType);
 			}
 
@@ -302,7 +302,8 @@ namespace WpfApplication3.Communicate
         {
 			Button btn = sender as Button;
             string content = btn.Content as string;
-			string filePDF = content + ".pdf";
+            string address = btn.Tag as string;
+			string filePDF = address;
 			string FileISF = content+".isf";
             DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
             string strPath = di.Parent.Parent.FullName;
@@ -326,6 +327,16 @@ namespace WpfApplication3.Communicate
 			fileCurrentPDF=content;
 //            PDFReader pdfReader = new PDFReader();
 //            pdfReader.showPdf(content + ".pdf");
+        }
+
+        private void lblSend_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount != 2)
+                return;
+            object obj = listboxSend.ContainerFromElement((TextBlock)sender);
+            int i = listboxSend.Items.IndexOf(((ListBoxItem)obj).Content);
+            listboxSend.Items.RemoveAt(i);
+
         }
 		
     }
