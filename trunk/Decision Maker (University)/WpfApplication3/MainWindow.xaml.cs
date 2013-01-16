@@ -342,14 +342,20 @@ namespace WpfApplication3
             FrameMiddleContent.Navigate(TalentC);
 
         }
-           private void ScientificR(object sender, System.Windows.RoutedEventArgs e)
+        private void ScientificR(object sender, System.Windows.RoutedEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.ScientificResearch  ScientificR = new  Development_performance.ScientificResearch();
             FrameMiddleContent.Navigate(ScientificR);
 
         }
-           private void ComprehensiveR(object sender, System.Windows.RoutedEventArgs e)
+        
+        private void ComprehensiveI(object sender, RoutedEventArgs e)
+        {
+            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+            FrameMiddleContent.Navigate(ComprehensiveI);
+        }
+        private void ComprehensiveR(object sender, System.Windows.RoutedEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.ComprehensiveReputation  ComprehensiveR = new  Development_performance.ComprehensiveReputation();
@@ -614,6 +620,7 @@ namespace WpfApplication3
                 menutitle8.Visibility = System.Windows.Visibility.Visible;
             }
         }
+
 		
     }
 }

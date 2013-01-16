@@ -1,0 +1,72 @@
+﻿<Page x:Class="WpfApplication3.Development_performance.ComprehensiveIndex"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="972" d:DesignWidth="1265"
+	Title="ComprehensiveIndex" Loaded="Page_Loaded">
+    <Grid Margin="0,0,5,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Rectangle RadiusX="8" RadiusY="8">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{DynamicResource #235235235}"/>
+            </Rectangle.Fill>
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label Style="{DynamicResource Labeltopheader}" Content="综合指数" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+        <Grid>
+            <Grid>
+                <Label Content="2012综合指数" Height="28" HorizontalAlignment="Left" Margin="14,0,0,897" Name="label1" VerticalAlignment="Bottom" Width="119" />
+                <vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Margin="327,47,357,605">
+                    <vc:Chart.Series>
+                        <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
+                            <vc:DataSeries.DataPoints>
+                                <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Color="LightSteelBlue" />
+                                <vc:DataPoint AxisXLabel="科学研究" YValue="40" />
+                                <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" />
+                                <vc:DataPoint AxisXLabel="综合声誉" YValue="26" />
+                            </vc:DataSeries.DataPoints>
+                        </vc:DataSeries>
+                    </vc:Chart.Series>
+                </vc:Chart>
+             </Grid>
+            <Grid>
+                <Label Content="分解目标" Height="28" HorizontalAlignment="Left" Margin="14,429,0,0" Name="label2" VerticalAlignment="Top" Width="108" />
+
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget" Stroke="Black" VerticalAlignment="Top" Width="1000" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4" Stroke="Black" VerticalAlignment="Top" Width="200" />
+
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="1000" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,395,0,0" Name="totalpercent" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="280,482,0,0" Name="part1value" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,482,0,0" Name="part1percent" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="335,522,0,0" Name="part2percent" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="1080,395,0,0" Name="totalvalue" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="537,541,0,0" Name="part2value" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="635,581,0,0" Name="part3percent" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="744,601,0,0" Name="part3value" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="870,643,0,0" Name="part4percent" VerticalAlignment="Top" />
+                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="970,643,0,0" Name="part4value" VerticalAlignment="Top" />
+                <Rectangle Height="80" HorizontalAlignment="Left" Margin="120,450,0,0" Name="verline1" Stroke="Black" VerticalAlignment="Top" Width="1" />
+                <Rectangle Height="160" HorizontalAlignment="Left" Margin="248,643,0,0" Name="verline2" Stroke="Black" VerticalAlignment="Top" Width="1" />
+                <Rectangle Height="240" HorizontalAlignment="Left" Margin="348,643,0,0" Name="verline3" Stroke="Black" VerticalAlignment="Top" Width="1" />
+                <Rectangle Height="320" HorizontalAlignment="Left" Margin="448,643,0,0" Name="verline4" Stroke="Black" VerticalAlignment="Top" Width="1" />
+                <Rectangle Height="320" HorizontalAlignment="Left" Margin="571,726,0,0" Name="verline5" Stroke="Black" VerticalAlignment="Top" Width="1" />
+            </Grid>
+          
+        </Grid>
+    </Grid>
+    
+</Page>
