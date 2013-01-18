@@ -26,10 +26,14 @@
                     <vc:Chart.Series>
                         <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
                             <vc:DataSeries.DataPoints>
-                                <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Color="LightSteelBlue" />
-                                <vc:DataPoint AxisXLabel="科学研究" YValue="40" />
-                                <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" />
-                                <vc:DataPoint AxisXLabel="综合声誉" YValue="26" />
+                                <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Background="Black" >
+                                	<vc:DataPoint.Color>
+                                		<SolidColorBrush Color="#FF59D98F"/>
+                                	</vc:DataPoint.Color>
+                                </vc:DataPoint>
+                                <vc:DataPoint AxisXLabel="科学研究" YValue="40" Color="#FF129698"/>
+                                <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" Color="#FF51D8B6"/>
+                                <vc:DataPoint AxisXLabel="综合声誉" YValue="26" Color="#FF13BA85"/>
                             </vc:DataSeries.DataPoints>
                         </vc:DataSeries>
                     </vc:Chart.Series>
@@ -44,11 +48,31 @@
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3" Stroke="Black" VerticalAlignment="Top" Width="200" />
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4" Stroke="Black" VerticalAlignment="Top" Width="200" />
 
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="1000" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4_copy" Fill="GreenYellow" Stroke="Black" VerticalAlignment="Top" Width="200" />
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget_copy" Stroke="Black" VerticalAlignment="Top" Width="1000" >
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
+                	<Rectangle.Fill>
+                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                	</Rectangle.Fill>
+                </Rectangle>
                 <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,395,0,0" Name="totalpercent" VerticalAlignment="Top" />
                 <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="280,482,0,0" Name="part1value" VerticalAlignment="Top" />
                 <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,482,0,0" Name="part1percent" VerticalAlignment="Top" />
