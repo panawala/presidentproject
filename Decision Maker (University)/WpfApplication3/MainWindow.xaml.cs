@@ -132,7 +132,7 @@ namespace WpfApplication3
                 }
                 catch (Exception)
                 {
-                    //异常处理
+                    break;//异常处理
                 }
                 //初始化Rss 
                 XmlNodeList list = doc.GetElementsByTagName("item"); //获得项   
