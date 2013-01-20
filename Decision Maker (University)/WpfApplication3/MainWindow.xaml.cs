@@ -129,21 +129,22 @@ namespace WpfApplication3
                 try
                 {
                     doc.Load(rsspath[cid]);//加载XML 包括HTTP：// 和本地
+                    XmlNodeList list = doc.GetElementsByTagName("item"); //获得项   
+                    XmlNode node = list.Item(0);//
+                    NewsItem item = new NewsItem();
+                    item = getItem((XmlElement)node);
+                    item.ChannelLink = channellink[cid];
+                    item.ChannelTitle = channeltitle[cid];
+                    item.LogoPath = logopath[cid];
+                    //加入list
+                    items.Add(item);
                 }
                 catch (Exception)
                 {
-                    break;//异常处理
+                    //异常处理
                 }
                 //初始化Rss 
-                XmlNodeList list = doc.GetElementsByTagName("item"); //获得项   
-                XmlNode node = list.Item(0);//
-                NewsItem item = new NewsItem();
-                item = getItem((XmlElement)node);
-                item.ChannelLink = channellink[cid];
-                item.ChannelTitle = channeltitle[cid];
-                item.LogoPath = logopath[cid];
-                //加入list
-                items.Add(item);
+                
             }
 
             //添加绑定操作

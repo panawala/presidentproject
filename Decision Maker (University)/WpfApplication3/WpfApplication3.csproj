@@ -46,7 +46,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -495,6 +495,7 @@
     <None Include="PDF\2012年5月内部文件情况报告.pdf" />
     <None Include="PDF\2012年5月媒体报道情况报告.pdf" />
     <None Include="PDF\2012年5月项目经费使用情况报告.pdf" />
+    <None Include="PDF\行政公文测试.pdf" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
