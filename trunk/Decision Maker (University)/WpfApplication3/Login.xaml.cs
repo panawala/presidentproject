@@ -48,9 +48,9 @@ namespace WpfApplication3
                     return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("网络环境异常，细节： "+ex.Message);
+                MessageBox.Show("本程序需要网络连接，请先配置好当前网络环境");
                 return;
             }
 
