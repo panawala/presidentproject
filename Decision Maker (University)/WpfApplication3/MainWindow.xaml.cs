@@ -317,7 +317,7 @@ namespace WpfApplication3
         //        menutitle6.Visibility = System.Windows.Visibility.Visible;
         //}
 		        
-        //private void menutitle7_Selected(object sender, System.Windows.RoutedEventArgs e)
+        //private void menutitle7_PreviewMouseDown(object sender, System.Windows.RoutedEventArgs e)
         //{
         //    // TODO: Add event handler implementation here.
         //    HideMenu();
@@ -327,7 +327,7 @@ namespace WpfApplication3
 
         //}
 		        
-        //private void menutitle8_Selected(object sender, System.Windows.RoutedEventArgs e)
+        //private void menutitle8_PreviewMouseDown(object sender, System.Windows.RoutedEventArgs e)
         //{
         //    // TODO: Add event handler implementation here.
         //    HideMenu();
@@ -336,14 +336,14 @@ namespace WpfApplication3
         //        menutitle8.Visibility = System.Windows.Visibility.Visible;
         //}
 
-        private void TalentC(object sender, System.Windows.RoutedEventArgs e)
+        private void TalentC(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.TalentCultivation  TalentC = new  Development_performance.TalentCultivation();
             FrameMiddleContent.Navigate(TalentC);
 
         }
-        private void ScientificR(object sender, System.Windows.RoutedEventArgs e)
+        private void ScientificR(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.ScientificResearch  ScientificR = new  Development_performance.ScientificResearch();
@@ -351,19 +351,19 @@ namespace WpfApplication3
 
         }
         
-        private void ComprehensiveI(object sender, RoutedEventArgs e)
+        private void ComprehensiveI(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
             FrameMiddleContent.Navigate(ComprehensiveI);
         }
-        private void ComprehensiveR(object sender, System.Windows.RoutedEventArgs e)
+        private void ComprehensiveR(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.ComprehensiveReputation  ComprehensiveR = new  Development_performance.ComprehensiveReputation();
             FrameMiddleContent.Navigate(ComprehensiveR);
 
         }
-           private void GreenC(object sender, System.Windows.RoutedEventArgs e)
+           private void GreenC(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
             Development_performance.GreenCampus  GreenC = new  Development_performance.GreenCampus();
@@ -371,7 +371,7 @@ namespace WpfApplication3
 
         }
 
-        private void menu6_3_Selected(object sender, System.Windows.RoutedEventArgs e)
+        private void menu6_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			PageShiGuZaiHai m_PageShiGuZaiHai = new PageShiGuZaiHai();
@@ -379,7 +379,7 @@ namespace WpfApplication3
 
 		}
 
-		private void menu7_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu7_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(1);
@@ -388,14 +388,14 @@ namespace WpfApplication3
 			
 		}
 
-		private void menu4_2_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu4_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
             FrameMiddleContent.Navigate(m_PageDocIssue);
 		}
 
-		private void menu8_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu8_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			LargeProject.PageProject m_PageProject = new LargeProject.PageProject();
@@ -403,7 +403,7 @@ namespace WpfApplication3
 
 		}
 
-		private void menu5_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu5_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			
@@ -411,14 +411,14 @@ namespace WpfApplication3
             FrameMiddleContent.Navigate(m_PageCase);
 		}
 
-		private void menu4_3_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu4_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
             DailyManagement.VideoConferencing m_VideoConferencing = new DailyManagement.VideoConferencing();
             FrameMiddleContent.Navigate(m_VideoConferencing);
 		}
 
-		private void menu4_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+		private void menu4_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 			DailyManagement.Schedule m_Schedule = new DailyManagement.Schedule();
@@ -426,61 +426,61 @@ namespace WpfApplication3
 
 		}
 
-        private void menu2_2_Selected(object sender, RoutedEventArgs e)
+        private void menu2_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             ResourcesAndManpower.PageOrganizationStructure m_OrganizationStructure = new ResourcesAndManpower.PageOrganizationStructure();
             FrameMiddleContent.Navigate(m_OrganizationStructure);
         }
 
-        private void menu2_1_Selected(object sender, RoutedEventArgs e)
+        private void menu2_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             ResourcesAndManpower.PageSpatialResource m_Page = new ResourcesAndManpower.PageSpatialResource();
             FrameMiddleContent.Navigate(m_Page);
         }
 
-        private void menu3_1_Selected(object sender, System.Windows.RoutedEventArgs e)
+        private void menu3_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
             FrameMiddleContent.Navigate(m_PageDocIssue);
         }
 
-        private void menu7_2_Selected(object sender, RoutedEventArgs e)
+        private void menu7_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(2);
             FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
         }
 
-        private void menu7_3_Selected(object sender, RoutedEventArgs e)
+        private void menu7_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             FeedBack.PageTeacherStudentFeedback m_PageTeacherStudentFeedback = new FeedBack.PageTeacherStudentFeedback(3);
             FrameMiddleContent.Navigate(m_PageTeacherStudentFeedback);
         }
 
-        private void menu6_2_Selected(object sender, RoutedEventArgs e)
+        private void menu6_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             PageSheHuiAnQuan page = new PageSheHuiAnQuan();
             FrameMiddleContent.Navigate(page);
         }
 
-        private void menu6_1_Selected(object sender, RoutedEventArgs e)
+        private void menu6_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             PageZiRanZaiHai page = new PageZiRanZaiHai();
             FrameMiddleContent.Navigate(page);
         }
 
-        private void menu6_4_Selected(object sender, RoutedEventArgs e)
+        private void menu6_4_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             PageGongGongWeiSheng page = new PageGongGongWeiSheng();
             FrameMiddleContent.Navigate(page);
         }
 
-        private void menu8_2_Selected(object sender, RoutedEventArgs e)
+        private void menu8_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             LargeProject.PageProjectGym m_PageProject = new LargeProject.PageProjectGym();
             FrameMiddleContent.Navigate(m_PageProject);
         }
 
-        private void menu8_3_Selected(object sender, RoutedEventArgs e)
+        private void menu8_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             LargeProject.PageProjectOuter m_PageProject = new LargeProject.PageProjectOuter();
             FrameMiddleContent.Navigate(m_PageProject);
