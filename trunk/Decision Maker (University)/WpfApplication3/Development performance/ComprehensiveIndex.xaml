@@ -19,10 +19,15 @@
             </Rectangle.Effect>
         </Rectangle>
         <Label Style="{DynamicResource Labeltopheader}" Content="综合指数" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
-        <Grid>
-            <Grid>
-                <Label Content="2012综合指数" Height="28" HorizontalAlignment="Left" Margin="14,0,0,897" Name="label1" VerticalAlignment="Bottom" Width="119" />
-                <vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Margin="327,47,357,605">
+        <Grid Grid.Row="1" Grid.RowSpan="2">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="43"/>
+        		<RowDefinition Height="0.365*"/>
+        		<RowDefinition Height="0.635*"/>
+        	</Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Label Content="2012综合指数" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="119" Margin="8,7,0,0" />
+                <vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Background="{x:Null}" Width="576" Height="320" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <vc:Chart.Series>
                         <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
                             <vc:DataSeries.DataPoints>
@@ -39,7 +44,7 @@
                     </vc:Chart.Series>
                 </vc:Chart>
              </Grid>
-            <Grid>
+            <Grid Grid.RowSpan="3">
                 <Label Content="分解目标" Height="28" HorizontalAlignment="Left" Margin="14,429,0,0" Name="label2" VerticalAlignment="Top" Width="108" />
 
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget" Stroke="Black" VerticalAlignment="Top" Width="1000" />
