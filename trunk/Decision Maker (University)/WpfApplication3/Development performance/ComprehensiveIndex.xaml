@@ -19,22 +19,24 @@
             </Rectangle.Effect>
         </Rectangle>
         <Label Style="{DynamicResource Labeltopheader}" Content="综合指数" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+
         <Grid Grid.Row="1" Grid.RowSpan="2">
-        	<Grid.RowDefinitions>
-        		<RowDefinition Height="43"/>
-        		<RowDefinition Height="0.365*"/>
-        		<RowDefinition Height="0.635*"/>
-        	</Grid.RowDefinitions>
-            <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43"/>
+                <RowDefinition Height="0.365*"/>
+                <RowDefinition Height="0.635*"/>
+            </Grid.RowDefinitions>
+            <Grid Name="gridGraph" Grid.Row="1">
                 <Label Content="2012综合指数" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="119" Margin="8,7,0,0" />
-                <vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Background="{x:Null}" Width="576" Height="320" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <vc:Chart Name="m_chart" Rendered="chart_Rendered" xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Margin="327,47,357,605">
+
                     <vc:Chart.Series>
                         <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
                             <vc:DataSeries.DataPoints>
                                 <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Background="Black" >
-                                	<vc:DataPoint.Color>
-                                		<SolidColorBrush Color="#FF59D98F"/>
-                                	</vc:DataPoint.Color>
+                                    <vc:DataPoint.Color>
+                                        <SolidColorBrush Color="#FF59D98F"/>
+                                    </vc:DataPoint.Color>
                                 </vc:DataPoint>
                                 <vc:DataPoint AxisXLabel="科学研究" YValue="40" Color="#FF129698"/>
                                 <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" Color="#FF51D8B6"/>
@@ -43,7 +45,7 @@
                         </vc:DataSeries>
                     </vc:Chart.Series>
                 </vc:Chart>
-             </Grid>
+            </Grid>
             <Grid Grid.RowSpan="3">
                 <Label Content="分解目标" Height="28" HorizontalAlignment="Left" Margin="14,429,0,0" Name="label2" VerticalAlignment="Top" Width="108" />
 
@@ -54,29 +56,29 @@
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4" Stroke="Black" VerticalAlignment="Top" Width="200" />
 
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget_copy" Stroke="Black" VerticalAlignment="Top" Width="1000" >
-                	<Rectangle.Fill>
-                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                	</Rectangle.Fill>
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                    </Rectangle.Fill>
                 </Rectangle>
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                	<Rectangle.Fill>
-                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                	</Rectangle.Fill>
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                    </Rectangle.Fill>
                 </Rectangle>
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                	<Rectangle.Fill>
-                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                	</Rectangle.Fill>
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                    </Rectangle.Fill>
                 </Rectangle>
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                	<Rectangle.Fill>
-                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                	</Rectangle.Fill>
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                    </Rectangle.Fill>
                 </Rectangle>
                 <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                	<Rectangle.Fill>
-                		<SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                	</Rectangle.Fill>
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
+                    </Rectangle.Fill>
                 </Rectangle>
                 <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,395,0,0" Name="totalpercent" VerticalAlignment="Top" />
                 <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="280,482,0,0" Name="part1value" VerticalAlignment="Top" />
@@ -94,8 +96,8 @@
                 <Rectangle Height="320" HorizontalAlignment="Left" Margin="448,643,0,0" Name="verline4" Stroke="Black" VerticalAlignment="Top" Width="1" />
                 <Rectangle Height="320" HorizontalAlignment="Left" Margin="571,726,0,0" Name="verline5" Stroke="Black" VerticalAlignment="Top" Width="1" />
             </Grid>
-          
+
         </Grid>
     </Grid>
-    
+
 </Page>

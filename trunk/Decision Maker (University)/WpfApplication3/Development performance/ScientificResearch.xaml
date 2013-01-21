@@ -147,11 +147,15 @@
             					<CheckBox x:Name="shehui1"  Content="国家社会科学基金项目成果" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}" />
-            				<StackPanel Grid.Row="2" Orientation="Vertical">
-            					<Label Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg"/>
-            				</StackPanel>
-            				<StackPanel Grid.Row="3" Orientation="Vertical">
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
+                                <Grid Grid.Row="1" Name="gridAchievement" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            </Grid>
+                            <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
             					<TextBox Text="指科研人员在他所从事的某一科学技术研究项目或课题研究范围内，通过实验观察、调查研究、综合分析等一系列脑力、体力劳动所取得的、并经过评审或鉴定，确认具有学术意义和实用价值的创造性结果。它是科技工作者辛勤劳动的结晶，是人类重要的精神财富和物质财富；是一种具有特殊意义的生产力，也是衡量科学研究任务完成与否，质量优劣，以及科研人员贡献大小的重要标志。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold"/>
             				</StackPanel>
@@ -226,11 +230,15 @@
             					<CheckBox x:Name="shehui2"  Content="国家社会科学研究基地" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shizishuiping_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}"/>
-            				<StackPanel Grid.Row="2" Orientation="Vertical">
-            					<Label Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg"/>
-            				</StackPanel>
-            				<StackPanel Grid.Row="3" Orientation="Vertical">
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
+                                <Grid Grid.Row="1" Name="gridBase" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            </Grid>
+                            <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
             					<TextBox Text="学校按照应用领先、基础突破、协调发展的科技发展方略，初步构建起了覆盖基础研究层、高新技术研究层、技术开发层三个层次的科技创新体系。光电国家实验室（筹）和脉冲强磁场实验装置国家重大科技基础设施，还拥有5个国家重点实验室、1个国防重点实验室、6个国家工程（技术）研究中心、1个国家工程实验室等一批国家级和部、省级研究基地。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold"/>
             				</StackPanel>
@@ -304,10 +312,14 @@
             					<CheckBox x:Name="shehui3"  Content="国家社会科学基金项目" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
-            				<StackPanel Grid.Row="2" Orientation="Vertical">
-            					<Label Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg"/>
-            				</StackPanel>
+            				<Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+            					<Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
+            					<Grid Grid.Row="1" Name="gridProject" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            				</Grid>
             				<StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
             					<TextBox Text="科研项目是指课题从项目申请、立项论证、组织实施、检查评估、验收鉴定、成果申报、科技推广、档案入卷的全程管理。其目的是使科研项目实行制度化和科学化的管理，保证科研计划圆满完成，出成果、出人才、出效益，提高竞争力。" TextWrapping="Wrap" FontSize="14" FontWeight="Bold"/>

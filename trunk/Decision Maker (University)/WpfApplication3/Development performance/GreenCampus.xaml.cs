@@ -17,6 +17,8 @@ using WpfZhihui;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using System.Net;
+using WpfApplication3.CreateChart;
+using Visifire.Charts;
 
 namespace WpfApplication3.Development_performance
 {
@@ -41,6 +43,181 @@ namespace WpfApplication3.Development_performance
             W_xiaohao.ObjectForScripting = ds;
             W_huanjing.Navigate(new Uri(strPATH + @"/html/GreenDetect.htm", UriKind.RelativeOrAbsolute));
             W_huanjing.ObjectForScripting = ds;
+
+            CreateChart.ChartInformation ci1 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "水耗",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Column,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "1月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "3月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "4月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "5月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "6月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "7月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "8月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "9月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "10月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "11月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "12月",
+                                    YValue = 25,
+                                },
+                            }
+                        },
+                    },
+            };
+            CreateChart.ChartInformation ci2 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "能耗",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Line,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "1月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "3月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "4月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "5月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "6月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "7月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "8月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "9月",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "10月",
+                                    YValue = 18,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "11月",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "12月",
+                                    YValue = 25,
+                                },
+                            }
+                        },
+                    },
+            };
+
+            ChartHelper ch = new ChartHelper();
+            Chart m_chart1 = ch.CreateChart(ci1);
+            gridGraph1.Children.Clear();
+            gridGraph1.Children.Add(m_chart1);
+
+            Chart m_chart2 = ch.CreateChart(ci2);
+            gridGraph2.Children.Clear();
+            gridGraph2.Children.Add(m_chart2);
+
         }
         public static string ToJsJson(object item)
         {
