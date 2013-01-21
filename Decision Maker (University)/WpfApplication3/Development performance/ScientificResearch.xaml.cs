@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Visifire.Charts;
+using WpfApplication3.CreateChart;
 
 namespace WpfApplication3.Development_performance
 {
@@ -254,6 +256,272 @@ namespace WpfApplication3.Development_performance
 
             L_xuekeshuiping.DataContext = SubInfo;
             L_xuekeshuiping.SelectedIndex = 0;
+
+
+            loadGraph();
+        }
+
+        protected void loadGraph()
+        {
+            CreateChart.ChartInformation ci1 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "科研成果",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Column,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 36,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 27,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 48,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 29,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 50,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 31,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 62,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 33,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 74,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 86,
+                                },
+                            }
+                        },
+                    },
+            };
+            CreateChart.ChartInformation ci2 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "科研基地",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Line,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 16,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 27,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 48,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 29,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 80,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 31,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 82,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 33,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 94,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 96,
+                                },
+                            }
+                        },
+                    },
+            };
+            CreateChart.ChartInformation ci3 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "科研项目",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Area,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 26,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 20,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 48,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 29,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 90,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 31,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 32,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 53,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 34,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 76,
+                                },
+                            }
+                        },
+                    },
+            };
+
+            ChartHelper ch = new ChartHelper();
+            Chart m_chart1 = ch.CreateChart(ci1);
+            gridAchievement.Children.Clear();
+            gridAchievement.Children.Add(m_chart1);
+
+            Chart m_chart2 = ch.CreateChart(ci2);
+            gridBase.Children.Clear();
+            gridBase.Children.Add(m_chart2);
+
+            Chart m_chart3 = ch.CreateChart(ci3);
+            gridProject.Children.Clear();
+            gridProject.Children.Add(m_chart3);
 
         }
 

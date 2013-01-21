@@ -210,8 +210,8 @@
         							<RowDefinition Height="50*" />
         							<RowDefinition Height="50*" />
         						</Grid.RowDefinitions>
-        						<Image Grid.Row="0" Source="/WpfApplication3;component/Images/table.png" />
-        						<Image Grid.Row="1" Source="/WpfApplication3;component/Images/tubiao1.jpg" />
+                                <Grid Grid.Row="0" Name="gridGraph1"/>
+                                <Grid Grid.Row="1" Name="gridGraph2"/>
         					</Grid>
         				</Grid>
         			</Grid>

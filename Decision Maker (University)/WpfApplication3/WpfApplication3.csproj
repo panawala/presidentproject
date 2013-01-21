@@ -101,6 +101,9 @@
     <Reference Include="WPFVisifire.Charts">
       <HintPath>..\Library\Visifire\WPFVisifire.Charts.dll</HintPath>
     </Reference>
+    <Reference Include="WPFVisifire.Gauges">
+      <HintPath>..\Library\Visifire\WPFVisifire.Gauges.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -129,6 +132,8 @@
     <Compile Include="Control\CxHelp.xaml.cs">
       <DependentUpon>CxHelp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateChart\ChartHelper.cs" />
+    <Compile Include="CreateChart\ChartInformation.cs" />
     <Compile Include="DailyManagement\Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>

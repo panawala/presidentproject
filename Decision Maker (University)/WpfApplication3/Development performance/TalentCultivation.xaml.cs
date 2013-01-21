@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Visifire.Charts;
+using WpfApplication3.CreateChart;
 
 namespace WpfApplication3.Development_performance
 {
@@ -19,7 +21,7 @@ namespace WpfApplication3.Development_performance
     /// </summary>
     public partial class TalentCultivation : Page
     {
-       
+
         public TalentCultivation()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace WpfApplication3.Development_performance
 
         protected void Page_Loaded(object sender, RoutedEventArgs e)
         {
-             List<TeaInformation> TeaInfo = new List<TeaInformation>
+            List<TeaInformation> TeaInfo = new List<TeaInformation>
             {
                 new TeaInformation
                 {
@@ -135,7 +137,7 @@ namespace WpfApplication3.Development_performance
                     lianxifangshi = "未知",
                 }
             };
-             List<SubInformation> SubInfo = new List<SubInformation>
+            List<SubInformation> SubInfo = new List<SubInformation>
              {
                  new SubInformation
                  {
@@ -248,17 +250,281 @@ namespace WpfApplication3.Development_performance
                  }
              };
 
-             L_shizishuiping.DataContext = TeaInfo;
-             L_shizishuiping.SelectedIndex = 0;
+            L_shizishuiping.DataContext = TeaInfo;
+            L_shizishuiping.SelectedIndex = 0;
 
-             L_jiaoyujiaoxue.DataContext = SubInfo;
-             L_jiaoyujiaoxue.SelectedIndex = 0;
+            L_jiaoyujiaoxue.DataContext = SubInfo;
+            L_jiaoyujiaoxue.SelectedIndex = 0;
 
-             L_xuekeshuiping.DataContext = SubInfo;
-             L_xuekeshuiping.SelectedIndex = 0;
+            L_xuekeshuiping.DataContext = SubInfo;
+            L_xuekeshuiping.SelectedIndex = 0;
 
+            loadGraph();
+            
         }
 
+        protected void loadGraph()
+        {
+            CreateChart.ChartInformation ci1 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "教育教学",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Column,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 15,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 26,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 27,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 28,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 39,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 30,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 41,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 32,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 53,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 34,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 65,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 36,
+                                },
+                            }
+                        },
+                    },
+            };
+            CreateChart.ChartInformation ci2 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "师资水平",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Line,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 26,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 37,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 28,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 49,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 30,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 51,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 32,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 63,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 34,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 75,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 36,
+                                },
+                            }
+                        },
+                    },
+            };
+            CreateChart.ChartInformation ci3 = new ChartInformation()
+            {
+                m_BorderThickness = new Thickness(1.0),
+                m_Theme = "Theme1",
+                m_View3D = true,
+                m_axisXTitle = "学科水平",
+                m_axisYTitle = "",
+                m_axisYMaximum = 100,
+                m_axisYInterval = 20,
+                dsc = new DataSeriesCollection()
+                    {
+                        new DataSeries()
+                        {
+                            LegendText = "",
+                            RenderAs = RenderAs.Area,
+                            AxisYType = AxisTypes.Primary,
+                            DataPoints = new DataPointCollection()
+                            {
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2001年",
+                                    YValue = 25,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2002年",
+                                    YValue = 26,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2003年",
+                                    YValue = 27,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2004年",
+                                    YValue = 28,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2005年",
+                                    YValue = 29,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2006年",
+                                    YValue = 30,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2007年",
+                                    YValue = 31,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2008年",
+                                    YValue = 32,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2009年",
+                                    YValue = 33,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2010年",
+                                    YValue = 34,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2011年",
+                                    YValue = 35,
+                                },
+                                new DataPoint()
+                                {
+                                    AxisXLabel = "2012年",
+                                    YValue = 36,
+                                },
+                            }
+                        },
+                    },
+            };
+
+            ChartHelper ch = new ChartHelper();
+            Chart m_chart1 = ch.CreateChart(ci1);
+            gridEducation.Children.Clear();
+            gridEducation.Children.Add(m_chart1);
+
+            Chart m_chart2 = ch.CreateChart(ci2);
+            gridTeaching.Children.Clear();
+            gridTeaching.Children.Add(m_chart2);
+
+            Chart m_chart3 = ch.CreateChart(ci3);
+            gridAcademic.Children.Clear();
+            gridAcademic.Children.Add(m_chart3);
+        }
 
         protected void S_jiaoyujiaoxue_Click(object sender, RoutedEventArgs e)
         {
@@ -377,7 +643,7 @@ namespace WpfApplication3.Development_performance
             L_jiaoyujiaoxue.DataContext = SubInfo1.Where(s => (gaoxiaoxueke1.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu1.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan1.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
             L_jiaoyujiaoxue.SelectedIndex = 0;
 
-          
+
         }
         protected void S_shizishuiping_Click(object sender, RoutedEventArgs e)
         {
@@ -490,12 +756,12 @@ namespace WpfApplication3.Development_performance
                 }
             };
 
-            L_shizishuiping.DataContext = TeaInfo1.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.zhiwu == "中国科学院院士") || (zhonggongyuan.IsChecked.Equals(true) && s.zhiwu == "中国工程院院士") || (guowaiyuan.IsChecked.Equals(true) && s.zhiwu == "国外院士") || (renwenshehui.IsChecked.Equals(true) && s.zhiwu == "杰出人文社会科学家") || (jiaoxuemingshi.IsChecked.Equals(true) && s.zhiwu == "国家级教学名师") || (qianrenjihua.IsChecked.Equals(true) && s.zhiwu == "千人计划入选者")); 
+            L_shizishuiping.DataContext = TeaInfo1.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.zhiwu == "中国科学院院士") || (zhonggongyuan.IsChecked.Equals(true) && s.zhiwu == "中国工程院院士") || (guowaiyuan.IsChecked.Equals(true) && s.zhiwu == "国外院士") || (renwenshehui.IsChecked.Equals(true) && s.zhiwu == "杰出人文社会科学家") || (jiaoxuemingshi.IsChecked.Equals(true) && s.zhiwu == "国家级教学名师") || (qianrenjihua.IsChecked.Equals(true) && s.zhiwu == "千人计划入选者"));
             L_shizishuiping.SelectedIndex = 0;
         }
         private void S_xuekeshuiping_Click(object sender, RoutedEventArgs e)
         {
-           
+
             List<SubInformation> SubInfo2 = new List<SubInformation>
              {
                  new SubInformation
@@ -608,7 +874,7 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_xuekeshuiping.DataContext = SubInfo2.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）")||(yijizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科")||(erjizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科")||(zhongdianpeiyu.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科")||(liudongzhan.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
+            L_xuekeshuiping.DataContext = SubInfo2.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
             L_xuekeshuiping.SelectedIndex = 0;
         }
         public class TeaInformation
@@ -628,6 +894,6 @@ namespace WpfApplication3.Development_performance
             public string qita1 { get; set; }
         }
 
-     
+
     }
 }

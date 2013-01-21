@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
+using Visifire.Charts;
 
 namespace WpfApplication3.Development_performance
 {
@@ -116,6 +117,7 @@ namespace WpfApplication3.Development_performance
             tlable.Left += width[3];
             verline5.Margin = tlable;
 
+
                                                                                     //动画开始
             for (int i = 0; i < 4; i++)
             {
@@ -145,7 +147,16 @@ namespace WpfApplication3.Development_performance
             myTotalStoryboard.Children.Add(mytotalAnimation);
             myTotalStoryboard.AutoReverse = false;
             myTotalStoryboard.Begin(this);
-		
+
+        }
+        void chart_Rendered(object sender, EventArgs e)
+        {
+            Chart c = sender as Chart;
+            Legend legend = c.Legends[0];
+            Grid root = legend.Parent as Grid;
+            int i = root.Children.Count;
+            root.Children.RemoveAt(i - 6);
+            root.Children.RemoveAt(i - 6);
         }
     }
 }
