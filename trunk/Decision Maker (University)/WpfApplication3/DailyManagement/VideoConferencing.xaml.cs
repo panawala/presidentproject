@@ -185,6 +185,11 @@ namespace WpfApplication3.DailyManagement
 
             listBox4.DataContext = infos.Where(s => s.Type == "媒体报道");
             listBox4.SelectedIndex = 0;
+
+            string str = infos[0].Address;
+            showPDF1(str);
+            str = infos[1].Address;
+            showPDF2(str);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -402,11 +407,6 @@ namespace WpfApplication3.DailyManagement
             public string Title { get; set; }
             public string Type { get; set; }
             public string Address { get; set; }
-        }
-
-        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
     }
