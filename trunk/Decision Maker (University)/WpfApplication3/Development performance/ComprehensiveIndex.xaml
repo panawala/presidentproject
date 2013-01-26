@@ -28,73 +28,156 @@
             </Grid.RowDefinitions>
             <Grid Name="gridGraph" Grid.Row="1">
                 <Label Content="2012综合指数" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="119" Margin="8,7,0,0" />
-                <vc:Chart Name="m_chart" Rendered="chart_Rendered" xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Margin="327,47,357,605">
+                <Grid>
+                    <vc:Chart Name="m_chart" Rendered="chart_Rendered" xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts" BorderThickness="0" BorderBrush="#FEFFF2" Theme="Theme1" AnimationEnabled="True" ToolBarEnabled="True" ColorSet="VisiGreen" Watermark="False" Bevel="False" LightingEnabled="True" ShadowEnabled="False" Margin="332,10,352,10">
+                        <vc:Chart.Series>
+                            <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
+                                <vc:DataSeries.DataPoints>
+                                    <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Background="Black" >
+                                        <vc:DataPoint.Color>
+                                            <SolidColorBrush Color="#FF59D98F"/>
+                                        </vc:DataPoint.Color>
+                                    </vc:DataPoint>
+                                    <vc:DataPoint AxisXLabel="科学研究" YValue="40" Color="#FF129698"/>
+                                    <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" Color="#FF51D8B6"/>
+                                    <vc:DataPoint AxisXLabel="综合声誉" YValue="26" Color="#FF13BA85"/>
+                                </vc:DataSeries.DataPoints>
+                            </vc:DataSeries>
+                        </vc:Chart.Series>
+                    </vc:Chart>
 
-                    <vc:Chart.Series>
-                        <vc:DataSeries LegendText="综合指数" RenderAs="Doughnut" AxisYType="Secondary" >
-                            <vc:DataSeries.DataPoints>
-                                <vc:DataPoint AxisXLabel="人才培养" YValue="45.5" Background="Black" >
-                                    <vc:DataPoint.Color>
-                                        <SolidColorBrush Color="#FF59D98F"/>
-                                    </vc:DataPoint.Color>
-                                </vc:DataPoint>
-                                <vc:DataPoint AxisXLabel="科学研究" YValue="40" Color="#FF129698"/>
-                                <vc:DataPoint AxisXLabel="绿色校园" YValue="30.5" Color="#FF51D8B6"/>
-                                <vc:DataPoint AxisXLabel="综合声誉" YValue="26" Color="#FF13BA85"/>
-                            </vc:DataSeries.DataPoints>
-                        </vc:DataSeries>
-                    </vc:Chart.Series>
-                </vc:Chart>
+                </Grid>
             </Grid>
-            <Grid Grid.RowSpan="3">
-                <Label Content="分解目标" Height="28" HorizontalAlignment="Left" Margin="14,429,0,0" Name="label2" VerticalAlignment="Top" Width="108" />
+            <Grid Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <Grid Grid.Row="0">
+                    <TextBlock Height="50" Width="280" Margin="10,10,0,0" Text="分解目标" HorizontalAlignment="Left" Background="#FF4FDDF3" FontSize="36" FontFamily="YouYuan" FontWeight="SemiBold" LineStackingStrategy="BlockLineHeight" Foreground="White" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid Name="PartedTarget" Margin="10,70,10,10" ShowGridLines="True" Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Rectangle Height="55"  Margin="10,10,10,0" Name="part1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280"  Fill="#FFFBCDA6" />
+                            <Rectangle Height="55"  Margin="10,10,10,0" Name="part1_copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280"  Fill="#FFFB841F" />
+                            <TextBlock Height="30" Text="N/N" x:Name="part1_value" Margin="153,22,20,50" FontSize="22" TextAlignment="Right" FontFamily="Verdana"/>
+                            <TextBlock Height="30" Width=" 100" Text="人才培养" Margin="10,22,200,50" x:Name="part1_name" Foreground="White" FontFamily="YouYuan" FontSize="24" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid Margin="20,20,20,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="二级指标" Grid.Row="0" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontFamily="SimHei" FontWeight="Bold"/>
+                                <TextBlock x:Name="tb_tc_edu" Text="教育教学" Grid.Row="1" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_tc_edu_MouseDown"/>
+                                <TextBlock x:Name="tb_tc_teachers" Text="师资队伍" Grid.Row="2" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_tc_teachers_MouseDown"/>
+                                <TextBlock x:Name="tb_tc_train" Text="培养基地" Grid.Row="3" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_tc_train_MouseDown"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="1" Fill="#FFA8B7DE" />
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part2_copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="1" Fill="#FF1D52DE" />
+                            <TextBlock Height="30" Width=" 100" Text="科学研究" Margin="10,22,200,50" x:Name="part2_name" Foreground="White" FontFamily="YouYuan" FontSize="24" FontWeight="Bold"/>
+                            <TextBlock Height="30" Text="N/N" x:Name="part2_value" Margin="128,22,20,50" FontSize="22" TextAlignment="Right" FontFamily="Verdana"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid Margin="20,20,20,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="二级指标" Grid.Row="0" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontFamily="SimHei" FontWeight="Bold"/>
+                                <TextBlock x:Name="tb_sr_achievements" Text="科研成果" Grid.Row="1" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_sr_achievements_MouseDown"/>
+                                <TextBlock x:Name="tb_sr_research" Text="科研基地" Grid.Row="2" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_sr_research_MouseDown"/>
+                                <TextBlock x:Name="tb_sr_project" Text="科研项目" Grid.Row="3" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_sr_project_MouseDown"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="2" Fill="#FFF7A4B7" />
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part3_copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="2"  Fill="#FFD41C46" />
+                            <TextBlock Height="30" Width=" 100" Text="综合声誉" Margin="10,22,200,50" x:Name="part3_name" Foreground="White" FontFamily="YouYuan" FontSize="24" FontWeight="Bold"/>
+                            <TextBlock Height="30" Text="N/N" x:Name="part3_value" Margin="149,22,20,50" FontSize="22" TextAlignment="Right" FontFamily="Verdana"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid Margin="20,20,20,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="二级指标" Grid.Row="0" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontFamily="SimHei" FontWeight="Bold"/>
+                                <TextBlock x:Name="tb_cr_academic" Text="学术声誉" Grid.Row="1" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_cr_academic_MouseDown"/>
+                                <TextBlock x:Name="tb_cr_donate" Text="校友捐赠" Grid.Row="2" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_cr_donate_MouseDown"/>
+                                <TextBlock x:Name="tb_cr_reputation" Text="社会声誉" Grid.Row="3" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_cr_reputation_MouseDown"/>
+                                <TextBlock x:Name="tb_cr_schoolfellow" Text="杰出校友" Grid.Row="4" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_cr_schoolfellow_MouseDown"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="3" Fill="#FFD2F79D" />
+                            <Rectangle Height="55" Margin="10,10,10,0" Name="part4_copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Grid.Column="3" Fill="#FF74BF07" />
+                            <TextBlock Height="30" Width=" 100" Text="绿色校园" Margin="10,22,200,50" x:Name="part4_name" Foreground="White" FontFamily="YouYuan" FontSize="24" FontWeight="Bold"/>
+                            <TextBlock Height="30" Text="N/N" x:Name="part4_value" Margin="158,22,20,50" FontSize="22" TextAlignment="Right" FontFamily="Verdana"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid Margin="20,20,20,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="二级指标" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontFamily="SimHei" FontWeight="Bold"/>
+                                <TextBlock x:Name="tb_gc_resource" Text="资源消耗" Grid.Row="1" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_gc_resource_MouseDown"/>
+                                <TextBlock x:Name="tb_cr_environment" Text="环境品质" Grid.Row="2" VerticalAlignment="Center" FontSize="28" FontFamily="FangSong" HorizontalAlignment="Center" MouseDown="tb_cr_environment_MouseDown"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
 
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget" Stroke="Black" VerticalAlignment="Top" Width="1000" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3" Stroke="Black" VerticalAlignment="Top" Width="200" />
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4" Stroke="Black" VerticalAlignment="Top" Width="200" />
 
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,450,0,0" Name="totalTarget_copy" Stroke="Black" VerticalAlignment="Top" Width="1000" >
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="120,530,0,0" Name="part1_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="240,610,0,0" Name="part2_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="360,690,0,0" Name="part3_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Rectangle Height="35" HorizontalAlignment="Left" Margin="480,770,0,0" Name="part4_copy" Stroke="Black" VerticalAlignment="Top" Width="200" >
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{DynamicResource GreenLeft}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,395,0,0" Name="totalpercent" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="280,482,0,0" Name="part1value" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="120,482,0,0" Name="part1percent" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="335,522,0,0" Name="part2percent" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="1080,395,0,0" Name="totalvalue" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="537,541,0,0" Name="part2value" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="635,581,0,0" Name="part3percent" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="744,601,0,0" Name="part3value" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="870,643,0,0" Name="part4percent" VerticalAlignment="Top" />
-                <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="970,643,0,0" Name="part4value" VerticalAlignment="Top" />
-                <Rectangle Height="80" HorizontalAlignment="Left" Margin="120,450,0,0" Name="verline1" Stroke="Black" VerticalAlignment="Top" Width="1" />
-                <Rectangle Height="160" HorizontalAlignment="Left" Margin="248,643,0,0" Name="verline2" Stroke="Black" VerticalAlignment="Top" Width="1" />
-                <Rectangle Height="240" HorizontalAlignment="Left" Margin="348,643,0,0" Name="verline3" Stroke="Black" VerticalAlignment="Top" Width="1" />
-                <Rectangle Height="320" HorizontalAlignment="Left" Margin="448,643,0,0" Name="verline4" Stroke="Black" VerticalAlignment="Top" Width="1" />
-                <Rectangle Height="320" HorizontalAlignment="Left" Margin="571,726,0,0" Name="verline5" Stroke="Black" VerticalAlignment="Top" Width="1" />
+
+
+                </Grid>
             </Grid>
 
         </Grid>

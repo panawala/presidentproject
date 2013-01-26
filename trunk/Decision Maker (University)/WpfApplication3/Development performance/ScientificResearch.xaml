@@ -80,7 +80,7 @@
                 <Label Content="科学研究" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
             </Grid>
             <TabControl Grid.Row="1" Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0">
-            	<TabItem Header="科研成果" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_achievements" Header="科研成果" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -163,7 +163,7 @@
             			</Grid>
 					 </Grid>
             	</TabItem>
-            	<TabItem Header="科研基地" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
+            	<TabItem x:Name="tabI_research" Header="科研基地" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -245,7 +245,7 @@
             			</Grid>
 					</Grid>
             	</TabItem>
-            	<TabItem Header="科研项目" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-70,-3">
+            	<TabItem x:Name="tabI_project" Header="科研项目" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-70,-3">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>

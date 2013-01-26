@@ -27,9 +27,24 @@ namespace WpfApplication3.Development_performance
     {
 
         private List<NewsItem> items = new List<NewsItem>();
-        public ComprehensiveReputation()
+        public ComprehensiveReputation(int defaultTabItem)
         {
             InitializeComponent();
+            switch (defaultTabItem)
+            {
+                case 1:
+                    tabI_academic.IsSelected = true;
+                    break;
+                case 2:
+                    tabI_donate.IsSelected = true;
+                    break;
+                case 3:
+                    tabI_reputation.IsSelected = true;
+                    break;
+                case 4:
+                    tabI_schoolfellow.IsSelected = true;
+                    break;
+            }
         }
 
         protected void Page_Loaded(object sender, RoutedEventArgs e)

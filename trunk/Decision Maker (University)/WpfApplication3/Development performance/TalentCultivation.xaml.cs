@@ -22,9 +22,28 @@ namespace WpfApplication3.Development_performance
     public partial class TalentCultivation : Page
     {
 
-        public TalentCultivation()
+        public TalentCultivation(int i)
         {
             InitializeComponent();
+            //确定默认选项
+            switch (i){
+                case 1:
+                    tabI_education.IsSelected = true;
+                    tabI_teachers.IsSelected = false;
+                    tabI_train.IsSelected = false;
+                    break;
+                case 2:
+
+                    tabI_education.IsSelected = false;
+                    tabI_teachers.IsSelected = true;
+                    tabI_train.IsSelected = false;
+                    break;
+                case 3:
+                    tabI_education.IsSelected = false;
+                    tabI_teachers.IsSelected = false;
+                    tabI_train.IsSelected = true;
+                    break;
+            }
         }
 
         protected void Page_Loaded(object sender, RoutedEventArgs e)

@@ -48,7 +48,7 @@
         		<Label Content="绿色校园" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
         	</Grid>
         	<TabControl Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0" Grid.Row="1">
-        		<TabItem Header="实时校园消耗" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-30,-3">
+        		<TabItem x:Name="tabI_resource" Header="实时校园消耗" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-30,-3">
         			<Grid>
         				<Grid.RowDefinitions>
         					<RowDefinition Height="193.644"/>
@@ -216,7 +216,7 @@
         				</Grid>
         			</Grid>
         		</TabItem>
-        		<TabItem Header="实时校园环境" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
+        		<TabItem x:Name="tabI_environment" Header="实时校园环境" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
         			<Grid>
         				<Grid.RowDefinitions>
         					<RowDefinition Height="193.644"/>

@@ -21,9 +21,21 @@ namespace WpfApplication3.Development_performance
     /// </summary>
     public partial class ScientificResearch : Page
     {
-        public ScientificResearch()
+        public ScientificResearch(int defaultTabItem)
         {
             InitializeComponent();
+            switch (defaultTabItem)
+            {
+                case 1:
+                    tabI_achievements.IsSelected = true;
+                    break;
+                case 2:
+                    tabI_research.IsSelected = true;
+                    break;
+                case 3:
+                    tabI_project.IsSelected = true;
+                    break;
+            }
         }
         protected void Page_Loaded(object sender, RoutedEventArgs e)
         {

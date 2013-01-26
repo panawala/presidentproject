@@ -79,7 +79,7 @@
             	<Label Content="培养进度" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
             </Grid>
             <TabControl Grid.Row="1" Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0">
-            	<TabItem Header="教育教学" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_education" Header="教育教学" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -159,7 +159,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="师资水平" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-50,-3" Width="89" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_teachers" Header="师资水平" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-50,-3" Width="89" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -239,7 +239,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="学科水平" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,-3" Height="28" VerticalAlignment="Top">
+            	<TabItem x:Name="tabI_train" Header="学科水平" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,-3">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
