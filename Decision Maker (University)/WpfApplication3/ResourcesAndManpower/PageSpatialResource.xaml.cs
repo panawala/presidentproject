@@ -35,6 +35,30 @@ namespace WpfApplication3.ResourcesAndManpower
                 Top=221,
                 Left=540
             },
+            new SpatialNode
+            {
+                Name="足球场",
+                Type="体育场馆",
+                ImageUrl=@"\Images\足球场.jpg",
+                BuildingIntro="同济大学足球场建筑信息",
+                CurrentUse="同济大学足球场当前使用状况",
+                Organization="同济大学足球场建筑结构",
+                RecentActivity="同济大学足球场近期活动",
+                Left=529,
+                Top=569
+            },
+            new SpatialNode
+            {
+                Name="操场",
+                Type="体育场馆",
+                ImageUrl=@"\Images\操场.jpg",
+                BuildingIntro="同济大学操场建筑信息",
+                CurrentUse="同济大学操场当前使用状况",
+                Organization="同济大学操场建筑结构",
+                RecentActivity="同济大学操场近期活动",
+                Left=337,
+                Top=351
+            },
              new SpatialNode
             {
                 Name="西北四楼",
@@ -70,7 +94,32 @@ namespace WpfApplication3.ResourcesAndManpower
                 RecentActivity="RecentActivity",
                 Top=498,
                 Left=343
+            },
+            new SpatialNode
+            {
+                Name="三好坞",
+                Type="设施和实验室",
+                ImageUrl=@"\Images\三好坞.jpg",
+                BuildingIntro="三好坞建筑信息",
+                CurrentUse="三好坞当前使用状况",
+                Organization="三好坞建筑结构",
+                RecentActivity="三好坞最近活动",
+                Left=487,
+                Top=158
+            },
+            new SpatialNode
+            {
+                Name="综合楼",
+                Type="教学办公用楼",
+                ImageUrl=@"\Images\综合楼.jpg",
+                BuildingIntro="综合楼建筑信息",
+                CurrentUse="综合楼当前使用状况",
+                Organization="综合楼建筑结构",
+                RecentActivity="综合楼最近活动",
+                Left=676,
+                Top=240
             }
+
         };
 
         public PageSpatialResource()

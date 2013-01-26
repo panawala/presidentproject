@@ -26,12 +26,12 @@ namespace WpfApplication3.FeedBack
         DataSetFeedback.T_FeedBackDataTable dtCurrent;
         int iCurrentItem;
         List<string> lstrSend;
+        int iType;
         public PageTeacherStudentFeedback(int type)
         {
             InitializeComponent();
-            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
-            dtCurrent = adapter.GetData(type);
-            listboxFeedback.ItemsSource = dtCurrent;
+            iType = type;
+            rbtAlreadyRead.IsChecked = true;
             btnPrevious.IsEnabled = false;
             btnNext.IsEnabled = false;
             lstrSend = new List<string>();
@@ -45,6 +45,7 @@ namespace WpfApplication3.FeedBack
                 lblWindowTitle.Content = "企业联盟反馈";
             if(dtCurrent.Count>0)
                 ShowFeedBack(0);
+            
         }
 
         private void btnFeedbackShow_Click(object sender, RoutedEventArgs e)
@@ -61,7 +62,7 @@ namespace WpfApplication3.FeedBack
             if (tbxSearch.Text != "")
             {
                 DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
-                dtCurrent = adapter.GetDataByKey(1, tbxSearch.Text);
+                dtCurrent = adapter.GetDataByKey(iType, tbxSearch.Text);
                 listboxFeedback.ItemsSource = dtCurrent;
             }
         }
@@ -111,6 +112,9 @@ namespace WpfApplication3.FeedBack
             else
                 this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection();
             this.InkCanvasAnnotation1.IsEnabled = true;
+            int id = row.Id;
+            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+            adapter.UpdateFeedBackAlreadyRead(id);
         }
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
@@ -158,6 +162,9 @@ namespace WpfApplication3.FeedBack
             this.InkCanvasAnnotation1.Strokes.Save(fs);
             fs.Close();
             MessageBox.Show("批示保存成功！");
+            int id = dtCurrent[iCurrentItem].Id;
+            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+            adapter.UpdateFeedBackAlreadyComment(id);
         }
 
         private void btnCommentClear_Click(object sender, RoutedEventArgs e)
@@ -259,6 +266,36 @@ namespace WpfApplication3.FeedBack
             int i = listboxSend.Items.IndexOf(((ListBoxItem)obj).Content);
             listboxSend.Items.RemoveAt(i);
 
+        }
+
+        private void rbtNoRead_Checked_1(object sender, RoutedEventArgs e)
+        {
+            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+            dtCurrent = adapter.GetData(iType, false, false);
+            listboxFeedback.ItemsSource = dtCurrent;
+            btnPrevious.IsEnabled = false;
+            btnNext.IsEnabled = false;
+            iCurrentItem = -1;
+        }
+
+        private void rbtAlreadyRead_Checked_1(object sender, RoutedEventArgs e)
+        {
+            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+            dtCurrent = adapter.GetData(iType, false, true);
+            listboxFeedback.ItemsSource = dtCurrent;
+            btnPrevious.IsEnabled = false;
+            btnNext.IsEnabled = false;
+            iCurrentItem = -1;
+        }
+
+        private void rbtAlreadyComment_Checked_1(object sender, RoutedEventArgs e)
+        {
+            DataSetFeedbackTableAdapters.T_FeedBackTableAdapter adapter = new DataSetFeedbackTableAdapters.T_FeedBackTableAdapter();
+            dtCurrent = adapter.GetData(iType, true, true);
+            listboxFeedback.ItemsSource = dtCurrent;
+            btnPrevious.IsEnabled = false;
+            btnNext.IsEnabled = false;
+            iCurrentItem = -1;
         }
     }
 }

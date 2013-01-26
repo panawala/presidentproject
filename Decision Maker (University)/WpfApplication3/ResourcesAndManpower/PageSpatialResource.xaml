@@ -56,7 +56,8 @@
         								<Canvas.Background>
         									<ImageBrush ImageSource="/WpfApplication3;component/Images/校长-资源统筹-map-15.jpg" />
         								</Canvas.Background>
-        							</Canvas>
+
+                                    </Canvas>
         						</Viewbox>
         					</Grid>
         					<Grid Grid.Row="1">
