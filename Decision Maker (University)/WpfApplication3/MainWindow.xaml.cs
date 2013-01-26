@@ -393,7 +393,7 @@ namespace WpfApplication3
 		private void menu8_1_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
-			LargeProject.PageProject m_PageProject = new LargeProject.PageProject();
+			LargeProject.PageProject m_PageProject = new LargeProject.PageProject(1);
             FrameMiddleContent.Navigate(m_PageProject);
 
 		}
@@ -471,13 +471,39 @@ namespace WpfApplication3
 
         private void menu8_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            LargeProject.PageProjectGym m_PageProject = new LargeProject.PageProjectGym();
+            //LargeProject.PageProjectGym m_PageProject = new LargeProject.PageProjectGym();
+            //FrameMiddleContent.Navigate(m_PageProject);
+
+            LargeProject.PageProject m_PageProject = new LargeProject.PageProject(2);
             FrameMiddleContent.Navigate(m_PageProject);
         }
 
         private void menu8_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            LargeProject.PageProjectOuter m_PageProject = new LargeProject.PageProjectOuter();
+            //LargeProject.PageProjectOuter m_PageProject = new LargeProject.PageProjectOuter();
+            //FrameMiddleContent.Navigate(m_PageProject);
+            
+			LargeProject.PageProject m_PageProject = new LargeProject.PageProject(3);
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
+        private void menu8_5_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            LargeProject.PageProject m_PageProject = new LargeProject.PageProject(5);
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
+
+        private void menu8_4_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            LargeProject.PageProject m_PageProject = new LargeProject.PageProject(4);
+            FrameMiddleContent.Navigate(m_PageProject);
+        }
+
+        private void menu8_6_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            LargeProject.PageProject m_PageProject = new LargeProject.PageProject(6);
             FrameMiddleContent.Navigate(m_PageProject);
         }
 
@@ -631,6 +657,7 @@ namespace WpfApplication3
             GC.WaitForPendingFinalizers();
         }
 
+ 
 		
     }
 }

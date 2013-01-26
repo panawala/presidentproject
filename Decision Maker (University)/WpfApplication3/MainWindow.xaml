@@ -606,17 +606,17 @@
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem x:Name="menu8_4" Content="211校园建设" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_4" Content="211校园建设" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu8_4_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem x:Name="menu8_5" Content="海外校区" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_5" Content="海外校区" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu8_5_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem x:Name="menu8_6" Content="同济-张江科技园" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu8_6" Content="同济-张江科技园" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu8_6_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
