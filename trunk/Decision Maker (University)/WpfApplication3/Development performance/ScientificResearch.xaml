@@ -54,7 +54,7 @@
         	</Rectangle.Effect>
         </Rectangle>
         <Label Style="{DynamicResource Labeltopheader}" Content="科学研究" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
-        <Grid Grid.Column="0" Margin="10,50,10,10">
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridContent">
             <Grid.RowDefinitions>
             	<RowDefinition Height="38"/>
             	<RowDefinition/>
@@ -153,7 +153,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
-                                <Grid Grid.Row="1" Name="gridAchievement" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <Grid Grid.Row="1" Name="gridAchievement" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseDown="gridLittleGraph_MouseDown_1"/>
                             </Grid>
                             <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
@@ -236,7 +236,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
-                                <Grid Grid.Row="1" Name="gridBase" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <Grid Grid.Row="1" Name="gridBase" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseDown="gridLittleGraph_MouseDown_1"/>
                             </Grid>
                             <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
@@ -318,7 +318,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
             					<Label Grid.Row="0" Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Grid Grid.Row="1" Name="gridProject" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            					<Grid Grid.Row="1" Name="gridProject" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseDown="gridLittleGraph_MouseDown_1"/>
             				</Grid>
             				<StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
@@ -330,5 +330,6 @@
             	</TabItem>
             </TabControl>
         </Grid>
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridMaxGraph" Visibility="Hidden" MouseDown="gridMaxGraph_MouseDown_1"/>
     </Grid>
 </Page>

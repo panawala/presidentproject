@@ -25,37 +25,23 @@ namespace WpfApplication3.Communicate
     {
         bool IsRead;
         int DocType;
+        bool IsDesc;
         DataSetDoc.T_DocDataTable dtDocs;
-        DataSetDoc.T_DocDataTable dtLatestDocs;
 //        DataSetDoc.T_DocDataTable dtCurrent;
 //		DataSetDoc.T_DocDataTable dtLatestCurrent;
 		string fileCurrentPDF;
-		
-        int iCurrent;
         public PageDocIssue()
         {
             InitializeComponent();
             dtDocs = new DataSetDoc.T_DocDataTable();
-            dtLatestDocs = new DataSetDoc.T_DocDataTable();
-//            dtCurrent = new DataSetDoc.T_DocDataTable();
             this.InkCanvasAnnotation1.IsEnabled = false;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             IsRead = false;
-            listboxLatestDocsRefresh(IsRead);
-            for(DocType = 1;DocType<4;DocType++)
-			{
-            	listboxDocsRefresh(IsRead,DocType);
-			}
-			IsRead=true;
-            listboxLatestDocsRefresh(IsRead);
-			for(DocType = 1;DocType<4;DocType++)
-			{
-            	listboxDocsRefresh(IsRead,DocType);
-			}
-
+            IsDesc = true;
+            tabControl1.SelectedIndex = 1;
         }
 
 		private void comboBox1_DropDownClosed(object sender, EventArgs e)
@@ -181,56 +167,13 @@ namespace WpfApplication3.Communicate
             MessageBox.Show("批示保存成功！");
         }
 
-        private void listboxLatestDocsRefresh(bool Isread)
-        {
-            //IsRead
-            DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
-            dtLatestDocs = adapter.GetLatestDataByState(Isread);
-//			dtLatestCurrent=dtLatestDocs;
-			if(Isread==true)
-            	listboxLatestDocsIsRead.ItemsSource = dtLatestDocs;
-			else
-				listboxLatestDocsNotRead.ItemsSource = dtLatestDocs;
-
-        }
-
         private void listboxDocsRefresh(bool Isread,int Doctype)
         {
             //IsRead&&DocType
             DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
-            dtDocs = adapter.GetDataByDocStateAndDocType(Isread, Doctype);
+                dtDocs = adapter.GetDataByDocStateAndDocTypeDesc(Isread, Doctype);
 //			dtCurrent=dtDocs;
-			if(Isread==true)
-			{
-				if(Doctype==1)
-				{
-					listboxDocsType1.ItemsSource = dtDocs;
-				}
-				else if(Doctype==2)
-				{
-					listboxDocsType2.ItemsSource = dtDocs;
-				}
-				else
-				{
-					listboxDocsType2.ItemsSource = dtDocs;
-				}
-			}
-
-			else
-			{
-				if(Doctype==1)
-				{
-					listboxDocsType4.ItemsSource = dtDocs;
-				}
-				else if(Doctype==2)
-				{
-					listboxDocsType5.ItemsSource = dtDocs;
-				}
-				else
-				{
-					listboxDocsType6.ItemsSource = dtDocs;
-				}
-			}
+            listboxDocs.ItemsSource = dtDocs;
 
         }
        private void btnSend_Click(object sender, RoutedEventArgs e)
@@ -238,49 +181,6 @@ namespace WpfApplication3.Communicate
             MessageBox.Show("发送成功！");
         }
 		
-
-        private void GridDocType1_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(true,1);
-        }
-
-        private void GridDocType2_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(true,2);
-        }
-
-        private void GridDocType3_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(true,3);
-        }
-
-        private void GridDocType4_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(false,1);
-        }
-
-        private void GridDocType5_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(false,2);
-        }
-
-        private void GridDocType6_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxDocsRefresh(false,3);
-        }
-
-        private void GridAlready_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-			listboxLatestDocsRefresh(true);
-            listboxDocsRefresh(true,1);
-        }
-
-        private void GridNotYet_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
-			listboxLatestDocsRefresh(false);
-            listboxDocsRefresh(false,1);
-        }
 
         private void tbxSearch_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -337,6 +237,48 @@ namespace WpfApplication3.Communicate
             int i = listboxSend.Items.IndexOf(((ListBoxItem)obj).Content);
             listboxSend.Items.RemoveAt(i);
 
+        }
+
+        private void btnSortByDate_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (!IsDesc)
+            {
+
+                listboxDocs.ItemsSource = dtDocs.OrderByDescending(s => s.SubmissionDate);
+                IsDesc = true;
+            }
+            else
+            {
+                listboxDocs.ItemsSource = dtDocs.OrderBy(s => s.SubmissionDate);
+                IsDesc = false;
+            }
+        }
+
+        private void TabControl_Selection1Changed_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                IsRead = true;
+                DocType = tabControlAlready.SelectedIndex + 1;
+            }
+            else
+            {
+                IsRead = false;
+                DocType = tabControlNotYet.SelectedIndex + 1;
+            }
+            listboxDocsRefresh(IsRead, DocType);
+        }
+
+        private void tabControlAlready_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            DocType = tabControlAlready.SelectedIndex + 1;
+            listboxDocsRefresh(IsRead, DocType);
+        }
+
+        private void tabControlNotYet_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            DocType = tabControlNotYet.SelectedIndex + 1;
+            listboxDocsRefresh(IsRead, DocType);
         }
 		
     }

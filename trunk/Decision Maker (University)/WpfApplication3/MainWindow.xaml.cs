@@ -622,6 +622,13 @@ namespace WpfApplication3
             }
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            WebBrowserTV.Dispose();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
 		
     }
 }
