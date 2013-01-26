@@ -109,7 +109,7 @@
                 <Label Content="综合声誉" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
             </Grid>
             <TabControl Grid.Row="1" Style="{DynamicResource TabControlStyle2}" Margin="0,20,0,0">
-            	<TabItem Header="学术声誉" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_academic" Header="学术声誉" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-30,-3" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -296,7 +296,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="社会声誉" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
+            	<TabItem x:Name="tabI_reputation" Header="社会声誉" Style="{DynamicResource TabItemLargeProjects}" HorizontalAlignment="Right" Margin="0,0,-50,-3">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -484,7 +484,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="杰出校友" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-70,-3" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_schoolfellow" Header="杰出校友" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-70,-3" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -567,7 +567,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="社会捐赠" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-90,-3" HorizontalAlignment="Right">
+            	<TabItem x:Name="tabI_donate" Header="社会捐赠" Style="{DynamicResource TabItemLargeProjects}" Margin="0,0,-90,-3" HorizontalAlignment="Right">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>

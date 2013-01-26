@@ -27,9 +27,18 @@ namespace WpfApplication3.Development_performance
     /// </summary>
     public partial class GreenCampus : Page
     {
-        public GreenCampus()
+        public GreenCampus(int defaultTabItem)
         {
             InitializeComponent();
+            switch (defaultTabItem){
+                case 1:
+                    tabI_resource.IsSelected = true;
+
+                    break;
+                case 2:
+                    tabI_environment.IsSelected = true;
+                    break;
+            }
         }
 
         protected void Page_Loaded(object sender, RoutedEventArgs e)

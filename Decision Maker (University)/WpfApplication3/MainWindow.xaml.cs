@@ -339,34 +339,29 @@ namespace WpfApplication3
         private void TalentC(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
-            Development_performance.TalentCultivation  TalentC = new  Development_performance.TalentCultivation();
+            Development_performance.TalentCultivation  TalentC = new  Development_performance.TalentCultivation(1);
             FrameMiddleContent.Navigate(TalentC);
 
         }
         private void ScientificR(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
-            Development_performance.ScientificResearch  ScientificR = new  Development_performance.ScientificResearch();
+            Development_performance.ScientificResearch  ScientificR = new  Development_performance.ScientificResearch(1);
             FrameMiddleContent.Navigate(ScientificR);
 
         }
         
-        private void ComprehensiveI(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
-            FrameMiddleContent.Navigate(ComprehensiveI);
-        }
         private void ComprehensiveR(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
-            Development_performance.ComprehensiveReputation  ComprehensiveR = new  Development_performance.ComprehensiveReputation();
+            Development_performance.ComprehensiveReputation  ComprehensiveR = new  Development_performance.ComprehensiveReputation(1);
             FrameMiddleContent.Navigate(ComprehensiveR);
 
         }
            private void GreenC(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // TODO: Add event handler implementation here.
-            Development_performance.GreenCampus  GreenC = new  Development_performance.GreenCampus();
+            Development_performance.GreenCampus  GreenC = new  Development_performance.GreenCampus(1);
             FrameMiddleContent.Navigate(GreenC);
 
         }
@@ -493,6 +488,10 @@ namespace WpfApplication3
                 HideMenu();
                 UnselectMenus();
                 VisibleMenuTitle();
+
+
+                HomePage m_HomePage = new HomePage();
+                FrameMiddleContent.Navigate(m_HomePage);
             }
             else
             {
@@ -500,6 +499,9 @@ namespace WpfApplication3
                 HideMenuTitle();
                 menu1.Visibility = System.Windows.Visibility.Visible;
                 menutitle1.Visibility = System.Windows.Visibility.Visible;
+                //点击后默认显示综合指数
+                Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+                FrameMiddleContent.Navigate(ComprehensiveI);
             }
         }
 		
