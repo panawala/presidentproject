@@ -130,10 +130,18 @@
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                 	<RowDefinition Height="50"/>
-                	<RowDefinition Height="*"/>
+                	<RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Label Name="lblWindowTitle" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="**信息反馈"/>
-                <Grid Margin="10" Grid.Row="1">
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Name="rbtNoRead" Content="未阅读" GroupName="feedback" Checked="rbtNoRead_Checked_1"/>
+                        <RadioButton Name="rbtAlreadyRead" Content="已阅读" GroupName="feedback" Checked="rbtAlreadyRead_Checked_1"/>
+                        <RadioButton Name="rbtAlreadyComment" Content="已批阅" GroupName="feedback" Checked="rbtAlreadyComment_Checked_1"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="10" Grid.Row="2">
                 	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1">
                 		<Rectangle.Fill>
                 			<SolidColorBrush Color="{DynamicResource white}"/>

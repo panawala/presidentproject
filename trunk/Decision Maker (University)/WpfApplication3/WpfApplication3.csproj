@@ -705,6 +705,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\三好坞.jpg" />
+    <Resource Include="Images\综合楼.jpg" />
+    <Resource Include="Images\操场.jpg" />
+    <Resource Include="Images\足球场.jpg" />
     <Resource Include="Images\gymsecene.jpg" />
     <Resource Include="Images\outer.jpg" />
     <Resource Include="Images\gym.jpg" />

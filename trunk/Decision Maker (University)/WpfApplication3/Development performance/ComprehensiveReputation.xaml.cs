@@ -332,10 +332,9 @@ namespace WpfApplication3.Development_performance
             L_shehuijuanzeng.DataContext = SubInfo;
             L_shehuijuanzeng.SelectedIndex = 0;
 
-         
 
+            loadGraph();
         }
-
     
         protected void S_jiechuxiaoyou_Click(object sender, RoutedEventArgs e)
         {
