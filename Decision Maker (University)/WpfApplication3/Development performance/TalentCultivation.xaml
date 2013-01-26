@@ -53,7 +53,7 @@
         	</Rectangle.Effect>
         </Rectangle>
         <Label Style="{DynamicResource Labeltopheader}" Content="人才培养" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
-        <Grid Grid.Column="0" Margin="10,50,10,10">
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridContent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="38"/>
                 <RowDefinition/>
@@ -149,7 +149,7 @@
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50" />
             				<Grid Grid.Row="2" >
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
-            					<Grid Name="gridEducation" Margin="0,33.756,0,0" d:LayoutOverrides="Height"/>
+            					<Grid Name="gridEducation" Margin="0,33.756,0,0" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>
             				</Grid>
             				<Grid Grid.Row="3" >
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
@@ -230,7 +230,7 @@
             				<Button Grid.Row="1" Content="搜索" FontSize="22" Click="S_shizishuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Margin="0,0,0,8" Width="200" Height="50"/>
             				<Grid Grid.Row="2" >
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
-            					<Grid Name="gridTeaching" Margin="0,33.756,0,72.376" d:LayoutOverrides="Height"/>
+            					<Grid Name="gridTeaching" Margin="0,33.756,0,72.376" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>
             				</Grid>
             				<Grid Grid.Row="3" >
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
@@ -239,7 +239,7 @@
             			</Grid>
             		</Grid>
             	</TabItem>
-            	<TabItem Header="学科水平" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,-3">
+            	<TabItem Header="学科水平" Style="{DynamicResource TabItemLargeProjects}" Margin="70,0,-70,-3" Height="28" VerticalAlignment="Top">
             		<Grid>
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
@@ -309,7 +309,7 @@
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2">
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
-            					<Grid Name="gridAcademic" Margin="0,33.756,0,9.56" d:LayoutOverrides="Height"/>
+            					<Grid Name="gridAcademic" Margin="0,33.756,0,9.56" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>
             				</Grid>
             				<Grid Grid.Row="3">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
@@ -321,5 +321,6 @@
             	</TabItem>
             </TabControl>
         </Grid>
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridMaxGraph" Visibility="Hidden" MouseDown="gridMaxGraph_MouseDown_1"/>
     </Grid>
 </Page>

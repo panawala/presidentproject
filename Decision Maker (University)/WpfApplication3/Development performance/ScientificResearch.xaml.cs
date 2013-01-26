@@ -893,6 +893,31 @@ namespace WpfApplication3.Development_performance
             public string qita1 { get; set; }
         }
 
+        private void gridLittleGraph_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount != 2)
+                return;
+            UIElement ue = ((Grid)sender).Children[0];
+            ((Grid)sender).Children.Clear();
+            gridMaxGraph.Children.Add(ue);
+            gridContent.Visibility = System.Windows.Visibility.Hidden;
+            gridMaxGraph.Visibility = System.Windows.Visibility.Visible;
+        }
 
+        private void gridMaxGraph_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount != 2)
+                return;
+            gridMaxGraph.Visibility = System.Windows.Visibility.Hidden;
+            gridContent.Visibility = System.Windows.Visibility.Visible;
+            UIElement ue = ((Grid)sender).Children[0];
+            ((Grid)sender).Children.Clear();
+            if (gridAchievement.Children.Count == 0)
+                gridAchievement.Children.Add(ue);
+            else if (gridProject.Children.Count == 0)
+                gridProject.Children.Add(ue);
+            else if (gridBase.Children.Count == 0)
+                gridBase.Children.Add(ue);
+        }
     }
 }

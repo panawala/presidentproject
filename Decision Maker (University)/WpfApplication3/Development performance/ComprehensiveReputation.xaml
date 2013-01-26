@@ -83,7 +83,7 @@
         	</Rectangle.Effect>
         </Rectangle>
         <Label Style="{DynamicResource Labeltopheader}" Content="综合声誉" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
-        <Grid Grid.Column="0" Margin="10,50,10,10">
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridContent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="38"/>
                 <RowDefinition/>
@@ -551,11 +551,15 @@
             					<CheckBox x:Name="zhongdianpeiyu"  Content="其他杰出校友" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiechuxiaoyou_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
-            				<StackPanel Grid.Row="2" Orientation="Vertical">
-            					<Label Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao2.jpg"/>
-            				</StackPanel>
-            				<StackPanel Grid.Row="3" Orientation="Vertical">
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="年份对比" FontSize="18" FontWeight="Bold" Grid.Row="0"/>
+                                <Grid Name="gridGraphJieChuXiaoYou"  d:LayoutOverrides="Height" Grid.Row="1" MouseDown="gridLittleGraph_MouseDown_1"/>
+                            </Grid>
+                            <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
             					<TextBox Text="杰出校友:是指高校毕业生中杰出的政治家、企业家、科学家和优秀博士等。杰出政治家是指国家级正职领导、国家级副职领导、省部级等正职领导，中央委员及候补委员等。杰出企业家是指国内外上市公司、国资委直管中央企业、国有重点企业董事长、总裁/总经理，国有商业银行、股份制商业银行董事长、行长等企业" TextWrapping="Wrap" FontSize="14" FontWeight="Bold"/>
             				</StackPanel>
@@ -630,11 +634,15 @@
             					<CheckBox x:Name="renwenshehui"  Content="个人捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shehuijuanzeng_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
-            				<StackPanel Grid.Row="2" Orientation="Vertical">
-            					<Label Content="年份对比" FontSize="18" FontWeight="Bold"/>
-            					<Image Stretch="Fill" Source="/WpfApplication3;component/Images/tubiao1.jpg"/>
-            				</StackPanel>
-            				<StackPanel Grid.Row="3" Orientation="Vertical">
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="年份对比" FontSize="18" FontWeight="Bold" Grid.Row="0"/>
+                                <Grid Name="gridGraphSheHuiJuanZeng" d:LayoutOverrides="Height" Grid.Row="1" MouseDown="gridLittleGraph_MouseDown_1"/>
+                            </Grid>
+                            <StackPanel Grid.Row="3" Orientation="Vertical">
             					<Label Content="指标解释" FontSize="18" FontWeight="Bold"/>
             					<TextBox Text="高等教育一方面通过提高人的自身素质生产社会资本，另一方面使接受高等教育而获得社会资本的人们实现社会阶层的流动与发展。因此，积极倡导高校社会捐赠，以期引起蝴蝶效应，不断涌现的捐赠者会带动越来越多的人参与，形成良性互动，营造社会和谐氛围。 " TextWrapping="Wrap" FontSize="14" FontWeight="Bold"/>
             				</StackPanel>
@@ -643,6 +651,7 @@
             	</TabItem>
             </TabControl>
         </Grid>
+        <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridMaxGraph" Visibility="Hidden" MouseDown="gridMaxGraph_MouseDown_1"/>
     </Grid>
 </Page>
 

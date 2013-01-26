@@ -197,6 +197,7 @@ namespace WpfApplication3.ResourcesAndManpower
                 Canvas.SetLeft(btn, node.Left);
                 Canvas.SetTop(btn, node.Top);
             }
+            button_Click(canvasMap.Children[0], e);
         }
 
 
