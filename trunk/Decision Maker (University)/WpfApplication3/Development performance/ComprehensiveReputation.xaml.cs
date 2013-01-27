@@ -326,11 +326,11 @@ namespace WpfApplication3.Development_performance
                  }
              };
 
-            L_jiechuxiaoyou.DataContext = TeaInfo;
-            L_jiechuxiaoyou.SelectedIndex = 0;
+            D_jiechuxiaoyou.ItemsSource = TeaInfo;
+            D_jiechuxiaoyou.SelectedIndex = 0;
 
-            L_shehuijuanzeng.DataContext = SubInfo;
-            L_shehuijuanzeng.SelectedIndex = 0;
+            D_shehuijuanzeng .ItemsSource= SubInfo;
+            D_shehuijuanzeng.SelectedIndex = 0;
 
 
             loadGraph();
@@ -448,8 +448,8 @@ namespace WpfApplication3.Development_performance
            
             };
 
-            L_jiechuxiaoyou.DataContext = TeaInfo1.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.zhiwu == "杰出政治家") || (yijizhongdian.IsChecked.Equals(true) && s.zhiwu == "杰出科学家") || (erjizhongdian.IsChecked.Equals(true) && s.zhiwu == "杰出企业家") || (zhongdianpeiyu.IsChecked.Equals(true) && s.zhiwu == "其他杰出校友") );
-            L_jiechuxiaoyou.SelectedIndex = 0;
+            D_jiechuxiaoyou.ItemsSource = TeaInfo1.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.zhiwu == "杰出政治家") || (yijizhongdian.IsChecked.Equals(true) && s.zhiwu == "杰出科学家") || (erjizhongdian.IsChecked.Equals(true) && s.zhiwu == "杰出企业家") || (zhongdianpeiyu.IsChecked.Equals(true) && s.zhiwu == "其他杰出校友"));
+            D_jiechuxiaoyou.SelectedIndex = 0;
         }
         private void S_shehuijuanzeng_Click(object sender, RoutedEventArgs e)
         {
@@ -566,8 +566,8 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_shehuijuanzeng.DataContext = SubInfo2.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.xuekedengji == "企业捐赠") || (zhonggongyuan.IsChecked.Equals(true) && s.xuekedengji == "基金捐赠") || (guowaiyuan.IsChecked.Equals(true) && s.xuekedengji == "海外捐赠") || (renwenshehui.IsChecked.Equals(true) && s.xuekedengji == "个人捐赠"));
-            L_shehuijuanzeng.SelectedIndex = 0;
+            D_shehuijuanzeng.ItemsSource = SubInfo2.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.xuekedengji == "企业捐赠") || (zhonggongyuan.IsChecked.Equals(true) && s.xuekedengji == "基金捐赠") || (guowaiyuan.IsChecked.Equals(true) && s.xuekedengji == "海外捐赠") || (renwenshehui.IsChecked.Equals(true) && s.xuekedengji == "个人捐赠"));
+            D_shehuijuanzeng.SelectedIndex = 0;
         }
 
         public void LoadRss()
