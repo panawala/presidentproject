@@ -260,14 +260,14 @@ namespace WpfApplication3.Development_performance
                  }
              };
 
-            L_shizishuiping.DataContext = TeaInfo;
-            L_shizishuiping.SelectedIndex = 0;
+            D_keyanjidi.ItemsSource = TeaInfo;
+            D_keyanjidi.SelectedIndex = 0;
 
-            L_jiaoyujiaoxue.DataContext = SubInfo;
-            L_jiaoyujiaoxue.SelectedIndex = 0;
+            D_keyanchengguo.ItemsSource = SubInfo;
+            D_keyanchengguo.SelectedIndex = 0;
 
-            L_xuekeshuiping.DataContext = SubInfo;
-            L_xuekeshuiping.SelectedIndex = 0;
+            D_keyanxiangmu.ItemsSource = SubInfo;
+            D_keyanxiangmu.SelectedIndex = 0;
 
 
             loadGraph();
@@ -651,8 +651,8 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_jiaoyujiaoxue.DataContext = SubInfo1.Where(s => (jiuqisan1.IsChecked.Equals(true) && s.xuekedengji == "973国家重大基础研究项目") || (zhongda1.IsChecked.Equals(true) && s.xuekedengji == "国家重大科学研究计划项目") || (ziran1.IsChecked.Equals(true) && s.xuekedengji == "国家自然科学基金项目") || (shehui1.IsChecked.Equals(true) && s.xuekedengji == "国家社会科学基金项目"));
-            L_jiaoyujiaoxue.SelectedIndex = 0;
+            D_keyanchengguo.ItemsSource = SubInfo1.Where(s => (jiuqisan1.IsChecked.Equals(true) && s.xuekedengji == "973国家重大基础研究项目") || (zhongda1.IsChecked.Equals(true) && s.xuekedengji == "国家重大科学研究计划项目") || (ziran1.IsChecked.Equals(true) && s.xuekedengji == "国家自然科学基金项目") || (shehui1.IsChecked.Equals(true) && s.xuekedengji == "国家社会科学基金项目"));
+            D_keyanchengguo.SelectedIndex = 0;
 
 
         }
@@ -767,8 +767,8 @@ namespace WpfApplication3.Development_performance
                 }
             };
 
-            L_shizishuiping.DataContext = TeaInfo1.Where(s => (jiuqisan2.IsChecked.Equals(true) && s.zhiwu == "973国家重大基础研究项目") || (zhongda2.IsChecked.Equals(true) && s.zhiwu == "国家重大科学研究计划项目") || (ziran2.IsChecked.Equals(true) && s.zhiwu == "国家自然科学基金项目") || (shehui2.IsChecked.Equals(true) && s.zhiwu == "国家社会科学基金项目") );
-            L_shizishuiping.SelectedIndex = 0;
+            D_keyanjidi.ItemsSource = TeaInfo1.Where(s => (jiuqisan2.IsChecked.Equals(true) && s.zhiwu == "973国家重大基础研究项目") || (zhongda2.IsChecked.Equals(true) && s.zhiwu == "国家重大科学研究计划项目") || (ziran2.IsChecked.Equals(true) && s.zhiwu == "国家自然科学基金项目") || (shehui2.IsChecked.Equals(true) && s.zhiwu == "国家社会科学基金项目"));
+            D_keyanjidi.SelectedIndex = 0;
         }
         private void S_xuekeshuiping_Click(object sender, RoutedEventArgs e)
         {
@@ -885,8 +885,8 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_xuekeshuiping.DataContext = SubInfo2.Where(s => (jiuqisan3.IsChecked.Equals(true) && s.xuekedengji == "973国家重大基础研究项目") || (zhongda3.IsChecked.Equals(true) && s.xuekedengji == "国家重大科学研究计划项目") || (ziran3.IsChecked.Equals(true) && s.xuekedengji == "国家自然科学基金项目") || (shehui3.IsChecked.Equals(true) && s.xuekedengji == "国家社会科学基金项目") );
-            L_xuekeshuiping.SelectedIndex = 0;
+            D_keyanxiangmu.ItemsSource = SubInfo2.Where(s => (jiuqisan3.IsChecked.Equals(true) && s.xuekedengji == "973国家重大基础研究项目") || (zhongda3.IsChecked.Equals(true) && s.xuekedengji == "国家重大科学研究计划项目") || (ziran3.IsChecked.Equals(true) && s.xuekedengji == "国家自然科学基金项目") || (shehui3.IsChecked.Equals(true) && s.xuekedengji == "国家社会科学基金项目"));
+            D_keyanxiangmu.SelectedIndex = 0;
         }
         public class TeaInformation
         {
