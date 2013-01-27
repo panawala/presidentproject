@@ -4619,5 +4619,153 @@
 				<Canvas x:Name="ControlsHolder" Height="0" Width="0"/>
 			</Grid>
 		</ControlTemplate>
+		<Style x:Key="TabControlEmpty" TargetType="{x:Type TabControl}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Padding" Value="4,4,4,4"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush}"/>
+			<Setter Property="Background" Value="#F9F9F9"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TabControl}">
+						<Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition x:Name="ColumnDefinition0"/>
+								<ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+								<RowDefinition x:Name="RowDefinition1" Height="*"/>
+							</Grid.RowDefinitions>
+							<TabPanel x:Name="HeaderPanel" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+							<Grid x:Name="ContentPanel" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+								<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="20" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+							</Grid>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="TabStripPlacement" Value="Bottom">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+							</Trigger>
+							<Trigger Property="TabStripPlacement" Value="Left">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+								<Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="2,2,0,2"/>
+							</Trigger>
+							<Trigger Property="TabStripPlacement" Value="Right">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+								<Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+								<Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="0,2,2,2"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="Labelnormal1" TargetType="{x:Type Label}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Padding" Value="5"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Label}">
+						<Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="true" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+							<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="2">
+								<Rectangle.Fill>
+									<LinearGradientBrush EndPoint="1.034,1.024" StartPoint="0.015,-0.096">
+										<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+										<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+									</LinearGradientBrush>
+								</Rectangle.Fill>
+							</Rectangle>
+							<ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="RadioButtonFeedback" TargetType="{x:Type RadioButton}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Background" Value="#F4F4F4"/>
+			<Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type RadioButton}">
+						<BulletDecorator Background="Transparent">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CheckStates">
+									<VisualState x:Name="Checked">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Unchecked"/>
+									<VisualState x:Name="Indeterminate"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Grid Height="25" Margin="0" VerticalAlignment="Stretch" Width="85">
+								<Rectangle x:Name="rectangle" RadiusY="8" RadiusX="8" StrokeThickness="1" Cursor="Hand">
+									<Rectangle.Fill>
+										<LinearGradientBrush EndPoint="0.488,1.039" StartPoint="0.486,-0.05">
+											<GradientStop Color="{DynamicResource LineColor#184184184}"/>
+											<GradientStop Color="{DynamicResource #122122122}" Offset="1"/>
+										</LinearGradientBrush>
+									</Rectangle.Fill>
+								</Rectangle>
+								<Path x:Name="path" Data="M7.9999995,0 L77,0 C81.418282,2.9802322E-07 85,3.5817223 85,8.0000013 L85,17 C85,21.418278 81.418282,25 77,25 L49.650135,25 42.5,32.150135 35.349865,25 7.9999995,25 C3.581722,25 0,21.418278 0,17 L0,8.0000013 C0,3.5817223 3.581722,2.9802322E-07 7.9999995,0 z" Margin="0,0,0,-7.15" Stretch="Fill" StrokeThickness="1" Visibility="Hidden">
+									<Path.Fill>
+										<LinearGradientBrush EndPoint="0.501,0.77" StartPoint="0.5,-0.078">
+											<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+											<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+								<ContentPresenter Margin="0" RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Grid>
+						</BulletDecorator>
+						<ControlTemplate.Triggers>
+							<Trigger Property="HasContent" Value="true">
+								<Setter Property="FocusVisualStyle" Value="{StaticResource CheckRadioFocusVisual}"/>
+								<Setter Property="Padding" Value="4,0,0,0"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsChecked" Value="true">
+								<Setter Property="Foreground" Value="#F0F0F0"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
 	</Application.Resources>
 </Application>

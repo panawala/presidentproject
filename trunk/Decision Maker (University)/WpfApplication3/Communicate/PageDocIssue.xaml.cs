@@ -253,6 +253,17 @@ namespace WpfApplication3.Communicate
                 IsDesc = false;
             }
         }
+		
+		private void ckbDate_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            listboxDocs.ItemsSource = dtDocs.OrderByDescending(s => s.SubmissionDate);
+        }
+
+        private void ckbDate_Unchecked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            listboxDocs.ItemsSource = dtDocs.OrderBy(s => s.SubmissionDate);
+        }
+
 
         private void TabControl_Selection1Changed_1(object sender, SelectionChangedEventArgs e)
         {

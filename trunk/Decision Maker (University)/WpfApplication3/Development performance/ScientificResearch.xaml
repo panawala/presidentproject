@@ -91,7 +91,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Name="D_keyanchengguo" VerticalAlignment="Top" Width="877" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Name="D_keyanchengguo" Grid.RowSpan="2" Margin="7,10,10,10" FontSize="18">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="成果名称" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="成果等级" Binding="{Binding Path=xuekedengji}" FontSize="18" />
@@ -103,10 +103,10 @@
                         </Grid>
             			<Grid Grid.Column="1" x:Name="G_jiaoyujiaoxue" Margin="10" Width="315" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="155.159"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<CheckBox x:Name="jiuqisan1"  Content="973国家重大基础研究项目成果" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
@@ -114,7 +114,7 @@
             					<CheckBox x:Name="ziran1"  Content="国家自然科学基金项目成果" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox x:Name="shehui1"  Content="国家社会科学基金项目成果" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}" />
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_jiaoyujiaoxue_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}" />
                             <Grid Grid.Row="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>
@@ -142,7 +142,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="739" HorizontalAlignment="Left" Margin="6,0,0,0" Name="D_keyanjidi" VerticalAlignment="Top" Width="870" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Margin="7,10,10,10" Name="D_keyanjidi" FontSize="18" Grid.RowSpan="2">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="基地名称" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="基地等级" Binding="{Binding Path=zhiwu}" FontSize="18" />
@@ -154,10 +154,10 @@
                         </Grid>
             			<Grid Grid.Column="1" x:Name="G_shizishuiping" Visibility="Visible" Margin="10" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="155.159"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<CheckBox x:Name="jiuqisan2"  Content="973国家重大基础研究基地" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
@@ -165,7 +165,7 @@
             					<CheckBox x:Name="ziran2"  Content="国家自然科学研究基地" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox x:Name="shehui2"  Content="国家社会科学研究基地" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shizishuiping_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_shizishuiping_Click" Width="200" Height="50" Style="{DynamicResource ButtonFeedbacknormal}"/>
                             <Grid Grid.Row="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>
@@ -192,7 +192,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Margin="6,0,0,0" Name="D_keyanxiangmu" VerticalAlignment="Top" Width="871" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Margin="7,10,10,10" Name="D_keyanxiangmu" FontSize="18" Grid.RowSpan="2">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="项目名称" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="项目等级" Binding="{Binding Path=xuekedengji}" FontSize="18" />
@@ -204,10 +204,10 @@
                         </Grid>
             			<Grid Grid.Column="1" x:Name="G_xuekeshuiping" Margin="5" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="157.391"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<CheckBox x:Name="jiuqisan3"  Content="973国家重大基础研究项目" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
@@ -215,7 +215,7 @@
             					<CheckBox x:Name="ziran3"  Content="国家自然科学基金项目" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox x:Name="shehui3"  Content="国家社会科学基金项目" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>
