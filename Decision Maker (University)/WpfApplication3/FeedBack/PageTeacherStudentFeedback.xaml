@@ -135,13 +135,13 @@
                 </Grid.RowDefinitions>
                 <Label Name="lblWindowTitle" VerticalAlignment="Top" Style="{DynamicResource Labeltopheader}" Content="**信息反馈"/>
                 <Grid Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <RadioButton Name="rbtNoRead" Content="未阅读" GroupName="feedback" Checked="rbtNoRead_Checked_1"/>
-                        <RadioButton Name="rbtAlreadyRead" Content="已阅读" GroupName="feedback" Checked="rbtAlreadyRead_Checked_1"/>
-                        <RadioButton Name="rbtAlreadyComment" Content="已批阅" GroupName="feedback" Checked="rbtAlreadyComment_Checked_1"/>
-                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" d:LayoutOverrides="Width" HorizontalAlignment="Center">
+                		<RadioButton x:Name="rbtNoRead" Content="未阅读" GroupName="feedback" Checked="rbtNoRead_Checked_1" Style="{DynamicResource RadioButtonFeedback}" HorizontalAlignment="Right"/>
+                		<RadioButton x:Name="rbtAlreadyRead" Content="已阅读" GroupName="feedback" Checked="rbtAlreadyRead_Checked_1" Style="{DynamicResource RadioButtonFeedback}" HorizontalAlignment="Left" Margin="20,0,0,0" IsChecked="True"/>
+                		<RadioButton x:Name="rbtAlreadyComment" Content="已批阅" GroupName="feedback" Checked="rbtAlreadyComment_Checked_1" Style="{DynamicResource RadioButtonFeedback}" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                	</StackPanel>
                 </Grid>
-                <Grid Margin="10" Grid.Row="2">
+                <Grid Margin="10,3,10,10" Grid.Row="2">
                 	<Rectangle RadiusY="8" RadiusX="8" StrokeThickness="1">
                 		<Rectangle.Fill>
                 			<SolidColorBrush Color="{DynamicResource white}"/>

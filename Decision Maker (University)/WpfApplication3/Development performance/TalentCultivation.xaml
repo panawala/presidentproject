@@ -90,7 +90,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Name="D_jiaoyujiaoxue" VerticalAlignment="Top" Width="882" Grid.RowSpan="2" FontSize="20">
+                            <DataGrid AutoGenerateColumns="False" Name="D_jiaoyujiaoxue" Grid.RowSpan="2" FontSize="18" Margin="7,10,10,10">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="专业学科" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
                                 <DataGridTextColumn Header="教学" Binding="{Binding Path=xuekedengji}" FontSize="18" />
@@ -102,10 +102,10 @@
                         </Grid>
             			<Grid x:Name="G_jiaoyujiaoxue" Width="315" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="155.159"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<Grid Margin="10" Grid.Row="0">
             					<CheckBox x:Name="gaoxiaoxueke1"  Content="高校学科创新引智基地(111计划)" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" VerticalAlignment="Top"/>
@@ -114,7 +114,7 @@
             					<CheckBox x:Name="zhongdianpeiyu1"  Content="国家重点培育学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,63.35,0,0" VerticalAlignment="Top"/>
             					<CheckBox x:Name="liudongzhan1"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,84.466,0,104.425" d:LayoutOverrides="Height"/>
             				</Grid>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiaoyujiaoxue_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50" />
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_jiaoyujiaoxue_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50" />
             				<Grid Grid.Row="2" >
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
             					<Grid Name="gridEducation" Margin="0,33.756,0,0" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>
@@ -138,7 +138,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="702" HorizontalAlignment="Left" Name="D_shizishuiping" VerticalAlignment="Top" Width="882" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Name="D_shizishuiping" FontSize="18" Grid.RowSpan="2" Margin="7,10,10,10">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="姓名" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="现任职务" Binding="{Binding Path=zhiwu}" FontSize="18" />
@@ -150,10 +150,10 @@
                         </Grid>
             			<Grid x:Name="G_shizishuiping" Visibility="Visible" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="155.159"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<Grid Margin="10" Grid.Row="0">
             					<CheckBox x:Name="zhongkeyuan"  Content="中国科学院院士" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" VerticalAlignment="Top"/>
@@ -163,7 +163,7 @@
             					<CheckBox x:Name="jiaoxuemingshi"  Content="国家级教学名师" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,84.466,0,0" VerticalAlignment="Top"/>
             					<CheckBox x:Name="qianrenjihua"  Content="千人计划入选者" FontSize="16" Style="{DynamicResource CheckBoxfeedback}" Margin="0,105.583,0,0" VerticalAlignment="Top"/>
             				</Grid>
-            				<Button Grid.Row="1" Content="搜索" FontSize="22" Click="S_shizishuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Margin="0,0,0,8" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_shizishuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Margin="0,0,0,8" Width="200" Height="50"/>
             				<Grid Grid.Row="2" >
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
             					<Grid Name="gridTeaching" Margin="0,33.756,0,72.376" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>
@@ -186,7 +186,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Name="D_xuekeshuiping" VerticalAlignment="Top" Width="882" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Name="D_xuekeshuiping" FontSize="18" Grid.RowSpan="2" Margin="7,10,10,10">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="专业名称" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="学科等级" Binding="{Binding Path=xuekedengji}" FontSize="18" />
@@ -198,10 +198,10 @@
                         </Grid>
             			<Grid x:Name="G_xuekeshuiping" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="155.159"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<Grid Margin="10" Grid.Row="0">
             					<CheckBox x:Name="gaoxiaoxueke"  Content="高校学科创新引智基地(111计划)"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" IsChecked="False" VerticalAlignment="Top"/>
@@ -210,7 +210,7 @@
             					<CheckBox x:Name="zhongdianpeiyu"  Content="国家重点培育学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,63.35,0,51" d:LayoutOverrides="Height"/>
             					<CheckBox x:Name="liudongzhan"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,0,0,31" VerticalAlignment="Bottom"/>
             				</Grid>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2">
             					<Label Content="年份对比" FontSize="18" FontWeight="Bold" VerticalAlignment="Top"/>
             					<Grid Name="gridAcademic" Margin="0,33.756,0,9.56" d:LayoutOverrides="Height" MouseDown="gridLittleGraph_MouseDown_1"/>

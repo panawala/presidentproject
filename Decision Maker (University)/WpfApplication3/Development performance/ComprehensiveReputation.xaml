@@ -270,9 +270,9 @@
             			</Grid>
             			<Grid Grid.Column="1" x:Name="G_R_xueshushengyu" Margin="10,10,0,0" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="157.234"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.777*"/>
+            					<RowDefinition/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<Label Content="推荐关键词" FontSize="18" FontWeight="Bold" />
@@ -281,7 +281,7 @@
             					<CheckBox Content="同济新闻" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox Content="同济建筑" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xueshushengyu_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_xueshushengyu_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2" >
             					<Rectangle StrokeDashArray="1 0" RadiusX="8" RadiusY="8">
             						<Rectangle.Stroke>
@@ -458,9 +458,9 @@
             			</Grid>
             			<Grid Grid.Column="1" x:Name="G_R_shehuishengyu" Visibility="Visible" Margin="10,10,0,0" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="157.234"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.777*"/>
+            					<RowDefinition/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<Label Content="推荐关键词" FontSize="18" FontWeight="Bold" />
@@ -469,7 +469,7 @@
             					<CheckBox Content="海外华侨捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox Content="同济学子捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shehuishengyu_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_shehuishengyu_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2" >
             					<Rectangle StrokeDashArray="1 0" RadiusX="8" RadiusY="8">
             						<Rectangle.Stroke>
@@ -495,7 +495,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="723" HorizontalAlignment="Left" Margin="5,0,0,0" Name="D_jiechuxiaoyou" VerticalAlignment="Top" Width="872" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Margin="7,10,10,10" Name="D_jiechuxiaoyou" FontSize="18" Grid.RowSpan="2">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="姓名" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="现任职务" Binding="{Binding Path=zhiwu}" FontSize="18" />
@@ -507,10 +507,10 @@
                         </Grid>
             			<Grid Grid.Column="1" x:Name="G_R_jiechuxiaoyou" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="159.623"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<CheckBox x:Name="gaoxiaoxueke"  Content="杰出政治家" FontSize="16"  Style="{DynamicResource CheckBoxfeedback}"/>
@@ -518,7 +518,7 @@
             					<CheckBox x:Name="erjizhongdian"  Content="杰出企业家" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox x:Name="zhongdianpeiyu"  Content="其他杰出校友" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_jiechuxiaoyou_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_jiechuxiaoyou_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
                             <Grid Grid.Row="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>
@@ -546,7 +546,7 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Margin="6,0,0,0" Name="D_shehuijuanzeng" VerticalAlignment="Top" Width="870" FontSize="18" Grid.RowSpan="2">
+                            <DataGrid AutoGenerateColumns="False" Margin="7,10,10,10" Name="D_shehuijuanzeng" FontSize="18" Grid.RowSpan="2">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="捐赠名称" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="捐赠物品" Binding="{Binding Path=xuekedengji}" FontSize="18" />
@@ -558,10 +558,10 @@
                         </Grid>
             			<Grid Grid.Column="1" x:Name="G_R_shehuijuanzeng" >
             				<Grid.RowDefinitions>
-            					<RowDefinition Height="0.223*"/>
+            					<RowDefinition Height="159.623"/>
             					<RowDefinition Height="71.916"/>
-            					<RowDefinition Height="0.451*"/>
-            					<RowDefinition Height="0.325*"/>
+            					<RowDefinition Height="0.581*"/>
+            					<RowDefinition Height="0.419*"/>
             				</Grid.RowDefinitions>
             				<StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
             					<CheckBox x:Name="zhongkeyuan"  Content="企业捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
@@ -569,7 +569,7 @@
             					<CheckBox x:Name="guowaiyuan"  Content="海外捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             					<CheckBox x:Name="renwenshehui"  Content="个人捐赠" FontSize="16" Style="{DynamicResource CheckBoxfeedback}"/>
             				</StackPanel>
-            				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_shehuijuanzeng_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
+            				<Button Grid.Row="1" Content="搜索" FontSize="18" Click="S_shehuijuanzeng_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
                             <Grid Grid.Row="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>

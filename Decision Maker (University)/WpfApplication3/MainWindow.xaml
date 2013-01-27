@@ -291,6 +291,96 @@
         		</Setter.Value>
         	</Setter>
         </Style>
+        <Style x:Key="CheckBoxMute" TargetType="{x:Type CheckBox}">
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="Background" Value="{StaticResource CheckBoxFillNormal}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="FocusVisualStyle" Value="{StaticResource EmptyCheckBoxFocusVisual}"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type CheckBox}">
+        				<Grid Margin="4,0,13,0">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CheckStates">
+        							<VisualState x:Name="Checked">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Unchecked"/>
+        							<VisualState x:Name="Indeterminate"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        					<Grid HorizontalAlignment="Center" Width="13.78" Height="15.237" VerticalAlignment="Center">
+        						<Rectangle Width="1" Height="5" HorizontalAlignment="Left" Margin="0,5.121,0,5.116">
+        							<Rectangle.Fill>
+        								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        									<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+        									<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+        								</LinearGradientBrush>
+        							</Rectangle.Fill>
+        						</Rectangle>
+        						<Path Data="M4.9380003,0 L4.9380003,7.6116668 4.9379998,15.073667 0,10.063482 0,7.6116668 0,7.4580001 0,5.0075536 z" HorizontalAlignment="Left" Margin="1.243,0,0,0" Stretch="Fill" Width="4.938" >
+        							<Path.Fill>
+        								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        									<GradientStop Color="{DynamicResource GreenLeft}" Offset="0"/>
+        									<GradientStop Color="{DynamicResource GreenRight}" Offset="1"/>
+        								</LinearGradientBrush>
+        							</Path.Fill>
+        						</Path>
+        						<Grid x:Name="grid" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+        							<ed:Arc Fill="{x:Null}" HorizontalAlignment="Stretch" Height="6" Margin="0.937,2.126,3.063,1.874" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5">
+        								<ed:Arc.Stroke>
+        									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        										<GradientStop Color="{DynamicResource GreenRight}" Offset="0"/>
+        										<GradientStop Color="{DynamicResource GreenLeft}" Offset="1"/>
+        									</LinearGradientBrush>
+        								</ed:Arc.Stroke>
+        								<ed:Arc.RenderTransform>
+        									<TransformGroup>
+        										<ScaleTransform/>
+        										<SkewTransform/>
+        										<RotateTransform Angle="45"/>
+        										<TranslateTransform/>
+        									</TransformGroup>
+        								</ed:Arc.RenderTransform>
+        							</ed:Arc>
+        							<ed:Arc HorizontalAlignment="Stretch" Height="10" Margin="0" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5">
+        								<ed:Arc.Stroke>
+        									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        										<GradientStop Color="{DynamicResource GreenRight}" Offset="0"/>
+        										<GradientStop Color="{DynamicResource GreenLeft}" Offset="1"/>
+        									</LinearGradientBrush>
+        								</ed:Arc.Stroke>
+        								<ed:Arc.RenderTransform>
+        									<TransformGroup>
+        										<ScaleTransform/>
+        										<SkewTransform/>
+        										<RotateTransform Angle="45"/>
+        										<TranslateTransform/>
+        									</TransformGroup>
+        								</ed:Arc.RenderTransform>
+        							</ed:Arc>
+        						</Grid>
+        					</Grid>
+        				</Grid>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="HasContent" Value="true">
+        						<Setter Property="FocusVisualStyle" Value="{StaticResource CheckRadioFocusVisual}"/>
+        						<Setter Property="Padding" Value="4,0,0,0"/>
+        					</Trigger>
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
     </Window.Resources>
     <Grid Name="LayoutRoot" >
         <Grid.Background>
@@ -697,6 +787,7 @@
                         </ComboBoxItem>
                     </ComboBox>
                     <Image Height="186" HorizontalAlignment="Left" x:Name="imageTVCover" Stretch="Fill" VerticalAlignment="Top" Width="280" Source="Images/TVCover.jpg" MouseLeftButtonDown="imageTVCover_MouseLeftButtonDown" Margin="6.5,8,0,0" />
+                    <CheckBox x:Name="ckbMute" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Checked="ckbMute_Checked" Style="{DynamicResource CheckBoxMute}" Unchecked="ckbMute_Unchecked" Margin="0,0,-3,7.663"/>
                 </Grid>
                 <Grid x:Name="RssNews" Width="286" HorizontalAlignment="Left" Margin="2,261.5,0,10">
                     <ListView x:Name="Rsslist" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0" />

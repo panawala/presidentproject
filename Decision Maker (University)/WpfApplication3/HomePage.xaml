@@ -860,7 +860,7 @@
                             </Label.Foreground>
                         </Label>
                     </Grid>
-                    <GridSplitter Margin="0,93.2,372.005,79.2" Height="30" Width="2" Background="#FFB7B7B7"/>
+                    <GridSplitter Margin="0,77,372.38,63.652" Height="30" Width="2" Background="#FFB7B7B7" d:LayoutOverrides="VerticalAlignment"/>
 
 
                     <Grid x:Name="WeatherAir2" HorizontalAlignment="Left" Margin="468.995,37,0,-4.167" Width="186">
