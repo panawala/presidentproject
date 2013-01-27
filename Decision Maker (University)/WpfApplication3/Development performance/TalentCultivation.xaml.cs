@@ -269,14 +269,14 @@ namespace WpfApplication3.Development_performance
                  }
              };
 
-            L_shizishuiping.DataContext = TeaInfo;
-            L_shizishuiping.SelectedIndex = 0;
+            D_shizishuiping.ItemsSource = TeaInfo;
+            D_shizishuiping.SelectedIndex = 0;
 
-            L_jiaoyujiaoxue.DataContext = SubInfo;
-            L_jiaoyujiaoxue.SelectedIndex = 0;
+            D_jiaoyujiaoxue.ItemsSource = SubInfo;
+            D_jiaoyujiaoxue.SelectedIndex = 0;
 
-            L_xuekeshuiping.DataContext = SubInfo;
-            L_xuekeshuiping.SelectedIndex = 0;
+            D_xuekeshuiping.ItemsSource = SubInfo;
+            D_xuekeshuiping.SelectedIndex = 0;
 
             loadGraph();
             
@@ -659,8 +659,8 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_jiaoyujiaoxue.DataContext = SubInfo1.Where(s => (gaoxiaoxueke1.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu1.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan1.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
-            L_jiaoyujiaoxue.SelectedIndex = 0;
+            D_jiaoyujiaoxue.ItemsSource = SubInfo1.Where(s => (gaoxiaoxueke1.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian1.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu1.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan1.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
+            D_jiaoyujiaoxue.SelectedIndex = 0;
 
 
         }
@@ -775,8 +775,8 @@ namespace WpfApplication3.Development_performance
                 }
             };
 
-            L_shizishuiping.DataContext = TeaInfo1.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.zhiwu == "中国科学院院士") || (zhonggongyuan.IsChecked.Equals(true) && s.zhiwu == "中国工程院院士") || (guowaiyuan.IsChecked.Equals(true) && s.zhiwu == "国外院士") || (renwenshehui.IsChecked.Equals(true) && s.zhiwu == "杰出人文社会科学家") || (jiaoxuemingshi.IsChecked.Equals(true) && s.zhiwu == "国家级教学名师") || (qianrenjihua.IsChecked.Equals(true) && s.zhiwu == "千人计划入选者"));
-            L_shizishuiping.SelectedIndex = 0;
+            D_shizishuiping.ItemsSource = TeaInfo1.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.zhiwu == "中国科学院院士") || (zhonggongyuan.IsChecked.Equals(true) && s.zhiwu == "中国工程院院士") || (guowaiyuan.IsChecked.Equals(true) && s.zhiwu == "国外院士") || (renwenshehui.IsChecked.Equals(true) && s.zhiwu == "杰出人文社会科学家") || (jiaoxuemingshi.IsChecked.Equals(true) && s.zhiwu == "国家级教学名师") || (qianrenjihua.IsChecked.Equals(true) && s.zhiwu == "千人计划入选者"));
+            D_shizishuiping.SelectedIndex = 0;
         }
         private void S_xuekeshuiping_Click(object sender, RoutedEventArgs e)
         {
@@ -893,8 +893,8 @@ namespace WpfApplication3.Development_performance
 
                  }
              };
-            L_xuekeshuiping.DataContext = SubInfo2.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
-            L_xuekeshuiping.SelectedIndex = 0;
+            D_xuekeshuiping.ItemsSource = SubInfo2.Where(s => (gaoxiaoxueke.IsChecked.Equals(true) && s.xuekedengji == "高校学科创新引智基地（111计划）") || (yijizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家一级重点学科") || (erjizhongdian.IsChecked.Equals(true) && s.xuekedengji == "国家二级重点学科") || (zhongdianpeiyu.IsChecked.Equals(true) && s.xuekedengji == "国家重点培育学科") || (liudongzhan.IsChecked.Equals(true) && s.xuekedengji == "博士后流动站"));
+            D_xuekeshuiping.SelectedIndex = 0;
         }
         public class TeaInformation
         {
