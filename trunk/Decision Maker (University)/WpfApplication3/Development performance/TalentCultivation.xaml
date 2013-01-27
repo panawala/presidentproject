@@ -90,48 +90,16 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-            				<Grid x:Name="jiaoyujiaoxue" Margin="5,5,5,2.475" d:LayoutOverrides="Height">
-            					<Grid.ColumnDefinitions>
-            						<ColumnDefinition Width="28"/>
-            						<ColumnDefinition Width="*"/>
-            					</Grid.ColumnDefinitions>
-            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
-            						<Grid.ColumnDefinitions>
-            							<ColumnDefinition Width="0.2*"/>
-            							<ColumnDefinition Width="0.374*"/>
-            							<ColumnDefinition Width="0.117*"/>
-            							<ColumnDefinition Width="0.135*"/>
-            							<ColumnDefinition Width="0.174*"/>
-            						</Grid.ColumnDefinitions>
-            						<Label Content="教育教学" FontSize="16" Background="{x:Null}">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="教学" FontSize="16" Background="{x:Null}" Grid.Column="1">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="所属学院" FontSize="16" Background="{x:Null}" Grid.Column="2">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="3">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="4">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            					</Grid>
-            				</Grid>
-            				<ListBox x:Name="L_jiaoyujiaoxue" ItemTemplate="{StaticResource listboxTemplate2}"   ItemsSource="{Binding}" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
-            			</Grid>
+                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Name="D_jiaoyujiaoxue" VerticalAlignment="Top" Width="882" Grid.RowSpan="2" FontSize="20">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="专业学科" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
+                                <DataGridTextColumn Header="教学" Binding="{Binding Path=xuekedengji}" FontSize="18" />
+                                <DataGridTextColumn Header="所属学院" Binding="{Binding Path=xueyuan}" FontSize="18" />
+                                <DataGridTextColumn Header="其他" Binding="{Binding Path=qita}" FontSize="18" />
+                                <DataGridTextColumn Header="其他1" Binding="{Binding Path=qita1}" FontSize="18" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
             			<Grid x:Name="G_jiaoyujiaoxue" Width="315" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
             					<RowDefinition Height="0.223*"/>
@@ -170,48 +138,16 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-            				<Grid x:Name="shizishuiping" Margin="5,5,5,1.475" d:LayoutOverrides="Height">
-            					<Grid.ColumnDefinitions>
-            						<ColumnDefinition Width="28"/>
-            						<ColumnDefinition Width="*"/>
-            					</Grid.ColumnDefinitions>
-            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
-            						<Grid.ColumnDefinitions>
-            							<ColumnDefinition Width="0.2*"/>
-            							<ColumnDefinition Width="0.374*"/>
-            							<ColumnDefinition Width="0.117*"/>
-            							<ColumnDefinition Width="0.135*"/>
-            							<ColumnDefinition Width="0.174*"/>
-            						</Grid.ColumnDefinitions>
-            						<Label Content="姓名" FontSize="16" Background="{x:Null}" Width="190" Grid.Column="0">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="现任职务" FontSize="16" Background="{x:Null}" Grid.Column="1">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="毕业时间" FontSize="16" Background="{x:Null}" Grid.Column="2">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="专业" FontSize="16" Background="{x:Null}" Grid.Column="3">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="联系方式" FontSize="16" Background="{x:Null}" Grid.Column="4">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            					</Grid>
-            				</Grid>
-            				<ListBox x:Name="L_shizishuiping" ItemTemplate="{StaticResource listboxTemplate1}" ItemsSource="{Binding}" Visibility="Visible" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
-            			</Grid>
+                            <DataGrid AutoGenerateColumns="False" Height="702" HorizontalAlignment="Left" Name="D_shizishuiping" VerticalAlignment="Top" Width="882" FontSize="18" Grid.RowSpan="2">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="姓名" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
+                                    <DataGridTextColumn Header="现任职务" Binding="{Binding Path=zhiwu}" FontSize="18" />
+                                    <DataGridTextColumn Header="毕业时间" Binding="{Binding Path=biyeshijian}" FontSize="18" />
+                                    <DataGridTextColumn Header="专业" Binding="{Binding Path=zhuanye}" FontSize="18" />
+                                    <DataGridTextColumn Header="联系方式" Binding="{Binding Path=lianxifangshi}" FontSize="18" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
             			<Grid x:Name="G_shizishuiping" Visibility="Visible" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
             					<RowDefinition Height="0.223*"/>
@@ -250,48 +186,16 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-            				<Grid x:Name="xuekeshuiping" Margin="5,5,5,3.475" d:LayoutOverrides="Height">
-            					<Grid.ColumnDefinitions>
-            						<ColumnDefinition Width="28"/>
-            						<ColumnDefinition Width="*"/>
-            					</Grid.ColumnDefinitions>
-            					<Grid Grid.ColumnSpan="1" Grid.Column="1">
-            						<Grid.ColumnDefinitions>
-            							<ColumnDefinition Width="0.2*"/>
-            							<ColumnDefinition Width="0.374*"/>
-            							<ColumnDefinition Width="0.117*"/>
-            							<ColumnDefinition Width="0.135*"/>
-            							<ColumnDefinition Width="0.174*"/>
-            						</Grid.ColumnDefinitions>
-            						<Label Content="专业名称" FontSize="16" Background="{x:Null}">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="学科等级" FontSize="16" Background="{x:Null}" Grid.Column="1">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="所属学院" FontSize="16" Background="{x:Null}" Grid.Column="2">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="3">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            						<Label Content="其他" FontSize="16" Background="{x:Null}" Grid.Column="4">
-            							<Label.Foreground>
-            								<SolidColorBrush Color="{DynamicResource black}"/>
-            							</Label.Foreground>
-            						</Label>
-            					</Grid>
-            				</Grid>
-            				<ListBox x:Name="L_xuekeshuiping" ItemTemplate="{StaticResource listboxTemplate2}"  ItemsSource="{Binding}" Margin="5" Background="{x:Null}" Grid.Row="1" ItemContainerStyle="{DynamicResource ListBoxItemDevelopment}"/>
-            			</Grid>
+                            <DataGrid AutoGenerateColumns="False" Height="740" HorizontalAlignment="Left" Name="D_xuekeshuiping" VerticalAlignment="Top" Width="882" FontSize="18" Grid.RowSpan="2">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="专业名称" Binding="{Binding Path=zhuanyemingcheng}" MinWidth="50" FontSize="18" />
+                                    <DataGridTextColumn Header="学科等级" Binding="{Binding Path=xuekedengji}" FontSize="18" />
+                                    <DataGridTextColumn Header="所属学院" Binding="{Binding Path=xueyuan}" FontSize="18" />
+                                    <DataGridTextColumn Header="其他" Binding="{Binding Path=qita}" FontSize="18" />
+                                    <DataGridTextColumn Header="其他1" Binding="{Binding Path=qita1}" FontSize="18" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
             			<Grid x:Name="G_xuekeshuiping" Grid.Column="1" Margin="10" >
             				<Grid.RowDefinitions>
             					<RowDefinition Height="0.223*"/>
@@ -303,8 +207,8 @@
             					<CheckBox x:Name="gaoxiaoxueke"  Content="高校学科创新引智基地(111计划)"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" IsChecked="False" VerticalAlignment="Top"/>
             					<CheckBox x:Name="yijizhongdian" Content="国家一级重点学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,21.116,0,0" VerticalAlignment="Top" />
             					<CheckBox x:Name="erjizhongdian"  Content="国家二级重点学科" Style="{DynamicResource CheckBoxfeedback}"  FontSize="16" Margin="0,42.233,0,0" VerticalAlignment="Top"/>
-            					<CheckBox x:Name="zhongdianpeiyu"  Content="国家重点培育学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,63.35,0,57.764" d:LayoutOverrides="Height"/>
-            					<CheckBox x:Name="liudongzhan"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,0,0,36.647" VerticalAlignment="Bottom"/>
+            					<CheckBox x:Name="zhongdianpeiyu"  Content="国家重点培育学科"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,63.35,0,51" d:LayoutOverrides="Height"/>
+            					<CheckBox x:Name="liudongzhan"  Content="博士后流动站"  Style="{DynamicResource CheckBoxfeedback}" FontSize="16" Margin="0,0,0,31" VerticalAlignment="Bottom"/>
             				</Grid>
             				<Button Grid.Row="1" Content="搜索" FontSize="16" Click="S_xuekeshuiping_Click" Style="{DynamicResource ButtonFeedbacknormal}" Width="200" Height="50"/>
             				<Grid Grid.Row="2">
