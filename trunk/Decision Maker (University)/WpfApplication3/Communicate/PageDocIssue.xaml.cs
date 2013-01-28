@@ -27,6 +27,7 @@ namespace WpfApplication3.Communicate
         int DocType;
         bool IsDesc;
         DataSetDoc.T_DocDataTable dtDocs;
+        int iCurrentItem;
 //        DataSetDoc.T_DocDataTable dtCurrent;
 //		DataSetDoc.T_DocDataTable dtLatestCurrent;
 		string fileCurrentPDF;
@@ -35,13 +36,41 @@ namespace WpfApplication3.Communicate
             InitializeComponent();
             dtDocs = new DataSetDoc.T_DocDataTable();
             this.InkCanvasAnnotation1.IsEnabled = false;
+            IsRead = false;
+            IsDesc = true;
+            tabControl1.SelectedIndex = 1;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            IsRead = false;
-            IsDesc = true;
-            tabControl1.SelectedIndex = 1;
+            if (dtDocs.Count > 0)
+            {
+                string content = dtDocs[0].DocTitle;
+                string address = dtDocs[0].DocAddress;
+                string filePDF = address;
+                string FileISF = content + ".isf";
+                DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
+                string strPath = di.Parent.Parent.FullName;
+                if (System.IO.File.Exists(strPath + @"/PDF/" + filePDF))
+                {
+                    webbrowserDocContent.Navigate(new Uri(strPath + @"/PDF/" + filePDF, UriKind.RelativeOrAbsolute));
+                }
+                else
+                {
+                    MessageBox.Show("未找到PDF文件");
+                }
+                if (System.IO.File.Exists(strPath + @"/Comment/" + FileISF))
+                {
+                    System.IO.FileStream fs = new System.IO.FileStream(strPath + @"/Comment/" + FileISF, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection(fs);
+                    fs.Close();
+                }
+                else
+                    this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection();
+                this.InkCanvasAnnotation1.IsEnabled = true;
+                fileCurrentPDF = content;
+                iCurrentItem = dtDocs[0].Id;
+            }
         }
 
 		private void comboBox1_DropDownClosed(object sender, EventArgs e)
@@ -165,6 +194,8 @@ namespace WpfApplication3.Communicate
             this.InkCanvasAnnotation1.Strokes.Save(fs);
             fs.Close();
             MessageBox.Show("批示保存成功！");
+            DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
+            adapter.UpdateState(true, iCurrentItem);
         }
 
         private void listboxDocsRefresh(bool Isread,int Doctype)
@@ -202,7 +233,10 @@ namespace WpfApplication3.Communicate
         {
 			Button btn = sender as Button;
             string content = btn.Content as string;
-            string address = btn.Tag as string;
+            int id = Int32.Parse(btn.Tag.ToString());
+            DataSetDocTableAdapters.T_DocTableAdapter adapter = new DataSetDocTableAdapters.T_DocTableAdapter();
+            DataSetDoc.T_DocDataTable dt = adapter.GetDocById(id);
+            string address = dt[0].DocAddress;
 			string filePDF = address;
 			string FileISF = content+".isf";
             DirectoryInfo di = new DirectoryInfo(System.Environment.CurrentDirectory);
@@ -225,6 +259,7 @@ namespace WpfApplication3.Communicate
                 this.InkCanvasAnnotation1.Strokes = new System.Windows.Ink.StrokeCollection();
             this.InkCanvasAnnotation1.IsEnabled = true;
 			fileCurrentPDF=content;
+            iCurrentItem = id;
 //            PDFReader pdfReader = new PDFReader();
 //            pdfReader.showPdf(content + ".pdf");
         }

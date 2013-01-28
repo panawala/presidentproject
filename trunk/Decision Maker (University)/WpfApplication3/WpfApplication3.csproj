@@ -112,9 +112,10 @@
     </ApplicationDefinition>
     <Compile Include="BRAnyChatCoreSDK.cs" />
     <Compile Include="Case\ClassCatalogNodeItem.cs" />
-    <Compile Include="Case\DataSet_Case.cs">
+    <Compile Include="Case\DataSet_Case.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Case.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Case\PageCase.xaml.cs">
       <DependentUpon>PageCase.xaml</DependentUpon>
@@ -123,6 +124,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBureauDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Communicate\DataSetDoc.cs">
+      <DependentUpon>DataSetDoc.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Communicate\DataSetDoc.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -156,11 +161,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Case\DataSet_Case.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_Case.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet_HumanResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -451,6 +451,17 @@
     <None Include="background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Case\DataSet_Case.xsc">
+      <DependentUpon>DataSet_Case.xsd</DependentUpon>
+    </None>
+    <None Include="Case\DataSet_Case.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Case.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Case\DataSet_Case.xss">
+      <DependentUpon>DataSet_Case.xsd</DependentUpon>
+    </None>
     <None Include="Communicate\DataSetBureauDoc.xsc">
       <DependentUpon>DataSetBureauDoc.xsd</DependentUpon>
     </None>
@@ -483,17 +494,6 @@
     </None>
     <None Include="DataSetCalendar.xss">
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
-    </None>
-    <None Include="Case\DataSet_Case.xsc">
-      <DependentUpon>DataSet_Case.xsd</DependentUpon>
-    </None>
-    <None Include="Case\DataSet_Case.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_Case.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Case\DataSet_Case.xss">
-      <DependentUpon>DataSet_Case.xsd</DependentUpon>
     </None>
     <None Include="DataSet_HumanResource.xsc">
       <DependentUpon>DataSet_HumanResource.xsd</DependentUpon>

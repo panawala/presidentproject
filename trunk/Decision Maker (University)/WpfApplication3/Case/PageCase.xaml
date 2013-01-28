@@ -41,17 +41,17 @@
                     		<SolidColorBrush Color="{DynamicResource #235235235}"/>
                     	</ComboBox.Foreground>
                         <ComboBoxItem Content="类别" IsEnabled="False" IsSelected="True" Style="{DynamicResource ComboBoxItemCase}" />
-                        <ComboBoxItem Content="城市发展案例库" Style="{DynamicResource ComboBoxItemCase}" >
+                        <ComboBoxItem Content="学校发展案例" Style="{DynamicResource ComboBoxItemCase}" >
                         	<ComboBoxItem.Foreground>
                         		<SolidColorBrush Color="{DynamicResource black}"/>
                         	</ComboBoxItem.Foreground>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="城市百科知识库" Style="{DynamicResource ComboBoxItemCase}" >
+                        <ComboBoxItem Content="学校百科知识" Style="{DynamicResource ComboBoxItemCase}" >
                         	<ComboBoxItem.Foreground>
                         		<SolidColorBrush Color="{DynamicResource black}"/>
                         	</ComboBoxItem.Foreground>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="城市数据知识库" Style="{DynamicResource ComboBoxItemCase}" >
+                        <ComboBoxItem Content="学校数据知识" Style="{DynamicResource ComboBoxItemCase}" >
                         	<ComboBoxItem.Foreground>
                         		<SolidColorBrush Color="{DynamicResource black}"/>
                         	</ComboBoxItem.Foreground>
@@ -181,7 +181,7 @@
                     		</Rectangle>
                     		<TextBox x:Name="tbxSearch" HorizontalAlignment="Stretch" Text="请输入关键词。。" Style="{DynamicResource TextBoxSearchbar}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="4" GotMouseCapture="tbxSearch_GotMouseCapture"/>
                     	</Grid>
-                        <Button x:Name="btnSearch" Content="搜" VerticalAlignment="Top" Height="30" Click="btnSearch_Click" Style="{DynamicResource ButtonSearch}" Width="30" Grid.Column="2" />
+                        <Button x:Name="btnSearch" Content="搜" VerticalAlignment="Bottom" Height="30" Click="btnSearch_Click" Style="{DynamicResource ButtonSearch}" Width="30" Grid.Column="2" Margin="0,0,1,0" />
                     </Grid>
                 </Grid>
             </Grid>
@@ -202,7 +202,7 @@
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate DataType="{x:Type local:ClassCatalogNodeItem}" ItemsSource="{Binding Children}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock VerticalAlignment="Center" Text="{Binding strText}"/>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding strText}" MouseDown="TextBlock_MouseDown_1"/>
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
