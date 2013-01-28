@@ -115,10 +115,18 @@
     <Compile Include="Case\PageCase.xaml.cs">
       <DependentUpon>PageCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Communicate\DataSetBureauDoc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBureauDoc.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Communicate\DataSetDoc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Communicate\PageBureauCommunicate.xaml.cs">
+      <DependentUpon>PageBureauCommunicate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Communicate\PageDocIssue.xaml.cs">
       <DependentUpon>PageDocIssue.xaml</DependentUpon>
@@ -283,6 +291,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Communicate\PageBureauCommunicate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Communicate\PageDocIssue.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -438,6 +450,17 @@
     </None>
     <None Include="background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Communicate\DataSetBureauDoc.xsc">
+      <DependentUpon>DataSetBureauDoc.xsd</DependentUpon>
+    </None>
+    <None Include="Communicate\DataSetBureauDoc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBureauDoc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Communicate\DataSetBureauDoc.xss">
+      <DependentUpon>DataSetBureauDoc.xsd</DependentUpon>
     </None>
     <None Include="Communicate\DataSetDoc.xsc">
       <DependentUpon>DataSetDoc.xsd</DependentUpon>

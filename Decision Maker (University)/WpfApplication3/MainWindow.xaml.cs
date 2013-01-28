@@ -451,6 +451,11 @@ namespace WpfApplication3
 			Communicate.PageDocIssue m_PageDocIssue = new Communicate.PageDocIssue();
             FrameMiddleContent.Navigate(m_PageDocIssue);
         }
+        private void menu3_2_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Communicate.PageBureauCommunicate m_PageBureauDoc = new Communicate.PageBureauCommunicate();
+            FrameMiddleContent.Navigate(m_PageBureauDoc);
+        }
 
         private void menu7_2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -681,6 +686,8 @@ namespace WpfApplication3
             keybd_event(VK_VOLUME_MUTE, MapVirtualKey(VK_VOLUME_MUTE, 0), KEYEVENTF_EXTENDEDKEY, 0);
             keybd_event(VK_VOLUME_MUTE, MapVirtualKey(VK_VOLUME_MUTE, 0), KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
         }
+
+
 
  
 		
