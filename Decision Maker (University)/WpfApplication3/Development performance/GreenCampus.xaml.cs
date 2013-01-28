@@ -562,6 +562,11 @@ namespace WpfApplication3.Development_performance
                 W_huanjing.ObjectForScripting = ds2;
             }
         }
-    
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+            this.NavigationService.Navigate(ComprehensiveI);
+        }
     }
 }

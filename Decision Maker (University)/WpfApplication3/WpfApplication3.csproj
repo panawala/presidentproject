@@ -112,6 +112,10 @@
     </ApplicationDefinition>
     <Compile Include="BRAnyChatCoreSDK.cs" />
     <Compile Include="Case\ClassCatalogNodeItem.cs" />
+    <Compile Include="Case\DataSet_Case.cs">
+      <DependentUpon>DataSet_Case.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Case\PageCase.xaml.cs">
       <DependentUpon>PageCase.xaml</DependentUpon>
     </Compile>
@@ -152,10 +156,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCalendar.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Case\DataSet_Case.cs">
-      <DependentUpon>DataSet_Case.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Case\DataSet_Case.Designer.cs">
       <AutoGen>True</AutoGen>

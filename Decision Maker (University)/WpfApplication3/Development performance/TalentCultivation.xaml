@@ -224,6 +224,7 @@
             		</Grid>
             	</TabItem>
             </TabControl>
+            <Button Name="btn_home" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Margin="0,0,10,0" Click="btn_home_Click" Style="{DynamicResource ButtonResourceHomeButton}" Height="39" Grid.RowSpan="2"/>
         </Grid>
         <Grid Grid.Column="0" Margin="10,50,10,10" Name="gridMaxGraph" Visibility="Hidden" MouseDown="gridMaxGraph_MouseDown_1"/>
     </Grid>
