@@ -40,7 +40,7 @@
             	<ColumnDefinition Width="70*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="5,10,0,0">
-            	<Image Source="/WpfApplication3;component/Images/wuchangfu.jpg" Stretch="Fill" Width="150" Height="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            	<Image Name="wnd_FacultyMemberPhoto" Source="/WpfApplication3;component/Images/wuchangfu.jpg" Stretch="Fill" Width="150" Height="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Label Content="Title1" Height="38" Margin="46,18,0,0" x:Name="lblTitle1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="523" />

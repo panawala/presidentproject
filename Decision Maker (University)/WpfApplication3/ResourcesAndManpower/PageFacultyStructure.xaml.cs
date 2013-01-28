@@ -42,7 +42,7 @@ namespace WpfApplication3.ResourcesAndManpower
             listbox4.ItemsSource = dt;
             dt = adapter.GetDataByCollegeAndMenu(strCollegeName, "学术刊物");
             listbox5.ItemsSource = dt;
-            dt = adapter.GetDataByCollegeAndMenu(strCollegeName, "国际机构");
+            dt = adapter.GetDataByCollegeAndMenu(strCollegeName, "国际合作机构");
             listbox6.ItemsSource = dt;
             
         }
