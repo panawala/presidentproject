@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Data;
 
 namespace WpfApplication3.Case
 {
@@ -26,7 +27,7 @@ namespace WpfApplication3.Case
             InitializeComponent();
             ShowTreeView();
             DataSet_CaseTableAdapters.T_CaseTableAdapter adapter = new DataSet_CaseTableAdapters.T_CaseTableAdapter();
-            dtSource = adapter.GetDataFromChengShiFaZhanAnLiKu();
+            dtSource = adapter.GetDataByMenu("学校发展案例");
             DataBind(20, 1);
         }
 
@@ -55,13 +56,9 @@ namespace WpfApplication3.Case
             ClassCatalogNodeItem node = new ClassCatalogNodeItem() { strText = "学校发展案例", isOpen = true };
             ClassCatalogNodeItem child = new ClassCatalogNodeItem() { strText = "校区规划", isOpen = true };
             node.Children.Add(child);
-            child = new ClassCatalogNodeItem() { strText = "总体规划", isOpen = true };
-            node.Children.Add(child);
             child = new ClassCatalogNodeItem() { strText = "详细规划", isOpen = true };
             node.Children.Add(child);
             child = new ClassCatalogNodeItem() { strText = "校园设计", isOpen = true };
-            node.Children.Add(child);
-            child = new ClassCatalogNodeItem() { strText = "专项规划", isOpen = true };
             node.Children.Add(child);
             itemList.Add(node);
             node = new ClassCatalogNodeItem() { strText = "学校百科知识", isOpen = true };
@@ -147,6 +144,24 @@ namespace WpfApplication3.Case
                 return;
             DataSet_CaseTableAdapters.T_CaseTableAdapter adapter = new DataSet_CaseTableAdapters.T_CaseTableAdapter();
             dtSource = adapter.GetDataByKey(tbxSearch.Text);
+            string strType = "";
+            string strTime = "";
+            string strArea = "";
+            if (cbbType.SelectedIndex >0)
+                strType = ((ComboBoxItem)cbbType.SelectedItem).Content.ToString();
+            if (cbbTime.SelectedIndex > 0)
+                strTime = ((ComboBoxItem)cbbTime.SelectedItem).Content.ToString();
+            if (cbbArea.SelectedIndex > 0)
+                strArea = ((ComboBoxItem)cbbArea.SelectedItem).Content.ToString();
+            foreach (DataSet_Case.T_CaseRow row in dtSource)
+            {
+                if (row.CreateTime != strTime && strTime != "")
+                    dtSource.RemoveT_CaseRow(row);
+                else if (row.Menu1 != strType && strType != "")
+                    dtSource.RemoveT_CaseRow(row);
+                else if (row.CaseCountry != strArea && strArea != "")
+                    dtSource.RemoveT_CaseRow(row);
+            }
             DataBind(20, 1);
         }
 
@@ -182,6 +197,15 @@ namespace WpfApplication3.Case
         private void tbxSearchCase_GotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
         {
         	tbxSearchCase.Clear();// TODO: Add event handler implementation here.
+        }
+
+        private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tbl = (TextBlock)sender;
+            string str = tbl.Text;
+            DataSet_CaseTableAdapters.T_CaseTableAdapter adapter = new DataSet_CaseTableAdapters.T_CaseTableAdapter();
+            dtSource = adapter.GetDataByMenu(str);
+            DataBind(20, 1);
         }
     }
 

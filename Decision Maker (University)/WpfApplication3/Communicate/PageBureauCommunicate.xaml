@@ -88,7 +88,7 @@
                 </Grid>
                 <Label x:Name="label" Content="{Binding SubmissionDate}" HorizontalAlignment="Center" Width="Auto" Grid.Column="2" VerticalAlignment="Center"/>
                 <ContentPresenter Content="{Binding DocTitle}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Cursor="Hand"/>
-                <Button x:Name="btnDocSearchShow" Content="{Binding DocTitle}" Tag="{Binding DocAddress}" Click="btnDocSearchShow_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand"/>
+                <Button x:Name="btnDocSearchShow" Content="{Binding DocTitle}" Tag="{Binding Id}" Click="btnDocSearchShow_Click" Focusable="False" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" Style="{DynamicResource ButtonFeedbacknormal}" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand"/>
             </Grid>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsSelected" Value="true"/>
