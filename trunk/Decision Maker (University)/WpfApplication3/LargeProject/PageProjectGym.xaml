@@ -222,7 +222,7 @@
         						<ColumnDefinition/>
         					</Grid.ColumnDefinitions>
         					<Image x:Name="ImageSolution" Stretch="Fill" Grid.Column="0" />
-        					<ScrollViewer Grid.Column="1">
+        					<ScrollViewer Grid.Column="1" Margin="20" FontSize="14" FontWeight="Bold">
         						<TextBlock x:Name="TextProject" Text="TextBlockdfgsTefsdfgsdfgsdgfsdgfsgfsgfsdfgsdf" TextWrapping="WrapWithOverflow"/>
         					</ScrollViewer>
         				</Grid>

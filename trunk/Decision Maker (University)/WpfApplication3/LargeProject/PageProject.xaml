@@ -242,8 +242,8 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="ImageSolution" Stretch="Fill" Grid.Column="0" />
-                            <ScrollViewer Grid.Column="1">
-                                <TextBlock x:Name="TextProject" Text="TextBlockdfgsTefsdfgsdfgsdgfsdgfsgfsgfsdfgsdf" TextWrapping="WrapWithOverflow" Foreground="Black"/>
+                            <ScrollViewer Grid.Column="1" Margin="20" FontSize="16" FontFamily="Black" FontWeight="Bold">
+                                <TextBlock x:Name="TextProject" Text="TextBlockdfgsTefsdfgsdfgsdgfsdgfsgfsgfsdfgsdf" TextWrapping="WrapWithOverflow" Foreground="Black" FontFamily="微软雅黑" FontSize="14"/>
                             </ScrollViewer>
                         </Grid>
 
@@ -330,7 +330,7 @@
                             <TextBlock TextWrapping="Wrap" Text="林涛" d:LayoutOverrides="Width, Height" Grid.Column="1" HorizontalAlignment="Left" LineHeight="24" FontWeight="Bold" Padding="0,7,0,0" Margin="12,0,0,0"/>
                             <Button x:Name="btn_ZiRanZaiHai_Phone_A" Grid.ColumnSpan="2" Opacity="0" Cursor="Hand" />
                         </Grid>
-                        <TextBlock TextWrapping="Wrap" Text="下设部门：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontWeight="Bold" FontSize="14"/>
+                        <TextBlock TextWrapping="Wrap" Text="下设部门：" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.999,20,0,0" FontSize="14" FontWeight="Bold"/>
                         <Grid Height="35" Margin="0,15,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="28.25"/>
