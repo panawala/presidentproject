@@ -22,6 +22,22 @@ namespace WpfApplication3.ResourcesAndManpower
         public WindowFacultyMember(int FacultyStructureId)
         {
             InitializeComponent();
+            //暂用   之后记得删了  转到相应的人的主页
+            switch (FacultyStructureId)
+            {
+                case 3:
+                    wb_person.Source = new Uri("http://www.tongji-arch.org/person_detail.asp?id=46");
+                    break;
+                case 4:
+                    wb_person.Source = new Uri("http://www.tongji-arch.org/person_detail.asp?id=31");
+                    break;
+                case 5:
+                    wb_person.Source = new Uri("http://www.tongji-arch.org/person_detail.asp?id=48");
+                    break;
+                default:
+                    wb_person.Source = new Uri("http://www.tongji-caup.org/intro.php?cid=22");
+                    break;
+            }
             wnd_FacultyMemberPhoto.Source = new BitmapImage(new Uri("/Images/Photos/FacultyMemberPhoto_" + FacultyStructureId + ".jpg", UriKind.Relative));
             DataSetFacultyMemberTableAdapters.T_FacultyMemberTableAdapter adapter = new DataSetFacultyMemberTableAdapters.T_FacultyMemberTableAdapter();
             try

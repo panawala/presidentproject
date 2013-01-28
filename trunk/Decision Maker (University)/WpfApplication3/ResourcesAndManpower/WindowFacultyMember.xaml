@@ -53,7 +53,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" Margin="10">
-        	<WebBrowser Margin="10" Source="http://www.tongji-caup.org/intro.php?cid=22" />
+        	<WebBrowser Name="wb_person" Margin="10" Source="http://www.tongji-caup.org/intro.php?cid=22" />
         </Grid>
     </Grid>
 </Window>

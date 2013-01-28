@@ -265,6 +265,13 @@ namespace WpfApplication3.ResourcesAndManpower
                 Canvas.SetLeft(btn, node.Left);
                 Canvas.SetTop(btn, node.Top);
             }
+            foreach (Button btn in canvasMap.Children)
+            {
+                if (getSpatialNodeByName(btn.Content.ToString()).Name == "文远楼")
+                    btn.IsEnabled = true;
+                else
+                    btn.IsEnabled = false;
+            }
             button_Click(canvasMap.Children[0], e);
         }
 

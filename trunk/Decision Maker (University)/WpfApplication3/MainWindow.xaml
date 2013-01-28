@@ -622,7 +622,7 @@
                 	</ListBox>
                 	<ListBoxItem x:Name="menutitle5" Content="经验引介" Height="70" Style="{DynamicResource ListBoxItemStyle1}" FontSize="16" PreviewMouseDown="menutitle5_PreviewMouseDown"/>
                 	<ListBox x:Name="menu5" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListBoxMenu}" Width="292" BorderThickness="0" Margin="-2,0,0,0" Visibility="Collapsed">
-                		<ListBoxItem x:Name="menu5_1" Content="校园管理经营" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu5_1_PreviewMouseDown">
+                		<ListBoxItem x:Name="menu5_1" Content="校园管理经验" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu5_1_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>

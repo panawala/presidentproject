@@ -940,6 +940,12 @@ namespace WpfApplication3.Development_performance
                 gridTeaching.Children.Add(ue);
         }
 
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+            this.NavigationService.Navigate(ComprehensiveI);
+        }
+
 
     }
 }
