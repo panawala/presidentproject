@@ -20,17 +20,17 @@ namespace WpfApplication3.Communicate {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetDoc")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetBureauDoc")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetDoc : global::System.Data.DataSet {
+    public partial class DataSetBureauDoc : global::System.Data.DataSet {
         
-        private T_DocDataTable tableT_Doc;
+        private T_PresidentBureauDocDataTable tableT_PresidentBureauDoc;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSetDoc() {
+        public DataSetBureauDoc() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WpfApplication3.Communicate {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSetDoc(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetBureauDoc(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace WpfApplication3.Communicate {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["T_Doc"] != null)) {
-                    base.Tables.Add(new T_DocDataTable(ds.Tables["T_Doc"]));
+                if ((ds.Tables["T_PresidentBureauDoc"] != null)) {
+                    base.Tables.Add(new T_PresidentBureauDocDataTable(ds.Tables["T_PresidentBureauDoc"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WpfApplication3.Communicate {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public T_DocDataTable T_Doc {
+        public T_PresidentBureauDocDataTable T_PresidentBureauDoc {
             get {
-                return this.tableT_Doc;
+                return this.tableT_PresidentBureauDoc;
             }
         }
         
@@ -127,7 +127,7 @@ namespace WpfApplication3.Communicate {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetDoc cln = ((DataSetDoc)(base.Clone()));
+            DataSetBureauDoc cln = ((DataSetBureauDoc)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace WpfApplication3.Communicate {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["T_Doc"] != null)) {
-                    base.Tables.Add(new T_DocDataTable(ds.Tables["T_Doc"]));
+                if ((ds.Tables["T_PresidentBureauDoc"] != null)) {
+                    base.Tables.Add(new T_PresidentBureauDocDataTable(ds.Tables["T_PresidentBureauDoc"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WpfApplication3.Communicate {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableT_Doc = ((T_DocDataTable)(base.Tables["T_Doc"]));
+            this.tableT_PresidentBureauDoc = ((T_PresidentBureauDocDataTable)(base.Tables["T_PresidentBureauDoc"]));
             if ((initTable == true)) {
-                if ((this.tableT_Doc != null)) {
-                    this.tableT_Doc.InitVars();
+                if ((this.tableT_PresidentBureauDoc != null)) {
+                    this.tableT_PresidentBureauDoc.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace WpfApplication3.Communicate {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetDoc";
+            this.DataSetName = "DataSetBureauDoc";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetDoc.xsd";
+            this.Namespace = "http://tempuri.org/DataSetBureauDoc.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableT_Doc = new T_DocDataTable();
-            base.Tables.Add(this.tableT_Doc);
+            this.tableT_PresidentBureauDoc = new T_PresidentBureauDocDataTable();
+            base.Tables.Add(this.tableT_PresidentBureauDoc);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeT_Doc() {
+        private bool ShouldSerializeT_PresidentBureauDoc() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace WpfApplication3.Communicate {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetDoc ds = new DataSetDoc();
+            DataSetBureauDoc ds = new DataSetBureauDoc();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace WpfApplication3.Communicate {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void T_DocRowChangeEventHandler(object sender, T_DocRowChangeEvent e);
+        public delegate void T_PresidentBureauDocRowChangeEventHandler(object sender, T_PresidentBureauDocRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class T_DocDataTable : global::System.Data.TypedTableBase<T_DocRow> {
+        public partial class T_PresidentBureauDocDataTable : global::System.Data.TypedTableBase<T_PresidentBureauDocRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -293,8 +293,8 @@ namespace WpfApplication3.Communicate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocDataTable() {
-                this.TableName = "T_Doc";
+            public T_PresidentBureauDocDataTable() {
+                this.TableName = "T_PresidentBureauDoc";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +302,7 @@ namespace WpfApplication3.Communicate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal T_DocDataTable(global::System.Data.DataTable table) {
+            internal T_PresidentBureauDocDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,7 +319,7 @@ namespace WpfApplication3.Communicate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected T_DocDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected T_PresidentBureauDocDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -383,34 +383,34 @@ namespace WpfApplication3.Communicate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRow this[int index] {
+            public T_PresidentBureauDocRow this[int index] {
                 get {
-                    return ((T_DocRow)(this.Rows[index]));
+                    return ((T_PresidentBureauDocRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event T_DocRowChangeEventHandler T_DocRowChanging;
+            public event T_PresidentBureauDocRowChangeEventHandler T_PresidentBureauDocRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event T_DocRowChangeEventHandler T_DocRowChanged;
+            public event T_PresidentBureauDocRowChangeEventHandler T_PresidentBureauDocRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event T_DocRowChangeEventHandler T_DocRowDeleting;
+            public event T_PresidentBureauDocRowChangeEventHandler T_PresidentBureauDocRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event T_DocRowChangeEventHandler T_DocRowDeleted;
+            public event T_PresidentBureauDocRowChangeEventHandler T_PresidentBureauDocRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddT_DocRow(T_DocRow row) {
+            public void AddT_PresidentBureauDocRow(T_PresidentBureauDocRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRow AddT_DocRow(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, string DocType) {
-                T_DocRow rowT_DocRow = ((T_DocRow)(this.NewRow()));
+            public T_PresidentBureauDocRow AddT_PresidentBureauDocRow(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, int DocType) {
+                T_PresidentBureauDocRow rowT_PresidentBureauDocRow = ((T_PresidentBureauDocRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         DocTitle,
@@ -418,22 +418,22 @@ namespace WpfApplication3.Communicate {
                         SubmissionDate,
                         IsRead,
                         DocType};
-                rowT_DocRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowT_DocRow);
-                return rowT_DocRow;
+                rowT_PresidentBureauDocRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowT_PresidentBureauDocRow);
+                return rowT_PresidentBureauDocRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRow FindById(int Id) {
-                return ((T_DocRow)(this.Rows.Find(new object[] {
+            public T_PresidentBureauDocRow FindById(int Id) {
+                return ((T_PresidentBureauDocRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                T_DocDataTable cln = ((T_DocDataTable)(base.Clone()));
+                T_PresidentBureauDocDataTable cln = ((T_PresidentBureauDocDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,7 +441,7 @@ namespace WpfApplication3.Communicate {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new T_DocDataTable();
+                return new T_PresidentBureauDocDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -468,7 +468,7 @@ namespace WpfApplication3.Communicate {
                 base.Columns.Add(this.columnSubmissionDate);
                 this.columnIsRead = new global::System.Data.DataColumn("IsRead", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsRead);
-                this.columnDocType = new global::System.Data.DataColumn("DocType", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDocType = new global::System.Data.DataColumn("DocType", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -485,33 +485,32 @@ namespace WpfApplication3.Communicate {
                 this.columnSubmissionDate.AllowDBNull = false;
                 this.columnIsRead.AllowDBNull = false;
                 this.columnDocType.AllowDBNull = false;
-                this.columnDocType.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRow NewT_DocRow() {
-                return ((T_DocRow)(this.NewRow()));
+            public T_PresidentBureauDocRow NewT_PresidentBureauDocRow() {
+                return ((T_PresidentBureauDocRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new T_DocRow(builder);
+                return new T_PresidentBureauDocRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(T_DocRow);
+                return typeof(T_PresidentBureauDocRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.T_DocRowChanged != null)) {
-                    this.T_DocRowChanged(this, new T_DocRowChangeEvent(((T_DocRow)(e.Row)), e.Action));
+                if ((this.T_PresidentBureauDocRowChanged != null)) {
+                    this.T_PresidentBureauDocRowChanged(this, new T_PresidentBureauDocRowChangeEvent(((T_PresidentBureauDocRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,8 +518,8 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.T_DocRowChanging != null)) {
-                    this.T_DocRowChanging(this, new T_DocRowChangeEvent(((T_DocRow)(e.Row)), e.Action));
+                if ((this.T_PresidentBureauDocRowChanging != null)) {
+                    this.T_PresidentBureauDocRowChanging(this, new T_PresidentBureauDocRowChangeEvent(((T_PresidentBureauDocRow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,8 +527,8 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.T_DocRowDeleted != null)) {
-                    this.T_DocRowDeleted(this, new T_DocRowChangeEvent(((T_DocRow)(e.Row)), e.Action));
+                if ((this.T_PresidentBureauDocRowDeleted != null)) {
+                    this.T_PresidentBureauDocRowDeleted(this, new T_PresidentBureauDocRowChangeEvent(((T_PresidentBureauDocRow)(e.Row)), e.Action));
                 }
             }
             
@@ -537,14 +536,14 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.T_DocRowDeleting != null)) {
-                    this.T_DocRowDeleting(this, new T_DocRowChangeEvent(((T_DocRow)(e.Row)), e.Action));
+                if ((this.T_PresidentBureauDocRowDeleting != null)) {
+                    this.T_PresidentBureauDocRowDeleting(this, new T_PresidentBureauDocRowChangeEvent(((T_PresidentBureauDocRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveT_DocRow(T_DocRow row) {
+            public void RemoveT_PresidentBureauDocRow(T_PresidentBureauDocRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -553,7 +552,7 @@ namespace WpfApplication3.Communicate {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetDoc ds = new DataSetDoc();
+                DataSetBureauDoc ds = new DataSetBureauDoc();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -571,7 +570,7 @@ namespace WpfApplication3.Communicate {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "T_DocDataTable";
+                attribute2.FixedValue = "T_PresidentBureauDocDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -615,25 +614,25 @@ namespace WpfApplication3.Communicate {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class T_DocRow : global::System.Data.DataRow {
+        public partial class T_PresidentBureauDocRow : global::System.Data.DataRow {
             
-            private T_DocDataTable tableT_Doc;
+            private T_PresidentBureauDocDataTable tableT_PresidentBureauDoc;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal T_DocRow(global::System.Data.DataRowBuilder rb) : 
+            internal T_PresidentBureauDocRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableT_Doc = ((T_DocDataTable)(this.Table));
+                this.tableT_PresidentBureauDoc = ((T_PresidentBureauDocDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableT_Doc.IdColumn]));
+                    return ((int)(this[this.tableT_PresidentBureauDoc.IdColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.IdColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.IdColumn] = value;
                 }
             }
             
@@ -641,10 +640,10 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DocTitle {
                 get {
-                    return ((string)(this[this.tableT_Doc.DocTitleColumn]));
+                    return ((string)(this[this.tableT_PresidentBureauDoc.DocTitleColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.DocTitleColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.DocTitleColumn] = value;
                 }
             }
             
@@ -652,10 +651,10 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DocAddress {
                 get {
-                    return ((string)(this[this.tableT_Doc.DocAddressColumn]));
+                    return ((string)(this[this.tableT_PresidentBureauDoc.DocAddressColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.DocAddressColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.DocAddressColumn] = value;
                 }
             }
             
@@ -663,10 +662,10 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime SubmissionDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableT_Doc.SubmissionDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableT_PresidentBureauDoc.SubmissionDateColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.SubmissionDateColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.SubmissionDateColumn] = value;
                 }
             }
             
@@ -674,21 +673,21 @@ namespace WpfApplication3.Communicate {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRead {
                 get {
-                    return ((bool)(this[this.tableT_Doc.IsReadColumn]));
+                    return ((bool)(this[this.tableT_PresidentBureauDoc.IsReadColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.IsReadColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.IsReadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DocType {
+            public int DocType {
                 get {
-                    return ((string)(this[this.tableT_Doc.DocTypeColumn]));
+                    return ((int)(this[this.tableT_PresidentBureauDoc.DocTypeColumn]));
                 }
                 set {
-                    this[this.tableT_Doc.DocTypeColumn] = value;
+                    this[this.tableT_PresidentBureauDoc.DocTypeColumn] = value;
                 }
             }
         }
@@ -697,22 +696,22 @@ namespace WpfApplication3.Communicate {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class T_DocRowChangeEvent : global::System.EventArgs {
+        public class T_PresidentBureauDocRowChangeEvent : global::System.EventArgs {
             
-            private T_DocRow eventRow;
+            private T_PresidentBureauDocRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRowChangeEvent(T_DocRow row, global::System.Data.DataRowAction action) {
+            public T_PresidentBureauDocRowChangeEvent(T_PresidentBureauDocRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DocRow Row {
+            public T_PresidentBureauDocRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -728,7 +727,7 @@ namespace WpfApplication3.Communicate {
         }
     }
 }
-namespace WpfApplication3.Communicate.DataSetDocTableAdapters {
+namespace WpfApplication3.Communicate.DataSetBureauDocTableAdapters {
     
     
     /// <summary>
@@ -740,7 +739,7 @@ namespace WpfApplication3.Communicate.DataSetDocTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class T_DocTableAdapter : global::System.ComponentModel.Component {
+    public partial class T_PresidentBureauDocTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -754,7 +753,7 @@ namespace WpfApplication3.Communicate.DataSetDocTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public T_DocTableAdapter() {
+        public T_PresidentBureauDocTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -851,7 +850,7 @@ namespace WpfApplication3.Communicate.DataSetDocTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "T_Doc";
+            tableMapping.DataSetTable = "T_PresidentBureauDoc";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("DocTitle", "DocTitle");
             tableMapping.ColumnMappings.Add("DocAddress", "DocAddress");
@@ -861,43 +860,40 @@ namespace WpfApplication3.Communicate.DataSetDocTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[T_Doc] WHERE (([Id] = @Original_Id) AND ([DocTitle] = @Origina" +
-                "l_DocTitle) AND ([DocAddress] = @Original_DocAddress) AND ([SubmissionDate] = @O" +
-                "riginal_SubmissionDate) AND ([IsRead] = @Original_IsRead) AND ([DocType] = @Orig" +
-                "inal_DocType))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [T_PresidentBureauDoc] WHERE (([Id] = @Original_Id) AND ([DocTitle] = @Original_DocTitle) AND ([DocAddress] = @Original_DocAddress) AND ([SubmissionDate] = @Original_SubmissionDate) AND ([IsRead] = @Original_IsRead) AND ([DocType] = @Original_DocType))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocAddress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubmissionDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubmissionDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsRead", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[T_Doc] ([DocTitle], [DocAddress], [SubmissionDate], [IsRead], [DocType]) VALUES (@DocTitle, @DocAddress, @SubmissionDate, @IsRead, @DocType);
-SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [T_PresidentBureauDoc] ([DocTitle], [DocAddress], [SubmissionDate], [IsRead], [DocType]) VALUES (@DocTitle, @DocAddress, @SubmissionDate, @IsRead, @DocType);
+SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_PresidentBureauDoc WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubmissionDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubmissionDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[T_Doc] SET [DocTitle] = @DocTitle, [DocAddress] = @DocAddress, [SubmissionDate] = @SubmissionDate, [IsRead] = @IsRead, [DocType] = @DocType WHERE (([Id] = @Original_Id) AND ([DocTitle] = @Original_DocTitle) AND ([DocAddress] = @Original_DocAddress) AND ([SubmissionDate] = @Original_SubmissionDate) AND ([IsRead] = @Original_IsRead) AND ([DocType] = @Original_DocType));
-SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [T_PresidentBureauDoc] SET [DocTitle] = @DocTitle, [DocAddress] = @DocAddress, [SubmissionDate] = @SubmissionDate, [IsRead] = @IsRead, [DocType] = @DocType WHERE (([Id] = @Original_Id) AND ([DocTitle] = @Original_DocTitle) AND ([DocAddress] = @Original_DocAddress) AND ([SubmissionDate] = @Original_SubmissionDate) AND ([IsRead] = @Original_IsRead) AND ([DocType] = @Original_DocType));
+SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_PresidentBureauDoc WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubmissionDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubmissionDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocAddress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubmissionDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubmissionDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsRead", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -911,59 +907,48 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM dbo.T_Doc";
+            this._commandCollection[0].CommandText = "SELECT        T_PresidentBureauDoc.*\r\nFROM            T_PresidentBureauDoc";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType\r\nFROM    " +
-                "        T_PresidentDoc\r\nWHERE        (IsRead = @IsRead) AND (DocType = @DocType)" +
-                "\r\nORDER BY SubmissionDate ASC";
+                "        T_PresidentBureauDoc\r\nWHERE        (DocTitle LIKE \'%\' + @key + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@key", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType\r\nFROM    " +
-                "        T_PresidentDoc\r\nWHERE        (IsRead = @IsRead) AND (DocType = @DocType)" +
-                "\r\nORDER BY SubmissionDate DESC";
+                "        T_PresidentBureauDoc\r\nWHERE        (IsRead = @IsRead) AND (DocType = @Do" +
+                "cType)\r\nORDER BY SubmissionDate ASC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType\r\nFROM    " +
-                "        T_PresidentDoc\r\nWHERE        (DocTitle LIKE \'%\' + @key + \'%\')";
+                "        T_PresidentBureauDoc\r\nWHERE        (IsRead = @IsRead) AND (DocType = @Do" +
+                "cType)\r\nORDER BY SubmissionDate DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@key", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "DocTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM dbo.T_Doc w" +
-                "here Id=@Id";
+            this._commandCollection[4].CommandText = "SELECT        Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType\r\nFROM    " +
+                "        T_PresidentBureauDoc\r\nWHERE        (DATEDIFF(day, SubmissionDate, GETDAT" +
+                "E()) >= 0) AND (DATEDIFF(day, SubmissionDate, GETDATE()) <= 6) AND (IsRead = @Is" +
+                "Read)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType\r\nFROM    " +
-                "        T_PresidentDoc\r\nWHERE        (DATEDIFF(day, SubmissionDate, GETDATE()) >" +
-                "= 0) AND (DATEDIFF(day, SubmissionDate, GETDATE()) <= 6) AND (IsRead = @IsRead)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE [dbo].[T_Doc] SET  [IsRead] = @IsRead WHERE (Id = @Id)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsRead", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsRead", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetDoc.T_DocDataTable dataTable) {
+        public virtual int Fill(DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -976,9 +961,9 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetDoc.T_DocDataTable GetData() {
+        public virtual DataSetBureauDoc.T_PresidentBureauDocDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
+            DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable = new DataSetBureauDoc.T_PresidentBureauDocDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -987,41 +972,15 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetDoc.T_DocDataTable GetDataByDocStateAndDocTypeAsc(bool IsRead, int DocType) {
+        public virtual DataSetBureauDoc.T_PresidentBureauDocDataTable GetBureauDocByKey(string key) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((bool)(IsRead));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DocType));
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetDoc.T_DocDataTable GetDataByDocStateAndDocTypeDesc(bool IsRead, int DocType) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((bool)(IsRead));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DocType));
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetDoc.T_DocDataTable GetDataByKey(string key) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((key == null)) {
                 throw new global::System.ArgumentNullException("key");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(key));
             }
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
+            DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable = new DataSetBureauDoc.T_PresidentBureauDocDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1030,22 +989,11 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetDoc.T_DocDataTable GetDocById(int Id) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetDoc.T_DocDataTable GetLatestDataByState(bool IsRead) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+        public virtual DataSetBureauDoc.T_PresidentBureauDocDataTable GetBureauDocByStatenTypeASC(bool IsRead, int DocType) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((bool)(IsRead));
-            DataSetDoc.T_DocDataTable dataTable = new DataSetDoc.T_DocDataTable();
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DocType));
+            DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable = new DataSetBureauDoc.T_PresidentBureauDocDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1053,15 +1001,40 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDoc.T_DocDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetBureauDoc.T_PresidentBureauDocDataTable GetBureauDocByStatenTypeDESC(bool IsRead, int DocType) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((bool)(IsRead));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DocType));
+            DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable = new DataSetBureauDoc.T_PresidentBureauDocDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetBureauDoc.T_PresidentBureauDocDataTable GetLastestBureauDocByState(bool IsRead) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((bool)(IsRead));
+            DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable = new DataSetBureauDoc.T_PresidentBureauDocDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSetBureauDoc.T_PresidentBureauDocDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDoc dataSet) {
-            return this.Adapter.Update(dataSet, "T_Doc");
+        public virtual int Update(DataSetBureauDoc dataSet) {
+            return this.Adapter.Update(dataSet, "T_PresidentBureauDoc");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1083,7 +1056,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, string Original_DocType) {
+        public virtual int Delete(int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, int Original_DocType) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_DocTitle == null)) {
                 throw new global::System.ArgumentNullException("Original_DocTitle");
@@ -1099,12 +1072,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_SubmissionDate));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_IsRead));
-            if ((Original_DocType == null)) {
-                throw new global::System.ArgumentNullException("Original_DocType");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DocType));
-            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_DocType));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1125,7 +1093,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, string DocType) {
+        public virtual int Insert(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, int DocType) {
             if ((DocTitle == null)) {
                 throw new global::System.ArgumentNullException("DocTitle");
             }
@@ -1140,12 +1108,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(SubmissionDate));
             this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(IsRead));
-            if ((DocType == null)) {
-                throw new global::System.ArgumentNullException("DocType");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DocType));
-            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(DocType));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1166,7 +1129,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, string DocType, int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, string Original_DocType, int Id) {
+        public virtual int Update(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, int DocType, int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, int Original_DocType, int Id) {
             if ((DocTitle == null)) {
                 throw new global::System.ArgumentNullException("DocTitle");
             }
@@ -1181,12 +1144,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(SubmissionDate));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(IsRead));
-            if ((DocType == null)) {
-                throw new global::System.ArgumentNullException("DocType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DocType));
-            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(DocType));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
             if ((Original_DocTitle == null)) {
                 throw new global::System.ArgumentNullException("Original_DocTitle");
@@ -1202,12 +1160,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
             }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_SubmissionDate));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_IsRead));
-            if ((Original_DocType == null)) {
-                throw new global::System.ArgumentNullException("Original_DocType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DocType));
-            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_DocType));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1229,33 +1182,8 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, string DocType, int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, string Original_DocType) {
+        public virtual int Update(string DocTitle, string DocAddress, System.DateTime SubmissionDate, bool IsRead, int DocType, int Original_Id, string Original_DocTitle, string Original_DocAddress, System.DateTime Original_SubmissionDate, bool Original_IsRead, int Original_DocType) {
             return this.Update(DocTitle, DocAddress, SubmissionDate, IsRead, DocType, Original_Id, Original_DocTitle, Original_DocAddress, Original_SubmissionDate, Original_IsRead, Original_DocType, Original_Id);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateState(bool IsRead, int Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
-            command.Parameters[0].Value = ((bool)(IsRead));
-            command.Parameters[1].Value = ((int)(Id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
@@ -1271,7 +1199,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         
         private UpdateOrderOption _updateOrder;
         
-        private T_DocTableAdapter _t_DocTableAdapter;
+        private T_PresidentBureauDocTableAdapter _t_PresidentBureauDocTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1293,12 +1221,12 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public T_DocTableAdapter T_DocTableAdapter {
+        public T_PresidentBureauDocTableAdapter T_PresidentBureauDocTableAdapter {
             get {
-                return this._t_DocTableAdapter;
+                return this._t_PresidentBureauDocTableAdapter;
             }
             set {
-                this._t_DocTableAdapter = value;
+                this._t_PresidentBureauDocTableAdapter = value;
             }
         }
         
@@ -1321,9 +1249,9 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._t_DocTableAdapter != null) 
-                            && (this._t_DocTableAdapter.Connection != null))) {
-                    return this._t_DocTableAdapter.Connection;
+                if (((this._t_PresidentBureauDocTableAdapter != null) 
+                            && (this._t_PresidentBureauDocTableAdapter.Connection != null))) {
+                    return this._t_PresidentBureauDocTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1338,7 +1266,7 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._t_DocTableAdapter != null)) {
+                if ((this._t_PresidentBureauDocTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1350,14 +1278,14 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSetDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetBureauDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._t_DocTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.T_Doc.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._t_PresidentBureauDocTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.T_PresidentBureauDoc.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._t_DocTableAdapter.Update(updatedRows));
+                    result = (result + this._t_PresidentBureauDocTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1369,13 +1297,13 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSetDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetBureauDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._t_DocTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.T_Doc.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._t_PresidentBureauDocTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.T_PresidentBureauDoc.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._t_DocTableAdapter.Update(addedRows));
+                    result = (result + this._t_PresidentBureauDocTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1387,13 +1315,13 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSetDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetBureauDoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._t_DocTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.T_Doc.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._t_PresidentBureauDocTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.T_PresidentBureauDoc.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._t_DocTableAdapter.Update(deletedRows));
+                    result = (result + this._t_PresidentBureauDocTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1429,15 +1357,15 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSetDoc dataSet) {
+        public virtual int UpdateAll(DataSetBureauDoc dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._t_DocTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._t_DocTableAdapter.Connection) == false))) {
+            if (((this._t_PresidentBureauDocTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._t_PresidentBureauDocTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1473,13 +1401,13 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._t_DocTableAdapter != null)) {
-                    revertConnections.Add(this._t_DocTableAdapter, this._t_DocTableAdapter.Connection);
-                    this._t_DocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._t_DocTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._t_DocTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._t_DocTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._t_DocTableAdapter.Adapter);
+                if ((this._t_PresidentBureauDocTableAdapter != null)) {
+                    revertConnections.Add(this._t_PresidentBureauDocTableAdapter, this._t_PresidentBureauDocTableAdapter.Connection);
+                    this._t_PresidentBureauDocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._t_PresidentBureauDocTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._t_PresidentBureauDocTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._t_PresidentBureauDocTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._t_PresidentBureauDocTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1540,9 +1468,9 @@ SELECT Id, DocTitle, DocAddress, SubmissionDate, IsRead, DocType FROM T_Doc WHER
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._t_DocTableAdapter != null)) {
-                    this._t_DocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._t_DocTableAdapter]));
-                    this._t_DocTableAdapter.Transaction = null;
+                if ((this._t_PresidentBureauDocTableAdapter != null)) {
+                    this._t_PresidentBureauDocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._t_PresidentBureauDocTableAdapter]));
+                    this._t_PresidentBureauDocTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

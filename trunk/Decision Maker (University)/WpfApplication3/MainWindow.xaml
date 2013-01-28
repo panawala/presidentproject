@@ -596,7 +596,7 @@
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem x:Name="menu3_2" Content="市局沟通" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16">
+                		<ListBoxItem x:Name="menu3_2" Content="市局沟通" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu3_2_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
@@ -696,7 +696,7 @@
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
                 		</ListBoxItem>
-                		<ListBoxItem x:Name="menu8_4" Content="211校园建设" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu8_4_PreviewMouseDown">
+                		<ListBoxItem x:Name="menu8_4" Content="2011校园建设" Style="{DynamicResource ListBoxItemleftSubmenu}" Height="70" FontSize="16" PreviewMouseDown="menu8_4_PreviewMouseDown">
                 			<ListBoxItem.Foreground>
                 				<SolidColorBrush Color="{DynamicResource #646464}"/>
                 			</ListBoxItem.Foreground>
