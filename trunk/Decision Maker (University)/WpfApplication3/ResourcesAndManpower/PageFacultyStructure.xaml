@@ -371,7 +371,7 @@
                 	<Rectangle Stroke="Black" StrokeDashArray="4 4" HorizontalAlignment="Left" Width="1" Grid.Column="1"/>
                 	<Rectangle Stroke="Black" Height="1" StrokeDashArray="4 4" VerticalAlignment="Top" Grid.Column="1"/></Grid>
                 <Grid Grid.Row="1">
-                    <Label Style="{DynamicResource LabelResource}" Foreground="White" FontSize="16">国际机构</Label>
+                    <Label Style="{DynamicResource LabelResource}" Foreground="White" FontSize="16">国际合作机构</Label>
                 </Grid>
                 <Grid Grid.Row="2">
                     <ListBox Name="listbox6" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" Style="{DynamicResource ListBoxResource}" FontSize="16" >

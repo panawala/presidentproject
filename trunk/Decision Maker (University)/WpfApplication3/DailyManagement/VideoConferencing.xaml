@@ -295,7 +295,7 @@
             			<SolidColorBrush Color="{DynamicResource #235235235}"/>
             		</Rectangle.Fill>
             	</Rectangle>
-            	<Label VerticalAlignment="Top" Content="发演讲稿" Style="{DynamicResource Labeltopheader}"/>
+            	<Label VerticalAlignment="Top" Content="发言讲稿" Style="{DynamicResource Labeltopheader}"/>
             	<WebBrowser x:Name="webBrower1" Grid.Row="1" Margin="20,20,20,30" Opacity="0.15"/>
             </Grid>
         </Grid>
@@ -317,7 +317,7 @@
         	<Label VerticalAlignment="Top" Content="相关材料" Style="{DynamicResource LabelRightContent}" d:LayoutOverrides="VerticalAlignment"/>
 
         	<TabControl FontSize="13" FontWeight="Normal" Grid.Row="0" Margin="0,44.834,0,0" Style="{DynamicResource TabControlStyle2}" Background="{x:Null}" BorderBrush="{x:Null}" >
-        		<TabItem Header="发演讲稿" Style="{DynamicResource TabItemLargeProjects}" Margin="40,0,-40,0" >
+        		<TabItem Header="发言讲稿" Style="{DynamicResource TabItemLargeProjects}" Margin="40,0,-40,0" >
         			<ListBox  x:Name="listBox1" ItemsSource="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
         				<ListBox.ItemContainerStyle>
             									<Style TargetType="{x:Type ListBoxItem}" >

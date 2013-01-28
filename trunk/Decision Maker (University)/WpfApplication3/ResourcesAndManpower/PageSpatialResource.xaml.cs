@@ -179,9 +179,28 @@ namespace WpfApplication3.ResourcesAndManpower
 
         private void btnAll_Click(object sender, RoutedEventArgs e)
         {
+            bool allenbled = true;
             foreach (Button btn in canvasMap.Children)
             {
-                btn.IsEnabled = true;
+                if (btn.IsEnabled != true)
+                {
+                    allenbled = false;
+                    break;
+                }
+            }
+            if (allenbled == true)
+            {
+                foreach (Button btn in canvasMap.Children)
+                {
+                    btn.IsEnabled = false;           
+                }
+            }
+            else
+            {
+                foreach (Button btn in canvasMap.Children)
+                {
+                    btn.IsEnabled = true;
+                }
             }
         }
 

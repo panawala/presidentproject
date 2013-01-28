@@ -22,6 +22,7 @@ namespace WpfApplication3.ResourcesAndManpower
         public WindowFacultyMember(int FacultyStructureId)
         {
             InitializeComponent();
+            wnd_FacultyMemberPhoto.Source = new BitmapImage(new Uri("/Images/Photos/FacultyMemberPhoto_" + FacultyStructureId + ".jpg", UriKind.Relative));
             DataSetFacultyMemberTableAdapters.T_FacultyMemberTableAdapter adapter = new DataSetFacultyMemberTableAdapters.T_FacultyMemberTableAdapter();
             try
             {

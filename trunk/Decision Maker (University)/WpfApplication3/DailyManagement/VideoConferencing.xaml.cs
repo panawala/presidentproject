@@ -47,33 +47,9 @@ namespace WpfApplication3.DailyManagement
                 {
                     ImageSource="/Images/cone.png",
                     FileDate="2012-11-22",
-                    Title="2012年5月项目经费使用情况报告",
+                    Title="新年贺词",
                     Type="项目经费",
-                    Address=pathPDF + @"/PDF/" + "2012年5月项目经费使用情况报告.pdf"
-                },
-                new Information
-                {
-                    ImageSource="/Images/cone.png",
-                    FileDate="2012-11-22",
-                    Title="2012年5月项目经费使用情况报告",
-                    Type="项目经费",
-                    Address=pathPDF + @"/PDF/" + "2012年5月项目经费使用情况报告.pdf"
-                },
-                new Information
-                {
-                    ImageSource="/Images/cone.png",
-                    FileDate="2012-11-22",
-                    Title="2012年5月项目经费使用情况报告",
-                    Type="项目经费",
-                    Address=pathPDF + @"/PDF/" + "2012年5月项目经费使用情况报告.pdf"
-                },
-                new Information
-                {
-                    ImageSource="/Images/cone.png",
-                    FileDate="2012-11-22",
-                    Title="2012年5月项目经费使用情况报告",
-                    Type="项目经费",
-                    Address=pathPDF + @"/PDF/" + "2012年5月项目经费使用情况报告.pdf"
+                    Address=pathPDF + @"/PDF/" + "新年贺词.pdf"
                 },
                 new Information
                 {
