@@ -24,9 +24,11 @@ namespace WpfApplication3.Development_performance
         private double[,] partyedvalue = { { 45.5, 41.5 }, { 40, 34 }, { 30.5, 27.5 }, { 26, 22.5 } };
         private double[] percent;
         private double width;
-        public ComprehensiveIndex()
+        MainWindow controlmenu;
+        public ComprehensiveIndex(MainWindow p)
         {
             InitializeComponent();
+            controlmenu = p;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -91,80 +93,91 @@ namespace WpfApplication3.Development_performance
         //页面跳转函数
         private void tb_tc_edu_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(1);
+            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(1,controlmenu);
+            controlmenu.menu1_1.IsSelected = true;
             this.NavigationService.Navigate(TalentC);
         }
 
         private void tb_tc_teachers_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
-            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(2);
+            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(2,controlmenu);
+            controlmenu.menu1_1.IsSelected = true;
             this.NavigationService.Navigate(TalentC);
         }
 
         private void tb_tc_train_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(3);
+            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(3,controlmenu);
+            controlmenu.menu1_1.IsSelected = true;
             this.NavigationService.Navigate(TalentC);
         }
 
         private void tb_sr_achievements_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(1);
+            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(1,controlmenu);
+            controlmenu.menu1_2.IsSelected = true;
             this.NavigationService.Navigate(ScientificR);
         }
 
         private void tb_sr_research_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(2);
+            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(2,controlmenu);
+            controlmenu.menu1_2.IsSelected = true;
             this.NavigationService.Navigate(ScientificR);
         }
 
         private void tb_sr_project_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(3);
+            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(3,controlmenu);
+            controlmenu.menu1_2.IsSelected = true;
             this.NavigationService.Navigate(ScientificR);
         }
 
         private void tb_cr_academic_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(1);
+            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(1,controlmenu);
+            controlmenu.menu1_3.IsSelected = true;
             this.NavigationService.Navigate(ComprehensiveR);
         }
 
         private void tb_cr_donate_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(2);
+            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(2,controlmenu);
+            controlmenu.menu1_3.IsSelected = true;
             this.NavigationService.Navigate(ComprehensiveR);
         }
 
         private void tb_cr_reputation_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(3);
+            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(3,controlmenu);
+            controlmenu.menu1_3.IsSelected = true;
             this.NavigationService.Navigate(ComprehensiveR);
         }
 
         private void tb_cr_schoolfellow_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(4);
+            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(4,controlmenu);
+            controlmenu.menu1_3.IsSelected = true;
             this.NavigationService.Navigate(ComprehensiveR);
         }
 
         private void tb_gc_resource_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Development_performance.GreenCampus GreenC = new Development_performance.GreenCampus(1);
+            Development_performance.GreenCampus GreenC = new Development_performance.GreenCampus(1,controlmenu);
+            controlmenu.menu1_4.IsSelected = true;
             this.NavigationService.Navigate(GreenC);
         }
 
         private void tb_cr_environment_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Development_performance.GreenCampus GreenC = new Development_performance.GreenCampus(2);
+            Development_performance.GreenCampus GreenC = new Development_performance.GreenCampus(2,controlmenu);
+            controlmenu.menu1_4.IsSelected = true;
             this.NavigationService.Navigate(GreenC);
 
         }

@@ -23,9 +23,10 @@ namespace WpfApplication3.Development_performance
     /// </summary>
     public partial class TalentCultivation : Page
     {
-
-        public TalentCultivation(int i)
+        MainWindow controlmenu;
+        public TalentCultivation(int i,MainWindow p)
         {
+            controlmenu = p;
             InitializeComponent();
             //确定默认选项
             switch (i){
@@ -926,7 +927,11 @@ namespace WpfApplication3.Development_performance
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
-            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex(controlmenu);
+            controlmenu.menu1_1.IsSelected = false;
+            controlmenu.menu1_2.IsSelected = false;
+            controlmenu.menu1_3.IsSelected = false;
+            controlmenu.menu1_4.IsSelected = false;
             this.NavigationService.Navigate(ComprehensiveI);
         }
 
@@ -940,9 +945,9 @@ namespace WpfApplication3.Development_performance
             Teaching m_window = new Teaching(tea.lianxifangshi.ToString());
             try
             {
-                m_window.Show();
-                Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
-                this.NavigationService.Navigate(TalentCultivationI);
+              m_window.Show();
+              Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2,controlmenu);
+              this.NavigationService.Navigate(TalentCultivationI);
             }
             catch
             {
