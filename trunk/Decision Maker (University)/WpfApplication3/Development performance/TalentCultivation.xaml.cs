@@ -941,13 +941,13 @@ namespace WpfApplication3.Development_performance
             try
             {
               m_window.Show();
-              Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
-              this.NavigationService.Navigate(TalentCultivationI);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
+            this.NavigationService.Navigate(TalentCultivationI);
         }
     }
 }
