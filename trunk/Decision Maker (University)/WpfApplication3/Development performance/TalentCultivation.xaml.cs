@@ -940,14 +940,14 @@ namespace WpfApplication3.Development_performance
             Teaching m_window = new Teaching(tea.lianxifangshi.ToString());
             try
             {
-              m_window.Show();
+                m_window.Show();
+                Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
+                this.NavigationService.Navigate(TalentCultivationI);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
-            Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
-            this.NavigationService.Navigate(TalentCultivationI);
+           
         }
     }
 }
