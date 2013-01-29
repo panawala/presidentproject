@@ -141,10 +141,10 @@
                             <DataGrid AutoGenerateColumns="False" Name="D_shizishuiping" FontSize="18" Grid.RowSpan="2" Margin="7,10,10,10" SelectionUnit="FullRow" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="姓名" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
-                                    <DataGridTextColumn Header="职称" Binding="{Binding Path=zhiwu}" FontSize="18" />
+                                    <DataGridTextColumn Header="学术荣誉" Binding="{Binding Path=zhiwu}" FontSize="18" />
                                     <DataGridTextColumn Header="毕业时间" Binding="{Binding Path=biyeshijian}" FontSize="18" Visibility="Hidden" />
                                     <DataGridTextColumn Header="专业" Binding="{Binding Path=zhuanye}" FontSize="18" />
-                                    <DataGridHyperlinkColumn Header="其他资料" Binding="{Binding Path=lianxifangshi}">
+                                    <DataGridHyperlinkColumn Header="详细资料" Binding="{Binding Path=lianxifangshi}">
                                     <DataGridHyperlinkColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <EventSetter Event="Hyperlink.Click" Handler="Hyperlink_Click1" />
