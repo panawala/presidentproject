@@ -13,6 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Visifire.Charts;
 using WpfApplication3.CreateChart;
+using System.Data;
+using System.Diagnostics;
 
 namespace WpfApplication3.Development_performance
 {
@@ -52,108 +54,100 @@ namespace WpfApplication3.Development_performance
             {
                 new TeaInformation
                 {
-                    xingming = "李国豪",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "桥梁",
-                    lianxifangshi = "未知",
+                    xingming = "戴复东",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1952年7月",
+                    zhuanye = "建筑学与建筑设计",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_122.htm",
                 },
                               
                 new TeaInformation
                 {
-                    xingming = "裘法祖",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "医学",
-                    lianxifangshi = "未知",
+                    xingming = "范立础",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年7月",
+                    zhuanye = "桥梁和结构工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_124.htm",
                 },                
-                new TeaInformation
-                {
-                    xingming = "黄志镗",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "土木",
-                    lianxifangshi = "未知",
-                },
                 new TeaInformation
                 {
                     xingming = "郭重庆",
                     zhiwu = "中国工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "诗人",
-                    lianxifangshi = "未知",
-                },   
+                    biyeshijian = "1957年",
+                    zhuanye = "机械制造工艺与设备",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_123.htm",
+                },
                 new TeaInformation
                 {
-                    xingming = "程京",
+                    xingming = "李同保",
                     zhiwu = "中国工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "医学",
-                    lianxifangshi = "未知",
+                    biyeshijian = "1963年",
+                    zhuanye = "测量学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_125.htm",
                 },   
                 new TeaInformation
                 {
-                    xingming = "李德仁",
-                    zhiwu = "工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "水利",
-                    lianxifangshi = "未知",
+                    xingming = "卢耀如",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1953年8月",
+                    zhuanye = "地质学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_126.htm",
+                },   
+                new TeaInformation
+                {
+                    xingming = "马在田",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1957年",
+                    zhuanye = "地球物理学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_127.htm",
                 }, 
                  new TeaInformation
                 {
-                    xingming = "普罗迪",
-                    zhiwu = "国外院士",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "沈祖炎",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年",
+                    zhuanye = "结构工程钢结构",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_128.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "安娜贝蒂琼卡",
-                    zhiwu = "国外院士",
-                    biyeshijian = "未知",
-                    zhuanye = "未知",
-                    lianxifangshi = "未知",
+                    xingming = "孙钧",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1949年6月",
+                    zhuanye = "土木工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_129.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "冯佛戈",
-                    zhiwu = "杰出人文社会科学家",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "汪品先",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1960年",
+                    zhuanye = "海洋与地球科学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_130.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "柔石",
-                    zhiwu = "杰出人文社会科学家",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "项海帆",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年",
+                    zhuanye = "桥梁及结构工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_131.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "元丰少",
-                    zhiwu = "国家级教学名师",
-                    biyeshijian = "未知",
-                    zhuanye = "建筑",
-                    lianxifangshi = "未知",
+                    xingming = "姚熹",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1957年",
+                    zhuanye = "电子陶瓷",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_132.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "张晨曦",
-                    zhiwu = "国家级教学名师",
-                    biyeshijian = "未知",
-                    zhuanye = "计算机",
-                    lianxifangshi = "未知",
-                },   
-                 new TeaInformation
-                {
-                    xingming = "王祖涵",
-                    zhiwu = "千人计划入选者",
-                    biyeshijian = "未知",
-                    zhuanye = "生物",
-                    lianxifangshi = "未知",
+                    xingming = "郑时龄",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1965年",
+                    zhuanye = "建筑学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_133.htm",
                 }
             };
             List<SubInformation> SubInfo = new List<SubInformation>
@@ -270,7 +264,6 @@ namespace WpfApplication3.Development_performance
              };
 
             D_shizishuiping.ItemsSource = TeaInfo;
-            D_shizishuiping.SelectedIndex = 0;
 
             D_jiaoyujiaoxue.ItemsSource = SubInfo;
             D_jiaoyujiaoxue.SelectedIndex = 0;
@@ -668,115 +661,106 @@ namespace WpfApplication3.Development_performance
         {
             List<TeaInformation> TeaInfo1 = new List<TeaInformation>
             {
-                new TeaInformation
+                 new TeaInformation
                 {
-                    xingming = "李国豪",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "桥梁",
-                    lianxifangshi = "未知",
+                    xingming = "戴复东",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1952年7月",
+                    zhuanye = "建筑学与建筑设计",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_122.htm",
                 },
                               
                 new TeaInformation
                 {
-                    xingming = "裘法祖",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "医学",
-                    lianxifangshi = "未知",
+                    xingming = "范立础",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年7月",
+                    zhuanye = "桥梁和结构工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_124.htm",
                 },                
-                new TeaInformation
-                {
-                    xingming = "黄志镗",
-                    zhiwu = "中国科学院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "土木",
-                    lianxifangshi = "未知",
-                },
                 new TeaInformation
                 {
                     xingming = "郭重庆",
                     zhiwu = "中国工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "诗人",
-                    lianxifangshi = "未知",
-                },   
+                    biyeshijian = "1957年",
+                    zhuanye = "机械制造工艺与设备",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_123.htm",
+                },
                 new TeaInformation
                 {
-                    xingming = "程京",
+                    xingming = "李同保",
                     zhiwu = "中国工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "医学",
-                    lianxifangshi = "未知",
+                    biyeshijian = "1963年",
+                    zhuanye = "测量学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_125.htm",
                 },   
                 new TeaInformation
                 {
-                    xingming = "李德仁",
-                    zhiwu = "工程院院士",
-                    biyeshijian = "未知",
-                    zhuanye = "水利",
-                    lianxifangshi = "未知",
+                    xingming = "卢耀如",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1953年8月",
+                    zhuanye = "地质学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_126.htm",
+                },   
+                new TeaInformation
+                {
+                    xingming = "马在田",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1957年",
+                    zhuanye = "地球物理学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_127.htm",
                 }, 
                  new TeaInformation
                 {
-                    xingming = "普罗迪",
-                    zhiwu = "国外院士",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "沈祖炎",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年",
+                    zhuanye = "结构工程钢结构",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_128.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "安娜贝蒂琼卡",
-                    zhiwu = "国外院士",
-                    biyeshijian = "未知",
-                    zhuanye = "未知",
-                    lianxifangshi = "未知",
+                    xingming = "孙钧",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1949年6月",
+                    zhuanye = "土木工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_129.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "冯佛戈",
-                    zhiwu = "杰出人文社会科学家",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "汪品先",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1960年",
+                    zhuanye = "海洋与地球科学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_130.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "柔石",
-                    zhiwu = "杰出人文社会科学家",
-                    biyeshijian = "未知",
-                    zhuanye = "文学",
-                    lianxifangshi = "未知",
+                    xingming = "项海帆",
+                    zhiwu = "中国工程院院士",
+                    biyeshijian = "1955年",
+                    zhuanye = "桥梁及结构工程",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_131.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "元丰少",
-                    zhiwu = "国家级教学名师",
-                    biyeshijian = "未知",
-                    zhuanye = "建筑",
-                    lianxifangshi = "未知",
+                    xingming = "姚熹",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1957年",
+                    zhuanye = "电子陶瓷",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_132.htm",
                 },   
                  new TeaInformation
                 {
-                    xingming = "张晨曦",
-                    zhiwu = "国家级教学名师",
-                    biyeshijian = "未知",
-                    zhuanye = "计算机",
-                    lianxifangshi = "未知",
-                },   
-                 new TeaInformation
-                {
-                    xingming = "王祖涵",
-                    zhiwu = "千人计划入选者",
-                    biyeshijian = "未知",
-                    zhuanye = "生物",
-                    lianxifangshi = "未知",
+                    xingming = "郑时龄",
+                    zhiwu = "中国科学院院士",
+                    biyeshijian = "1965年",
+                    zhuanye = "建筑学",
+                    lianxifangshi = "http://gtjuh.tongji.edu.cn/person/intro/new_page_133.htm",
                 }
             };
 
             D_shizishuiping.ItemsSource = TeaInfo1.Where(s => (zhongkeyuan.IsChecked.Equals(true) && s.zhiwu == "中国科学院院士") || (zhonggongyuan.IsChecked.Equals(true) && s.zhiwu == "中国工程院院士") || (guowaiyuan.IsChecked.Equals(true) && s.zhiwu == "国外院士") || (renwenshehui.IsChecked.Equals(true) && s.zhiwu == "杰出人文社会科学家") || (jiaoxuemingshi.IsChecked.Equals(true) && s.zhiwu == "国家级教学名师") || (qianrenjihua.IsChecked.Equals(true) && s.zhiwu == "千人计划入选者"));
-            D_shizishuiping.SelectedIndex = 0;
         }
         private void S_xuekeshuiping_Click(object sender, RoutedEventArgs e)
         {
@@ -946,6 +930,24 @@ namespace WpfApplication3.Development_performance
             this.NavigationService.Navigate(ComprehensiveI);
         }
 
+        private void Hyperlink_Click1(object sender, RoutedEventArgs e)
+        {
+            /*Hyperlink link = e.OriginalSource as Hyperlink;
+            Process.Start(link.NavigateUri.AbsoluteUri);
+            */
+            TeaInformation tea = (TeaInformation)D_shizishuiping.SelectedItem;
 
+            Teaching m_window = new Teaching(tea.lianxifangshi.ToString());
+            try
+            {
+              m_window.Show();
+              Development_performance.TalentCultivation TalentCultivationI = new Development_performance.TalentCultivation(2);
+              this.NavigationService.Navigate(TalentCultivationI);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
