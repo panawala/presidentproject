@@ -138,13 +138,19 @@
             					<RowDefinition Height="37"/>
             					<RowDefinition/>
             				</Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" Name="D_shizishuiping" FontSize="18" Grid.RowSpan="2" Margin="7,10,10,10">
+                            <DataGrid AutoGenerateColumns="False" Name="D_shizishuiping" FontSize="18" Grid.RowSpan="2" Margin="7,10,10,10" SelectionUnit="FullRow" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="姓名" Binding="{Binding Path=xingming}" MinWidth="50" FontSize="18" />
                                     <DataGridTextColumn Header="现任职务" Binding="{Binding Path=zhiwu}" FontSize="18" />
                                     <DataGridTextColumn Header="毕业时间" Binding="{Binding Path=biyeshijian}" FontSize="18" />
                                     <DataGridTextColumn Header="专业" Binding="{Binding Path=zhuanye}" FontSize="18" />
-                                    <DataGridTextColumn Header="联系方式" Binding="{Binding Path=lianxifangshi}" FontSize="18" Width="*"/>
+                                    <DataGridHyperlinkColumn Header="其他资料" Binding="{Binding Path=lianxifangshi}">
+                                    <DataGridHyperlinkColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <EventSetter Event="Hyperlink.Click" Handler="Hyperlink_Click1" />
+                                        </Style>
+                                    </DataGridHyperlinkColumn.ElementStyle>
+                                    </DataGridHyperlinkColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
