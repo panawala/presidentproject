@@ -59,7 +59,7 @@ namespace WpfApplication3.Development_performance
         
         
             Q_xueshushengyu.Navigate(new Uri(strPATH + @"/html/quxian.htm", UriKind.RelativeOrAbsolute));
-            mainWebBrowser.Navigate(new Uri("http://news.hexun.com/2012-12-13/149009551.html", UriKind.RelativeOrAbsolute));
+            mainWebBrowser.Navigate(new Uri("http://www.chinadegrees.cn/xwyyjsjyxx/xxsbdxz/index.shtml", UriKind.RelativeOrAbsolute));
             mainWebBrowser1.Navigate(new Uri("http://news.hexun.com/2012-12-13/149009551.html", UriKind.RelativeOrAbsolute));
 
         
