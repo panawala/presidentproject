@@ -183,6 +183,9 @@
     <Compile Include="Development performance\TalentCultivation.xaml.cs">
       <DependentUpon>TalentCultivation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Development performance\Teaching.xaml.cs">
+      <DependentUpon>Teaching.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EggModel\CxEggModel.xaml.cs">
       <DependentUpon>CxEggModel.xaml</DependentUpon>
     </Compile>
@@ -338,6 +341,10 @@
     <Page Include="Development performance\TalentCultivation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Development performance\Teaching.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EggModel\CxEggModel.xaml">
       <Generator>MSBuild:Compile</Generator>
