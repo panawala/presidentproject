@@ -814,6 +814,7 @@
     <Resource Include="CutImages\图像\yingjiyuan-07.png" />
     <Resource Include="CutImages\图像\yingjiyuan1-07.png" />
     <Resource Include="CutImages\图像\yuan_bg-07.png" />
+    <Resource Include="Application.ico" />
     <Content Include="html\GreenDetect1.htm" />
     <Content Include="html\quxian.htm" />
     <Content Include="html\redu.htm" />
