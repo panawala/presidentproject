@@ -76,7 +76,7 @@ namespace WpfApplication3
                 if (strlocation == "突发事件")
                     ijudge = 1;
                 else if (strlocation == "自然灾害")
-                    ijudge = 2;
+                    ijudge = 5;
                 DataTable dt = new DataTable();
                 SQLHelper.getPointsByCategory(ijudge, out dt);
                 List<Location> m_list = new List<Location>();
