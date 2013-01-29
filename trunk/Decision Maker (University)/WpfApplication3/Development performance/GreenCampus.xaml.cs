@@ -27,9 +27,12 @@ namespace WpfApplication3.Development_performance
     /// </summary>
     public partial class GreenCampus : Page
     {
-        public GreenCampus(int defaultTabItem)
+
+        MainWindow controlmenu;
+        public GreenCampus(int defaultTabItem, MainWindow p)
         {
             InitializeComponent();
+            controlmenu = p;
             switch (defaultTabItem){
                 case 1:
                     tabI_resource.IsSelected = true;
@@ -565,7 +568,11 @@ namespace WpfApplication3.Development_performance
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
-            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+            Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex(controlmenu);
+            controlmenu.menu1_1.IsSelected = false;
+            controlmenu.menu1_2.IsSelected = false;
+            controlmenu.menu1_3.IsSelected = false;
+            controlmenu.menu1_4.IsSelected = false;
             this.NavigationService.Navigate(ComprehensiveI);
         }
     }

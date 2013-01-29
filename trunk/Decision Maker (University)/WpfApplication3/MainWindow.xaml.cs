@@ -349,35 +349,7 @@ namespace WpfApplication3
         //        menutitle8.Visibility = System.Windows.Visibility.Visible;
         //}
 
-        private void TalentC(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Development_performance.TalentCultivation  TalentC = new  Development_performance.TalentCultivation(1);
-            FrameMiddleContent.Navigate(TalentC);
 
-        }
-        private void ScientificR(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Development_performance.ScientificResearch  ScientificR = new  Development_performance.ScientificResearch(1);
-            FrameMiddleContent.Navigate(ScientificR);
-
-        }
-        
-        private void ComprehensiveR(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Development_performance.ComprehensiveReputation  ComprehensiveR = new  Development_performance.ComprehensiveReputation(1);
-            FrameMiddleContent.Navigate(ComprehensiveR);
-
-        }
-           private void GreenC(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            // TODO: Add event handler implementation here.
-            Development_performance.GreenCampus  GreenC = new  Development_performance.GreenCampus(1);
-            FrameMiddleContent.Navigate(GreenC);
-
-        }
 
         private void menu6_3_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
@@ -532,10 +504,13 @@ namespace WpfApplication3
                 HideMenu();
                 UnselectMenus();
                 VisibleMenuTitle();
-
-
                 HomePage m_HomePage = new HomePage();
                 FrameMiddleContent.Navigate(m_HomePage);
+                //
+                menu1_1.IsSelected = false;
+                menu1_2.IsSelected = false;
+                menu1_3.IsSelected = false;
+                menu1_4.IsSelected = false;
             }
             else
             {
@@ -544,11 +519,39 @@ namespace WpfApplication3
                 menu1.Visibility = System.Windows.Visibility.Visible;
                 menutitle1.Visibility = System.Windows.Visibility.Visible;
                 //点击后默认显示综合指数
-                Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex();
+                Development_performance.ComprehensiveIndex ComprehensiveI = new Development_performance.ComprehensiveIndex(this);
                 FrameMiddleContent.Navigate(ComprehensiveI);
             }
         }
-		
+        private void TalentC(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            Development_performance.TalentCultivation TalentC = new Development_performance.TalentCultivation(1,this);
+            FrameMiddleContent.Navigate(TalentC);
+
+        }
+        private void ScientificR(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            Development_performance.ScientificResearch ScientificR = new Development_performance.ScientificResearch(1,this);
+            FrameMiddleContent.Navigate(ScientificR);
+
+        }
+
+        private void ComprehensiveR(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            Development_performance.ComprehensiveReputation ComprehensiveR = new Development_performance.ComprehensiveReputation(1,this);
+            FrameMiddleContent.Navigate(ComprehensiveR);
+
+        }
+        private void GreenC(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            Development_performance.GreenCampus GreenC = new Development_performance.GreenCampus(1,this);
+            FrameMiddleContent.Navigate(GreenC);
+
+        }
 		private void menutitle2_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (menu2.Visibility == System.Windows.Visibility.Visible)
